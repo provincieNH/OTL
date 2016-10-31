@@ -1,10 +1,17 @@
 @prefix ad: <http://areaaldata.noord-holland.nl#> .
 @prefix adwl: <http://areaaldata-wl.noord-holland.nl#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ad: a owl:Ontology ;
+    owl:imports adwl:,
+        geo:,
+        sf: .
 
 <http://areaaldata.noord-holland.nl#999> a owl:Class ;
     rdfs:label 999 .
@@ -23,16 +30,18 @@ ad:aanduidingEisVoorzorgsmaatr_p a owl:Class ;
         ad:LAST_EDITED_USER,
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
-        ad:OMSCHRIJVING ;
+        ad:OMSCHRIJVING,
+        ad:SHAPE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:NETRISICOOMSCHRIJVING ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:NETRISICOOMSCHRIJVING ],
+        geo:Point,
         owl:Thing .
 
 ad:aanduidingVerzoekContact_p a owl:Class ;
@@ -47,6 +56,7 @@ ad:aanduidingVerzoekContact_p a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
+        ad:SHAPE,
         ad:VERHOOGDRISICO,
         ad:VOORZORGMAATREGEL ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -55,6 +65,7 @@ ad:aanduidingVerzoekContact_p a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:adres_tbl a owl:Class ;
@@ -102,28 +113,30 @@ ad:bak_p a owl:Class ;
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
         ad:RECREATIEPLEK,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
         ad:TYPESPEC,
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:begroeidTerreindeelBerm_v a owl:Class ;
@@ -157,6 +170,7 @@ ad:begroeidTerreindeelBerm_v a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKINGMBTONDERH,
         ad:OPTALUD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:STREEFBEELD,
@@ -170,22 +184,23 @@ ad:begroeidTerreindeelBerm_v a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:FYSIEKVOORKOMEN ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:FYSIEKVOORKOMEN ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:STATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:begroeidTerreindeelKruin_l a owl:Class ;
@@ -200,6 +215,7 @@ ad:begroeidTerreindeelKruin_l a owl:Class ;
         ad:LAST_EDITED_USER,
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:SHAPE_Length ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -207,6 +223,7 @@ ad:begroeidTerreindeelKruin_l a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:begroeidTerreindeelPlantvak_v a owl:Class ;
@@ -242,6 +259,7 @@ ad:begroeidTerreindeelPlantvak_v a owl:Class ;
         ad:OPMERKINGMBTONDERH,
         ad:OPPERVLAKTE,
         ad:OPTALUD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:STREEFBEELD,
@@ -250,22 +268,23 @@ ad:begroeidTerreindeelPlantvak_v a owl:Class ;
         ad:WIJZEVANINWINNING ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:FYSIEKVOORKOMEN ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:FYSIEKVOORKOMEN ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:begroeidTerreindeel_v a owl:Class ;
@@ -287,28 +306,30 @@ ad:begroeidTerreindeel_v a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:ONDERHOUDER,
         ad:OPTALUD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:FYSIEKVOORKOMEN ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:beschoeiingInspectie_tbl a owl:Class ;
@@ -371,6 +392,7 @@ ad:bodem_v a owl:Class ;
         ad:ONDERKANTSLIB,
         ad:OPMERKING,
         ad:PEILJAAR,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TYPEBAGGER,
@@ -378,10 +400,11 @@ ad:bodem_v a owl:Class ;
         ad:VAARWEGDEELTRAJECT ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:bordScheepvaart_p a owl:Class ;
@@ -415,6 +438,7 @@ ad:bordScheepvaart_p a owl:Class ;
         ad:REFLECTIEWAARDE,
         ad:REFLECTIEWAARDE_DATUM,
         ad:RVVTYPEBORD,
+        ad:SHAPE,
         ad:TEKSTBVBORD,
         ad:TEKSTHOOFDBORD,
         ad:TEKSTONDERBORD,
@@ -424,22 +448,23 @@ ad:bordScheepvaart_p a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:STATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:bordWegwijzer_p a owl:Class ;
@@ -476,6 +501,7 @@ ad:bordWegwijzer_p a owl:Class ;
         ad:ONDERSTEUNINGSCONS,
         ad:ONTWERPDATUM,
         ad:REFLECTIEKLASSE,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE,
         ad:TYPELAMP,
         ad:TYPESPEC,
@@ -486,22 +512,23 @@ ad:bordWegwijzer_p a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:BGTPLUSTYPE ],
+        geo:Point,
         owl:Thing .
 
 ad:bordZwemwater_p a owl:Class ;
@@ -537,12 +564,13 @@ ad:bordZwemwater_p a owl:Class ;
         ad:PLAATS,
         ad:POSTADRES,
         ad:POSTCODE_PLAATS,
+        ad:SHAPE,
         ad:TELEFOONLIJST,
         ad:TIJDSTIPREGISTRATIE,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
@@ -554,10 +582,11 @@ ad:bordZwemwater_p a owl:Class ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:bord_p a owl:Class ;
@@ -603,6 +632,7 @@ ad:bord_p a owl:Class ;
         ad:REFLECTIEWAARDE,
         ad:REFLECTIEWAARDE_DATUM,
         ad:RVVTYPEBORD,
+        ad:SHAPE,
         ad:TEKST,
         ad:TIJDSTIPREGISTRATIE,
         ad:TOPDESK_ID,
@@ -615,10 +645,10 @@ ad:bord_p a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
@@ -627,10 +657,11 @@ ad:bord_p a owl:Class ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:bouwdeelGeluidsscherm_tbl a owl:Class ;
@@ -681,10 +712,10 @@ ad:bouwdeelKunstwerk_tbl a owl:Class ;
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         owl:Thing .
 
 ad:bouwdeelOevervak_tbl a owl:Class ;
@@ -708,10 +739,10 @@ ad:bouwdeelOevervak_tbl a owl:Class ;
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         owl:Thing .
 
 ad:buis_l a owl:Class ;
@@ -735,6 +766,7 @@ ad:buis_l a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:PRODUCT,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:THEMAKAART,
         ad:TRAJECT,
@@ -744,10 +776,11 @@ ad:buis_l a owl:Class ;
         ad:bovengrondsZichtbaar ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:buisleiding_v a owl:Class ;
@@ -770,6 +803,7 @@ ad:buisleiding_v a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:PRODUCT,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:THEMAKAART,
         ad:TYPESPEC,
@@ -778,10 +812,11 @@ ad:buisleiding_v a owl:Class ;
         ad:bovengrondsZichtbaar ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:concessieverlener_tbl a owl:Class ;
@@ -816,10 +851,10 @@ ad:crowInspectie_tbl a owl:Class ;
         ad:OPMERKING ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         owl:Thing .
 
 ad:crowInspectieresultaat_tbl a owl:Class ;
@@ -841,10 +876,10 @@ ad:crowInspectieresultaat_tbl a owl:Class ;
         ad:WVO_ID ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         owl:Thing .
 
 ad:crowMeting_tbl a owl:Class ;
@@ -885,13 +920,15 @@ ad:diepteTovMaaiveld_p a owl:Class ;
         ad:IDENTIFICATIE,
         ad:INNETWERK,
         ad:LAST_EDITED_DATE,
-        ad:LAST_EDITED_USER ;
+        ad:LAST_EDITED_USER,
+        ad:SHAPE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
+        geo:Point,
         owl:Thing .
 
 ad:doorvaartmaat_p a owl:Class ;
@@ -911,14 +948,16 @@ ad:doorvaartmaat_p a owl:Class ;
         ad:OBJECTNAAM,
         ad:OMSCHRIJVING,
         ad:OPMERKING,
+        ad:SHAPE,
         ad:VAARWEG,
         ad:VAARWEGDEELTRAJECT ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
+        geo:Point,
         owl:Thing .
 
 ad:ecoHoofdstructuur_v a owl:Class ;
@@ -933,6 +972,7 @@ ad:ecoHoofdstructuur_v a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -941,6 +981,7 @@ ad:ecoHoofdstructuur_v a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:ecoVerbZone_v a owl:Class ;
@@ -955,13 +996,15 @@ ad:ecoVerbZone_v a owl:Class ;
         ad:LAST_EDITED_USER,
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
-        ad:OMSCHRIJVING ;
+        ad:OMSCHRIJVING,
+        ad:SHAPE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:electriciteitskabel_l a owl:Class ;
@@ -991,6 +1034,7 @@ ad:electriciteitskabel_l a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:PRODUCT,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TOELICHTING,
         ad:TYPESPEC,
@@ -1000,25 +1044,26 @@ ad:electriciteitskabel_l a owl:Class ;
         ad:bovengrondsZichtbaar ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BEDRIJFSSPANNING ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:DIEPTELEGGING ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:NOMINALESPANNING ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:GEONAUWKEURIGHEIDXY ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:DIEPTELEGGING ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:HUIDIGESTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BEDRIJFSSPANNING ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:HUIDIGESTATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:faunavoorziening_v a owl:Class ;
@@ -1047,6 +1092,7 @@ ad:faunavoorziening_v a owl:Class ;
         ad:OPMERKING,
         ad:PLANJAAR,
         ad:RESTLEVENSDUUR,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TRAJECT,
@@ -1054,13 +1100,14 @@ ad:faunavoorziening_v a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:RELATIEVEHOOGTELIGGING ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:RELATIEVEHOOGTELIGGING ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:fietsparkeervoorziening_l a owl:Class ;
@@ -1087,6 +1134,7 @@ ad:fietsparkeervoorziening_l a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TRAJECT,
         ad:TYPESPEC ;
@@ -1099,6 +1147,7 @@ ad:fietsparkeervoorziening_l a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:functioneelGebied_v a owl:Class ;
@@ -1116,24 +1165,26 @@ ad:functioneelGebied_v a owl:Class ;
         ad:NAAM,
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:gebiedscontractregio_v a owl:Class ;
@@ -1149,6 +1200,7 @@ ad:gebiedscontractregio_v a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OPDRACHTNEMER,
         ad:REGIO,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -1157,6 +1209,7 @@ ad:gebiedscontractregio_v a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:gebouwInstallatie_v a owl:Class ;
@@ -1173,11 +1226,18 @@ ad:gebouwInstallatie_v a owl:Class ;
         ad:LV_PUBLICATIEDATUM,
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
@@ -1185,16 +1245,11 @@ ad:gebouwInstallatie_v a owl:Class ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:BGTPLUSTYPE ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:geluidwerendeVoorziening_l a owl:Class ;
@@ -1221,19 +1276,21 @@ ad:geluidwerendeVoorziening_l a owl:Class ;
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
         ad:REGIO,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TRAJECT,
         ad:VAARWEG,
         ad:WEG ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BEGROEID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:BEGROEID ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:halte_v a owl:Class ;
@@ -1260,6 +1317,7 @@ ad:halte_v a owl:Class ;
         ad:ONDERHOUDER,
         ad:ONDERHOUDSOVEREENKOMST,
         ad:PROJECT,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:SUBSIDIEPROJECT,
@@ -1274,10 +1332,11 @@ ad:halte_v a owl:Class ;
             owl:onProperty ad:HALTEKOM ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:hasProperty a owl:TransitiveProperty ;
@@ -1302,11 +1361,15 @@ ad:installatie_p a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
         ad:TYPESPEC,
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
@@ -1317,13 +1380,11 @@ ad:installatie_p a owl:Class ;
             owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:kabelbed_v a owl:Class ;
@@ -1349,6 +1410,7 @@ ad:kabelbed_v a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:PRODUCT,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:VERTICALE_POSITIE,
         ad:WAARSCHUWINGSTYPE,
@@ -1358,16 +1420,17 @@ ad:kabelbed_v a owl:Class ;
             owl:onProperty ad:AFWIJKINGDIEPTE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:GEONAUWKEURIGHEIDXY ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:HUIDIGESTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:GEONAUWKEURIGHEIDXY ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:kastDRIS_p a owl:Class ;
@@ -1398,6 +1461,7 @@ ad:kastDRIS_p a owl:Class ;
         ad:PLANJAAR,
         ad:RELHOOGTELIGGING,
         ad:RESTLEVENSDUUR,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
         ad:TYPECOMMUNICATIE,
@@ -1406,22 +1470,23 @@ ad:kastDRIS_p a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BGTPLUSTYPE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        geo:Point,
         owl:Thing .
 
 ad:kastOvl_p a owl:Class ;
@@ -1458,11 +1523,15 @@ ad:kastOvl_p a owl:Class ;
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
         ad:RALKLEUR,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
         ad:TYPECOMMUNICATIE,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
@@ -1470,16 +1539,14 @@ ad:kastOvl_p a owl:Class ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:kastVri_p a owl:Class ;
@@ -1533,6 +1600,7 @@ ad:kastVri_p a owl:Class ;
         ad:RALKLEUR,
         ad:ROODLAMPBEWAKING,
         ad:SERIENUMMER,
+        ad:SHAPE,
         ad:SIMNUMMER,
         ad:SOORTAUTOMAATKOPPE,
         ad:SOORTPRIOVOORZIENI,
@@ -1546,22 +1614,23 @@ ad:kastVri_p a owl:Class ;
         ad:ZIJWEG ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BGTPLUSTYPE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
+        geo:Point,
         owl:Thing .
 
 ad:kast_p a owl:Class ;
@@ -1598,6 +1667,7 @@ ad:kast_p a owl:Class ;
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
         ad:RELHOOGTELIGGING,
+        ad:SHAPE,
         ad:SIMNUMMER,
         ad:TELPUNTCODE,
         ad:TIJDSTIPREGISTRATIE,
@@ -1608,22 +1678,23 @@ ad:kast_p a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
+            owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:BGTPLUSTYPE ],
+        geo:Point,
         owl:Thing .
 
 ad:kruispunt_p a owl:Class ;
@@ -1643,14 +1714,16 @@ ad:kruispunt_p a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:TYPESPEC,
         ad:WEG ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
+        geo:Point,
         owl:Thing .
 
 ad:kunstwerkBeweegbaar_p a owl:Class ;
@@ -1724,6 +1797,7 @@ ad:kunstwerkBeweegbaar_p a owl:Class ;
         ad:OPLEGGINGTYPE,
         ad:PLANJAARPMO,
         ad:SCHOTBALKAANWEZIG,
+        ad:SHAPE,
         ad:TALUDBEKLEDINGOPPO,
         ad:TOPCODE,
         ad:TRAJECT,
@@ -1739,10 +1813,11 @@ ad:kunstwerkBeweegbaar_p a owl:Class ;
         ad:ZCOORDINAAT ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
+        geo:Point,
         owl:Thing .
 
 ad:kunstwerkVast_p a owl:Class ;
@@ -1810,6 +1885,7 @@ ad:kunstwerkVast_p a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPLEGGINGTYPE,
         ad:SCHOTBALKAANWEZIG,
+        ad:SHAPE,
         ad:TALUDBEKLEDINGOPPO,
         ad:TOPCODE,
         ad:TRAJECT,
@@ -1829,6 +1905,7 @@ ad:kunstwerkVast_p a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:kunstwerkdeel_l a owl:Class ;
@@ -1868,6 +1945,7 @@ ad:kunstwerkdeel_l a owl:Class ;
         ad:PROFIEL,
         ad:REGIO,
         ad:SCHOTBALKAANWEZIG,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
@@ -1878,22 +1956,23 @@ ad:kunstwerkdeel_l a owl:Class ;
         ad:YCOORDINAAT ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:BGTPLUSTYPE ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:kunstwerkdeel_mp a owl:Class ;
@@ -1910,22 +1989,24 @@ ad:kunstwerkdeel_mp a owl:Class ;
         ad:LV_PUBLICATIEDATUM,
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        geo:MultiPoint,
         owl:Thing .
 
 ad:kunstwerkdeel_v a owl:Class ;
@@ -1960,6 +2041,7 @@ ad:kunstwerkdeel_v a owl:Class ;
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
         ad:OPMERKINGMBTONDERH,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
@@ -1972,25 +2054,26 @@ ad:kunstwerkdeel_v a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BGTPLUSTYPE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:kwElement_tbl a owl:Class ;
@@ -2023,10 +2106,10 @@ ad:kwElement_tbl a owl:Class ;
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         owl:Thing .
 
 ad:lamp_p a owl:Class ;
@@ -2051,13 +2134,15 @@ ad:lamp_p a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
+        geo:Point,
         owl:Thing .
 
 ad:lantaarn_p a owl:Class ;
@@ -2086,19 +2171,21 @@ ad:lantaarn_p a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:TRAJECT,
         ad:TYPESPEC,
         ad:UITLEGGERPORTAAL,
         ad:WACHTTIJDVOORSPELL ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+        geo:Point,
         owl:Thing .
 
 ad:leidingelement_p a owl:Class ;
@@ -2124,6 +2211,7 @@ ad:leidingelement_p a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:PRODUCT,
+        ad:SHAPE,
         ad:TYPESPEC,
         ad:VERHOOGDRISICO,
         ad:VERTICALE_POSITIE,
@@ -2133,13 +2221,14 @@ ad:leidingelement_p a owl:Class ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:HUIDIGESTATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:GEONAUWKEURIGHEIDXY ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:HUIDIGESTATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:ligplaatsstrook_v a owl:Class ;
@@ -2167,6 +2256,7 @@ ad:ligplaatsstrook_v a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:RESTRUIMTE,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:VAARWEGDEELTRAJECT,
@@ -2177,6 +2267,7 @@ ad:ligplaatsstrook_v a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:mantelbuis_v a owl:Class ;
@@ -2204,6 +2295,7 @@ ad:mantelbuis_v a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:PRODUCT,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TYPESPEC,
@@ -2215,13 +2307,14 @@ ad:mantelbuis_v a owl:Class ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:GEONAUWKEURIGHEIDXY ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:HUIDIGESTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:mastDraagconstructie_p a owl:Class ;
@@ -2258,6 +2351,7 @@ ad:mastDraagconstructie_p a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:RALKLEUR,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
         ad:TYPESPEC,
@@ -2265,22 +2359,23 @@ ad:mastDraagconstructie_p a owl:Class ;
         ad:VORM ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+        geo:Point,
         owl:Thing .
 
 ad:metaDomeinen_tbl a owl:Class ;
@@ -2310,10 +2405,10 @@ ad:nenConditiescore_tbl a owl:Class ;
         ad:SCHEIDING_OEVERVAK ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         owl:Thing .
 
 ad:nenInspectie_tbl a owl:Class ;
@@ -2334,10 +2429,10 @@ ad:nenInspectie_tbl a owl:Class ;
         ad:OPMERKING ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         owl:Thing .
 
 ad:oeverReparatie_p a owl:Class ;
@@ -2351,13 +2446,15 @@ ad:oeverReparatie_p a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:OEVERVAK,
-        ad:RAPPORT ;
+        ad:RAPPORT,
+        ad:SHAPE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
+        geo:Point,
         owl:Thing .
 
 ad:oevervak_v a owl:Class ;
@@ -2393,6 +2490,7 @@ ad:oevervak_v a owl:Class ;
         ad:RISICO_STEILTE_TALUD,
         ad:RISICO_TOTAAL,
         ad:RISICO_WATERKERING,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TYPESPEC,
@@ -2400,10 +2498,11 @@ ad:oevervak_v a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:onbegroeidTerreindeelKruin_l a owl:Class ;
@@ -2418,13 +2517,15 @@ ad:onbegroeidTerreindeelKruin_l a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:ONBEGROEIDTERREINDEEL,
+        ad:SHAPE,
         ad:SHAPE_Length ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:onbegroeidTerreindeel_v a owl:Class ;
@@ -2442,11 +2543,18 @@ ad:onbegroeidTerreindeel_v a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:OPTALUD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:OBJECTBEGINTIJD ],
+        [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
@@ -2454,19 +2562,14 @@ ad:onbegroeidTerreindeel_v a owl:Class ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:OBJECTBEGINTIJD ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:FYSIEKVOORKOMEN ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:FYSIEKVOORKOMEN ],
+            owl:onProperty ad:INONDERZOEK ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:onderdeel_tbl a owl:Class ;
@@ -2533,6 +2636,7 @@ ad:ondersteunendWaterdeel_v a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKINGMBTONDERH,
         ad:OPPERVLAKTE,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:STREEFBEELD,
@@ -2544,22 +2648,23 @@ ad:ondersteunendWaterdeel_v a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:ondersteunendWegdeelKruin_l a owl:Class ;
@@ -2574,14 +2679,16 @@ ad:ondersteunendWegdeelKruin_l a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:ONDERSTEUNENDWEGDEEL,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:ondersteunendWegdeelPlantvak_v a owl:Class ;
@@ -2614,6 +2721,7 @@ ad:ondersteunendWegdeelPlantvak_v a owl:Class ;
         ad:OPMERKINGMBTONDERH,
         ad:OPPERVLAKTE,
         ad:OPTALUD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
@@ -2625,25 +2733,26 @@ ad:ondersteunendWegdeelPlantvak_v a owl:Class ;
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:FYSIEKVOORKOMEN ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:FUNCTIE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:ondersteunendWegdeel_v a owl:Class ;
@@ -2679,6 +2788,7 @@ ad:ondersteunendWegdeel_v a owl:Class ;
         ad:OPMERKINGMBTONDERH,
         ad:OPPERVLAKTE,
         ad:OPTALUD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:SITUERING,
@@ -2697,13 +2807,13 @@ ad:ondersteunendWegdeel_v a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:FYSIEKVOORKOMEN ],
+            owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:FUNCTIE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
@@ -2712,10 +2822,11 @@ ad:ondersteunendWegdeel_v a owl:Class ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:FUNCTIE ],
+            owl:onProperty ad:FYSIEKVOORKOMEN ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:ongeclassificeerdObject_v a owl:Class ;
@@ -2730,13 +2841,11 @@ ad:ongeclassificeerdObject_v a owl:Class ;
         ad:LAST_EDITED_USER,
         ad:LV_PUBLICATIEDATUM,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
@@ -2744,13 +2853,17 @@ ad:ongeclassificeerdObject_v a owl:Class ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:OBJECTBEGINTIJD ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:AD_ID ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:overbruggingsdeel_v a owl:Class ;
@@ -2769,6 +2882,7 @@ ad:overbruggingsdeel_v a owl:Class ;
         ad:LV_PUBLICATIEDATUM,
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
@@ -2779,16 +2893,17 @@ ad:overbruggingsdeel_v a owl:Class ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:STATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:overigBouwwerk_v a owl:Class ;
@@ -2822,6 +2937,7 @@ ad:overigBouwwerk_v a owl:Class ;
         ad:RECLAME_HOOGTE,
         ad:RECLAME_TYPE,
         ad:RECLAME_VERLICHTING,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
@@ -2834,22 +2950,23 @@ ad:overigBouwwerk_v a owl:Class ;
         ad:ZONNEPANEEL ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BGTPLUSTYPE ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:overigeScheiding_l a owl:Class ;
@@ -2865,17 +2982,12 @@ ad:overigeScheiding_l a owl:Class ;
         ad:LAST_EDITED_USER,
         ad:LV_PUBLICATIEDATUM,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:OBJECTBEGINTIJD ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
@@ -2884,10 +2996,17 @@ ad:overigeScheiding_l a owl:Class ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:OBJECTBEGINTIJD ],
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BGTPLUSTYPE ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:overigeScheiding_v a owl:Class ;
@@ -2903,30 +3022,32 @@ ad:overigeScheiding_v a owl:Class ;
         ad:LAST_EDITED_USER,
         ad:LV_PUBLICATIEDATUM,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:OBJECTBEGINTIJD ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:paalAfbakening_p a owl:Class ;
@@ -2953,6 +3074,7 @@ ad:paalAfbakening_p a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:TEKST,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
@@ -2961,22 +3083,23 @@ ad:paalAfbakening_p a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BGTPLUSTYPE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        geo:Point,
         owl:Thing .
 
 ad:paalDraagconstructie_p a owl:Class ;
@@ -3014,6 +3137,7 @@ ad:paalDraagconstructie_p a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:RALKLEUR,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
         ad:TYPESPEC,
@@ -3021,22 +3145,23 @@ ad:paalDraagconstructie_p a owl:Class ;
         ad:VORM ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:pandHuisnummerreeks_t a owl:Class ;
@@ -3066,10 +3191,10 @@ ad:pandHuisnummerreeks_t a owl:Class ;
         ad:ZORDER ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:IDENTIFICATIE ],
+            owl:onProperty ad:IDENTIFICATIEBAGVBOLAAGSTEHNR ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:IDENTIFICATIEBAGVBOLAAGSTEHNR ],
+            owl:onProperty ad:IDENTIFICATIE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
@@ -3087,21 +3212,19 @@ ad:pand_v a owl:Class ;
         ad:LAST_EDITED_USER,
         ad:LV_PUBLICATIEDATUM,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:OBJECTBEGINTIJD ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:IDENTIFICATIEBAGPND ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:OBJECTBEGINTIJD ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
@@ -3110,7 +3233,11 @@ ad:pand_v a owl:Class ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:IDENTIFICATIEBAGPND ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:plaatsbepalingspunt_p a owl:Class ;
@@ -3126,16 +3253,18 @@ ad:plaatsbepalingspunt_p a owl:Class ;
         ad:LAST_EDITED_DATE,
         ad:LAST_EDITED_USER,
         ad:NAUWKEURIGHEID,
-        ad:ONDERHOUDER ;
+        ad:ONDERHOUDER,
+        ad:SHAPE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:INWINNINGSMETHODE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:DATUMINWINNING ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INWINNINGSMETHODE ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:put_p a owl:Class ;
@@ -3158,15 +3287,19 @@ ad:put_p a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE,
         ad:TYPESPEC,
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BGTPLUSTYPE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
@@ -3175,10 +3308,8 @@ ad:put_p a owl:Class ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
+        geo:Point,
         owl:Thing .
 
 ad:recreatieplek_v a owl:Class ;
@@ -3199,6 +3330,7 @@ ad:recreatieplek_v a owl:Class ;
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
         ad:OPMERKING,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TRAJECT,
@@ -3212,6 +3344,7 @@ ad:recreatieplek_v a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:scheidingGeluidsscherm_l a owl:Class ;
@@ -3242,13 +3375,11 @@ ad:scheidingGeluidsscherm_l a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:OPPERVLAKTE,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
@@ -3259,10 +3390,14 @@ ad:scheidingGeluidsscherm_l a owl:Class ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:scheidingOevervak_l a owl:Class ;
@@ -3294,27 +3429,29 @@ ad:scheidingOevervak_l a owl:Class ;
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
         ad:OPMERKING,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:scheiding_l a owl:Class ;
@@ -3349,6 +3486,7 @@ ad:scheiding_l a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:OPMERKINGMBTONDERH,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
@@ -3360,19 +3498,20 @@ ad:scheiding_l a owl:Class ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:scheiding_v a owl:Class ;
@@ -3401,6 +3540,7 @@ ad:scheiding_v a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
@@ -3412,19 +3552,20 @@ ad:scheiding_v a owl:Class ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:schutsluis_p a owl:Class ;
@@ -3471,6 +3612,7 @@ ad:schutsluis_p a owl:Class ;
         ad:ONDERHOUDER,
         ad:PLANJAARPMO,
         ad:SCHOTBALKAANWEZIG,
+        ad:SHAPE,
         ad:TOPCODE,
         ad:TRAJECT,
         ad:TRAJECT2,
@@ -3491,6 +3633,7 @@ ad:schutsluis_p a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AFSTANDSBEDIENING ],
+        geo:Point,
         owl:Thing .
 
 ad:sensor_l a owl:Class ;
@@ -3518,28 +3661,30 @@ ad:sensor_l a owl:Class ;
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
         ad:SENSOR,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:BGTPLUSTYPE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:sensor_p a owl:Class ;
@@ -3568,6 +3713,7 @@ ad:sensor_p a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE,
         ad:TOPDESK_ID,
         ad:TRAJECT,
@@ -3577,22 +3723,23 @@ ad:sensor_p a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
+            owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BGTPLUSTYPE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        geo:Point,
         owl:Thing .
 
 ad:spoor_l a owl:Class ;
@@ -3608,29 +3755,31 @@ ad:spoor_l a owl:Class ;
         ad:LAST_EDITED_USER,
         ad:LV_PUBLICATIEDATUM,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:OBJECTBEGINTIJD ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:FUNCTIE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:OBJECTBEGINTIJD ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:FUNCTIE ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:spoorrail_l a owl:Class ;
@@ -3650,16 +3799,18 @@ ad:spoorrail_l a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TRAJECT,
         ad:TYPESPEC,
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:straatmeubilairLichtpunt_p a owl:Class ;
@@ -3694,6 +3845,7 @@ ad:straatmeubilairLichtpunt_p a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPZETSTUK,
         ad:RICHTING,
+        ad:SHAPE,
         ad:SOORTENERGIE,
         ad:SPIEGELSTAND,
         ad:TIJDSTIPREGISTRATIE,
@@ -3704,22 +3856,23 @@ ad:straatmeubilairLichtpunt_p a owl:Class ;
         ad:VERWIJZINGCONTRACT ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        geo:Point,
         owl:Thing .
 
 ad:straatmeubilair_p a owl:Class ;
@@ -3754,28 +3907,30 @@ ad:straatmeubilair_p a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:RECREATIEPLEK,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
         ad:TYPESPEC,
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:telecommunicatiekabel_l a owl:Class ;
@@ -3805,6 +3960,7 @@ ad:telecommunicatiekabel_l a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKING,
         ad:PRODUCT,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TOELICHTING,
         ad:TYPESPEC,
@@ -3816,16 +3972,17 @@ ad:telecommunicatiekabel_l a owl:Class ;
         ad:bovengrondsZichtbaar ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:HUIDIGESTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:GEONAUWKEURIGHEIDXY ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:telpaal_p a owl:Class ;
@@ -3851,16 +4008,18 @@ ad:telpaal_p a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:TELPUNTCODE,
         ad:TRAJECT,
         ad:VOEDING,
         ad:WEG ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:theorHectometrering_p a owl:Class ;
@@ -3875,6 +4034,7 @@ ad:theorHectometrering_p a owl:Class ;
         ad:LAST_EDITED_USER,
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:TRAJECT,
         ad:WEG_OF_VAARWEGNUMMER ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -3883,6 +4043,7 @@ ad:theorHectometrering_p a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        geo:Point,
         owl:Thing .
 
 ad:traject_v a owl:Class ;
@@ -3909,6 +4070,7 @@ ad:traject_v a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:STREEFBEELD,
@@ -3919,6 +4081,7 @@ ad:traject_v a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:tunneldeel_v a owl:Class ;
@@ -3935,25 +4098,27 @@ ad:tunneldeel_v a owl:Class ;
         ad:LV_PUBLICATIEDATUM,
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:uithouder_p a owl:Class ;
@@ -3975,14 +4140,16 @@ ad:uithouder_p a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:TRAJECT,
         ad:TYPESPEC ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
+        geo:Point,
         owl:Thing .
 
 ad:uitleggerPortaal_l a owl:Class ;
@@ -4003,6 +4170,7 @@ ad:uitleggerPortaal_l a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TRAJECT,
         ad:TYPESPEC ;
@@ -4012,6 +4180,7 @@ ad:uitleggerPortaal_l a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:utiliteitsLink_l a owl:Class ;
@@ -4021,6 +4190,7 @@ ad:utiliteitsLink_l a owl:Class ;
         ad:DATALEVERANCIER,
         ad:GISIB_ID,
         ad:GLOBALID,
+        ad:HARTLIJN,
         ad:IDENTIFICATIE,
         ad:INNETWERK,
         ad:ISFICTIEF,
@@ -4038,6 +4208,7 @@ ad:utiliteitsLink_l a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:utiliteitsNet_tbl a owl:Class ;
@@ -4073,10 +4244,10 @@ ad:utiliteitsNet_tbl a owl:Class ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STANDAARDDIEPTELEGGING ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:STANDAARDDIEPTELEGGING ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:HUIDIGESTATUS ],
@@ -4094,6 +4265,7 @@ ad:vaarweg_l a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
+        ad:SHAPE,
         ad:SHAPE_Length ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -4101,6 +4273,7 @@ ad:vaarweg_l a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:vaarwegdeeltraject_v a owl:Class ;
@@ -4129,15 +4302,17 @@ ad:vaarwegdeeltraject_v a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TRAJECT ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:vaarwegdeeltrajectas_l a owl:Class ;
@@ -4152,6 +4327,7 @@ ad:vaarwegdeeltrajectas_l a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:VAARWEGDEELTRAJECT ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -4160,6 +4336,7 @@ ad:vaarwegdeeltrajectas_l a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:vegetatieObject_l a owl:Class ;
@@ -4190,6 +4367,7 @@ ad:vegetatieObject_l a owl:Class ;
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
         ad:OPMERKINGMBTONDERH,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
@@ -4198,22 +4376,23 @@ ad:vegetatieObject_l a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+            owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:vegetatieObject_p a owl:Class ;
@@ -4250,6 +4429,7 @@ ad:vegetatieObject_p a owl:Class ;
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:SNOEIFASE,
         ad:TERMIJN_UITVOERING,
         ad:TIJDSTIPREGISTRATIE,
@@ -4260,22 +4440,23 @@ ad:vegetatieObject_p a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:vegetatieObject_v a owl:Class ;
@@ -4296,6 +4477,7 @@ ad:vegetatieObject_v a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
@@ -4305,19 +4487,20 @@ ad:vegetatieObject_v a owl:Class ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BGTPLUSTYPE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:vtaInspectie_tbl a owl:Class ;
@@ -4344,10 +4527,10 @@ ad:vtaInspectie_tbl a owl:Class ;
         ad:VTA_URGENTIE_NTO ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         owl:Thing .
 
 ad:waterdeel_v a owl:Class ;
@@ -4388,6 +4571,7 @@ ad:waterdeel_v a owl:Class ;
         ad:PEILVAST,
         ad:PEILWINTER,
         ad:PEILZOMER,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:SLOOTVEGETATIE,
@@ -4402,22 +4586,23 @@ ad:waterdeel_v a owl:Class ;
         ad:ZIJDE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:waterinrichtingselement_l a owl:Class ;
@@ -4438,6 +4623,7 @@ ad:waterinrichtingselement_l a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:ONDERHOUDER,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TYPESPEC ;
@@ -4446,7 +4632,7 @@ ad:waterinrichtingselement_l a owl:Class ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
@@ -4455,10 +4641,11 @@ ad:waterinrichtingselement_l a owl:Class ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:waterinrichtingselement_p a owl:Class ;
@@ -4489,6 +4676,7 @@ ad:waterinrichtingselement_p a owl:Class ;
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
         ad:RADARREFLECTIE,
+        ad:SHAPE,
         ad:SOORTENERGIE,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
@@ -4500,6 +4688,12 @@ ad:waterinrichtingselement_p a owl:Class ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BGTPLUSTYPE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -4507,12 +4701,7 @@ ad:waterinrichtingselement_p a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
+        geo:Point,
         owl:Thing .
 
 ad:waterloop_l a owl:Class ;
@@ -4540,6 +4729,7 @@ ad:waterloop_l a owl:Class ;
         ad:PEILVAST,
         ad:PEILWINTER,
         ad:PEILZOMER,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:SLOOTVEGETATIE,
@@ -4551,6 +4741,9 @@ ad:waterloop_l a owl:Class ;
         ad:WATERSCHAP ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:STATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -4558,9 +4751,7 @@ ad:waterloop_l a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:weg_l a owl:Class ;
@@ -4576,13 +4767,15 @@ ad:weg_l a owl:Class ;
         ad:LENGTE,
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
-        ad:OMSCHRIJVING ;
+        ad:OMSCHRIJVING,
+        ad:SHAPE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:wegdeelKruin_l a owl:Class ;
@@ -4596,14 +4789,16 @@ ad:wegdeelKruin_l a owl:Class ;
         ad:LAST_EDITED_USER,
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:WEGDEEL ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
+            owl:onProperty ad:AD_ID ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:wegdeelPerron_v a owl:Class ;
@@ -4631,39 +4826,13 @@ ad:wegdeelPerron_v a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPTALUD,
         ad:PERRONIDENTIFICATIE,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERLICHTING_AANW ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWARMING_AANW ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:MARKERING_PERRONRAND ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:FYSIEKVOORKOMEN ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AANPASSING_VISUEEL_BEPERKTEN ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:HALTEPAAL_AANW ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:HEKWERK_AANW ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BLINDEGELEIDESTR_AANW ],
@@ -4672,16 +4841,44 @@ ad:wegdeelPerron_v a owl:Class ;
             owl:onProperty ad:FUNCTIE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:GLADHEIDSBESTRIJDING ],
+            owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BRONHOUDER ],
+            owl:onProperty ad:HALTEPAAL_AANW ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERLICHTING_AANW ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AANPASSING_VISUEEL_BEPERKTEN ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:MARKERING_PERRONRAND ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:HEKWERK_AANW ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:FYSIEKVOORKOMEN ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:TOV ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:VERWARMING_AANW ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:GLADHEIDSBESTRIJDING ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:wegdeel_v a owl:Class ;
@@ -4722,6 +4919,7 @@ ad:wegdeel_v a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPPERVLAKTE,
         ad:OPTALUD,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:SITUERING,
@@ -4742,25 +4940,26 @@ ad:wegdeel_v a owl:Class ;
         ad:WGV_AFSTANDVAN ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:FUNCTIE ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
+            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:FYSIEKVOORKOMEN ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:weginrichtingselement_l a owl:Class ;
@@ -4796,6 +4995,7 @@ ad:weginrichtingselement_l a owl:Class ;
         ad:OMSCHRIJVING,
         ad:ONDERHOUDER,
         ad:REFLECTOR,
+        ad:SHAPE,
         ad:SHAPE_Length,
         ad:TIJDSTIPREGISTRATIE,
         ad:TRAJECT,
@@ -4806,6 +5006,12 @@ ad:weginrichtingselement_l a owl:Class ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:AD_ID ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -4813,12 +5019,7 @@ ad:weginrichtingselement_l a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:AD_ID ],
+        geo:MultiLineString,
         owl:Thing .
 
 ad:weginrichtingselement_p a owl:Class ;
@@ -4834,28 +5035,30 @@ ad:weginrichtingselement_p a owl:Class ;
         ad:LAST_EDITED_USER,
         ad:LV_PUBLICATIEDATUM,
         ad:OBJECTEINDTIJD,
+        ad:SHAPE,
         ad:TIJDSTIPREGISTRATIE ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:STATUS ],
+            owl:onProperty ad:BGTPLUSTYPE ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:OBJECTBEGINTIJD ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:VERWERKINGSSTATUS ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:INONDERZOEK ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:STATUS ],
+        geo:Point,
         owl:Thing .
 
 ad:weginrichtingselement_v a owl:Class ;
@@ -4891,6 +5094,7 @@ ad:weginrichtingselement_v a owl:Class ;
         ad:ONDERHOUDER,
         ad:OPMERKINGMBTONDERH,
         ad:OPPERVLAKTE,
+        ad:SHAPE,
         ad:SHAPE_Area,
         ad:SHAPE_Length,
         ad:STREEFBEELD,
@@ -4902,12 +5106,6 @@ ad:weginrichtingselement_v a owl:Class ;
             owl:onProperty ad:AD_ID ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:BGTPLUSTYPE ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ad:INONDERZOEK ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:BRONHOUDER ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -4915,6 +5113,13 @@ ad:weginrichtingselement_v a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:INONDERZOEK ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ad:BGTPLUSTYPE ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:wegvak_v a owl:Class ;
@@ -4931,6 +5136,7 @@ ad:wegvak_v a owl:Class ;
         ad:OBJECTBEGINTIJD,
         ad:OBJECTEINDTIJD,
         ad:OMSCHRIJVING,
+        ad:SHAPE,
         ad:TRAJECT,
         ad:TYPEONDERGROND,
         ad:WEG ;
@@ -4943,6 +5149,7 @@ ad:wegvak_v a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty ad:VERWERKINGSSTATUS ],
+        geo:MultiPolygon,
         owl:Thing .
 
 ad:AANGELICHT a owl:DatatypeProperty ;
