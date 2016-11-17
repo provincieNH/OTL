@@ -30,8 +30,8 @@ pnh_otl:Bebakening_en_bebording
           <http://areaaldata.noord-holland.nl#bord_p>
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#niet-bgt__verkeersbord> ;
-            owl:onProperty <http://areaaldata.noord-holland.nl#TYPESPEC> ;
+            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecBRD_RvvVerkeersbord> ;
+            owl:onProperty <http://areaaldata.noord-holland.nl#typeSpecBRD> ;
           ]
         ) ;
     ] ;
@@ -52,8 +52,8 @@ pnh_otl:Draagkrachtige_berm
           <http://areaaldata.noord-holland.nl#ondersteunendWegdeel_v>
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#berm> ;
-            owl:onProperty <http://areaaldata.noord-holland.nl#FUNCTIE> ;
+            owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieOWG_berm> ;
+            owl:onProperty <http://areaaldata.noord-holland.nl#functieOWG> ;
           ]
         ) ;
     ] ;
@@ -79,8 +79,8 @@ pnh_otl:Wegelement_Autoverkeer
       owl:intersectionOf (
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#rijbaan_autoweg> ;
-            owl:onProperty <http://areaaldata.noord-holland.nl#FUNCTIE> ;
+            owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_rijbaanautoweg> ;
+            owl:onProperty <http://areaaldata.noord-holland.nl#functieWGD> ;
           ]
           <http://areaaldata.noord-holland.nl#wegdeel_v>
         ) ;
@@ -95,8 +95,8 @@ pnh_otl:Wegelement_Busverkeer
       owl:intersectionOf (
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#OV-baan> ;
-            owl:onProperty <http://areaaldata.noord-holland.nl#FUNCTIE> ;
+            owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_OV-baan> ;
+            owl:onProperty <http://areaaldata.noord-holland.nl#functieWGD> ;
           ]
           <http://areaaldata.noord-holland.nl#wegdeel_v>
         ) ;
@@ -111,8 +111,8 @@ pnh_otl:Wegelement_Fietsverkeer
       owl:intersectionOf (
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#fietspad> ;
-            owl:onProperty <http://areaaldata.noord-holland.nl#FUNCTIE> ;
+            owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_fietspad> ;
+            owl:onProperty <http://areaaldata.noord-holland.nl#functieWGD> ;
           ]
           <http://areaaldata.noord-holland.nl#wegdeel_v>
         ) ;
