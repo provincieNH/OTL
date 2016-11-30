@@ -1,9 +1,10 @@
-# baseURI: http://otl.noord-holland.nl
+# baseURI: http://otl.noordholland.nl
 # imports: file:/D:/NIELS/Source/OTL/Areaaldata/areaaldata-wl.ttl
 # imports: file:/D:/NIELS/Source/OTL/Areaaldata/areaaldata.ttl
 # imports: http://otb.noord-holland.nl
 
-@prefix : <http://otl.noord-holland.nl#> .
+@prefix : <http://otl.noordholland.nl#> .
+@prefix ad: <http://areaaldata.noord-holland.nl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pnh_otb: <http://otb.noord-holland.nl#> .
 @prefix pnh_otl: <http://otl.noord-holland.nl#> .
@@ -12,7 +13,7 @@
 @prefix spin: <http://spinrdf.org/spin#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://otl.noord-holland.nl>
+<http://otl.noordholland.nl>
   rdf:type owl:Ontology ;
   spin:imports <http://topbraid.org/spin/owlrl-all> ;
   owl:imports <file:/D:/NIELS/Source/OTL/Areaaldata/areaaldata-wl.ttl> ;
@@ -20,57 +21,57 @@
   owl:imports <http://otb.noord-holland.nl> ;
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
-pnh_otl:Bebakening_en_bebording
+:Bebakening_en_bebording
   rdf:type owl:Class ;
   rdfs:label "Bebakening en bebording"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Bebakening_en_bebording ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://areaaldata.noord-holland.nl#bord_p>
+          ad:bord_p
           [
             rdf:type owl:Restriction ;
             owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecBRD_RvvVerkeersbord> ;
-            owl:onProperty <http://areaaldata.noord-holland.nl#typeSpecBRD> ;
+            owl:onProperty ad:typeSpecBRD ;
           ]
         ) ;
     ] ;
 .
-pnh_otl:Bouwdeel_Geluidwerende_constructie
+:Bouwdeel_Geluidwerende_constructie
   rdf:type owl:Class ;
   rdfs:label "Bouwdeel Geluidwerende constructie"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Bouwdeel_Geluidwerende_constructie ;
-  owl:equivalentClass <http://areaaldata.noord-holland.nl#bouwdeelGeluidsscherm_tbl> ;
+  owl:equivalentClass ad:bouwdeelGeluidsscherm_tbl ;
 .
-pnh_otl:Draagkrachtige_berm
+:Draagkrachtige_berm
   rdf:type owl:Class ;
   rdfs:label "Draagkrachtige berm"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Draagkrachtige_berm ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://areaaldata.noord-holland.nl#ondersteunendWegdeel_v>
+          ad:ondersteunendWegdeel_v
           [
             rdf:type owl:Restriction ;
             owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieOWG_berm> ;
-            owl:onProperty <http://areaaldata.noord-holland.nl#functieOWG> ;
+            owl:onProperty ad:functieOWG ;
           ]
         ) ;
     ] ;
 .
-pnh_otl:Geluidscherm
+:Geluidscherm
   rdf:type owl:Class ;
   rdfs:label "Geluidscherm"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Geluidscherm ;
-  owl:equivalentClass <http://areaaldata.noord-holland.nl#geluidwerendeVoorziening_l> ;
+  owl:equivalentClass ad:geluidwerendeVoorziening_l ;
 .
-pnh_otl:Geluidwerende_constructie
+:Geluidwerende_constructie
   rdf:type owl:Class ;
   rdfs:label "Geluidwerende constructie"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Geluidwerende_constructie ;
-  owl:equivalentClass <http://areaaldata.noord-holland.nl#scheidingGeluidsscherm_l> ;
+  owl:equivalentClass ad:scheidingGeluidsscherm_l ;
 .
-pnh_otl:Wegelement_Autoverkeer
+:Wegelement_Autoverkeer
   rdf:type owl:Class ;
   rdfs:label "Wegelement Autoverkeer"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Wegelement_Autoverkeer ;
@@ -80,13 +81,13 @@ pnh_otl:Wegelement_Autoverkeer
           [
             rdf:type owl:Restriction ;
             owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_rijbaanautoweg> ;
-            owl:onProperty <http://areaaldata.noord-holland.nl#functieWGD> ;
+            owl:onProperty ad:functieWGD ;
           ]
-          <http://areaaldata.noord-holland.nl#wegdeel_v>
+          ad:wegdeel_v
         ) ;
     ] ;
 .
-pnh_otl:Wegelement_Busverkeer
+:Wegelement_Busverkeer
   rdf:type owl:Class ;
   rdfs:label "Wegelement Busverkeer"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Wegelement_Busverkeer ;
@@ -96,13 +97,13 @@ pnh_otl:Wegelement_Busverkeer
           [
             rdf:type owl:Restriction ;
             owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_OV-baan> ;
-            owl:onProperty <http://areaaldata.noord-holland.nl#functieWGD> ;
+            owl:onProperty ad:functieWGD ;
           ]
-          <http://areaaldata.noord-holland.nl#wegdeel_v>
+          ad:wegdeel_v
         ) ;
     ] ;
 .
-pnh_otl:Wegelement_Fietsverkeer
+:Wegelement_Fietsverkeer
   rdf:type owl:Class ;
   rdfs:label "Wegelement Fietsverkeer"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Wegelement_Fietsverkeer ;
@@ -112,9 +113,9 @@ pnh_otl:Wegelement_Fietsverkeer
           [
             rdf:type owl:Restriction ;
             owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_fietspad> ;
-            owl:onProperty <http://areaaldata.noord-holland.nl#functieWGD> ;
+            owl:onProperty ad:functieWGD ;
           ]
-          <http://areaaldata.noord-holland.nl#wegdeel_v>
+          ad:wegdeel_v
         ) ;
     ] ;
 .
