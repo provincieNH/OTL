@@ -1,9 +1,9 @@
-# baseURI: http://otl.noordholland.nl
+# baseURI: http://otl.noord-holland.nl
 # imports: file:/D:/NIELS/Source/OTL/Areaaldata/areaaldata-wl.ttl
 # imports: file:/D:/NIELS/Source/OTL/Areaaldata/areaaldata.ttl
 # imports: http://otb.noord-holland.nl
 
-@prefix : <http://otl.noordholland.nl#> .
+@prefix : <http://otl.noord-holland.nl#> .
 @prefix ad: <http://areaaldata.noord-holland.nl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pnh_otb: <http://otb.noord-holland.nl#> .
@@ -13,7 +13,7 @@
 @prefix spin: <http://spinrdf.org/spin#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://otl.noordholland.nl>
+<http://otl.noord-holland.nl>
   rdf:type owl:Ontology ;
   spin:imports <http://topbraid.org/spin/owlrl-all> ;
   owl:imports <file:/D:/NIELS/Source/OTL/Areaaldata/areaaldata-wl.ttl> ;
@@ -21,7 +21,7 @@
   owl:imports <http://otb.noord-holland.nl> ;
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
-:Bebakening_en_bebording
+pnh_otl:Bebakening_en_bebording
   rdf:type owl:Class ;
   rdfs:label "Bebakening en bebording"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Bebakening_en_bebording ;
@@ -37,13 +37,13 @@
         ) ;
     ] ;
 .
-:Bouwdeel_Geluidwerende_constructie
+pnh_otl:Bouwdeel_Geluidwerende_constructie
   rdf:type owl:Class ;
   rdfs:label "Bouwdeel Geluidwerende constructie"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Bouwdeel_Geluidwerende_constructie ;
   owl:equivalentClass ad:bouwdeelGeluidsscherm_tbl ;
 .
-:Draagkrachtige_berm
+pnh_otl:Draagkrachtige_berm
   rdf:type owl:Class ;
   rdfs:label "Draagkrachtige berm"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Draagkrachtige_berm ;
@@ -59,19 +59,19 @@
         ) ;
     ] ;
 .
-:Geluidscherm
+pnh_otl:Geluidscherm
   rdf:type owl:Class ;
   rdfs:label "Geluidscherm"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Geluidscherm ;
   owl:equivalentClass ad:geluidwerendeVoorziening_l ;
 .
-:Geluidwerende_constructie
+pnh_otl:Geluidwerende_constructie
   rdf:type owl:Class ;
   rdfs:label "Geluidwerende constructie"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Geluidwerende_constructie ;
   owl:equivalentClass ad:scheidingGeluidsscherm_l ;
 .
-:Wegelement_Autoverkeer
+pnh_otl:Wegelement_Autoverkeer
   rdf:type owl:Class ;
   rdfs:label "Wegelement Autoverkeer"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Wegelement_Autoverkeer ;
@@ -87,7 +87,7 @@
         ) ;
     ] ;
 .
-:Wegelement_Busverkeer
+pnh_otl:Wegelement_Busverkeer
   rdf:type owl:Class ;
   rdfs:label "Wegelement Busverkeer"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Wegelement_Busverkeer ;
@@ -103,7 +103,7 @@
         ) ;
     ] ;
 .
-:Wegelement_Fietsverkeer
+pnh_otl:Wegelement_Fietsverkeer
   rdf:type owl:Class ;
   rdfs:label "Wegelement Fietsverkeer"^^xsd:string ;
   rdfs:subClassOf pnh_otb:Wegelement_Fietsverkeer ;

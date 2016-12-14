@@ -1,22 +1,23 @@
-# baseURI: http://areaaldata.noordholland.nl
-# imports: http://areaaldata-wl.noord-holland.nl#
+# baseURI: http://areaaldata.noord-holland.nl
+# imports: http://areaaldata-wl.noord-holland.nl
 # imports: http://www.opengis.net/ont/geosparql#
 # imports: http://www.opengis.net/ont/sf#
 
-@prefix : <http://areaaldata.noordholland.nl#> .
-@prefix ad: <http://areaaldata.noordholland.nl#> .
+@prefix : <http://areaaldata.noord-holland.nl#> .
+@prefix ad: <http://areaaldata.noord-holland.nl#> .
 @prefix adwl: <http://areaaldata-wl.noord-holland.nl#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://areaaldata.noordholland.nl>
+<http://areaaldata.noord-holland.nl>
   rdf:type owl:Ontology ;
-  owl:imports adwl: ;
+  owl:imports <http://areaaldata-wl.noord-holland.nl> ;
   owl:imports geo: ;
   owl:imports sf: ;
 .
