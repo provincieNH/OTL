@@ -1,24 +1,24 @@
-# baseURI: http://otl.noord-holland.nl
-# imports: http://areaaldata-wl.noord-holland.nl
-# imports: http://areaaldata.noord-holland.nl
-# imports: http://otb.noord-holland.nl
+# baseURI: http://otl.noord-holland.nl/otl/
+# imports: http://otl.noord-holland.nl/areaaldata-wl/
+# imports: http://otl.noord-holland.nl/areaaldata/
+# imports: http://otl.noord-holland.nl/otb/
 
-@prefix : <http://otl.noord-holland.nl#> .
-@prefix ad: <http://areaaldata.noord-holland.nl#> .
+@prefix : <http://otl.noord-holland.nl/otl/> .
+@prefix ad: <http://otl.noord-holland.nl/areaaldata/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pnh_otb: <http://otb.noord-holland.nl#> .
-@prefix pnh_otl: <http://otl.noord-holland.nl#> .
+@prefix pnh_otb: <http://otl.noord-holland.nl/otb/> .
+@prefix pnh_otl: <http://otl.noord-holland.nl/otl/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix spin: <http://spinrdf.org/spin#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://otl.noord-holland.nl>
+pnh_otl:
   rdf:type owl:Ontology ;
   spin:imports <http://topbraid.org/spin/owlrl-all> ;
-  owl:imports <http://areaaldata-wl.noord-holland.nl> ;
-  owl:imports <http://areaaldata.noord-holland.nl> ;
-  owl:imports <http://otb.noord-holland.nl> ;
+  owl:imports <http://otl.noord-holland.nl/areaaldata-wl/> ;
+  owl:imports ad: ;
+  owl:imports pnh_otb: ;
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
 pnh_otl:Abri
@@ -33,12 +33,12 @@ pnh_otl:Abri
             owl:unionOf (
                 [
                   rdf:type owl:Restriction ;
-                  owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecOBWVlak_OFN> ;
+                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOBWVlak_OFN> ;
                   owl:onProperty ad:typeSpecOBWVlak ;
                 ]
                 [
                   rdf:type owl:Restriction ;
-                  owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecOBWVlak_R-net> ;
+                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOBWVlak_R-net> ;
                   owl:onProperty ad:typeSpecOBWVlak ;
                 ]
               ) ;
@@ -58,12 +58,12 @@ pnh_otl:Actieve_markering_LED
             owl:unionOf (
                 [
                   rdf:type owl:Restriction ;
-                  owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecSTMLichtpunt_Markeringunit> ;
+                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSTMLichtpunt_Markeringunit> ;
                   owl:onProperty ad:typeSpecSTMLichtpunt ;
                 ]
                 [
                   rdf:type owl:Restriction ;
-                  owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecSTMLichtpunt_Markeringsunitonbekend> ;
+                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSTMLichtpunt_Markeringsunitonbekend> ;
                   owl:onProperty ad:typeSpecSTMLichtpunt ;
                 ]
               ) ;
@@ -81,7 +81,7 @@ pnh_otl:Bebakening_en_bebording
           ad:bord_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecBRD_RvvVerkeersbord> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBRD_RvvVerkeersbord> ;
             owl:onProperty ad:typeSpecBRD ;
           ]
         ) ;
@@ -101,7 +101,7 @@ pnh_otl:Bermplankjes
           ad:paalAfbakening_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecPALAfbakening_Bermplankonbekend> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecPALAfbakening_Bermplankonbekend> ;
             owl:onProperty ad:typeSpecPALAfbakening ;
           ]
         ) ;
@@ -121,7 +121,7 @@ pnh_otl:Betonning
           ad:waterinrichtingselement_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeWTIPunt_niet-bgtbetonning> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeWTIPunt_niet-bgtbetonning> ;
             owl:onProperty ad:typeWTIPunt ;
           ]
         ) ;
@@ -177,7 +177,7 @@ pnh_otl:DRIS-paneel
           ad:bord_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecBRD_DrisPaneelonbekend> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBRD_DrisPaneelonbekend> ;
             owl:onProperty ad:typeSpecBRD ;
           ]
         ) ;
@@ -192,7 +192,7 @@ pnh_otl:Detectielus
           ad:sensor_l
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecSNSLijn_Detectielus> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSNSLijn_Detectielus> ;
             owl:onProperty ad:typeSpecSNSLijn ;
           ]
         ) ;
@@ -208,7 +208,7 @@ pnh_otl:Draagkrachtige_berm
           ad:ondersteunendWegdeel_v
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieOWG_berm> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/functieOWG_berm> ;
             owl:onProperty ad:functieOWG ;
           ]
         ) ;
@@ -288,7 +288,7 @@ pnh_otl:Energieverzorging_zonnepaneel
           ad:installatie_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeINS_niet-bgtzonnepaneel> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeINS_niet-bgtzonnepaneel> ;
             owl:onProperty ad:typeINS ;
           ]
         ) ;
@@ -320,7 +320,7 @@ pnh_otl:Gladheidsmeldsysteem
           ad:kast_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeKST_niet-bgtGMSkast> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeKST_niet-bgtGMSkast> ;
             owl:onProperty ad:typeKST ;
           ]
         ) ;
@@ -338,12 +338,12 @@ pnh_otl:Kolk_en_put
             owl:unionOf (
                 [
                   rdf:type owl:Restriction ;
-                  owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecLDE_Straatkolk> ;
+                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecLDE_Straatkolk> ;
                   owl:onProperty ad:typeSpecLDE ;
                 ]
                 [
                   rdf:type owl:Restriction ;
-                  owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecLDE_Trottoirkolk> ;
+                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecLDE_Trottoirkolk> ;
                   owl:onProperty ad:typeSpecLDE ;
                 ]
               ) ;
@@ -367,7 +367,7 @@ pnh_otl:Kruispunt
             rdf:type owl:Class ;
             owl:complementOf [
                 rdf:type owl:Restriction ;
-                owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecKRU_Rotonde> ;
+                owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecKRU_Rotonde> ;
                 owl:onProperty ad:typeSpecKRU ;
               ] ;
           ]
@@ -383,7 +383,7 @@ pnh_otl:Lichtopstanden
           ad:waterinrichtingselement_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecWIIPunt_baken> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecWIIPunt_baken> ;
             owl:onProperty ad:typeSpecWIIPunt ;
           ]
         ) ;
@@ -411,12 +411,12 @@ pnh_otl:Onderdelen_VRI
             owl:unionOf (
                 [
                   rdf:type owl:Restriction ;
-                  owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecOND_DrukknopVRI> ;
+                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOND_DrukknopVRI> ;
                   owl:onProperty ad:typeSpecOND ;
                 ]
                 [
                   rdf:type owl:Restriction ;
-                  owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecOND_RateltikkerVRI> ;
+                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOND_RateltikkerVRI> ;
                   owl:onProperty ad:typeSpecOND ;
                 ]
               ) ;
@@ -433,7 +433,7 @@ pnh_otl:Parkeerplaats
           ad:wegdeel_v
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_parkeervlak> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/functieWGD_parkeervlak> ;
             owl:onProperty ad:functieWGD ;
           ]
         ) ;
@@ -453,7 +453,7 @@ pnh_otl:Rotonde
           ad:kruispunt_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecKRU_Rotonde> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecKRU_Rotonde> ;
             owl:onProperty ad:typeSpecKRU ;
           ]
         ) ;
@@ -473,7 +473,7 @@ pnh_otl:Telkast
           ad:kast_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeKST_niet-bgttelkast> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeKST_niet-bgttelkast> ;
             owl:onProperty ad:typeKST ;
           ]
         ) ;
@@ -493,7 +493,7 @@ pnh_otl:VRI-camera
           ad:sensor_l
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSNSPunt_niet-bgtcamera> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSNSPunt_niet-bgtcamera> ;
             owl:onProperty ad:typeSNSPunt ;
           ]
         ) ;
@@ -518,7 +518,7 @@ pnh_otl:Vaarwegennet
           ad:traject_v
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecTRA_Vaarweg> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecTRA_Vaarweg> ;
             owl:onProperty ad:typeSpecTRA ;
           ]
         ) ;
@@ -543,7 +543,7 @@ pnh_otl:Voertuigkering
           ad:weginrichtingselement_l
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeWGILijn_niet-bgtgeleideconstructie> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeWGILijn_niet-bgtgeleideconstructie> ;
             owl:onProperty ad:typeWGILijn ;
           ]
         ) ;
@@ -558,7 +558,7 @@ pnh_otl:Waarnemingscamera_Wegverkeer
           ad:sensor_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSNSPunt_niet-bgtcamera> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSNSPunt_niet-bgtcamera> ;
             owl:onProperty ad:typeSNSPunt ;
           ]
         ) ;
@@ -578,7 +578,7 @@ pnh_otl:Wegelement_Autoverkeer
       owl:intersectionOf (
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_rijbaanautoweg> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/functieWGD_rijbaanautoweg> ;
             owl:onProperty ad:functieWGD ;
           ]
           ad:wegdeel_v
@@ -594,7 +594,7 @@ pnh_otl:Wegelement_Busverkeer
       owl:intersectionOf (
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_OV-baan> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/functieWGD_OV-baan> ;
             owl:onProperty ad:functieWGD ;
           ]
           ad:wegdeel_v
@@ -610,7 +610,7 @@ pnh_otl:Wegelement_Fietsverkeer
       owl:intersectionOf (
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_fietspad> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/functieWGD_fietspad> ;
             owl:onProperty ad:functieWGD ;
           ]
           ad:wegdeel_v
@@ -626,7 +626,7 @@ pnh_otl:Wegelement_Landbouwverkeer
           ad:wegdeel_v
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_rijbaanlokaleweg> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/functieWGD_rijbaanlokaleweg> ;
             owl:onProperty ad:functieWGD ;
           ]
         ) ;
@@ -641,7 +641,7 @@ pnh_otl:Wegelement_Voetgangersverkeer
           ad:wegdeel_v
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://areaaldata-wl.noord-holland.nl#functieWGD_voetpad> ;
+            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/functieWGD_voetpad> ;
             owl:onProperty ad:functieWGD ;
           ]
         ) ;
@@ -659,17 +659,17 @@ pnh_otl:Wegennet
             owl:unionOf (
                 [
                   rdf:type owl:Restriction ;
-                  owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecTRA_Busbaan> ;
+                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecTRA_Busbaan> ;
                   owl:onProperty ad:typeSpecTRA ;
                 ]
                 [
                   rdf:type owl:Restriction ;
-                  owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecTRA_Fietspad> ;
+                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecTRA_Fietspad> ;
                   owl:onProperty ad:typeSpecTRA ;
                 ]
                 [
                   rdf:type owl:Restriction ;
-                  owl:hasValue <http://areaaldata-wl.noord-holland.nl#typeSpecTRA_Weg> ;
+                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/typeSpecTRA_Weg> ;
                   owl:onProperty ad:typeSpecTRA ;
                 ]
               ) ;

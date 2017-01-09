@@ -1,11 +1,10 @@
-# baseURI: http://areaaldata.noord-holland.nl
-# imports: http://areaaldata-wl.noord-holland.nl
+# baseURI: http://otl.noord-holland.nl/areaaldata/
+# imports: http://otl.noord-holland.nl/areaaldata-wl/
 # imports: http://www.opengis.net/ont/geosparql#
 # imports: http://www.opengis.net/ont/sf#
 
-@prefix : <http://areaaldata.noord-holland.nl#> .
-@prefix ad: <http://areaaldata.noord-holland.nl#> .
-@prefix adwl: <http://areaaldata-wl.noord-holland.nl#> .
+@prefix : <http://otl.noord-holland.nl/areaaldata/> .
+@prefix ad: <http://otl.noord-holland.nl/areaaldata/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -15,9 +14,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://areaaldata.noord-holland.nl>
+ad:
   rdf:type owl:Ontology ;
-  owl:imports <http://areaaldata-wl.noord-holland.nl> ;
+  owl:imports <http://otl.noord-holland.nl/areaaldata-wl/> ;
   owl:imports geo: ;
   owl:imports sf: ;
 .
@@ -146,7 +145,7 @@ ad:AUTORITEITSROL
 ad:BEDIENTIJDEN
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:BEDIENTIJDEN ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/BEDIENTIJDEN> ;
 .
 ad:BEDRIJFSSPANNING
   rdf:type owl:DatatypeProperty ;
@@ -168,7 +167,7 @@ ad:BEGROEIDTERREINDEEL
 ad:BEHEERDER
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:BEHEERDER ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/BEHEERDER> ;
 .
 ad:BEHEEROBJECT
   rdf:type owl:DatatypeProperty ;
@@ -177,7 +176,7 @@ ad:BEHEEROBJECT
 ad:BEHEER_OBJECT_SUBTYPE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:BEHEER_OBJECT_SUBTYPE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/BEHEER_OBJECT_SUBTYPE> ;
 .
 ad:BEH_OVEREENK_GEACCEPTEERD
   rdf:type owl:DatatypeProperty ;
@@ -194,7 +193,7 @@ ad:BERICHT_ID
 ad:BERM_FUNCTIE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:BERM_FUNCTIE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/BERM_FUNCTIE> ;
 .
 ad:BESCHOEIING_LM
   rdf:type owl:DatatypeProperty ;
@@ -207,7 +206,7 @@ ad:BESLUITDATUM
 ad:BESLUITNUMMER
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:BESLUITNUMMER ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/BESLUITNUMMER> ;
 .
 ad:BESTEK
   rdf:type owl:DatatypeProperty ;
@@ -228,7 +227,7 @@ ad:BEVESTIGING
 ad:BEVESTIGINGSWIJZE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:BEVESTIGINGSWIJZE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/BEVESTIGINGSWIJZE> ;
 .
 ad:BIJZONDEREWAARDE
   rdf:type owl:DatatypeProperty ;
@@ -253,7 +252,7 @@ ad:BOOM
 ad:BOOMSOORT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:BOOMSOORT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/BOOMSOORT> ;
 .
 ad:BORDNUMMER
   rdf:type owl:DatatypeProperty ;
@@ -262,7 +261,7 @@ ad:BORDNUMMER
 ad:BORD_FABRIKANT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:BORD_FABRIKANT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/BORD_FABRIKANT> ;
 .
 ad:BOUWDEEL_ID
   rdf:type owl:DatatypeProperty ;
@@ -275,7 +274,7 @@ ad:BOUWELEMENTTYPESPE
 ad:BOUWELEMENT_TYPE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:BOUWELEMENT_TYPE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/BOUWELEMENT_TYPE> ;
 .
 ad:BOUWJAARHYDRAULISC
   rdf:type owl:DatatypeProperty ;
@@ -296,7 +295,7 @@ ad:BREEDTENATPROFIEL
 ad:BREEDTE_INSTEKEN
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:BREEDTE_INSTEKEN ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/BREEDTE_INSTEKEN> ;
 .
 ad:BRON
   rdf:type owl:DatatypeProperty ;
@@ -309,7 +308,7 @@ ad:BRUG
 ad:CAT_WATERLOOP
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:CAT_WATERLOOP ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/CAT_WATERLOOP> ;
 .
 ad:CEKEUR
   rdf:type owl:DatatypeProperty ;
@@ -318,7 +317,7 @@ ad:CEKEUR
 ad:CEMT_KLASSE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:CEMT_KLASSE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/CEMT_KLASSE> ;
 .
 ad:CE_MARKERING_DATUM
   rdf:type owl:DatatypeProperty ;
@@ -418,7 +417,7 @@ ad:ConditionOfFacilityValue
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:ConditionOfFacilityValue ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/ConditionOfFacilityValue> ;
 .
 ad:DATALEVERANCIER
   rdf:type owl:DatatypeProperty ;
@@ -514,7 +513,7 @@ ad:DIMBAAR
 ad:DIMMETHODE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:DIMMETHODE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/DIMMETHODE> ;
 .
 ad:DOMEIN_NAAM
   rdf:type owl:DatatypeProperty ;
@@ -615,7 +614,7 @@ ad:DYNAMISCHVERKEERSM
 ad:DiepteAangrijpingspuntValue
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:DiepteAangrijpingspuntValue ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/DiepteAangrijpingspuntValue> ;
 .
 ad:EANEMETER
   rdf:type owl:DatatypeProperty ;
@@ -672,7 +671,7 @@ ad:FABRIKANT
 ad:FABRIKANT_TYPECODE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:FABRIKANT_TYPECODE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/FABRIKANT_TYPECODE> ;
 .
 ad:FAUNASOORT
   rdf:type owl:DatatypeProperty ;
@@ -681,7 +680,7 @@ ad:FAUNASOORT
 ad:FAUNA_DOELGROEP
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:FAUNA_DOELGROEP ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/FAUNA_DOELGROEP> ;
 .
 ad:FEATUREID
   rdf:type owl:DatatypeProperty ;
@@ -698,7 +697,7 @@ ad:FLIPANGLE
 ad:FLORASOORT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:FLORASOORT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/FLORASOORT> ;
 .
 ad:FONTLEADING
   rdf:type owl:DatatypeProperty ;
@@ -731,7 +730,7 @@ ad:FTPGEBRUIKERSWACHT
 ad:FUNCTIE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:FUNCTIE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/FUNCTIE> ;
 .
 ad:FUNDERING
   rdf:type owl:DatatypeProperty ;
@@ -740,7 +739,7 @@ ad:FUNDERING
 ad:FUNDERING_TYPE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:FUNDERING_TYPE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/FUNDERING_TYPE> ;
 .
 ad:GARANTIECERTIFICAAT
   rdf:type owl:DatatypeProperty ;
@@ -757,12 +756,12 @@ ad:GEBRUIK
 ad:GEBRUIKSFUNCTIE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:GEBRUIKSFUNCTIE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/GEBRUIKSFUNCTIE> ;
 .
 ad:GEDEELD_BEHEER
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:GEDEELD_BEHEER ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/GEDEELD_BEHEER> ;
 .
 ad:GELDENDEBEPERKING
   rdf:type owl:DatatypeProperty ;
@@ -779,7 +778,7 @@ ad:GELUID_VOORZ
 ad:GEMEENTE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:GEMEENTE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/GEMEENTE> ;
 .
 ad:GEMIDDELDEBREEDTE
   rdf:type owl:DatatypeProperty ;
@@ -820,7 +819,7 @@ ad:GORDING
 ad:GRONDSOORT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:GRONDSOORT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/GRONDSOORT> ;
 .
 ad:GSMNUMMER
   rdf:type owl:DatatypeProperty ;
@@ -845,7 +844,7 @@ ad:HECTOMETERAANDUIDING
 ad:HEG_FUNCTIE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:HEG_FUNCTIE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/HEG_FUNCTIE> ;
 .
 ad:HMBEGIN
   rdf:type owl:DatatypeProperty ;
@@ -867,7 +866,7 @@ ad:HOOGTEBOVENNAP
 ad:HOOGTEKLASSE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:HOOGTEKLASSE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/HOOGTEKLASSE> ;
 .
 ad:HOOGTEPALEN
   rdf:type owl:DatatypeProperty ;
@@ -947,7 +946,7 @@ ad:INSTALLATIENUMMER
 ad:INSTANTIE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:INSTANTIE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/INSTANTIE> ;
 .
 ad:INWINNENDEINSTANTIE
   rdf:type owl:DatatypeProperty ;
@@ -1081,7 +1080,7 @@ ad:LAMPSPANNING
 ad:LAMP_KLASSE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:LAMP_KLASSE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/LAMP_KLASSE> ;
 .
 ad:LANGSONVLAKHEID
   rdf:type owl:DatatypeProperty ;
@@ -1142,7 +1141,7 @@ ad:LEUNINGLENGTE
 ad:LEVENSCYCLUS
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:LEVENSCYCLUS ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/LEVENSCYCLUS> ;
 .
 ad:LEVENSVERWACHTING
   rdf:type owl:DatatypeProperty ;
@@ -1151,7 +1150,7 @@ ad:LEVENSVERWACHTING
 ad:LICHTKARAKTER
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:LICHTKARAKTER ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/LICHTKARAKTER> ;
 .
 ad:LICHTPUNTNUMMER
   rdf:type owl:DatatypeProperty ;
@@ -1184,7 +1183,7 @@ ad:LV_PUBLICATIEDATUM
 ad:MAATGEVEND_SCHIP
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:MAATGEVEND_SCHIP ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/MAATGEVEND_SCHIP> ;
 .
 ad:MAST
   rdf:type owl:DatatypeProperty ;
@@ -1201,12 +1200,12 @@ ad:MATERIAAL
 ad:MATERIAALSOORT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:MATERIAALSOORT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/MATERIAALSOORT> ;
 .
 ad:MATERIAALTYPE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:MATERIAALTYPE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/MATERIAALTYPE> ;
 .
 ad:MATRIXTEKST
   rdf:type owl:DatatypeProperty ;
@@ -1243,12 +1242,12 @@ ad:METING_WAARDE
 ad:MONTAGEWIJZE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:MONTAGEWIJZE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/MONTAGEWIJZE> ;
 .
 ad:MONUMENT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:MONUMENT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/MONUMENT> ;
 .
 ad:NAAM
   rdf:type owl:DatatypeProperty ;
@@ -1303,13 +1302,13 @@ ad:NUMMERGEKOPPELDEAU
 ad:NauwkeurigheidDiepteValue
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:NauwkeurigheidDiepteValue ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/NauwkeurigheidDiepteValue> ;
 .
 ad:NauwkeurigheidXYvalue
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:NauwkeurigheidXYvalue ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/NauwkeurigheidXYvalue> ;
 .
 ad:OBJECTBEGINTIJD
   rdf:type owl:DatatypeProperty ;
@@ -1339,7 +1338,7 @@ ad:OEVERVAK_ID
 ad:OEVER_FUNCTIE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:OEVER_FUNCTIE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/OEVER_FUNCTIE> ;
 .
 ad:OMSCHRIJVING
   rdf:type owl:DatatypeProperty ;
@@ -1352,7 +1351,7 @@ ad:ONBEGROEIDTERREINDEEL
 ad:ONDERHOUDER
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:ONDERHOUDER ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/ONDERHOUDER> ;
 .
 ad:ONDERHOUDSOVEREENKOMST
   rdf:type owl:DatatypeProperty ;
@@ -1389,7 +1388,7 @@ ad:OPDRACHTNEMER
 ad:OPLEGGING_TYPE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:OPLEGGING_TYPE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/OPLEGGING_TYPE> ;
 .
 ad:OPMERKING
   rdf:type owl:DatatypeProperty ;
@@ -1454,7 +1453,7 @@ ad:PLANJAARPMO
 ad:PLANT_SITUERING
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:PLANT_SITUERING ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/PLANT_SITUERING> ;
 .
 ad:POSTADRES
   rdf:type owl:DatatypeProperty ;
@@ -1479,7 +1478,7 @@ ad:PRODUCT
 ad:PROFIEL
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:PROFIEL ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/PROFIEL> ;
 .
 ad:RALKLEUR
   rdf:type owl:DatatypeProperty ;
@@ -1512,7 +1511,7 @@ ad:RECREATIEPLEK
 ad:REFLECTIEKLASSE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:REFLECTIEKLASSE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/REFLECTIEKLASSE> ;
 .
 ad:REFLECTIEWAARDE
   rdf:type owl:DatatypeProperty ;
@@ -1550,12 +1549,12 @@ ad:RICHTING
 ad:RISICO_AFSTAND_WEG
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:RISICO_AFSTAND_WEG ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/RISICO_AFSTAND_WEG> ;
 .
 ad:RISICO_STEILTE_TALUD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:RISICO_STEILTE_TALUD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/RISICO_STEILTE_TALUD> ;
 .
 ad:RISICO_TOTAAL
   rdf:type owl:DatatypeProperty ;
@@ -1564,7 +1563,7 @@ ad:RISICO_TOTAAL
 ad:RISICO_WATERKERING
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:RISICO_WATERKERING ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/RISICO_WATERKERING> ;
 .
 ad:ROODLAMPBEWAKING
   rdf:type owl:DatatypeProperty ;
@@ -1661,12 +1660,12 @@ ad:SIMNUMMER
 ad:SITUERING
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:SITUERING ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/SITUERING> ;
 .
 ad:SNOEIFASE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:SNOEIFASE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/SNOEIFASE> ;
 .
 ad:SOORTAUTOMAATKOPPE
   rdf:type owl:DatatypeProperty ;
@@ -1679,7 +1678,7 @@ ad:SOORTPRIOVOORZIENI
 ad:SOORT_ENERGIE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:SOORT_ENERGIE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/SOORT_ENERGIE> ;
 .
 ad:SPIEGELSTAND
   rdf:type owl:DatatypeProperty ;
@@ -1786,12 +1785,12 @@ ad:TEXTSTRING
 ad:THEMA
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:THEMA ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/THEMA> ;
 .
 ad:THEMAKAART
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:THEMAKAART ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/THEMAKAART> ;
 .
 ad:TIJDSTIPREGISTRATIE
   rdf:type owl:DatatypeProperty ;
@@ -1808,7 +1807,7 @@ ad:TOEVOEGING
 ad:TOPCODE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:TOPCODE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/TOPCODE> ;
 .
 ad:TOPDESK_ID
   rdf:type owl:DatatypeProperty ;
@@ -1833,42 +1832,42 @@ ad:TYPEUITHOUDER
 ad:TYPE_BAGGER
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:TYPE_BAGGER ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/TYPE_BAGGER> ;
 .
 ad:TYPE_BEHEER
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:TYPE_BEHEER ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/TYPE_BEHEER> ;
 .
 ad:TYPE_BODEM
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:TYPE_BODEM ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/TYPE_BODEM> ;
 .
 ad:TYPE_COMMUNICATIE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:TYPE_COMMUNICATIE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/TYPE_COMMUNICATIE> ;
 .
 ad:TYPE_LAMP
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:TYPE_LAMP ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/TYPE_LAMP> ;
 .
 ad:TYPE_ONDERGROND
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:TYPE_ONDERGROND ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/TYPE_ONDERGROND> ;
 .
 ad:TYPE_PLAAGSOORT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:TYPE_PLAAGSOORT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/TYPE_PLAAGSOORT> ;
 .
 ad:TYPE_VOEGOVERGANG
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:TYPE_VOEGOVERGANG ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/TYPE_VOEGOVERGANG> ;
 .
 ad:UITLEGGERPORTAAL
   rdf:type owl:DatatypeProperty ;
@@ -1901,12 +1900,12 @@ ad:VERANKERD
 ad:VERHARDING
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:VERHARDING ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/VERHARDING> ;
 .
 ad:VERHARDING_CATEGORIE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:VERHARDING_CATEGORIE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/VERHARDING_CATEGORIE> ;
 .
 ad:VERHOOGDRISICO
   rdf:type owl:DatatypeProperty ;
@@ -1919,7 +1918,7 @@ ad:VERKANTINGTALUD
 ad:VERKEERSKLASSE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:VERKEERSKLASSE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/VERKEERSKLASSE> ;
 .
 ad:VERLICHT
   rdf:type owl:DatatypeProperty ;
@@ -1941,7 +1940,7 @@ ad:VERWERKINGSSTATUS
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:VERWERKINGSSTATUS ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/VERWERKINGSSTATUS> ;
 .
 ad:VERWERKINGSSTATUS_HALTE
   rdf:type owl:DatatypeProperty ;
@@ -1987,22 +1986,22 @@ ad:VTA_GEBREK
 ad:VTA_HERKEURING
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:VTA_HERKEURING ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/VTA_HERKEURING> ;
 .
 ad:VTA_NTO
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:VTA_NTO ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/VTA_NTO> ;
 .
 ad:VTA_NTO_URGENTIE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:VTA_NTO_URGENTIE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/VTA_NTO_URGENTIE> ;
 .
 ad:VTA_RISICO
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:VTA_RISICO ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/VTA_RISICO> ;
 .
 ad:WAARDE
   rdf:type owl:DatatypeProperty ;
@@ -2027,7 +2026,7 @@ ad:WATERDIEPTE
 ad:WATERSCHAP
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:WATERSCHAP ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/WATERSCHAP> ;
 .
 ad:WEG
   rdf:type owl:DatatypeProperty ;
@@ -2040,7 +2039,7 @@ ad:WEGDEEL
 ad:WEGINDELING
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:WEGINDELING ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/WEGINDELING> ;
 .
 ad:WEGNAAM
   rdf:type owl:DatatypeProperty ;
@@ -2053,7 +2052,7 @@ ad:WEGNUMMER
 ad:WEGTYPE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:WEGTYPE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/WEGTYPE> ;
 .
 ad:WEGVAK
   rdf:type owl:DatatypeProperty ;
@@ -2118,7 +2117,7 @@ ad:YOFFSET
 ad:ZAADMENGSEL
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:ZAADMENGSEL ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/ZAADMENGSEL> ;
 .
 ad:ZCOORDINAAT
   rdf:type owl:DatatypeProperty ;
@@ -2127,7 +2126,7 @@ ad:ZCOORDINAAT
 ad:ZIJDE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:ZIJDE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/ZIJDE> ;
 .
 ad:ZIJWEG
   rdf:type owl:DatatypeProperty ;
@@ -3039,7 +3038,7 @@ ad:bronhouder
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:bronhouder ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/bronhouder> ;
 .
 ad:buis_l
   rdf:type owl:Class ;
@@ -3543,19 +3542,19 @@ ad:functieOWG
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:functieOWG ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/functieOWG> ;
 .
 ad:functieSPRLijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:functieSPRLijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/functieSPRLijn> ;
 .
 ad:functieWGD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:functieWGD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/functieWGD> ;
 .
 ad:functioneelGebied_v
   rdf:type owl:Class ;
@@ -3609,43 +3608,43 @@ ad:fysiekVoorkomenBTD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:fysiekVoorkomenBTD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/fysiekVoorkomenBTD> ;
 .
 ad:fysiekVoorkomenBTDB
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:fysiekVoorkomenBTDB ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/fysiekVoorkomenBTDB> ;
 .
 ad:fysiekVoorkomenBTDP
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:fysiekVoorkomenBTDP ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/fysiekVoorkomenBTDP> ;
 .
 ad:fysiekVoorkomenOTD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:fysiekVoorkomenOTD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/fysiekVoorkomenOTD> ;
 .
 ad:fysiekVoorkomenOWG
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:fysiekVoorkomenOWG ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/fysiekVoorkomenOWG> ;
 .
 ad:fysiekVoorkomenWGD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:fysiekVoorkomenWGD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/fysiekVoorkomenWGD> ;
 .
 ad:fysiekVoorkomenWGDP
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:fysiekVoorkomenWGDP ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/fysiekVoorkomenWGDP> ;
 .
 ad:gebiedscontractregio_v
   rdf:type owl:Class ;
@@ -3847,7 +3846,7 @@ ad:hasRelation
 ad:hoortBijTypeOverbrugging
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:hoortBijTypeOverbrugging ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/hoortBijTypeOverbrugging> ;
 .
 ad:installatie_p
   rdf:type owl:Class ;
@@ -3912,19 +3911,19 @@ ad:inwinningsmethode
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:inwinningsmethode ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/inwinningsmethode> ;
 .
 ad:jaNee
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:jaNee ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/jaNee> ;
 .
 ad:jaNeeOnbekend
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:jaNeeOnbekend ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/jaNeeOnbekend> ;
 .
 ad:kabelbed_v
   rdf:type owl:Class ;
@@ -6945,13 +6944,13 @@ ad:status
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:status ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/status> ;
 .
 ad:statusBestaand
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:statusBestaand ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/statusBestaand> ;
 .
 ad:straatmeubilairLichtpunt_p
   rdf:type owl:Class ;
@@ -7340,505 +7339,505 @@ ad:typeBAK
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeBAK ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeBAK> ;
 .
 ad:typeBRD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeBRD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeBRD> ;
 .
 ad:typeGBI
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeGBI ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeGBI> ;
 .
 ad:typeINS
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeINS ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeINS> ;
 .
 ad:typeKST
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeKST ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeKST> ;
 .
 ad:typeKWDLijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeKWDLijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeKWDLijn> ;
 .
 ad:typeKWDPunt
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeKWDPunt ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeKWDPunt> ;
 .
 ad:typeKWDVlakBGT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeKWDVlakBGT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeKWDVlakBGT> ;
 .
 ad:typeMST
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeMST ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeMST> ;
 .
 ad:typeOBD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeOBD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeOBD> ;
 .
 ad:typeOBWVlak
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeOBWVlak ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeOBWVlak> ;
 .
 ad:typeOSHLijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeOSHLijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeOSHLijn> ;
 .
 ad:typeOSHVlak
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeOSHVlak ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeOSHVlak> ;
 .
 ad:typeOWT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeOWT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeOWT> ;
 .
 ad:typePAL
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typePAL ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typePAL> ;
 .
 ad:typePUT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typePUT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typePUT> ;
 .
 ad:typeSHDLijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSHDLijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSHDLijn> ;
 .
 ad:typeSHDVlak
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSHDVlak ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSHDVlak> ;
 .
 ad:typeSNSLijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSNSLijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSNSLijn> ;
 .
 ad:typeSNSPunt
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSNSPunt ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSNSPunt> ;
 .
 ad:typeSTM
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSTM ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSTM> ;
 .
 ad:typeSpecBAK
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecBAK ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBAK> ;
 .
 ad:typeSpecBDM
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecBDM ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBDM> ;
 .
 ad:typeSpecBRD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecBRD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBRD> ;
 .
 ad:typeSpecBRDScheepvaart
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecBRDScheepvaart ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBRDScheepvaart> ;
 .
 ad:typeSpecBRDWegwijzer
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecBRDWegwijzer ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBRDWegwijzer> ;
 .
 ad:typeSpecBRDZwemwater
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecBRDZwemwater ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBRDZwemwater> ;
 .
 ad:typeSpecBTD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecBTD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBTD> ;
 .
 ad:typeSpecBTDBerm
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecBTDBerm ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBTDBerm> ;
 .
 ad:typeSpecBTDPlantvak
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecBTDPlantvak ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBTDPlantvak> ;
 .
 ad:typeSpecBUI
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecBUI ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBUI> ;
 .
 ad:typeSpecBWD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecBWD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecBWD> ;
 .
 ad:typeSpecFNV
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecFNV ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecFNV> ;
 .
 ad:typeSpecFPV
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecFPV ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecFPV> ;
 .
 ad:typeSpecGBI
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecGBI ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecGBI> ;
 .
 ad:typeSpecHLT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecHLT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecHLT> ;
 .
 ad:typeSpecINS
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecINS ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecINS> ;
 .
 ad:typeSpecKAB
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecKAB ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecKAB> ;
 .
 ad:typeSpecKRU
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecKRU ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecKRU> ;
 .
 ad:typeSpecKST
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecKST ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecKST> ;
 .
 ad:typeSpecKSTDRIS
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecKSTDRIS ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecKSTDRIS> ;
 .
 ad:typeSpecKWB
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecKWB ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecKWB> ;
 .
 ad:typeSpecKWD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecKWD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecKWD> ;
 .
 ad:typeSpecKWDLijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecKWDLijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecKWDLijn> ;
 .
 ad:typeSpecKWE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecKWE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecKWE> ;
 .
 ad:typeSpecKWV
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecKWV ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecKWV> ;
 .
 ad:typeSpecLAM
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecLAM ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecLAM> ;
 .
 ad:typeSpecLAN
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecLAN ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecLAN> ;
 .
 ad:typeSpecLDE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecLDE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecLDE> ;
 .
 ad:typeSpecMSTDraagconstructie
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecMSTDraagconstructie ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecMSTDraagconstructie> ;
 .
 ad:typeSpecOBD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecOBD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOBD> ;
 .
 ad:typeSpecOBWVlak
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecOBWVlak ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOBWVlak> ;
 .
 ad:typeSpecOEV
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecOEV ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOEV> ;
 .
 ad:typeSpecOND
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecOND ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOND> ;
 .
 ad:typeSpecOTD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecOTD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOTD> ;
 .
 ad:typeSpecOWA
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecOWA ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOWA> ;
 .
 ad:typeSpecOWE
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecOWE ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOWE> ;
 .
 ad:typeSpecOWEPlantvak
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecOWEPlantvak ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecOWEPlantvak> ;
 .
 ad:typeSpecPALAfbakening
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecPALAfbakening ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecPALAfbakening> ;
 .
 ad:typeSpecPALDraagconstructie
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecPALDraagconstructie ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecPALDraagconstructie> ;
 .
 ad:typeSpecPUT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecPUT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecPUT> ;
 .
 ad:typeSpecREC
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecREC ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecREC> ;
 .
 ad:typeSpecSHDGeluidscherm
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecSHDGeluidscherm ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSHDGeluidscherm> ;
 .
 ad:typeSpecSHDLijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecSHDLijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSHDLijn> ;
 .
 ad:typeSpecSHDOevervak
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecSHDOevervak ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSHDOevervak> ;
 .
 ad:typeSpecSHDVlak
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecSHDVlak ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSHDVlak> ;
 .
 ad:typeSpecSNSLijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecSNSLijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSNSLijn> ;
 .
 ad:typeSpecSNSPunt
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecSNSPunt ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSNSPunt> ;
 .
 ad:typeSpecSPO
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecSPO ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSPO> ;
 .
 ad:typeSpecSSS
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecSSS ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSSS> ;
 .
 ad:typeSpecSTM
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecSTM ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSTM> ;
 .
 ad:typeSpecSTMLichtpunt
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecSTMLichtpunt ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecSTMLichtpunt> ;
 .
 ad:typeSpecTND
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecTND ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecTND> ;
 .
 ad:typeSpecTRA
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecTRA ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecTRA> ;
 .
 ad:typeSpecUIP
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecUIP ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecUIP> ;
 .
 ad:typeSpecUIT
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecUIT ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecUIT> ;
 .
 ad:typeSpecUTN
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecUTN ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecUTN> ;
 .
 ad:typeSpecVGOLijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecVGOLijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecVGOLijn> ;
 .
 ad:typeSpecVGOPunt
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecVGOPunt ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecVGOPunt> ;
 .
 ad:typeSpecVGOVlak
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecVGOVlak ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecVGOVlak> ;
 .
 ad:typeSpecWGD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecWGD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecWGD> ;
 .
 ad:typeSpecWGILijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecWGILijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecWGILijn> ;
 .
 ad:typeSpecWIILijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecWIILijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecWIILijn> ;
 .
 ad:typeSpecWIIPunt
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecWIIPunt ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecWIIPunt> ;
 .
 ad:typeSpecWTD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecWTD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecWTD> ;
 .
 ad:typeSpecWTL
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeSpecWTL ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeSpecWTL> ;
 .
 ad:typeVGOLijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeVGOLijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeVGOLijn> ;
 .
 ad:typeVGOPunt
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeVGOPunt ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeVGOPunt> ;
 .
 ad:typeVGOVlak
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeVGOVlak ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeVGOVlak> ;
 .
 ad:typeWGILijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeWGILijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeWGILijn> ;
 .
 ad:typeWGIPunt
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeWGIPunt ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeWGIPunt> ;
 .
 ad:typeWGIVlak
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeWGIVlak ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeWGIVlak> ;
 .
 ad:typeWTD
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeWTD ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeWTD> ;
 .
 ad:typeWTILijn
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeWTILijn ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeWTILijn> ;
 .
 ad:typeWTIPunt
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:range adwl:typeWTIPunt ;
+  rdfs:range <http://otl.noord-holland.nl/areaaldata-wl/typeWTIPunt> ;
 .
 ad:uithouder_p
   rdf:type owl:Class ;

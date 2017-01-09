@@ -1,14 +1,22 @@
-# baseURI: http://areaaldata-wl.noord-holland.nl
+# baseURI: http://otl.noord-holland.nl/areaaldata-wl/
 
-@prefix : <http://areaaldata-wl.noord-holland.nl#> .
-@prefix adwl: <http://areaaldata-wl.noord-holland.nl#> .
+@prefix : <http://otl.noord-holland.nl/areaaldata-wl/> .
+@prefix adwl: <http://otl.noord-holland.nl/areaaldata-wl/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://areaaldata-wl.noord-holland.nl>
+<http://areaaldata-wl.noord-holland.nl#typeSpecKWD_IMGeoWATWaterwerken©>
+  rdf:type adwl:typeSpecKWD ;
+  rdfs:label "IMGeo WAT Water werken ©" ;
+.
+<http://areaaldata-wl.noord-holland.nl#typeSpecWGD_IMGeoWATWaterwerken©>
+  rdf:type adwl:typeSpecWGD ;
+  rdfs:label "IMGeo WAT Water werken ©" ;
+.
+adwl:
   rdf:type owl:Ontology ;
 .
 adwl:AnnotationStatus
@@ -19394,10 +19402,6 @@ adwl:typeSpecKWD_Gronddamstuw
   rdf:type adwl:typeSpecKWD ;
   rdfs:label "Gronddamstuw" ;
 .
-<http://areaaldata-wl.noord-holland.nl#typeSpecKWD_IMGeoWATWaterwerken©>
-  rdf:type adwl:typeSpecKWD ;
-  rdfs:label "IMGeo WAT Water werken ©" ;
-.
 adwl:typeSpecKWD_Keerwandstuw
   rdf:type adwl:typeSpecKWD ;
   rdfs:label "Keerwandstuw" ;
@@ -23595,10 +23599,6 @@ adwl:typeSpecWGD_Fietspad
 adwl:typeSpecWGD_Fietsstrook
   rdf:type adwl:typeSpecWGD ;
   rdfs:label "Fietsstrook" ;
-.
-<http://areaaldata-wl.noord-holland.nl#typeSpecWGD_IMGeoWATWaterwerken©>
-  rdf:type adwl:typeSpecWGD ;
-  rdfs:label "IMGeo WAT Water werken ©" ;
 .
 adwl:typeSpecWGD_Invoegstrook
   rdf:type adwl:typeSpecWGD ;

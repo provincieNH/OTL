@@ -1,18 +1,18 @@
-# baseURI: http://otb.noord-holland.nl
+# baseURI: http://otl.noord-holland.nl/otb/
 # imports: file:///OTL/imports/cbnlcore.rdf
 # imports: http://www.w3.org/2004/02/skos/core
 
-@prefix : <http://otb.noord-holland.nl#> .
+@prefix : <http://otl.noord-holland.nl/otb/> .
 @prefix cbnltop: <http://ont.cbnl.org/top/def/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pnh_otb: <http://otb.noord-holland.nl#> .
+@prefix pnh_otb: <http://otl.noord-holland.nl/otb/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://otb.noord-holland.nl>
+pnh_otb:
   rdf:type owl:Ontology ;
   owl:imports <file:///OTL/imports/cbnlcore.rdf> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
