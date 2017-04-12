@@ -1,5 +1,7 @@
-@prefix ad: <http://areaaldata.noord-holland.nl#> .
-@prefix adwl: <http://areaaldata-wl.noord-holland.nl#> .
+# baseURI: http://otl.noord-holland.nl/areaaldata/
+
+@prefix ad: <http://otl.noord-holland.nl/areaaldata/> .
+@prefix adwl: <http://otl.noord-holland.nl/areaaldata-wl/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
