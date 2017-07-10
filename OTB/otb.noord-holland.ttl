@@ -37,7 +37,11 @@ pnh_otb:Actieve_markering_LED
 pnh_otb:Bebakening_en_bebording
   rdf:type owl:Class ;
   rdfs:label "O_1.2.1.3 Bebakening en bebording"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Verkeersgeleiding ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Verkeersgeleiding ;
+    ] ;
   skos:prefLabel "Bebakening en bebording"^^xsd:string ;
 .
 pnh_otb:Belijning
@@ -72,7 +76,11 @@ pnh_otb:Bermbeplanting
 pnh_otb:Bermplankjes
   rdf:type owl:Class ;
   rdfs:label "O_1.2.1.4 Bermplankjes"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Verkeersgeleiding ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Verkeersgeleiding ;
+    ] ;
   skos:prefLabel "Bermplankjes"^^xsd:string ;
 .
 pnh_otb:Bermsloot_greppel
@@ -89,19 +97,31 @@ pnh_otb:Bermsloot_greppel
 pnh_otb:Besturing_DBS_Vaarwegen
   rdf:type owl:Class ;
   rdfs:label "O_5.2.1.1.1 Besturing (DBS) Vaarwegen"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Informatievoorziening_DRIP_Vaarweg ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Informatievoorziening_DRIP_Vaarweg ;
+    ] ;
   skos:prefLabel "Besturing (DBS) Vaarwegen"^^xsd:string ;
 .
 pnh_otb:Besturingskast_matrixpaneel_Vaarwegen
   rdf:type owl:Class ;
   rdfs:label "O_5.2.1.1.4 Besturingskast (matrixpaneel) Vaarwegen"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Informatievoorziening_DRIP_Vaarweg ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Informatievoorziening_DRIP_Vaarweg ;
+    ] ;
   skos:prefLabel "Besturingskast (matrixpaneel) Vaarwegen"^^xsd:string ;
 .
 pnh_otb:Betonning
   rdf:type owl:Class ;
   rdfs:label "O_2.1.3.1 Betonning"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Vaarweggeleiding ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Vaarweggeleiding ;
+    ] ;
   skos:prefLabel "Betonning"^^xsd:string ;
 .
 pnh_otb:Beweegbaar_kunstwerk
@@ -113,7 +133,11 @@ pnh_otb:Beweegbaar_kunstwerk
 pnh_otb:Bewegwijzering
   rdf:type owl:Class ;
   rdfs:label "O_1.2.1.1 Bewegwijzering"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Verkeersgeleiding ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Verkeersgeleiding ;
+    ] ;
   skos:prefLabel "Bewegwijzering"^^xsd:string ;
 .
 pnh_otb:Bouwdeel_Beweegbaar_kunstwerk
@@ -235,7 +259,11 @@ pnh_otb:Draagconstructie_DRIS
 pnh_otb:Draagconstructie_matrixpaneel_Vaarwegen
   rdf:type owl:Class ;
   rdfs:label "O_5.2.1.1.3 Draagconstructie (matrixpaneel) Vaarwegen"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Informatievoorziening_DRIP_Vaarweg ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Informatievoorziening_DRIP_Vaarweg ;
+    ] ;
   skos:prefLabel "Draagconstructie (matrixpaneel) Vaarwegen"^^xsd:string ;
 .
 pnh_otb:Draagkrachtige_berm
@@ -332,7 +360,11 @@ pnh_otb:Element_Beweegbaar_kunstwerk
 pnh_otb:Element_NEN_2767-4_Oever
   rdf:type owl:Class ;
   rdfs:label "O_2.1.1.1 Element (NEN 2767-4) Oever"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Oever ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Oever ;
+    ] ;
   skos:prefLabel "Element (NEN 2767-4) Oever"^^xsd:string ;
 .
 pnh_otb:Element_NEN_2767-4_Schutsluis
@@ -360,7 +392,11 @@ pnh_otb:Element_Vast_kunstwerk
 pnh_otb:Energieverzorging_zonnepaneel
   rdf:type owl:Class ;
   rdfs:label "O_1.2.5.1.4 Energieverzorging (zonnepaneel)"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Verkeersteller ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Verkeersteller ;
+    ] ;
   skos:prefLabel "Energieverzorging (zonnepaneel)"^^xsd:string ;
 .
 pnh_otb:Faunaraster
@@ -378,11 +414,7 @@ pnh_otb:Geluidscherm
   rdf:type owl:Class ;
   rdfs:label "O_1.2.2 Geluidscherm"^^xsd:string ;
   rdfs:subClassOf <http://ont.cbnl.org/cb/def/GeluidsbeperkendeConstructie> ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onProperty pnh_otb:partOf ;
-      owl:someValuesFrom pnh_otb:Weginpassingsvoorzieningen ;
-    ] ;
+  rdfs:subClassOf pnh_otb:Weginpassingsvoorzieningen ;
   skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen. De NEN 2767-4 decompositie wordt gevolgd, waarbij GELUIDWERENDE_VOORZIENING als Beheerobject is aangemaakt om het element 'geluidwerende constructie' van een bovenliggend beheerobject te voorzien. Geluidwerende voorzieningen worden als zelfstandige objecten beheerd en niet als element van bv bruggen of wegen (zoals in de NEN 2767-4 beschreven)."^^xsd:string ;
   skos:note "Definitie objectdefinitie BUDATA v3.4.1"^^xsd:string ;
   skos:prefLabel "Geluidscherm"^^xsd:string ;
@@ -504,13 +536,21 @@ pnh_otb:Kunstwerk
 pnh_otb:Lichtopstanden
   rdf:type owl:Class ;
   rdfs:label "O_2.1.3.2 Lichtopstanden"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Vaarweggeleiding ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Vaarweggeleiding ;
+    ] ;
   skos:prefLabel "Lichtopstanden"^^xsd:string ;
 .
 pnh_otb:Markering_en_belijning
   rdf:type owl:Class ;
   rdfs:label "O_1.2.1.2 Markering en belijning"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Verkeersgeleiding ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Verkeersgeleiding ;
+    ] ;
   skos:prefLabel "Markering en belijning"^^xsd:string ;
 .
 pnh_otb:Materieel_gladheidsbestrijding
@@ -533,7 +573,11 @@ pnh_otb:Natuurlijke_overgangen
 pnh_otb:Oever
   rdf:type owl:Class ;
   rdfs:label "O_2.1.1 Oever"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Vaarweg ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Vaarweg ;
+    ] ;
   skos:definition "Een Oevervak is de rand van een kanaal, vaarweg of rivier. Het begint bij bodem van het nautisch profiel en gaat door tot 10m achter de oeverconstructie. NB: Dit is het equivalent van Beheerobject bij Vaarwegen conform de NEN 2767-4 Decompositie. Een oevervak is ongeveer 100 meter lang en bestaat uit een uniforme oeverconstructie."^^xsd:string ;
   skos:note "Definitie objectdefinitie BUDATA v3.4.1"^^xsd:string ;
   skos:prefLabel "Oever"^^xsd:string ;
@@ -565,11 +609,7 @@ pnh_otb:Openbare_Verlichting
   rdf:type owl:Class ;
   rdfs:label "O_1.2.4 Openbare Verlichting"^^xsd:string ;
   rdfs:subClassOf <http://ont.cbnl.org/cb/def/OpenbareVerlichting> ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onProperty pnh_otb:partOf ;
-      owl:someValuesFrom pnh_otb:Weginpassingsvoorzieningen ;
-    ] ;
+  rdfs:subClassOf pnh_otb:Weginpassingsvoorzieningen ;
   skos:prefLabel "Openbare Verlichting"^^xsd:string ;
 .
 pnh_otb:Opstallen
@@ -611,7 +651,11 @@ pnh_otb:Perron
 pnh_otb:Presentatiepaneel_matrix_Vaarwegen
   rdf:type owl:Class ;
   rdfs:label "O_5.2.1.1.2 Presentatiepaneel (matrix) Vaarwegen"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Informatievoorziening_DRIP_Vaarweg ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Informatievoorziening_DRIP_Vaarweg ;
+    ] ;
   skos:prefLabel "Presentatiepaneel (matrix) Vaarwegen"^^xsd:string ;
 .
 pnh_otb:Provinciaal_systeem
@@ -679,13 +723,21 @@ pnh_otb:Technische_Installaties_Vaarwegen
 pnh_otb:Telkast
   rdf:type owl:Class ;
   rdfs:label "O_1.2.5.1.1 Telkast"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Verkeersteller ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Verkeersteller ;
+    ] ;
   skos:prefLabel "Telkast"^^xsd:string ;
 .
 pnh_otb:Telpaal
   rdf:type owl:Class ;
   rdfs:label "O_1.2.5.1.2 Telpaal"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Verkeersteller ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Verkeersteller ;
+    ] ;
   skos:prefLabel "Telpaal"^^xsd:string ;
 .
 pnh_otb:Terreinen
@@ -752,7 +804,11 @@ pnh_otb:Vaarweg
 pnh_otb:Vaarwegbodem
   rdf:type owl:Class ;
   rdfs:label "O_2.1.2 Vaarwegbodem"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Vaarweg ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Vaarweg ;
+    ] ;
   skos:prefLabel "Vaarwegbodem"^^xsd:string ;
 .
 pnh_otb:Vaarwegennet
@@ -769,7 +825,11 @@ pnh_otb:Vaarwegennet
 pnh_otb:Vaarweggeleiding
   rdf:type owl:Class ;
   rdfs:label "O_2.1.3 Vaarweggeleiding"^^xsd:string ;
-  rdfs:subClassOf pnh_otb:Vaarweg ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Vaarweg ;
+    ] ;
   skos:prefLabel "Vaarweggeleiding"^^xsd:string ;
 .
 pnh_otb:Vast_kunstwerk
@@ -863,11 +923,7 @@ pnh_otb:Voertuigkering
   rdf:type owl:Class ;
   rdfs:label "O_1.2.3 Voertuigkering"^^xsd:string ;
   rdfs:subClassOf <http://ont.cbnl.org/cb/def/Geleideconstructie> ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onProperty pnh_otb:partOf ;
-      owl:someValuesFrom pnh_otb:Weginpassingsvoorzieningen ;
-    ] ;
+  rdfs:subClassOf pnh_otb:Weginpassingsvoorzieningen ;
   skos:definition "Bermbeveiligingsconstructie of kerende leuning die tot doel heeft een gevarenzone af te schermen voor uit koers geraakte voertuigen. "^^xsd:string ;
   skos:note "Definitie RWS Objectenbibliotheek"^^xsd:string ;
   skos:prefLabel "Voertuigkering"^^xsd:string ;
@@ -942,7 +998,7 @@ pnh_otb:Wegelement_Autoverkeer
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty pnh_otb:partOf ;
-      owl:someValuesFrom pnh_otb:Weg ;
+      owl:someValuesFrom pnh_otb:Wegvak ;
     ] ;
   owl:disjointWith pnh_otb:Wegelement_Busverkeer ;
   owl:disjointWith pnh_otb:Wegelement_Fietsverkeer ;
@@ -959,7 +1015,7 @@ pnh_otb:Wegelement_Busverkeer
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty pnh_otb:partOf ;
-      owl:someValuesFrom pnh_otb:Weg ;
+      owl:someValuesFrom pnh_otb:Wegvak ;
     ] ;
   owl:disjointWith pnh_otb:Wegelement_Autoverkeer ;
   owl:disjointWith pnh_otb:Wegelement_Fietsverkeer ;
@@ -976,7 +1032,7 @@ pnh_otb:Wegelement_Fietsverkeer
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty pnh_otb:partOf ;
-      owl:someValuesFrom pnh_otb:Weg ;
+      owl:someValuesFrom pnh_otb:Wegvak ;
     ] ;
   owl:disjointWith pnh_otb:Wegelement_Autoverkeer ;
   owl:disjointWith pnh_otb:Wegelement_Busverkeer ;
@@ -1001,7 +1057,7 @@ pnh_otb:Wegelement_Landbouwverkeer
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty pnh_otb:partOf ;
-      owl:someValuesFrom pnh_otb:Weg ;
+      owl:someValuesFrom pnh_otb:Wegvak ;
     ] ;
   owl:disjointWith pnh_otb:Wegelement_Autoverkeer ;
   owl:disjointWith pnh_otb:Wegelement_Busverkeer ;
@@ -1026,7 +1082,7 @@ pnh_otb:Wegelement_Voetgangersverkeer
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty pnh_otb:partOf ;
-      owl:someValuesFrom pnh_otb:Weg ;
+      owl:someValuesFrom pnh_otb:Wegvak ;
     ] ;
   owl:disjointWith pnh_otb:Wegelement_Autoverkeer ;
   owl:disjointWith pnh_otb:Wegelement_Busverkeer ;
@@ -1060,6 +1116,18 @@ pnh_otb:Weginpassingsvoorzieningen
     ] ;
   skos:prefLabel "Weginpassingsvoorzieningen"^^xsd:string ;
 .
+pnh_otb:Wegvak
+  rdf:type owl:Class ;
+  rdfs:label "Wegvak"^^xsd:string ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Wegvak> ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty pnh_otb:partOf ;
+      owl:someValuesFrom pnh_otb:Weg ;
+    ] ;
+  skos:prefLabel "Wegvak"^^xsd:string ;
+.
 pnh_otb:Wegverkeerssein
   rdf:type owl:Class ;
   rdfs:label "O_5.2.3 Wegverkeerssein"^^xsd:string ;
@@ -1080,5 +1148,69 @@ pnh_otb:Zwemwaterborden
 .
 pnh_otb:partOf
   rdf:type owl:ObjectProperty ;
+  rdfs:domain pnh_otb:Abri ;
+  rdfs:domain pnh_otb:Beplanting_langs_Wegen_Vaarwegen_en_Terreinen ;
+  rdfs:domain pnh_otb:Bermbeplanting ;
+  rdfs:domain pnh_otb:Bermsloot_greppel ;
+  rdfs:domain pnh_otb:Bouwdeel_Beweegbaar_kunstwerk ;
+  rdfs:domain pnh_otb:Bouwdeel_Geluidwerende_constructie ;
+  rdfs:domain pnh_otb:Bouwdeel_NEN_2767-4_Schutsluis ;
+  rdfs:domain pnh_otb:Bouwdeel_Vast_kunstwerk ;
+  rdfs:domain pnh_otb:DRIS-paneel ;
+  rdfs:domain pnh_otb:Dataverzamelsysteem ;
+  rdfs:domain pnh_otb:Detectielus ;
+  rdfs:domain pnh_otb:Draagconstructie_DRIS ;
+  rdfs:domain pnh_otb:Draagkrachtige_berm ;
+  rdfs:domain pnh_otb:Ecoduct ;
+  rdfs:domain pnh_otb:Ecologisch_netwerk ;
+  rdfs:domain pnh_otb:Ecologische_verbindingen ;
+  rdfs:domain pnh_otb:Ecologische_verbindingszone ;
+  rdfs:domain pnh_otb:Ecopassages ;
+  rdfs:domain pnh_otb:Ecotopen ;
+  rdfs:domain pnh_otb:Element_Beweegbaar_kunstwerk ;
+  rdfs:domain pnh_otb:Element_NEN_2767-4_Schutsluis ;
+  rdfs:domain pnh_otb:Element_Vast_kunstwerk ;
+  rdfs:domain pnh_otb:Faunaraster ;
+  rdfs:domain pnh_otb:Geluidscherm ;
+  rdfs:domain pnh_otb:Geluidwerende_constructie ;
+  rdfs:domain pnh_otb:Habitats ;
+  rdfs:domain pnh_otb:Knooppunt ;
+  rdfs:domain pnh_otb:Kolk_en_put ;
+  rdfs:domain pnh_otb:Kolkleiding ;
+  rdfs:domain pnh_otb:Kunstwerk ;
+  rdfs:domain pnh_otb:Natuurlijke_overgangen ;
+  rdfs:domain pnh_otb:Oeverbeplanting ;
+  rdfs:domain pnh_otb:Onderdelen_VRI ;
+  rdfs:domain pnh_otb:Openbare_Verlichting ;
+  rdfs:domain pnh_otb:Overige_voorzieningen ;
+  rdfs:domain pnh_otb:Perron ;
+  rdfs:domain pnh_otb:Riool ;
+  rdfs:domain pnh_otb:Scheepvaartsein ;
+  rdfs:domain pnh_otb:Schutsluis ;
+  rdfs:domain pnh_otb:Technische_Installaties_Vaarwegen ;
+  rdfs:domain pnh_otb:Uitwisselpunt_Vaarweg ;
+  rdfs:domain pnh_otb:VRI-camera ;
+  rdfs:domain pnh_otb:VRI_Weg ;
+  rdfs:domain pnh_otb:Vaarweg ;
+  rdfs:domain pnh_otb:Vaarwegennet ;
+  rdfs:domain pnh_otb:Verblijfspunt_Vaarweg ;
+  rdfs:domain pnh_otb:Verblijfspunt_Weg ;
+  rdfs:domain pnh_otb:Verkeersmanagementsysteem ;
+  rdfs:domain pnh_otb:Verkeersmanagementsysteem_Vaarweg ;
+  rdfs:domain pnh_otb:Verkeersmanagementsysteem_Weg ;
+  rdfs:domain pnh_otb:Voertuigkering ;
+  rdfs:domain pnh_otb:Waarnemingscamera_Wegverkeer ;
+  rdfs:domain pnh_otb:Waarnemingssysteem_Wegverkeer ;
+  rdfs:domain pnh_otb:Waterberging ;
+  rdfs:domain pnh_otb:Waterhuishouding ;
+  rdfs:domain pnh_otb:Weg ;
+  rdfs:domain pnh_otb:Wegelement_Autoverkeer ;
+  rdfs:domain pnh_otb:Wegelement_Busverkeer ;
+  rdfs:domain pnh_otb:Wegelement_Fietsverkeer ;
+  rdfs:domain pnh_otb:Wegelement_Landbouwverkeer ;
+  rdfs:domain pnh_otb:Wegelement_Voetgangersverkeer ;
+  rdfs:domain pnh_otb:Wegennet ;
+  rdfs:domain pnh_otb:Weginpassingsvoorzieningen ;
+  rdfs:domain pnh_otb:Wegverkeerssein ;
   rdfs:label "onderdeelVan"^^xsd:string ;
 .
