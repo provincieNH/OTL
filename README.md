@@ -8,3 +8,7 @@ De OTL is in eerste instantie in puur RDF/OWL opgebouwd en bestaat uit 3 delen:
 * de map areaaldata bevat een rdf/owl file van het areaaldatamodel wat ook beschreven staat op: https://github.com/provincieNH/ILS/
 
 * de map OTL bevat de mapping van de bovenstaande ontologies op elkaar door middel van owl:equivalentClass met restricties op eigenschappen
+
+In de map COINS staat de COINS 2.0 compatible library van het Areaaldatamodel
+
+
