@@ -1,0 +1,492 @@
+# baseURI: http://otl.noord-holland.nl/areaaldata-kern/v4.02/
+ # imports: http://otl.noord-holland.nl/areaaldata-wl/v4.02/
+ 
+@prefix adkern: <http://otl.noord-holland.nl/areaaldata-kern/v4.02/> .
+@prefix adwl: <http://otl.noord-holland.nl/areaaldata-wl/v4.02/> .
+@prefix cbim-2.0: <http://www.coinsweb.nl/cbim-2.0.rdf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+adkern: a owl:Ontology ;
+    owl:imports adwl:,
+        cbim-2.0:,
+        geo: .
+
+adkern:aanduidingEisVoorzorgsmaatr_p a owl:Class ;
+    rdfs:label "aanduidingEisVoorzorgsmaatr_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:aanduidingVerzoekContact_p a owl:Class ;
+    rdfs:label "aanduidingVerzoekContact_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:adres_tbl a owl:Class ;
+    rdfs:label "adres_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:bak_p a owl:Class ;
+    rdfs:label "bak_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:begroeidTerreindeelBerm_v a owl:Class ;
+    rdfs:label "begroeidTerreindeelBerm_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:begroeidTerreindeelKruin_l a owl:Class ;
+    rdfs:label "begroeidTerreindeelKruin_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:begroeidTerreindeelPlantvak_v a owl:Class ;
+    rdfs:label "begroeidTerreindeelPlantvak_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:begroeidTerreindeel_v a owl:Class ;
+    rdfs:label "begroeidTerreindeel_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:beschoeiingInspectie_tbl a owl:Class ;
+    rdfs:label "beschoeiingInspectie_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:bodem_v a owl:Class ;
+    rdfs:label "bodem_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:bordScheepvaart_p a owl:Class ;
+    rdfs:label "bordScheepvaart_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:bordWegwijzer_p a owl:Class ;
+    rdfs:label "bordWegwijzer_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:bordZwemwater_p a owl:Class ;
+    rdfs:label "bordZwemwater_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:bord_p a owl:Class ;
+    rdfs:label "bord_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:bouwdeelGeluidsscherm_tbl a owl:Class ;
+    rdfs:label "bouwdeelGeluidsscherm_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:bouwdeelKunstwerk_tbl a owl:Class ;
+    rdfs:label "bouwdeelKunstwerk_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:bouwdeelOevervak_tbl a owl:Class ;
+    rdfs:label "bouwdeelOevervak_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:buis_l a owl:Class ;
+    rdfs:label "buis_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:buisleiding_v a owl:Class ;
+    rdfs:label "buisleiding_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:concessieverlener_tbl a owl:Class ;
+    rdfs:label "concessieverlener_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:crowInspectie_tbl a owl:Class ;
+    rdfs:label "crowInspectie_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:crowInspectieresultaat_tbl a owl:Class ;
+    rdfs:label "crowInspectieresultaat_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:crowMeting_tbl a owl:Class ;
+    rdfs:label "crowMeting_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:diepteTovMaaiveld_p a owl:Class ;
+    rdfs:label "diepteTovMaaiveld_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:doorvaartmaat_p a owl:Class ;
+    rdfs:label "doorvaartmaat_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:ecoHoofdstructuur_v a owl:Class ;
+    rdfs:label "ecoHoofdstructuur_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:ecoVerbZone_v a owl:Class ;
+    rdfs:label "ecoVerbZone_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:electriciteitskabel_l a owl:Class ;
+    rdfs:label "electriciteitskabel_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:faunavoorziening_v a owl:Class ;
+    rdfs:label "faunavoorziening_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:fietsparkeervoorziening_l a owl:Class ;
+    rdfs:label "fietsparkeervoorziening_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:functioneelGebied_v a owl:Class ;
+    rdfs:label "functioneelGebied_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:gebiedscontractregio_v a owl:Class ;
+    rdfs:label "gebiedscontractregio_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:gebouwInstallatie_v a owl:Class ;
+    rdfs:label "gebouwInstallatie_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:geluidwerendeVoorziening_l a owl:Class ;
+    rdfs:label "geluidwerendeVoorziening_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:halte_v a owl:Class ;
+    rdfs:label "halte_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:installatie_p a owl:Class ;
+    rdfs:label "installatie_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kabelbed_v a owl:Class ;
+    rdfs:label "kabelbed_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kastDRIS_p a owl:Class ;
+    rdfs:label "kastDRIS_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kastOvl_p a owl:Class ;
+    rdfs:label "kastOvl_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kastVri_p a owl:Class ;
+    rdfs:label "kastVri_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kast_p a owl:Class ;
+    rdfs:label "kast_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kruispunt_p a owl:Class ;
+    rdfs:label "kruispunt_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kunstwerkBeweegbaar_p a owl:Class ;
+    rdfs:label "kunstwerkBeweegbaar_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kunstwerkVast_p a owl:Class ;
+    rdfs:label "kunstwerkVast_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kunstwerkdeel_l a owl:Class ;
+    rdfs:label "kunstwerkdeel_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kunstwerkdeel_mp a owl:Class ;
+    rdfs:label "kunstwerkdeel_mp" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kunstwerkdeel_v a owl:Class ;
+    rdfs:label "kunstwerkdeel_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:kwElement_tbl a owl:Class ;
+    rdfs:label "kwElement_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:lamp_p a owl:Class ;
+    rdfs:label "lamp_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:lantaarn_p a owl:Class ;
+    rdfs:label "lantaarn_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:leidingelement_p a owl:Class ;
+    rdfs:label "leidingelement_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:ligplaatsstrook_v a owl:Class ;
+    rdfs:label "ligplaatsstrook_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:mantelbuis_v a owl:Class ;
+    rdfs:label "mantelbuis_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:mastDraagconstructie_p a owl:Class ;
+    rdfs:label "mastDraagconstructie_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:metaDomeinen_tbl a owl:Class ;
+    rdfs:label "metaDomeinen_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:nenConditiescore_tbl a owl:Class ;
+    rdfs:label "nenConditiescore_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:nenInspectie_tbl a owl:Class ;
+    rdfs:label "nenInspectie_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:oeverReparatie_p a owl:Class ;
+    rdfs:label "oeverReparatie_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:oevervak_v a owl:Class ;
+    rdfs:label "oevervak_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:onbegroeidTerreindeelKruin_l a owl:Class ;
+    rdfs:label "onbegroeidTerreindeelKruin_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:onbegroeidTerreindeel_v a owl:Class ;
+    rdfs:label "onbegroeidTerreindeel_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:onderdeel_tbl a owl:Class ;
+    rdfs:label "onderdeel_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:ondersteunendWaterdeel_v a owl:Class ;
+    rdfs:label "ondersteunendWaterdeel_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:ondersteunendWegdeelKruin_l a owl:Class ;
+    rdfs:label "ondersteunendWegdeelKruin_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:ondersteunendWegdeelPlantvak_v a owl:Class ;
+    rdfs:label "ondersteunendWegdeelPlantvak_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:ondersteunendWegdeel_v a owl:Class ;
+    rdfs:label "ondersteunendWegdeel_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:ongeclassificeerdObject_v a owl:Class ;
+    rdfs:label "ongeclassificeerdObject_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:overbruggingsdeel_v a owl:Class ;
+    rdfs:label "overbruggingsdeel_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:overigBouwwerk_v a owl:Class ;
+    rdfs:label "overigBouwwerk_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:overigeScheiding_l a owl:Class ;
+    rdfs:label "overigeScheiding_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:overigeScheiding_v a owl:Class ;
+    rdfs:label "overigeScheiding_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:paalAfbakening_p a owl:Class ;
+    rdfs:label "paalAfbakening_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:paalDraagconstructie_p a owl:Class ;
+    rdfs:label "paalDraagconstructie_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:pandHuisnummerreeks_t a owl:Class ;
+    rdfs:label "pandHuisnummerreeks_t" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:pand_v a owl:Class ;
+    rdfs:label "pand_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:plaatsbepalingspunt_p a owl:Class ;
+    rdfs:label "plaatsbepalingspunt_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:put_p a owl:Class ;
+    rdfs:label "put_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:recreatieplek_v a owl:Class ;
+    rdfs:label "recreatieplek_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:scheidingGeluidsscherm_l a owl:Class ;
+    rdfs:label "scheidingGeluidsscherm_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:scheidingOevervak_l a owl:Class ;
+    rdfs:label "scheidingOevervak_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:scheiding_l a owl:Class ;
+    rdfs:label "scheiding_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:scheiding_v a owl:Class ;
+    rdfs:label "scheiding_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:schutsluis_p a owl:Class ;
+    rdfs:label "schutsluis_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:sensor_l a owl:Class ;
+    rdfs:label "sensor_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:sensor_p a owl:Class ;
+    rdfs:label "sensor_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:spoor_l a owl:Class ;
+    rdfs:label "spoor_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:spoorrail_l a owl:Class ;
+    rdfs:label "spoorrail_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:straatmeubilairLichtpunt_p a owl:Class ;
+    rdfs:label "straatmeubilairLichtpunt_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:straatmeubilair_p a owl:Class ;
+    rdfs:label "straatmeubilair_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:telecommunicatiekabel_l a owl:Class ;
+    rdfs:label "telecommunicatiekabel_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:telpaal_p a owl:Class ;
+    rdfs:label "telpaal_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:theorHectometrering_p a owl:Class ;
+    rdfs:label "theorHectometrering_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:traject_v a owl:Class ;
+    rdfs:label "traject_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:tunneldeel_v a owl:Class ;
+    rdfs:label "tunneldeel_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:uithouder_p a owl:Class ;
+    rdfs:label "uithouder_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:uitleggerPortaal_l a owl:Class ;
+    rdfs:label "uitleggerPortaal_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:utiliteitsLink_l a owl:Class ;
+    rdfs:label "utiliteitsLink_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:utiliteitsNet_tbl a owl:Class ;
+    rdfs:label "utiliteitsNet_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:vaarweg_l a owl:Class ;
+    rdfs:label "vaarweg_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:vaarwegdeeltraject_v a owl:Class ;
+    rdfs:label "vaarwegdeeltraject_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:vaarwegdeeltrajectas_l a owl:Class ;
+    rdfs:label "vaarwegdeeltrajectas_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:vegetatieObject_l a owl:Class ;
+    rdfs:label "vegetatieObject_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:vegetatieObject_p a owl:Class ;
+    rdfs:label "vegetatieObject_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:vegetatieObject_v a owl:Class ;
+    rdfs:label "vegetatieObject_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:vtaInspectie_tbl a owl:Class ;
+    rdfs:label "vtaInspectie_tbl" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:waterdeel_v a owl:Class ;
+    rdfs:label "waterdeel_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:waterinrichtingselement_l a owl:Class ;
+    rdfs:label "waterinrichtingselement_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:waterinrichtingselement_p a owl:Class ;
+    rdfs:label "waterinrichtingselement_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:waterloop_l a owl:Class ;
+    rdfs:label "waterloop_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:weg_l a owl:Class ;
+    rdfs:label "weg_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:wegdeelKruin_l a owl:Class ;
+    rdfs:label "wegdeelKruin_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:wegdeelPerron_v a owl:Class ;
+    rdfs:label "wegdeelPerron_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:wegdeel_v a owl:Class ;
+    rdfs:label "wegdeel_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:weginrichtingselement_l a owl:Class ;
+    rdfs:label "weginrichtingselement_l" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:weginrichtingselement_p a owl:Class ;
+    rdfs:label "weginrichtingselement_p" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:weginrichtingselement_v a owl:Class ;
+    rdfs:label "weginrichtingselement_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:wegvak_v a owl:Class ;
+    rdfs:label "wegvak_v" ;
+    rdfs:subClassOf adkern:areaaldata .
+
+adkern:areaaldata a owl:Class ;
+    rdfs:label "areaaldata objecttypen" ;
+    rdfs:subClassOf cbim-2.0:CataloguePart,
+        cbim-2.0:Object .
+
