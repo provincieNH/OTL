@@ -22,8 +22,22 @@
   rdfs:subPropertyOf <http://bimloket.nl/sebim#PhysicalObject_performsFunction_Activity> ;
 .
 :Document_hasSubject_Artefact
+  rdf:type owl:ObjectProperty ;
+  <http://bimloket.nl/sebim#sourceID> "Rel-00223" ;
   rdfs:domain :document ;
+  rdfs:label "has subject"@en-gb ;
+  rdfs:label "heeft betrekking op"@nl-nl ;
   rdfs:range :artefact ;
+  rdfs:subPropertyOf <http://bimloket.nl/sebim#Individual_hasSubject_Individual> ;
+.
+:Document_hasSubject_Function
+  rdf:type owl:ObjectProperty ;
+  <http://bimloket.nl/sebim#sourceID> "Rel-00222" ;
+  rdfs:domain :document ;
+  rdfs:label "has subject"@en-gb ;
+  rdfs:label "heeft betrekking op"@nl-nl ;
+  rdfs:range :function ;
+  rdfs:subPropertyOf <http://bimloket.nl/sebim#Individual_hasSubject_Individual> ;
 .
 :Document_hasVersion_DocumentVersion
   rdf:type owl:ObjectProperty ;
@@ -33,6 +47,15 @@
   rdfs:label "heeft versie"@nl-nl ;
   rdfs:range :document_version ;
   rdfs:subPropertyOf <http://bimloket.nl/sebim#Thing_hasVersion_InformationObject> ;
+.
+:Document_isClassifiedAsByLibraryClass_ClassOfDocumentType
+  rdf:type owl:ObjectProperty ;
+  <http://bimloket.nl/sebim#sourceID> "Rel-00212" ;
+  rdfs:domain :document ;
+  rdfs:label "is classified as by library class"@en-gb ;
+  rdfs:label "is geclassificeerd als volgens bibliotheekklasse"@nl-nl ;
+  rdfs:range :document_type_library_element_reference ;
+  rdfs:subPropertyOf <http://bimloket.nl/sebim#Thing_isClassifiedAsByLibraryClass_Catalogue> ;
 .
 :Document_specifies_VAndVActivity
   rdf:type owl:ObjectProperty ;
@@ -107,6 +130,19 @@
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty <http://bimloket.nl/sebim#Document_hasVersion_DocumentVersion-inv> ;
+    ] ;
+.
+:document_type_library_element_reference
+  rdf:type owl:Class ;
+  <http://bimloket.nl/sebim#sourceID> "MEl-00181" ;
+  rdfs:comment "Group of accumulated document types"@en-gb ;
+  rdfs:label "document type library element reference"@en-gb ;
+  rdfs:label "documenttypebibliotheekelementreferentie"@nl-nl ;
+  rdfs:subClassOf <http://bimloket.nl/sebim#catalogue> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://bimloket.nl/sebim#Document_isClassifiedAsByLibraryClass_ClassOfDocumentType> ;
     ] ;
 .
 :document_version
