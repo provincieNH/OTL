@@ -1,8 +1,8 @@
-# baseURI: http://otl.noord-holland.nl/areaaldata/v4.02/
- # imports: http://otl.noord-holland.nl/areaaldata-wl/v4.02/
+# baseURI: http://coins.noord-holland.nl/areaaldata/v4.02/
+ # imports: http://coins.noord-holland.nl/areaaldata-wl/v4.02/
  
-@prefix ad: <http://otl.noord-holland.nl/areaaldata/v4.02/> .
-@prefix adwl: <http://otl.noord-holland.nl/areaaldata-wl/v4.02/> .
+@prefix ad: <http://coins.noord-holland.nl/areaaldata/v4.02/> .
+@prefix adwl: <http://coins.noord-holland.nl/areaaldata-wl/v4.02/> .
 @prefix cbim-2.0: <http://www.coinsweb.nl/cbim-2.0.rdf#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -22,8 +22,10 @@ ad:herkomstDefinitie a owl:AnnotationProperty ;
         ad:aanduidingVerzoekContact_p,
         ad:adres_tbl,
         ad:bak_p,
+        ad:begroeidTerreindeelBermKr_l,
         ad:begroeidTerreindeelBerm_v,
         ad:begroeidTerreindeelKruin_l,
+        ad:begroeidTerreindeelPlKr_l,
         ad:begroeidTerreindeelPlantvak_v,
         ad:begroeidTerreindeel_v,
         ad:beschoeiingInspectie_tbl,
@@ -82,6 +84,7 @@ ad:herkomstDefinitie a owl:AnnotationProperty ;
         ad:onderdeel_tbl,
         ad:ondersteunendWaterdeel_v,
         ad:ondersteunendWegdeelKruin_l,
+        ad:ondersteunendWegdeelPlKr_l,
         ad:ondersteunendWegdeelPlantvak_v,
         ad:ondersteunendWegdeel_v,
         ad:ongeclassificeerdObject_v,
@@ -141,8 +144,10 @@ ad:isBGT_Object a owl:AnnotationProperty ;
         ad:aanduidingVerzoekContact_p,
         ad:adres_tbl,
         ad:bak_p,
+        ad:begroeidTerreindeelBermKr_l,
         ad:begroeidTerreindeelBerm_v,
         ad:begroeidTerreindeelKruin_l,
+        ad:begroeidTerreindeelPlKr_l,
         ad:begroeidTerreindeelPlantvak_v,
         ad:begroeidTerreindeel_v,
         ad:beschoeiingInspectie_tbl,
@@ -201,6 +206,7 @@ ad:isBGT_Object a owl:AnnotationProperty ;
         ad:onderdeel_tbl,
         ad:ondersteunendWaterdeel_v,
         ad:ondersteunendWegdeelKruin_l,
+        ad:ondersteunendWegdeelPlKr_l,
         ad:ondersteunendWegdeelPlantvak_v,
         ad:ondersteunendWegdeel_v,
         ad:ongeclassificeerdObject_v,
@@ -260,8 +266,10 @@ ad:positioneleNauwkeurigheid a owl:AnnotationProperty ;
         ad:aanduidingVerzoekContact_p,
         ad:adres_tbl,
         ad:bak_p,
+        ad:begroeidTerreindeelBermKr_l,
         ad:begroeidTerreindeelBerm_v,
         ad:begroeidTerreindeelKruin_l,
+        ad:begroeidTerreindeelPlKr_l,
         ad:begroeidTerreindeelPlantvak_v,
         ad:begroeidTerreindeel_v,
         ad:beschoeiingInspectie_tbl,
@@ -320,6 +328,7 @@ ad:positioneleNauwkeurigheid a owl:AnnotationProperty ;
         ad:onderdeel_tbl,
         ad:ondersteunendWaterdeel_v,
         ad:ondersteunendWegdeelKruin_l,
+        ad:ondersteunendWegdeelPlKr_l,
         ad:ondersteunendWegdeelPlantvak_v,
         ad:ondersteunendWegdeel_v,
         ad:ongeclassificeerdObject_v,
@@ -406,6 +415,14 @@ ad:bak_p a owl:Class ;
     rdfs:subClassOf ad:areaaldata ;
     skos:definition "Object met een permanent karakter dat dient om iets in op te bergen of te verzamelen." .
 
+ad:begroeidTerreindeelBermKr_l a owl:Class ;
+    rdfs:label "begroeidTerreindeelBermKr_l" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "afgeleid van object waar kruinlijn bij hoort" ;
+    rdfs:subClassOf ad:areaaldata ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE" .
+
 ad:begroeidTerreindeelBerm_v a owl:Class ;
     rdfs:label "begroeidTerreindeelBerm_v" ;
     ad:herkomstDefinitie "PNH" ;
@@ -420,7 +437,15 @@ ad:begroeidTerreindeelKruin_l a owl:Class ;
     ad:isBGT_Object "Ja" ;
     ad:positioneleNauwkeurigheid "afgeleid van object waar kruinlijn bij hoort" ;
     rdfs:subClassOf ad:areaaldata ;
-    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." .
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE" .
+
+ad:begroeidTerreindeelPlKr_l a owl:Class ;
+    rdfs:label "begroeidTerreindeelPlKr_l" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "afgeleid van object waar kruinlijn bij hoort" ;
+    rdfs:subClassOf ad:areaaldata ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE" .
 
 ad:begroeidTerreindeelPlantvak_v a owl:Class ;
     rdfs:label "begroeidTerreindeelPlantvak_v" ;
@@ -852,7 +877,7 @@ ad:onbegroeidTerreindeelKruin_l a owl:Class ;
     ad:isBGT_Object "Ja" ;
     ad:positioneleNauwkeurigheid "afgeleid van object waar kruinlijn bij hoort" ;
     rdfs:subClassOf ad:areaaldata ;
-    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." .
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE" .
 
 ad:onbegroeidTerreindeel_v a owl:Class ;
     rdfs:label "onbegroeidTerreindeel_v" ;
@@ -884,7 +909,15 @@ ad:ondersteunendWegdeelKruin_l a owl:Class ;
     ad:isBGT_Object "Ja" ;
     ad:positioneleNauwkeurigheid "afgeleid van object waar kruinlijn bij hoort" ;
     rdfs:subClassOf ad:areaaldata ;
-    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." .
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE" .
+
+ad:ondersteunendWegdeelPlKr_l a owl:Class ;
+    rdfs:label "ondersteunendWegdeelPlKr_l" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "afgeleid van object waar kruinlijn bij hoort" ;
+    rdfs:subClassOf ad:areaaldata ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE." .
 
 ad:ondersteunendWegdeelPlantvak_v a owl:Class ;
     rdfs:label "ondersteunendWegdeelPlantvak_v" ;
@@ -1260,7 +1293,7 @@ ad:wegdeelKruin_l a owl:Class ;
     ad:isBGT_Object "Ja" ;
     ad:positioneleNauwkeurigheid "afgeleid van object waar kruinlijn bij hoort" ;
     rdfs:subClassOf ad:areaaldata ;
-    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." .
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE" .
 
 ad:wegdeelPerron_v a owl:Class ;
     rdfs:label "wegdeelPerron_v" ;
