@@ -16,6 +16,10 @@
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
+:Bestek
+  rdf:type :DocumentType ;
+  rdfs:label "Bestek"^^xsd:string ;
+.
 :DekkingGeografischGebied
   rdf:type owl:Class ;
   rdfs:label "DekkingGeografischGebied"^^xsd:string ;
@@ -36,41 +40,25 @@
   rdf:type owl:Class ;
   rdfs:label "Document"^^xsd:string ;
   rdfs:subClassOf :InformatieObject ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :documentheeftnaam ;
-    ] ;
 .
-:DocumentNaam
+:DocumentLocatie
   rdf:type owl:Class ;
-  rdfs:label "DocumentNaam"^^xsd:string ;
+  rdfs:label "DocumentLocatie"^^xsd:string ;
   rdfs:subClassOf :InformatieOmschrijving ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :onderwerp ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :soortdocument ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :versie ;
-    ] ;
 .
 :DocumentReden
   rdf:type owl:Class ;
   rdfs:label "DocumentReden"^^xsd:string ;
   rdfs:subClassOf :InformatieOmschrijving ;
 .
-:DocumentSoort
+:DocumentType
   rdf:type owl:Class ;
-  rdfs:label "DocumentSoort"^^xsd:string ;
+  rdfs:label "DocumentType"^^xsd:string ;
   rdfs:subClassOf :InformatieOmschrijving ;
+.
+:Factuur
+  rdf:type :DocumentType ;
+  rdfs:label "Factuur"^^xsd:string ;
 .
 :Geo-object
   rdf:type owl:DatatypeProperty ;
@@ -102,10 +90,22 @@
   rdf:type :DocumentReden ;
   rdfs:label "Opgemaakt"^^xsd:string ;
 .
+:Plan
+  rdf:type :DocumentType ;
+  rdfs:label "Plan"^^xsd:string ;
+.
 :Project
   rdf:type owl:Class ;
   rdfs:label "Project"^^xsd:string ;
   rdfs:subClassOf :InformatieObject ;
+.
+:Rapport
+  rdf:type :DocumentType ;
+  rdfs:label "Rapport"^^xsd:string ;
+.
+:Tekening
+  rdf:type :DocumentType ;
+  rdfs:label "Tekening"^^xsd:string ;
 .
 :Verzonden
   rdf:type :DocumentReden ;
@@ -115,6 +115,10 @@
   rdf:type owl:Class ;
   rdfs:label "Zaak"^^xsd:string ;
   rdfs:subClassOf :InformatieObject ;
+.
+:Zienswijze
+  rdf:type :DocumentType ;
+  rdfs:label "Zienswijze"^^xsd:string ;
 .
 :documentheeftdekkinggeografischgebied
   rdf:type rdf:Property ;
@@ -128,12 +132,11 @@
   rdfs:label "documentheeftdekkingintijd"^^xsd:string ;
   rdfs:range :DekkingInTijd ;
 .
-:documentheeftnaam
-  rdf:type owl:FunctionalProperty ;
+:documentheeftlocatie
   rdf:type owl:ObjectProperty ;
   rdfs:domain :Document ;
-  rdfs:label "Document heeft Naam"^^xsd:string ;
-  rdfs:range :DocumentNaam ;
+  rdfs:label "documentheeftlocatie"^^xsd:string ;
+  rdfs:range :DocumentLocatie ;
 .
 :documentheeftreden
   rdf:type owl:FunctionalProperty ;
@@ -142,12 +145,12 @@
   rdfs:label "Document heeft Reden"^^xsd:string ;
   rdfs:range :DocumentReden ;
 .
-:documentheeftsoort
+:documentheefttype
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
   rdfs:domain :Document ;
-  rdfs:label "Document heeft Soort"^^xsd:string ;
-  rdfs:range :DocumentSoort ;
+  rdfs:label "Document heeft Type"^^xsd:string ;
+  rdfs:range :DocumentType ;
 .
 :documenthoortbijzaak
   rdf:type owl:FunctionalProperty ;
@@ -156,31 +159,38 @@
   rdfs:label "Document hoort bij Zaak"^^xsd:string ;
   rdfs:range :Zaak ;
 .
+:filepath
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :DocumentLocatie ;
+  rdfs:label "filepath"^^xsd:string ;
+  rdfs:range xsd:string ;
+.
 :onderwerp
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
-  rdfs:domain :DocumentNaam ;
+  rdfs:domain :Document ;
   rdfs:label "onderwerp"^^xsd:string ;
   rdfs:range xsd:string ;
 .
 :periode
   rdf:type owl:DatatypeProperty ;
-  rdf:type owl:FunctionalProperty ;
-  rdfs:domain :Document ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain :DekkingInTijd ;
   rdfs:label "periode"^^xsd:string ;
-  rdfs:range xsd:date ;
+  rdfs:range xsd:string ;
 .
 :soortdocument
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
-  rdfs:domain :DocumentNaam ;
+  rdfs:domain :Document ;
   rdfs:label "soortdocument"^^xsd:string ;
   rdfs:range xsd:string ;
 .
 :versie
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
-  rdfs:domain :DocumentNaam ;
+  rdfs:domain :Document ;
   rdfs:label "versie"^^xsd:string ;
   rdfs:range xsd:string ;
 .
