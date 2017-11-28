@@ -1,10 +1,11 @@
 # baseURI: http://otl.noord-holland.nl/otl/
 # imports: http://otl.noord-holland.nl/areaaldata-prop/v4.03/
 # imports: http://otl.noord-holland.nl/otb/v_MN/
+# prefix: otl
 
 @prefix ad: <http://otl.noord-holland.nl/areaaldata/v4.03/> .
-@prefix adprop: <http://coins.noord-holland.nl/areaaldata-prop/v4.03/> .
-@prefix adwl: <http://coins.noord-holland.nl/areaaldata-wl/v4.03/> .
+@prefix adprop: <http://otl.noord-holland.nl/areaaldata-prop/v4.03/> .
+@prefix adwl: <http://otl.noord-holland.nl/areaaldata-wl/v4.03/> .
 @prefix otb: <http://otl.noord-holland.nl/otb/v_MN/> .
 @prefix otl: <http://otl.noord-holland.nl/otl/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -14,9 +15,9 @@
 
 otl:
   rdf:type owl:Ontology ;
-  owl:imports <http://otl.noord-holland.nl/areaaldata-prop/v4.03/> ;
+  owl:imports adprop: ;
   owl:imports otb: ;
-  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+  owl:versionInfo "Created with TopBraid Composer" ;
 .
 otl:Abri
   rdf:type owl:Class ;
@@ -24,12 +25,18 @@ otl:Abri
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          ad:overigBouwwerk_v 
+          ad:overigBouwwerk_v
           [
             rdf:type owl:Restriction ;
-            owl:hasValue  [a          owl:Class ;
-                                             owl:oneOf  ( adwl:typeSpecOBWVlak_abriOverig adwl:typeSpecOBWVlak_abriOFN )
-                                           ] ;
+            owl:hasValue [
+                rdf:type owl:Class ;
+                owl:oneOf (
+                    adwl:typeSpecOBWVlak_abriOverig
+                    adwl:typeSpecOBWVlak_abriOFN
+                    adwl:typeSpecOBWVlak_abriOnbekend
+                    adwl:typeSpecOBWVlak_abriR-net
+                  ) ;
+              ] ;
             owl:onProperty adprop:overigBouwwerk_v_heeft_TYPESPEC ;
           ]
         ) ;
@@ -37,32 +44,28 @@ otl:Abri
 .
 otl:Actieve_markering_LED
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Actieve_markering_LED> ;
+  rdfs:subClassOf otb:Actieve_markering_LED ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/straatmeubilairLichtpunt_p>
+          ad:straatmeubilairLichtpunt_p
           [
-            rdf:type owl:Class ;
-            owl:unionOf (
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecSTMLichtpunt_Markeringunit> ;
-                  owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecSTMLichtpunt> ;
-                ]
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecSTMLichtpunt_Markeringsunitonbekend> ;
-                  owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecSTMLichtpunt> ;
-                ]
-              ) ;
+            rdf:type owl:Restriction ;
+            owl:hasValue [
+                rdf:type owl:Class ;
+                owl:oneOf (
+                    adwl:typeSpecSTMLichtpunt_Markeringunit
+                    adwl:typeSpecSTMLichtpunt_Markeringsunitonbekend
+                  ) ;
+              ] ;
+            owl:onProperty adprop:straatmeubilairLichtpunt_p_heeft_TYPESPEC ;
           ]
         ) ;
     ] ;
 .
 otl:Bebakening_en_bebording
   rdf:type owl:Class ;
-  rdfs:label "Bebakening en bebording"^^xsd:string ;
+  rdfs:label "Bebakening en bebording" ;
   rdfs:subClassOf otb:Bebakening_en_bebording ;
   owl:equivalentClass [
       rdf:type owl:Class ;
@@ -78,596 +81,588 @@ otl:Bebakening_en_bebording
 .
 otl:Bermbeplanting
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Bermbeplanting> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/begroeidTerreindeelBerm_v> ;
+  rdfs:subClassOf otb:Bermbeplanting ;
+  owl:equivalentClass ad:begroeidTerreindeelBerm_v ;
 .
 otl:Bermplankjes
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Bermplankjes> ;
+  rdfs:subClassOf otb:Bermplankjes ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/paalAfbakening_p>
+          ad:paalAfbakening_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecPALAfbakening_Bermplankonbekend> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecPALAfbakening> ;
+            owl:hasValue adwl:typeSpecPALAfbakening_Bermplankonbekend ;
+            owl:onProperty adprop:paalAfbakening_p_heeft_TYPESPEC ;
           ]
         ) ;
     ] ;
 .
 otl:Bermsloot_greppel
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Bermsloot_greppel> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/waterloop_l> ;
+  rdfs:subClassOf otb:Bermsloot_greppel ;
+  owl:equivalentClass ad:waterloop_l ;
 .
 otl:Betonning
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Betonning> ;
+  rdfs:subClassOf otb:Betonning ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/waterinrichtingselement_p>
+          ad:waterinrichtingselement_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeWTIPunt_niet-bgtbetonning> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeWTIPunt> ;
+            owl:hasValue adwl:typeWTIPunt_niet-bgtbetonning ;
+            owl:onProperty adprop:waterinrichtingselement_p_heeft_BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
 .
 otl:Beweegbaar_kunstwerk
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Beweegbaar_kunstwerk> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/kunstwerkBeweegbaar_p> ;
+  rdfs:subClassOf otb:Beweegbaar_kunstwerk ;
+  owl:equivalentClass ad:kunstwerkBeweegbaar_p ;
 .
 otl:Bewegwijzering
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Bewegwijzering> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/bordWegwijzer_p> ;
+  rdfs:subClassOf otb:Bewegwijzering ;
+  owl:equivalentClass ad:bordWegwijzer_p ;
 .
 otl:Bouwdeel_Beweegbaar_kunstwerk
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Bouwdeel_Beweegbaar_kunstwerk> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/bouwdeelKunstwerk_tbl> ;
+  rdfs:subClassOf otb:Bouwdeel_Beweegbaar_kunstwerk ;
+  owl:equivalentClass ad:bouwdeelKunstwerk_tbl ;
 .
 otl:Bouwdeel_Geluidwerende_constructie
   rdf:type owl:Class ;
-  rdfs:label "Bouwdeel Geluidwerende constructie"^^xsd:string ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Bouwdeel_Geluidwerende_constructie> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/bouwdeelGeluidsscherm_tbl> ;
+  rdfs:label "Bouwdeel Geluidwerende constructie" ;
+  rdfs:subClassOf otb:Bouwdeel_Geluidwerende_constructie ;
+  owl:equivalentClass ad:bouwdeelGeluidsscherm_tbl ;
 .
 otl:Bouwdeel_NEN_2767-4_Oever
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Bouwdeel_NEN_2767-4_Oever> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/bouwdeelOevervak_tbl> ;
+  rdfs:subClassOf otb:Bouwdeel_NEN_2767-4_Oever ;
+  owl:equivalentClass ad:bouwdeelOevervak_tbl ;
 .
 otl:Bouwdeel_NEN_2767-4_Schutsluis
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Bouwdeel_NEN_2767-4_Schutsluis> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/bouwdeelKunstwerk_tbl> ;
+  rdfs:subClassOf otb:Bouwdeel_NEN_2767-4_Schutsluis ;
+  owl:equivalentClass ad:bouwdeelKunstwerk_tbl ;
 .
 otl:Bouwdeel_Vast_kunstwerk
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Bouwdeel_Vast_kunstwerk> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/bouwdeelKunstwerk_tbl> ;
+  rdfs:subClassOf otb:Bouwdeel_Vast_kunstwerk ;
+  owl:equivalentClass ad:bouwdeelKunstwerk_tbl ;
 .
 otl:Bushalte
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Bushalte> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/halte_v> ;
+  rdfs:subClassOf otb:Bushalte ;
+  owl:equivalentClass ad:halte_v ;
 .
 otl:DRIS-paneel
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/DRIS-paneel> ;
+  rdfs:subClassOf otb:DRIS-paneel ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/bord_p>
+          ad:bord_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecBRD_DrisPaneelonbekend> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecBRD> ;
+            owl:hasValue adwl:typeSpecBRD_DrisPaneelonbekend ;
+            owl:onProperty adprop:bord_p_heeft_TYPESPEC ;
           ]
         ) ;
     ] ;
 .
 otl:Detectielus
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Detectielus> ;
+  rdfs:subClassOf otb:Detectielus ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/sensor_l>
+          ad:sensor_l
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecSNSLijn_Detectielus> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecSNSLijn> ;
+            owl:hasValue adwl:typeSpecSNSLijn_Detectielus ;
+            owl:onProperty adprop:sensor_l_heeft_TYPESPEC ;
           ]
         ) ;
     ] ;
 .
 otl:Draagkrachtige_berm
   rdf:type owl:Class ;
-  rdfs:label "Draagkrachtige berm"^^xsd:string ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Draagkrachtige_berm> ;
+  rdfs:label "Draagkrachtige berm" ;
+  rdfs:subClassOf otb:Draagkrachtige_berm ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/ondersteunendWegdeel_v>
+          ad:ondersteunendWegdeel_v
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/functieOWG_berm> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/functieOWG> ;
+            owl:hasValue adwl:functieOWG_berm ;
+            owl:onProperty adprop:ondersteunendWegdeel_v_heeft_FUNCTIE ;
           ]
         ) ;
     ] ;
 .
 otl:Ecoduct
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Ecoduct> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/faunavoorziening_v> ;
+  rdfs:subClassOf otb:Ecoduct ;
+  owl:equivalentClass ad:faunavoorziening_v ;
 .
 otl:Ecologische_verbindingszone
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Ecologische_verbindingszone> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/ecoVerbZone_v> ;
+  rdfs:subClassOf otb:Ecologische_verbindingszone ;
+  owl:equivalentClass ad:ecoVerbZone_v ;
 .
 otl:Ecopassages
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Ecopassages> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/faunavoorziening_v> ;
+  rdfs:subClassOf otb:Ecopassages ;
+  owl:equivalentClass ad:faunavoorziening_v ;
 .
 otl:Element_Beweegbaar_kunstwerk
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Element_Beweegbaar_kunstwerk> ;
+  rdfs:subClassOf otb:Element_Beweegbaar_kunstwerk ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/kwElement_tbl>
+          ad:kwElement_tbl
           [
             rdf:type owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/KW_BEWEEGBAAR> ;
+            owl:onProperty adprop:kwElement_tbl_heeft_KW_BEWEEGBAAR ;
           ]
         ) ;
     ] ;
 .
 otl:Element_NEN_2767-4_Oever
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Element_NEN_2767-4_Oever> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/scheidingOevervak_l> ;
+  rdfs:subClassOf otb:Element_NEN_2767-4_Oever ;
+  owl:equivalentClass ad:scheidingOevervak_l ;
 .
 otl:Element_NEN_2767-4_Schutsluis
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Element_NEN_2767-4_Schutsluis> ;
+  rdfs:subClassOf otb:Element_NEN_2767-4_Schutsluis ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/kwElement_tbl>
+          ad:kwElement_tbl
           [
             rdf:type owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/SCHUTSLUIS> ;
+            owl:onProperty adprop:kwElement_tbl_heeft_SCHUTSLUIS ;
           ]
         ) ;
     ] ;
 .
 otl:Element_Vast_kunstwerk
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Element_Vast_kunstwerk> ;
+  rdfs:subClassOf otb:Element_Vast_kunstwerk ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/kwElement_tbl>
+          ad:kwElement_tbl
           [
             rdf:type owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/KW_VAST> ;
+            owl:onProperty adprop:kwElement_tbl_heeft_KW_VAST ;
           ]
         ) ;
     ] ;
 .
 otl:Energieverzorging_zonnepaneel
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Energieverzorging_zonnepaneel> ;
+  rdfs:subClassOf otb:Energieverzorging_zonnepaneel ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/installatie_p>
+          ad:installatie_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeINS_niet-bgtzonnepaneel> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeINS> ;
+            owl:hasValue adwl:typeINS_niet-bgtzonnepaneel ;
+            owl:onProperty adprop:installatie_p_heeft_BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
 .
 otl:Faunaraster
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Faunaraster> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/faunavoorziening_v> ;
+  rdfs:subClassOf otb:Faunaraster ;
+  owl:equivalentClass ad:faunavoorziening_v ;
 .
 otl:Geluidscherm
   rdf:type owl:Class ;
-  rdfs:label "Geluidscherm"^^xsd:string ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Geluidscherm> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/geluidwerendeVoorziening_l> ;
+  rdfs:label "Geluidscherm" ;
+  rdfs:subClassOf otb:Geluidscherm ;
+  owl:equivalentClass ad:geluidwerendeVoorziening_l ;
 .
 otl:Geluidwerende_constructie
   rdf:type owl:Class ;
-  rdfs:label "Geluidwerende constructie"^^xsd:string ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Geluidwerende_constructie> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/scheidingGeluidsscherm_l> ;
+  rdfs:label "Geluidwerende constructie" ;
+  rdfs:subClassOf otb:Geluidwerende_constructie ;
+  owl:equivalentClass ad:scheidingGeluidsscherm_l ;
 .
 otl:Gladheidsmeldsysteem
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Gladheidsmeldsysteem> ;
+  rdfs:subClassOf otb:Gladheidsmeldsysteem ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/kast_p>
+          ad:kast_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeKST_niet-bgtGMSkast> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeKST> ;
+            owl:hasValue adwl:typeKST_niet-bgtGMSkast ;
+            owl:onProperty adprop:kast_p_heeft_BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
 .
 otl:Kolk_en_put
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Kolk_en_put> ;
+  rdfs:subClassOf otb:Kolk_en_put ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/leidingelement_p>
+          ad:leidingelement_p
           [
-            rdf:type owl:Class ;
-            owl:unionOf (
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecLDE_Straatkolk> ;
-                  owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecLDE> ;
-                ]
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecLDE_Trottoirkolk> ;
-                  owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecLDE> ;
-                ]
-              ) ;
+            rdf:type owl:Restriction ;
+            owl:hasValue [
+                rdf:type owl:Class ;
+                owl:oneOf (
+                    adwl:typeSpecLDE_Straatkolk
+                    adwl:typeSpecLDE_Trottoirkolk
+                    adwl:typeSpecLDE_SKK
+                    adwl:typeSpecLDE_TKK
+                    adwl:typeSpecLDE_kolk
+                    adwl:typeSpecLDE_KLK
+                  ) ;
+              ] ;
+            owl:onProperty adprop:leidingelement_p_heeft_TYPESPEC ;
           ]
         ) ;
     ] ;
 .
 otl:Kolkleiding
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Kolkleiding> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/buis_l> ;
-.
-otl:Kruispunt
-  rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Kruispunt> ;
+  rdfs:subClassOf otb:Kolkleiding ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/kruispunt_p>
+          ad:buis_l
           [
-            rdf:type owl:Class ;
-            owl:complementOf [
-                rdf:type owl:Restriction ;
-                owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecKRU_Rotonde> ;
-                owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecKRU> ;
+            rdf:type owl:Restriction ;
+            owl:hasValue [
+                rdf:type owl:Class ;
+                owl:oneOf (
+                    adwl:typeSpecBUI_RVV
+                    adwl:typeSpecBUI_Rioolvrijverval
+
+                  ) ;
               ] ;
+            owl:onProperty adprop:buis_l_heeft_TYPESPEC ;
           ]
         ) ;
     ] ;
 .
+otl:Kruispunt
+  rdf:type owl:Class ;
+  rdfs:subClassOf otb:Kruispunt ;
+  owl:equivalentClass ad:kruispunt_p ;
+.
 otl:Lichtopstanden
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Lichtopstanden> ;
+  rdfs:subClassOf otb:Lichtopstanden ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/waterinrichtingselement_p>
+          ad:waterinrichtingselement_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecWIIPunt_baken> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecWIIPunt> ;
+            owl:hasValue adwl:typeSpecWIIPunt_baken ;
+            owl:onProperty adprop:waterinrichtingselement_p_heeft_TYPESPEC ;
           ]
         ) ;
     ] ;
 .
 otl:Oever
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Oever> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/oevervak_v> ;
+  rdfs:subClassOf otb:Oever ;
+  owl:equivalentClass ad:oevervak_v ;
 .
 otl:Oeverbeplanting
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Oeverbeplanting> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/ondersteunendWaterdeel_v> ;
+  rdfs:subClassOf otb:Oeverbeplanting ;
+  owl:equivalentClass ad:ondersteunendWaterdeel_v ;
 .
 otl:Onderdelen_VRI
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Onderdelen_VRI> ;
+  rdfs:subClassOf otb:Onderdelen_VRI ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/onderdeel_tbl>
+          ad:onderdeel_tbl
           [
-            rdf:type owl:Class ;
-            owl:unionOf (
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecOND_DrukknopVRI> ;
-                  owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecOND> ;
-                ]
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecOND_RateltikkerVRI> ;
-                  owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecOND> ;
-                ]
-              ) ;
+            rdf:type owl:Restriction ;
+            owl:hasValue [
+                rdf:type owl:Class ;
+                owl:oneOf (
+                    adwl:typeSpecOND_DRK
+                    adwl:typeSpecOND_RAT
+                  ) ;
+              ] ;
+            owl:onProperty adprop:onderdeel_tbl_heeft_TYPESPEC ;
           ]
         ) ;
     ] ;
 .
 otl:Parkeerplaats
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Parkeerplaats> ;
+  rdfs:subClassOf otb:Parkeerplaats ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/wegdeel_v>
+          ad:wegdeel_v
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/functieWGD_parkeervlak> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/functieWGD> ;
+            owl:hasValue adwl:functieWGD_parkeervlak ;
+            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
           ]
         ) ;
     ] ;
 .
 otl:Perron
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Perron> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/wegdeelPerron_v> ;
+  rdfs:subClassOf otb:Perron ;
+  owl:equivalentClass ad:wegdeelPerron_v ;
 .
 otl:Rotonde
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Rotonde> ;
+  rdfs:subClassOf otb:Rotonde ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/kruispunt_p>
+          ad:kruispunt_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecKRU_Rotonde> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecKRU> ;
+            owl:hasValue adwl:typeSpecKRU_Rotonde ;
+            owl:onProperty adprop:kruispunt_p_heeft_TYPESPEC ;
           ]
         ) ;
     ] ;
 .
 otl:Schutsluis
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Schutsluis> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/schutsluis_p> ;
+  rdfs:subClassOf otb:Schutsluis ;
+  owl:equivalentClass ad:schutsluis_p ;
 .
 otl:Telkast
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Telkast> ;
+  rdfs:subClassOf otb:Telkast ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/kast_p>
+          ad:kast_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeKST_niet-bgttelkast> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeKST> ;
+            owl:hasValue adwl:typeKST_niet-bgttelkast ;
+            owl:onProperty adprop:kast_p_heeft_BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
 .
 otl:Telpaal
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Telpaal> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/telpaal_p> ;
+  rdfs:subClassOf otb:Telpaal ;
+  owl:equivalentClass ad:telpaal_p ;
 .
 otl:VRI-camera
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/VRI-camera> ;
+  rdfs:subClassOf otb:VRI-camera ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/sensor_l>
+          ad:sensor_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSNSPunt_niet-bgtcamera> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSNSPunt> ;
+            owl:hasValue adwl:typeSNSPunt_niet-bgtcamera ;
+            owl:onProperty adprop:sensor_p_heeft_BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
 .
 otl:Vaarweg
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Vaarweg> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/vaarweg_l> ;
+  rdfs:subClassOf otb:Vaarweg ;
+  owl:equivalentClass ad:vaarweg_l ;
 .
 otl:Vaarwegbodem
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Vaarwegbodem> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/bodem_v> ;
+  rdfs:subClassOf otb:Vaarwegbodem ;
+  owl:equivalentClass ad:bodem_v ;
 .
 otl:Vaarwegennet
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Vaarwegennet> ;
+  rdfs:subClassOf otb:Vaarwegennet ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/traject_v>
+          ad:traject_v
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecTRA_Vaarweg> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecTRA> ;
+            owl:hasValue adwl:typeSpecTRA_Vaarweg ;
+            owl:onProperty adprop:traject_v_heeft_TYPESPEC ;
           ]
         ) ;
     ] ;
 .
 otl:Vast_kunstwerk
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Vast_kunstwerk> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/kunstwerkVast_p> ;
+  rdfs:subClassOf otb:Vast_kunstwerk ;
+  owl:equivalentClass ad:kunstwerkVast_p ;
 .
 otl:Verzorgingsplaats
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Verzorgingsplaats> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/recreatieplek_v> ;
+  rdfs:subClassOf otb:Verzorgingsplaats ;
+  owl:equivalentClass ad:recreatieplek_v ;
 .
 otl:Voertuigkering
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Voertuigkering> ;
+  rdfs:subClassOf otb:Voertuigkering ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/weginrichtingselement_l>
+          ad:weginrichtingselement_l
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeWGILijn_niet-bgtgeleideconstructie> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeWGILijn> ;
+            owl:hasValue adwl:typeWGILijn_niet-bgtgeleideconstructie ;
+            owl:onProperty adprop:weginrichtingselement_l_heeft_BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
 .
 otl:Waarnemingscamera_Wegverkeer
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Waarnemingscamera_Wegverkeer> ;
+  rdfs:subClassOf otb:Waarnemingscamera_Wegverkeer ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/sensor_p>
+          ad:sensor_p
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSNSPunt_niet-bgtcamera> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSNSPunt> ;
+            owl:hasValue adwl:typeSNSPunt_niet-bgtcamera ;
+            owl:onProperty adprop:sensor_p_heeft_BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
 .
 otl:Weg
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Weg> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/weg_l> ;
+  rdfs:subClassOf otb:Weg ;
+  owl:equivalentClass ad:weg_l ;
 .
 otl:Wegelement_Autoverkeer
   rdf:type owl:Class ;
-  rdfs:label "Wegelement Autoverkeer"^^xsd:string ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Wegelement_Autoverkeer> ;
+  rdfs:label "Wegelement Autoverkeer" ;
+  rdfs:subClassOf otb:Wegelement_Autoverkeer ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/functieWGD_rijbaanautoweg> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/functieWGD> ;
+            owl:hasValue adwl:functieWGD_rijbaanautoweg ;
+            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
           ]
-          <http://otl.noord-holland.nl/areaaldata/v4.00/wegdeel_v>
+          ad:wegdeel_v
         ) ;
     ] ;
 .
 otl:Wegelement_Busverkeer
   rdf:type owl:Class ;
-  rdfs:label "Wegelement Busverkeer"^^xsd:string ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Wegelement_Busverkeer> ;
+  rdfs:label "Wegelement Busverkeer" ;
+  rdfs:subClassOf otb:Wegelement_Busverkeer ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/functieWGD_OV-baan> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/functieWGD> ;
+            owl:hasValue adwl:functieWGD_OV-baan ;
+            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
           ]
-          <http://otl.noord-holland.nl/areaaldata/v4.00/wegdeel_v>
+          ad:wegdeel_v
         ) ;
     ] ;
 .
 otl:Wegelement_Fietsverkeer
   rdf:type owl:Class ;
-  rdfs:label "Wegelement Fietsverkeer"^^xsd:string ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Wegelement_Fietsverkeer> ;
+  rdfs:label "Wegelement Fietsverkeer" ;
+  rdfs:subClassOf otb:Wegelement_Fietsverkeer ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/functieWGD_fietspad> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/functieWGD> ;
+            owl:hasValue adwl:functieWGD_fietspad ;
+            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
           ]
-          <http://otl.noord-holland.nl/areaaldata/v4.00/wegdeel_v>
+          ad:wegdeel_v
         ) ;
     ] ;
 .
 otl:Wegelement_Landbouwverkeer
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Wegelement_Landbouwverkeer> ;
+  rdfs:subClassOf otb:Wegelement_Landbouwverkeer ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/wegdeel_v>
+          ad:wegdeel_v
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/functieWGD_rijbaanlokaleweg> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/functieWGD> ;
+            owl:hasValue adwl:functieWGD_rijbaanlokaleweg ;
+            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
           ]
         ) ;
     ] ;
 .
 otl:Wegelement_Voetgangersverkeer
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Wegelement_Voetgangersverkeer> ;
+  rdfs:subClassOf otb:Wegelement_Voetgangersverkeer ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/wegdeel_v>
+          ad:wegdeel_v
           [
             rdf:type owl:Restriction ;
-            owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/functieWGD_voetpad> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/functieWGD> ;
+            owl:hasValue adwl:functieWGD_voetpad ;
+            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
           ]
         ) ;
     ] ;
 .
 otl:Wegennet
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Wegennet> ;
+  rdfs:subClassOf otb:Wegennet ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.00/traject_v>
+          ad:traject_v
           [
-            rdf:type owl:Class ;
-            owl:unionOf (
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecTRA_Busbaan> ;
-                  owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecTRA> ;
-                ]
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecTRA_Fietspad> ;
-                  owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecTRA> ;
-                ]
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.02/typeSpecTRA_Weg> ;
-                  owl:onProperty <http://otl.noord-holland.nl/areaaldata/v4.00/typeSpecTRA> ;
-                ]
-              ) ;
+            rdf:type owl:Restriction ;
+            owl:hasValue [
+                rdf:type owl:Class ;
+                owl:oneOf (
+                    adwl:typeSpecTRA_Busbaan
+                    adwl:typeSpecTRA_Fietspad
+                    adwl:typeSpecTRA_Weg
+                  ) ;
+              ] ;
+            owl:onProperty adprop:traject_v_heeft_TYPESPEC ;
           ]
         ) ;
     ] ;
 .
 otl:Zwemwaterborden
   rdf:type owl:Class ;
-  rdfs:subClassOf <http://otl.noord-holland.nl/otb/Zwemwaterborden> ;
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.00/bordZwemwater_p> ;
+  rdfs:subClassOf otb:Zwemwaterborden ;
+  owl:equivalentClass ad:bordZwemwater_p ;
 .
