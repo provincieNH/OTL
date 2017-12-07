@@ -1,7 +1,6 @@
 # baseURI: http://otl.noord-holland.nl/otl/
 # imports: http://otl.noord-holland.nl/areaaldata-prop/v4.03/
 # imports: http://otl.noord-holland.nl/otb/v_MN/
-# prefix: otl
 
 @prefix ad: <http://otl.noord-holland.nl/areaaldata/v4.03/> .
 @prefix adprop: <http://otl.noord-holland.nl/areaaldata-prop/v4.03/> .
@@ -37,7 +36,7 @@ otl:Abri
                     adwl:typeSpecOBWVlak_abriR-net
                   ) ;
               ] ;
-            owl:onProperty adprop:overigBouwwerk_v_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -58,7 +57,7 @@ otl:Actieve_markering_LED
                     adwl:typeSpecSTMLichtpunt_Markeringsunitonbekend
                   ) ;
               ] ;
-            owl:onProperty adprop:straatmeubilairLichtpunt_p_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -74,7 +73,7 @@ otl:Bebakening_en_bebording
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeSpecBRD_RvvVerkeersbord ;
-            owl:onProperty adprop:bord_p_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -94,7 +93,7 @@ otl:Bermplankjes
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeSpecPALAfbakening_Bermplankonbekend ;
-            owl:onProperty adprop:paalAfbakening_p_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -114,7 +113,7 @@ otl:Betonning
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeWTIPunt_niet-bgtbetonning ;
-            owl:onProperty adprop:waterinrichtingselement_p_heeft_BGTPLUSTYPE ;
+            owl:onProperty adprop:BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
@@ -170,7 +169,7 @@ otl:DRIS-paneel
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeSpecBRD_DrisPaneelonbekend ;
-            owl:onProperty adprop:bord_p_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -185,7 +184,7 @@ otl:Detectielus
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeSpecSNSLijn_Detectielus ;
-            owl:onProperty adprop:sensor_l_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -201,7 +200,7 @@ otl:Draagkrachtige_berm
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:functieOWG_berm ;
-            owl:onProperty adprop:ondersteunendWegdeel_v_heeft_FUNCTIE ;
+            owl:onProperty adprop:FUNCTIE ;
           ]
         ) ;
     ] ;
@@ -231,7 +230,7 @@ otl:Element_Beweegbaar_kunstwerk
           [
             rdf:type owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty adprop:kwElement_tbl_heeft_KW_BEWEEGBAAR ;
+            owl:onProperty adprop:KW_BEWEEGBAAR ;
           ]
         ) ;
     ] ;
@@ -251,7 +250,7 @@ otl:Element_NEN_2767-4_Schutsluis
           [
             rdf:type owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty adprop:kwElement_tbl_heeft_SCHUTSLUIS ;
+            owl:onProperty adprop:SCHUTSLUIS ;
           ]
         ) ;
     ] ;
@@ -266,7 +265,7 @@ otl:Element_Vast_kunstwerk
           [
             rdf:type owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty adprop:kwElement_tbl_heeft_KW_VAST ;
+            owl:onProperty adprop:KW_VAST ;
           ]
         ) ;
     ] ;
@@ -281,7 +280,7 @@ otl:Energieverzorging_zonnepaneel
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeINS_niet-bgtzonnepaneel ;
-            owl:onProperty adprop:installatie_p_heeft_BGTPLUSTYPE ;
+            owl:onProperty adprop:BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
@@ -313,7 +312,7 @@ otl:Gladheidsmeldsysteem
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeKST_niet-bgtGMSkast ;
-            owl:onProperty adprop:kast_p_heeft_BGTPLUSTYPE ;
+            owl:onProperty adprop:BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
@@ -338,7 +337,7 @@ otl:Kolk_en_put
                     adwl:typeSpecLDE_KLK
                   ) ;
               ] ;
-            owl:onProperty adprop:leidingelement_p_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -357,10 +356,9 @@ otl:Kolkleiding
                 owl:oneOf (
                     adwl:typeSpecBUI_RVV
                     adwl:typeSpecBUI_Rioolvrijverval
-
                   ) ;
               ] ;
-            owl:onProperty adprop:buis_l_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -380,7 +378,7 @@ otl:Lichtopstanden
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeSpecWIIPunt_baken ;
-            owl:onProperty adprop:waterinrichtingselement_p_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -411,7 +409,7 @@ otl:Onderdelen_VRI
                     adwl:typeSpecOND_RAT
                   ) ;
               ] ;
-            owl:onProperty adprop:onderdeel_tbl_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -426,7 +424,7 @@ otl:Parkeerplaats
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:functieWGD_parkeervlak ;
-            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
+            owl:onProperty adprop:FUNCTIE ;
           ]
         ) ;
     ] ;
@@ -446,7 +444,7 @@ otl:Rotonde
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeSpecKRU_Rotonde ;
-            owl:onProperty adprop:kruispunt_p_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -466,7 +464,7 @@ otl:Telkast
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeKST_niet-bgttelkast ;
-            owl:onProperty adprop:kast_p_heeft_BGTPLUSTYPE ;
+            owl:onProperty adprop:BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
@@ -486,7 +484,7 @@ otl:VRI-camera
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeSNSPunt_niet-bgtcamera ;
-            owl:onProperty adprop:sensor_p_heeft_BGTPLUSTYPE ;
+            owl:onProperty adprop:BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
@@ -511,7 +509,7 @@ otl:Vaarwegennet
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeSpecTRA_Vaarweg ;
-            owl:onProperty adprop:traject_v_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
@@ -536,7 +534,7 @@ otl:Voertuigkering
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeWGILijn_niet-bgtgeleideconstructie ;
-            owl:onProperty adprop:weginrichtingselement_l_heeft_BGTPLUSTYPE ;
+            owl:onProperty adprop:BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
@@ -551,7 +549,7 @@ otl:Waarnemingscamera_Wegverkeer
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:typeSNSPunt_niet-bgtcamera ;
-            owl:onProperty adprop:sensor_p_heeft_BGTPLUSTYPE ;
+            owl:onProperty adprop:BGTPLUSTYPE ;
           ]
         ) ;
     ] ;
@@ -571,7 +569,7 @@ otl:Wegelement_Autoverkeer
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:functieWGD_rijbaanautoweg ;
-            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
+            owl:onProperty adprop:FUNCTIE ;
           ]
           ad:wegdeel_v
         ) ;
@@ -587,7 +585,7 @@ otl:Wegelement_Busverkeer
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:functieWGD_OV-baan ;
-            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
+            owl:onProperty adprop:FUNCTIE ;
           ]
           ad:wegdeel_v
         ) ;
@@ -603,7 +601,7 @@ otl:Wegelement_Fietsverkeer
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:functieWGD_fietspad ;
-            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
+            owl:onProperty adprop:FUNCTIE ;
           ]
           ad:wegdeel_v
         ) ;
@@ -619,7 +617,7 @@ otl:Wegelement_Landbouwverkeer
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:functieWGD_rijbaanlokaleweg ;
-            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
+            owl:onProperty adprop:FUNCTIE ;
           ]
         ) ;
     ] ;
@@ -634,7 +632,7 @@ otl:Wegelement_Voetgangersverkeer
           [
             rdf:type owl:Restriction ;
             owl:hasValue adwl:functieWGD_voetpad ;
-            owl:onProperty adprop:wegdeel_v_heeft_FUNCTIE ;
+            owl:onProperty adprop:FUNCTIE ;
           ]
         ) ;
     ] ;
@@ -656,7 +654,7 @@ otl:Wegennet
                     adwl:typeSpecTRA_Weg
                   ) ;
               ] ;
-            owl:onProperty adprop:traject_v_heeft_TYPESPEC ;
+            owl:onProperty adprop:TYPESPEC ;
           ]
         ) ;
     ] ;
