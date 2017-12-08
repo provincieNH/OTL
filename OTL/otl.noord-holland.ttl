@@ -1,7 +1,10 @@
 # baseURI: http://otl.noord-holland.nl/otl/
 # imports: http://otl.noord-holland.nl/areaaldata-prop/v4.03/
+# imports: http://otl.noord-holland.nl/doc/v0.1/
 # imports: http://otl.noord-holland.nl/otb/v_MN/
+# imports: http://otl.noord-holland.nl/se/v0.1/
 
+@prefix : <http://otl.noord-holland.nl/otl/> .
 @prefix ad: <http://otl.noord-holland.nl/areaaldata/v4.03/> .
 @prefix adprop: <http://otl.noord-holland.nl/areaaldata-prop/v4.03/> .
 @prefix adwl: <http://otl.noord-holland.nl/areaaldata-wl/v4.03/> .
@@ -12,10 +15,15 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://otl.noord-holland.nl/doc/v0.1/Document>
+  owl:equivalentClass <http://otl.noord-holland.nl/se/v0.1/document> ;
+.
 otl:
   rdf:type owl:Ontology ;
   owl:imports adprop: ;
+  owl:imports <http://otl.noord-holland.nl/doc/v0.1/> ;
   owl:imports otb: ;
+  owl:imports <http://otl.noord-holland.nl/se/v0.1/> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 otl:Abri
@@ -663,4 +671,7 @@ otl:Zwemwaterborden
   rdf:type owl:Class ;
   rdfs:subClassOf otb:Zwemwaterborden ;
   owl:equivalentClass ad:bordZwemwater_p ;
+.
+<http://otl.noord-holland.nl/se/v0.1/artefact>
+  owl:equivalentClass ad:areaaldata ;
 .
