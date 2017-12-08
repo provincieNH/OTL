@@ -62,7 +62,6 @@ doc:Factuur
 .
 doc:Geo-object
   rdf:type owl:DatatypeProperty ;
-  rdf:type owl:ObjectProperty ;
   rdfs:domain doc:DekkingGeografischGebied ;
   rdfs:label "Geo-object"^^xsd:string ;
   rdfs:range xsd:string ;
@@ -160,8 +159,8 @@ doc:documenthoortbijzaak
   rdfs:range doc:Zaak ;
 .
 doc:filepath
+  rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
   rdfs:domain doc:DocumentLocatie ;
   rdfs:label "filepath"^^xsd:string ;
   rdfs:range xsd:string ;
@@ -175,7 +174,6 @@ doc:onderwerp
 .
 doc:periode
   rdf:type owl:DatatypeProperty ;
-  rdf:type owl:ObjectProperty ;
   rdfs:domain doc:DekkingInTijd ;
   rdfs:label "periode"^^xsd:string ;
   rdfs:range xsd:string ;
