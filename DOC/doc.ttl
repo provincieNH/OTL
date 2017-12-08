@@ -3,27 +3,27 @@
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.w3.org/2004/02/skos/core
 
-@prefix : <http://otl.noord-holland.nl/doc/v0.1/> .
+@prefix doc: <http://otl.noord-holland.nl/doc/v0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:
+doc:
   rdf:type owl:Ontology ;
   owl:imports <http://purl.org/dc/terms/> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
-:Bestek
-  rdf:type :DocumentType ;
+doc:Bestek
+  rdf:type doc:DocumentType ;
   rdfs:label "Bestek"^^xsd:string ;
 .
-:DekkingGeografischGebied
+doc:DekkingGeografischGebied
   rdf:type owl:Class ;
   rdfs:label "DekkingGeografischGebied"^^xsd:string ;
-  rdfs:subClassOf :InformatieOmschrijving ;
+  rdfs:subClassOf doc:InformatieOmschrijving ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
@@ -31,166 +31,166 @@
       owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
     ] ;
 .
-:DekkingInTijd
+doc:DekkingInTijd
   rdf:type owl:Class ;
   rdfs:label "DekkingInTijd"^^xsd:string ;
-  rdfs:subClassOf :InformatieOmschrijving ;
+  rdfs:subClassOf doc:InformatieOmschrijving ;
 .
-:Document
+doc:Document
   rdf:type owl:Class ;
   rdfs:label "Document"^^xsd:string ;
-  rdfs:subClassOf :InformatieObject ;
+  rdfs:subClassOf doc:InformatieObject ;
 .
-:DocumentLocatie
+doc:DocumentLocatie
   rdf:type owl:Class ;
   rdfs:label "DocumentLocatie"^^xsd:string ;
-  rdfs:subClassOf :InformatieOmschrijving ;
+  rdfs:subClassOf doc:InformatieOmschrijving ;
 .
-:DocumentReden
+doc:DocumentReden
   rdf:type owl:Class ;
   rdfs:label "DocumentReden"^^xsd:string ;
-  rdfs:subClassOf :InformatieOmschrijving ;
+  rdfs:subClassOf doc:InformatieOmschrijving ;
 .
-:DocumentType
+doc:DocumentType
   rdf:type owl:Class ;
   rdfs:label "DocumentType"^^xsd:string ;
-  rdfs:subClassOf :InformatieOmschrijving ;
+  rdfs:subClassOf doc:InformatieOmschrijving ;
 .
-:Factuur
-  rdf:type :DocumentType ;
+doc:Factuur
+  rdf:type doc:DocumentType ;
   rdfs:label "Factuur"^^xsd:string ;
 .
-:Geo-object
+doc:Geo-object
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :DekkingGeografischGebied ;
+  rdfs:domain doc:DekkingGeografischGebied ;
   rdfs:label "Geo-object"^^xsd:string ;
   rdfs:range xsd:string ;
 .
-:Handeling
+doc:Handeling
   rdf:type owl:Class ;
   rdfs:label "Handeling"^^xsd:string ;
-  rdfs:subClassOf :InformatieOmschrijving ;
+  rdfs:subClassOf doc:InformatieOmschrijving ;
 .
-:InformatieObject
+doc:InformatieObject
   rdf:type owl:Class ;
   rdfs:label "InformatieObject"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
 .
-:InformatieOmschrijving
+doc:InformatieOmschrijving
   rdf:type owl:Class ;
   rdfs:label "InformatieOmschrijving"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
 .
-:Ontvangen
-  rdf:type :DocumentReden ;
+doc:Ontvangen
+  rdf:type doc:DocumentReden ;
   rdfs:label "Ontvangen"^^xsd:string ;
 .
-:Opgemaakt
-  rdf:type :DocumentReden ;
+doc:Opgemaakt
+  rdf:type doc:DocumentReden ;
   rdfs:label "Opgemaakt"^^xsd:string ;
 .
-:Plan
-  rdf:type :DocumentType ;
+doc:Plan
+  rdf:type doc:DocumentType ;
   rdfs:label "Plan"^^xsd:string ;
 .
-:Project
+doc:Project
   rdf:type owl:Class ;
   rdfs:label "Project"^^xsd:string ;
-  rdfs:subClassOf :InformatieObject ;
+  rdfs:subClassOf doc:InformatieObject ;
 .
-:Rapport
-  rdf:type :DocumentType ;
+doc:Rapport
+  rdf:type doc:DocumentType ;
   rdfs:label "Rapport"^^xsd:string ;
 .
-:Tekening
-  rdf:type :DocumentType ;
+doc:Tekening
+  rdf:type doc:DocumentType ;
   rdfs:label "Tekening"^^xsd:string ;
 .
-:Verzonden
-  rdf:type :DocumentReden ;
+doc:Verzonden
+  rdf:type doc:DocumentReden ;
   rdfs:label "Verzonden"^^xsd:string ;
 .
-:Zaak
+doc:Zaak
   rdf:type owl:Class ;
   rdfs:label "Zaak"^^xsd:string ;
-  rdfs:subClassOf :InformatieObject ;
+  rdfs:subClassOf doc:InformatieObject ;
 .
-:Zienswijze
-  rdf:type :DocumentType ;
+doc:Zienswijze
+  rdf:type doc:DocumentType ;
   rdfs:label "Zienswijze"^^xsd:string ;
 .
-:documentheeftdekkinggeografischgebied
+doc:documentheeftdekkinggeografischgebied
   rdf:type rdf:Property ;
-  rdfs:domain :Document ;
+  rdfs:domain doc:Document ;
   rdfs:label "documentheeftdekkinggeografischgebied"^^xsd:string ;
-  rdfs:range :DekkingGeografischGebied ;
+  rdfs:range doc:DekkingGeografischGebied ;
 .
-:documentheeftdekkingintijd
+doc:documentheeftdekkingintijd
   rdf:type rdf:Property ;
-  rdfs:domain :Document ;
+  rdfs:domain doc:Document ;
   rdfs:label "documentheeftdekkingintijd"^^xsd:string ;
-  rdfs:range :DekkingInTijd ;
+  rdfs:range doc:DekkingInTijd ;
 .
-:documentheeftlocatie
+doc:documentheeftlocatie
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Document ;
+  rdfs:domain doc:Document ;
   rdfs:label "documentheeftlocatie"^^xsd:string ;
-  rdfs:range :DocumentLocatie ;
+  rdfs:range doc:DocumentLocatie ;
 .
-:documentheeftreden
+doc:documentheeftreden
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Document ;
+  rdfs:domain doc:Document ;
   rdfs:label "Document heeft Reden"^^xsd:string ;
-  rdfs:range :DocumentReden ;
+  rdfs:range doc:DocumentReden ;
 .
-:documentheefttype
+doc:documentheefttype
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Document ;
+  rdfs:domain doc:Document ;
   rdfs:label "Document heeft Type"^^xsd:string ;
-  rdfs:range :DocumentType ;
+  rdfs:range doc:DocumentType ;
 .
-:documenthoortbijzaak
+doc:documenthoortbijzaak
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :Document ;
+  rdfs:domain doc:Document ;
   rdfs:label "Document hoort bij Zaak"^^xsd:string ;
-  rdfs:range :Zaak ;
+  rdfs:range doc:Zaak ;
 .
-:filepath
+doc:filepath
   rdf:type owl:FunctionalProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :DocumentLocatie ;
+  rdfs:domain doc:DocumentLocatie ;
   rdfs:label "filepath"^^xsd:string ;
   rdfs:range xsd:string ;
 .
-:onderwerp
+doc:onderwerp
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
-  rdfs:domain :Document ;
+  rdfs:domain doc:Document ;
   rdfs:label "onderwerp"^^xsd:string ;
   rdfs:range xsd:string ;
 .
-:periode
+doc:periode
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:ObjectProperty ;
-  rdfs:domain :DekkingInTijd ;
+  rdfs:domain doc:DekkingInTijd ;
   rdfs:label "periode"^^xsd:string ;
   rdfs:range xsd:string ;
 .
-:soortdocument
+doc:soortdocument
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
-  rdfs:domain :Document ;
+  rdfs:domain doc:Document ;
   rdfs:label "soortdocument"^^xsd:string ;
   rdfs:range xsd:string ;
 .
-:versie
+doc:versie
   rdf:type owl:DatatypeProperty ;
   rdf:type owl:FunctionalProperty ;
-  rdfs:domain :Document ;
+  rdfs:domain doc:Document ;
   rdfs:label "versie"^^xsd:string ;
   rdfs:range xsd:string ;
 .
