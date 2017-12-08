@@ -1,99 +1,99 @@
-# baseURI: http://otl.noord-holland.nl/se/
+# baseURI: http://otl.noord-holland.nl/se/v0.1/
 # imports: http://bimloket.nl/sebim/sebim.rdf
 
-@prefix : <http://otl.noord-holland.nl/se/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix se: <http://otl.noord-holland.nl/se/v0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:
+se:
   rdf:type owl:Ontology ;
   owl:imports <http://bimloket.nl/sebim/sebim.rdf> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-:Artefact_performsFunction_Function
+se:Artefact_performsFunction_Function
   rdf:type owl:ObjectProperty ;
   <http://bimloket.nl/sebim#sourceID> "Rel-00158" ;
-  rdfs:domain :artefact ;
+  rdfs:domain se:artefact ;
   rdfs:label "performs function"@en-gb ;
   rdfs:label "vervult functie"@nl-nl ;
-  rdfs:range :function ;
+  rdfs:range se:function ;
   rdfs:subPropertyOf <http://bimloket.nl/sebim#PhysicalObject_performsFunction_Activity> ;
 .
-:Document_hasSubject_Artefact
+se:Document_hasSubject_Artefact
   rdf:type owl:ObjectProperty ;
   <http://bimloket.nl/sebim#sourceID> "Rel-00223" ;
-  rdfs:domain :document ;
+  rdfs:domain se:document ;
   rdfs:label "has subject"@en-gb ;
   rdfs:label "heeft betrekking op"@nl-nl ;
-  rdfs:range :artefact ;
+  rdfs:range se:artefact ;
   rdfs:subPropertyOf <http://bimloket.nl/sebim#Individual_hasSubject_Individual> ;
 .
-:Document_hasSubject_Function
+se:Document_hasSubject_Function
   rdf:type owl:ObjectProperty ;
   <http://bimloket.nl/sebim#sourceID> "Rel-00222" ;
-  rdfs:domain :document ;
+  rdfs:domain se:document ;
   rdfs:label "has subject"@en-gb ;
   rdfs:label "heeft betrekking op"@nl-nl ;
-  rdfs:range :function ;
+  rdfs:range se:function ;
   rdfs:subPropertyOf <http://bimloket.nl/sebim#Individual_hasSubject_Individual> ;
 .
-:Document_hasVersion_DocumentVersion
+se:Document_hasVersion_DocumentVersion
   rdf:type owl:ObjectProperty ;
   <http://bimloket.nl/sebim#sourceID> "Rel-00221" ;
-  rdfs:domain :document ;
+  rdfs:domain se:document ;
   rdfs:label "has version"@en-gb ;
   rdfs:label "heeft versie"@nl-nl ;
-  rdfs:range :document_version ;
+  rdfs:range se:document_version ;
   rdfs:subPropertyOf <http://bimloket.nl/sebim#Thing_hasVersion_InformationObject> ;
 .
-:Document_isClassifiedAsByLibraryClass_ClassOfDocumentType
+se:Document_isClassifiedAsByLibraryClass_ClassOfDocumentType
   rdf:type owl:ObjectProperty ;
   <http://bimloket.nl/sebim#sourceID> "Rel-00212" ;
-  rdfs:domain :document ;
+  rdfs:domain se:document ;
   rdfs:label "is classified as by library class"@en-gb ;
   rdfs:label "is geclassificeerd als volgens bibliotheekklasse"@nl-nl ;
-  rdfs:range :document_type_library_element_reference ;
+  rdfs:range se:document_type_library_element_reference ;
   rdfs:subPropertyOf <http://bimloket.nl/sebim#Thing_isClassifiedAsByLibraryClass_Catalogue> ;
 .
-:Document_specifies_VAndVActivity
+se:Document_specifies_VAndVActivity
   rdf:type owl:ObjectProperty ;
   <http://bimloket.nl/sebim#sourceID> "Rel-00121" ;
-  rdfs:domain :document ;
+  rdfs:domain se:document ;
   rdfs:label "specificeert"@nl-nl ;
   rdfs:label "specifies"@en-gb ;
-  rdfs:range :VAndV_activity ;
+  rdfs:range se:VAndV_activity ;
   rdfs:subPropertyOf <http://bimloket.nl/sebim#InformationObject_specifies_Thing> ;
 .
-:Requirement_specifies_Document
+se:Requirement_specifies_Document
   rdf:type owl:ObjectProperty ;
   <http://bimloket.nl/sebim#sourceID> "Rel-00312" ;
-  rdfs:domain :requirement ;
+  rdfs:domain se:requirement ;
   rdfs:label "specificeert"@nl-nl ;
   rdfs:label "specifies"@en-gb ;
-  rdfs:range :document ;
+  rdfs:range se:document ;
   rdfs:subPropertyOf <http://bimloket.nl/sebim#InformationObject_specifies_Thing> ;
 .
-:Requirement_specifies_Function
+se:Requirement_specifies_Function
   rdf:type owl:ObjectProperty ;
   <http://bimloket.nl/sebim#sourceID> "Rel-00166" ;
-  rdfs:domain :requirement ;
+  rdfs:domain se:requirement ;
   rdfs:label "specificeert"@nl-nl ;
   rdfs:label "specifies"@en-gb ;
-  rdfs:range :function ;
+  rdfs:range se:function ;
   rdfs:subPropertyOf <http://bimloket.nl/sebim#InformationObject_specifies_Thing> ;
 .
-:VAndVActivity_checks_Function
+se:VAndVActivity_checks_Function
   rdf:type owl:ObjectProperty ;
   <http://bimloket.nl/sebim#sourceID> "Rel-00113" ;
-  rdfs:domain :VAndV_activity ;
+  rdfs:domain se:VAndV_activity ;
   rdfs:label "checks"@en-gb ;
   rdfs:label "controleert"@nl-nl ;
-  rdfs:range :function ;
+  rdfs:range se:function ;
   rdfs:subPropertyOf <http://bimloket.nl/sebim#Activity_checks_Individual> ;
 .
-:VAndV_activity
+se:VAndV_activity
   rdf:type owl:Class ;
   <http://bimloket.nl/sebim#sourceID> "MEl-00041" ;
   rdfs:comment "Activity to perform verification and/or validation"@en-gb ;
@@ -101,7 +101,7 @@
   rdfs:label "VAndV activity"@en-gb ;
   rdfs:subClassOf <http://bimloket.nl/sebim#human_activity> ;
 .
-:artefact
+se:artefact
   rdf:type owl:Class ;
   <http://bimloket.nl/sebim#sourceID> "MEl-00236" ;
   rdfs:comment "A man-made object"@en-gb ;
@@ -119,7 +119,7 @@
       owl:onProperty <http://bimloket.nl/sebim#ConnectionPoint_connectsWith_Artefact> ;
     ] ;
 .
-:document
+se:document
   rdf:type owl:Class ;
   <http://bimloket.nl/sebim#sourceID> "MEl-00157" ;
   rdfs:comment "Concrete or symbolic indication, preserved or recorded, for reconstructing or for proving a phenomenon, whether physical or mental"@en-gb ;
@@ -132,7 +132,7 @@
       owl:onProperty <http://bimloket.nl/sebim#Document_hasVersion_DocumentVersion-inv> ;
     ] ;
 .
-:document_type_library_element_reference
+se:document_type_library_element_reference
   rdf:type owl:Class ;
   <http://bimloket.nl/sebim#sourceID> "MEl-00181" ;
   rdfs:comment "Group of accumulated document types"@en-gb ;
@@ -145,7 +145,7 @@
       owl:onProperty <http://bimloket.nl/sebim#Document_isClassifiedAsByLibraryClass_ClassOfDocumentType> ;
     ] ;
 .
-:document_version
+se:document_version
   rdf:type owl:Class ;
   <http://bimloket.nl/sebim#sourceID> "MEl-00289" ;
   rdfs:comment "An identification that refers to a specific version of a document"@en-gb ;
@@ -153,7 +153,7 @@
   rdfs:label "documentversie"@nl-nl ;
   rdfs:subClassOf <http://bimloket.nl/sebim#information_object> ;
 .
-:function
+se:function
   rdf:type owl:Class ;
   <http://bimloket.nl/sebim#sourceID> "MEl-00176" ;
   rdfs:comment "An activity that is intended to be performed by one or more physical objects, which have a collective role as performer of the occurrence"@en-gb ;
@@ -161,7 +161,7 @@
   rdfs:label "function"@en-gb ;
   rdfs:subClassOf <http://bimloket.nl/sebim#activity> ;
 .
-:process
+se:process
   rdf:type owl:Class ;
   <http://bimloket.nl/sebim#sourceID> "MEl-00187" ;
   rdfs:comment "Set of interrelated or interacting activities which transforms inputs into outputs"@en-gb ;
@@ -169,7 +169,7 @@
   rdfs:label "process"@en-gb ;
   rdfs:subClassOf <http://bimloket.nl/sebim#activity> ;
 .
-:requirement
+se:requirement
   rdf:type owl:Class ;
   <http://bimloket.nl/sebim#sourceID> "MEl-00025" ;
   rdfs:comment "Singular documented physical or functional need that a particular design, product or process must be able to perform"@en-gb ;
@@ -177,7 +177,7 @@
   rdfs:label "requirement"@en-gb ;
   rdfs:subClassOf <http://bimloket.nl/sebim#information_object> ;
 .
-:risk
+se:risk
   rdf:type owl:Class ;
   <http://bimloket.nl/sebim#sourceID> "MEl-00206" ;
   rdfs:comment "A state where the possibility exists of something bad happening"@en-gb ;
@@ -195,7 +195,7 @@
       owl:onProperty <http://bimloket.nl/sebim#Risk_hasPriority_RiskPriorityNumber-inv> ;
     ] ;
 .
-:role
+se:role
   rdf:type owl:Class ;
   <http://bimloket.nl/sebim#sourceID> "MEl-00006" ;
   rdfs:comment "Function assumed by a thing in a particular situation"@en-gb ;
