@@ -1,0 +1,89 @@
+# baseURI: http://otl.noord-holland.nl/otl/2018/
+# imports: http://otl.noord-holland.nl/areaaldata-prop/v4.1/
+# imports: http://otl.noord-holland.nl/doc/v0.1/
+# imports: http://otl.noord-holland.nl/otb/v_MN/
+# imports: http://otl.noord-holland.nl/se/v0.1/
+# imports: http://www.buildingbits.nl/coins2/draft/IMBOR.rdf
+
+@prefix : <http://otl.noord-holland.nl/otl/2018/> .
+@prefix cbim-2.0: <http://www.coinsweb.nl/cbim-2.0.rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix v_MN: <http://otl.noord-holland.nl/otb/v_MN/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://otl.noord-holland.nl/areaaldata/v4.1/bak_p>
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Zandkist>
+          <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Afvalbak>
+        ) ;
+    ] ;
+.
+<http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelBerm_v>
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:intersectionOf (
+          [
+            rdf:type owl:Restriction ;
+            owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_grasEnKruidachtigen> ;
+            owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
+          ]
+          <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Groenobject>
+        ) ;
+    ] ;
+.
+<http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeel_v>
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:intersectionOf (
+          <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Groenobject>
+          [
+            rdf:type owl:Class ;
+            owl:unionOf (
+                [
+                  rdf:type owl:Restriction ;
+                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_planten> ;
+                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
+                ]
+                [
+                  rdf:type owl:Restriction ;
+                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_bosplantsoen> ;
+                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
+                ]
+                [
+                  rdf:type owl:Restriction ;
+                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_bodembedekkers> ;
+                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
+                ]
+                [
+                  rdf:type owl:Restriction ;
+                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_haag> ;
+                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
+                ]
+                [
+                  rdf:type owl:Restriction ;
+                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_struikrozen> ;
+                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
+                ]
+                [
+                  rdf:type owl:Restriction ;
+                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_heesters> ;
+                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
+                ]
+              ) ;
+          ]
+        ) ;
+    ] ;
+.
+:
+  rdf:type owl:Ontology ;
+  owl:imports <http://otl.noord-holland.nl/areaaldata-prop/v4.1/> ;
+  owl:imports <http://otl.noord-holland.nl/doc/v0.1/> ;
+  owl:imports v_MN: ;
+  owl:imports <http://otl.noord-holland.nl/se/v0.1/> ;
+  owl:imports <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
