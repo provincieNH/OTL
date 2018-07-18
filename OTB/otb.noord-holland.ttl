@@ -20,7 +20,7 @@ otb:
 otb:Abri
   rdf:type owl:Class ;
   rdfs:label "O_1.1.4.3.2 Abri"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Abri> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01094> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -53,7 +53,7 @@ otb:Belijning
 otb:Beplanting_langs_Wegen_Vaarwegen_en_Terreinen
   rdf:type owl:Class ;
   rdfs:label "O_3.3 Beplanting langs Wegen, Vaarwegen en Terreinen"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Beplanting> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01410> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -64,7 +64,7 @@ otb:Beplanting_langs_Wegen_Vaarwegen_en_Terreinen
 otb:Bermbeplanting
   rdf:type owl:Class ;
   rdfs:label "O_3.3.1 Bermbeplanting"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Berm> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01431> ;
   rdfs:subClassOf otb:Beplanting_langs_Wegen_Vaarwegen_en_Terreinen ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -86,7 +86,7 @@ otb:Bermplankjes
 otb:Bermsloot_greppel
   rdf:type owl:Class ;
   rdfs:label "O_6.2 Bermsloot/greppel"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Sloot> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01440> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -117,6 +117,7 @@ otb:Besturingskast_matrixpaneel_Vaarwegen
 otb:Betonning
   rdf:type owl:Class ;
   rdfs:label "O_2.1.3.1 Betonning"^^xsd:string ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03667> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -133,6 +134,7 @@ otb:Beweegbaar_kunstwerk
 otb:Bewegwijzering
   rdf:type owl:Class ;
   rdfs:label "O_1.2.1.1 Bewegwijzering"^^xsd:string ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01481> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -143,7 +145,7 @@ otb:Bewegwijzering
 otb:Bouwdeel_Beweegbaar_kunstwerk
   rdf:type owl:Class ;
   rdfs:label "O_7.2.1.1 Bouwdeel (NEN 2767-4) Beweegbaar Kunstwerk"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/BeweegbareBrug> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01340> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -154,7 +156,7 @@ otb:Bouwdeel_Beweegbaar_kunstwerk
 otb:Bouwdeel_Geluidwerende_constructie
   rdf:type owl:Class ;
   rdfs:label "O_1.2.2.1.1 Bouwdeel (NEN 2767-4) Geluidwerende constructie"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Geluidsscherm> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB02094> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -171,7 +173,7 @@ otb:Bouwdeel_NEN_2767-4_Oever
 otb:Bouwdeel_NEN_2767-4_Schutsluis
   rdf:type owl:Class ;
   rdfs:label "O_2.4.1.1 Bouwdeel (NEN 2767-4) Schutsluis"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Schutsluis> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03052> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -182,7 +184,7 @@ otb:Bouwdeel_NEN_2767-4_Schutsluis
 otb:Bouwdeel_Vast_kunstwerk
   rdf:type owl:Class ;
   rdfs:label "O_7.2.1.1 Bouwdeel (NEN 2767-4) Vast Kunstwerk"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/VasteBrug> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01342> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -193,7 +195,7 @@ otb:Bouwdeel_Vast_kunstwerk
 otb:Bushalte
   rdf:type owl:Class ;
   rdfs:label "O_1.1.4.3 Bushalte"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Bushalte> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01687> ;
   rdfs:subClassOf otb:Verblijfspunt_Weg ;
   skos:prefLabel "Bushalte"^^xsd:string ;
 .
@@ -206,7 +208,7 @@ otb:Camera_Vaarweg
 otb:DRIS-paneel
   rdf:type owl:Class ;
   rdfs:label "O_1.1.4.3.3 DRIS-paneel"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/DynamischRouteInformatiepaneel> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03747> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -217,7 +219,7 @@ otb:DRIS-paneel
 otb:Dataverzamelsysteem
   rdf:type owl:Class ;
   rdfs:label "O_1.2.5 Dataverzamelsysteem"^^xsd:string ;
-  rdfs:subClassOf cbnltop:Systeem ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB00048> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -230,12 +232,13 @@ otb:Dataverzamelsysteem
 otb:Detectielus
   rdf:type owl:Class ;
   rdfs:label "O_5.1.1.3 Detectielus"^^xsd:string ;
-  rdfs:subClassOf cbnltop:Installatiecomponent ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB00026> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
       owl:someValuesFrom otb:VRI_Weg ;
     ] ;
+  owl:equivalentClass <http://definities.geostandaarden.nl/concepten/imgeo/doc/begrip/detectielus> ;
   owl:equivalentClass <http://www.nen2767-4.nl/bouwdeel/detail/144.html> ;
   skos:prefLabel "Detectielus"^^xsd:string ;
 .
@@ -248,7 +251,7 @@ otb:Detectielus_Verkeersteller
 otb:Draagconstructie_DRIS
   rdf:type owl:Class ;
   rdfs:label "O_1.1.4.3.4 Draagconstructie DRIS"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Draagconstructie> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01012> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -269,12 +272,13 @@ otb:Draagconstructie_matrixpaneel_Vaarwegen
 otb:Draagkrachtige_berm
   rdf:type owl:Class ;
   rdfs:label "O_1.1.2 Draagkrachtige berm"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Berm> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01431> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
       owl:someValuesFrom otb:Weg ;
     ] ;
+  owl:equivalentClass <http://definities.geostandaarden.nl/concepten/imgeo/doc/begrip/berm> ;
   skos:changeNote "Veranderd van Constructieve berm om beter in lijn te zijn met CROW benaming"^^xsd:string ;
   skos:definition "Draagkrachtige berm: zijberm met voldoende draagkracht voor een personenauto. Berm waarop een voertuig (personenauto) bestuurbaar blijft."^^xsd:string ;
   skos:note "Definitie CROW pub. 328 Handboek wegontwerp 2013 - Basiscriteria"^^xsd:string ;
@@ -283,18 +287,19 @@ otb:Draagkrachtige_berm
 otb:Ecoduct
   rdf:type owl:Class ;
   rdfs:label "O_3.2.2 Ecoduct"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Ecoduct> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01954> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
       owl:someValuesFrom otb:Ecologische_verbindingen ;
     ] ;
+  owl:equivalentClass <http://definities.geostandaarden.nl/concepten/imgeo/doc/begrip/_ecoduct> ;
   skos:prefLabel "Ecoduct"^^xsd:string ;
 .
 otb:Ecologisch_netwerk
   rdf:type owl:Class ;
   rdfs:label "O_3 Ecologisch netwerk"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Netwerk> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01807> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -338,7 +343,7 @@ otb:Ecopassages
 otb:Ecotopen
   rdf:type owl:Class ;
   rdfs:label "O_3.1.3 Ecotopen"^^xsd:string ;
-  rdfs:subClassOf cbnltop:Ruimte ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB00047> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -349,7 +354,7 @@ otb:Ecotopen
 otb:Element_Beweegbaar_kunstwerk
   rdf:type owl:Class ;
   rdfs:label "O_7.2.1 Element (NEN 2767-4) Beweegbaar kunstwerk"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/BeweegbareBrug> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01340> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -370,7 +375,6 @@ otb:Element_NEN_2767-4_Oever
 otb:Element_NEN_2767-4_Schutsluis
   rdf:type owl:Class ;
   rdfs:label "O_2.4.1 Element (NEN 2767-4) Schutsluis"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Schutsluis> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -381,7 +385,6 @@ otb:Element_NEN_2767-4_Schutsluis
 otb:Element_Vast_kunstwerk
   rdf:type owl:Class ;
   rdfs:label "O_7.2.1 Element (NEN 2767-4) Vast kunstwerk"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/VasteBrug> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -392,28 +395,31 @@ otb:Element_Vast_kunstwerk
 otb:Energieverzorging_zonnepaneel
   rdf:type owl:Class ;
   rdfs:label "O_1.2.5.1.4 Energieverzorging (zonnepaneel)"^^xsd:string ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03541> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
       owl:someValuesFrom otb:Verkeersteller ;
     ] ;
+  owl:equivalentClass <http://definities.geostandaarden.nl/concepten/imgeo/doc/begrip/zonnepaneel> ;
   skos:prefLabel "Energieverzorging (zonnepaneel)"^^xsd:string ;
 .
 otb:Faunaraster
   rdf:type owl:Class ;
   rdfs:label "O_3.1.2 Faunaraster"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Faunaraster> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01998> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
       owl:someValuesFrom otb:Ecologische_verbindingszone ;
     ] ;
+  owl:equivalentClass <http://definities.geostandaarden.nl/concepten/imgeo/doc/begrip/faunaraster> ;
   skos:prefLabel "Faunaraster"^^xsd:string ;
 .
 otb:Geluidscherm
   rdf:type owl:Class ;
   rdfs:label "O_1.2.2 Geluidscherm"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/GeluidsbeperkendeConstructie> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB02095> ;
   rdfs:subClassOf otb:Weginpassingsvoorzieningen ;
   skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen. De NEN 2767-4 decompositie wordt gevolgd, waarbij GELUIDWERENDE_VOORZIENING als Beheerobject is aangemaakt om het element 'geluidwerende constructie' van een bovenliggend beheerobject te voorzien. Geluidwerende voorzieningen worden als zelfstandige objecten beheerd en niet als element van bv bruggen of wegen (zoals in de NEN 2767-4 beschreven)."^^xsd:string ;
   skos:note "Definitie objectdefinitie BUDATA v3.4.1"^^xsd:string ;
@@ -422,7 +428,7 @@ otb:Geluidscherm
 otb:Geluidwerende_constructie
   rdf:type owl:Class ;
   rdfs:label "O_1.2.2.1 Geluidwerende constructie (NEN 2767-4)"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Geluidsscherm> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB02094> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -441,7 +447,7 @@ otb:Gladheidsmeldsysteem
 otb:Habitats
   rdf:type owl:Class ;
   rdfs:label "O_3.1.4 Habitats"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Biotoop> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01508> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -452,7 +458,7 @@ otb:Habitats
 otb:Haven
   rdf:type owl:Class ;
   rdfs:label "O_2.3.1 Haven"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Havengebied> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB02234> ;
   rdfs:subClassOf otb:Verblijfspunt_Vaarweg ;
   skos:prefLabel "Haven"^^xsd:string ;
 .
@@ -471,7 +477,7 @@ otb:Kabels_en_Leidingen
 otb:Knooppunt
   rdf:type owl:Class ;
   rdfs:label "O_1.1.3 Knooppunt"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/OntmoetingVanVerkeer> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01130> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -484,7 +490,7 @@ otb:Knooppunt
 otb:Kolk_en_put
   rdf:type owl:Class ;
   rdfs:label "O_6.3 Kolk en put"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Rioolput> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01168> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -495,7 +501,7 @@ otb:Kolk_en_put
 otb:Kolkleiding
   rdf:type owl:Class ;
   rdfs:label "O_6.4 Kolkleiding"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Leiding> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01052> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -506,6 +512,7 @@ otb:Kolkleiding
 otb:Kruising
   rdf:type owl:Class ;
   rdfs:label "O_1.1.3.2 Kruising"^^xsd:string ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01246> ;
   rdfs:subClassOf otb:Knooppunt ;
   owl:disjointWith otb:Uitwisselpunt_weg ;
   skos:definition "Een knooppunt waar twee of meer verkeersstromen elkaar gelijkvloers kruisen maar waar geen uitwisseling van verkeer plaatsvindt (bijvoorbeeld een fietspad dat een gebiedsontsluitingsweg kruist)."^^xsd:string ;
@@ -516,6 +523,7 @@ otb:Kruising
 otb:Kruispunt
   rdf:type owl:Class ;
   rdfs:label "O_1.1.3.1.2 Kruispunt"^^xsd:string ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01297> ;
   rdfs:subClassOf otb:Uitwisselpunt_weg ;
   owl:disjointWith otb:Rotonde ;
   skos:definition "Een Uitwisselpunt Weg waar gelijkvloerse uitwisseling van verkeer plaats kan vinden."^^xsd:string ;
@@ -525,7 +533,7 @@ otb:Kruispunt
 otb:Kunstwerk
   rdf:type owl:Class ;
   rdfs:label "O_7 Kunstwerk"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Kunstwerk> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01117> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -562,7 +570,7 @@ otb:Materieel_gladheidsbestrijding
 otb:Natuurlijke_overgangen
   rdf:type owl:Class ;
   rdfs:label "O_3.1.1 Natuurlijke overgangen"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/NatuurlijkeTerreinafscheiding> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB02310> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -573,6 +581,7 @@ otb:Natuurlijke_overgangen
 otb:Oever
   rdf:type owl:Class ;
   rdfs:label "O_2.1.1 Oever"^^xsd:string ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01443> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -585,7 +594,7 @@ otb:Oever
 otb:Oeverbeplanting
   rdf:type owl:Class ;
   rdfs:label "O_3.3.2 Oeverbeplanting"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Oever> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01443> ;
   rdfs:subClassOf otb:Beplanting_langs_Wegen_Vaarwegen_en_Terreinen ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -597,7 +606,7 @@ otb:Oeverbeplanting
 otb:Onderdelen_VRI
   rdf:type owl:Class ;
   rdfs:label "O_5.1.1.4 Onderdelen VRI"^^xsd:string ;
-  rdfs:subClassOf cbnltop:Bouwproduct ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB00015> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -608,7 +617,7 @@ otb:Onderdelen_VRI
 otb:Openbare_Verlichting
   rdf:type owl:Class ;
   rdfs:label "O_1.2.4 Openbare Verlichting"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/OpenbareVerlichting> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01058> ;
   rdfs:subClassOf otb:Weginpassingsvoorzieningen ;
   skos:prefLabel "Openbare Verlichting"^^xsd:string ;
 .
@@ -621,7 +630,7 @@ otb:Opstallen
 otb:Overige_voorzieningen
   rdf:type owl:Class ;
   rdfs:label "O_4 Overige voorzieningen"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Voorziening> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01417> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -632,7 +641,7 @@ otb:Overige_voorzieningen
 otb:Parkeerplaats
   rdf:type owl:Class ;
   rdfs:label "O_1.1.4.2 Parkeerplaats"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Parkeerplaats> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01711> ;
   rdfs:subClassOf otb:Verblijfspunt_Weg ;
   skos:prefLabel "Parkeerplaats"^^xsd:string ;
   skos:relatedMatch <http://ont.cbnl.org/cb/def/Parkeerplaats> ;
@@ -640,7 +649,7 @@ otb:Parkeerplaats
 otb:Perron
   rdf:type owl:Class ;
   rdfs:label "O_1.1.4.3.1 Perron"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Halte> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01688> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -661,7 +670,7 @@ otb:Presentatiepaneel_matrix_Vaarwegen
 otb:Provinciaal_systeem
   rdf:type owl:Class ;
   rdfs:label "O_0 Provinciaal systeem"^^xsd:string ;
-  rdfs:subClassOf cbnltop:Systeem ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB00048> ;
   owl:versionInfo "0.1"^^xsd:string ;
   skos:definition "Een logisch samenwerkend geheel van provinciale fysieke objecten of van elkaar  afhankelijke provinciale fysieke objecten, die gezamenlijk een functie vervullen."^^xsd:string ;
   skos:note "Definitie gebaseerd op CBNL"^^xsd:string ;
@@ -670,7 +679,7 @@ otb:Provinciaal_systeem
 otb:Riool
   rdf:type owl:Class ;
   rdfs:label "O_6.1 Riool"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Rioolstelsel> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01867> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -681,6 +690,7 @@ otb:Riool
 otb:Rotonde
   rdf:type owl:Class ;
   rdfs:label "O_1.1.3.1.1 Rotonde"^^xsd:string ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB02657> ;
   rdfs:subClassOf otb:Uitwisselpunt_weg ;
   owl:disjointWith otb:Kruispunt ;
   skos:definition "Een verkeersplein waar het verkeer op het plein voorrang heeft, en waarop de wegen radiaal aansluiten."^^xsd:string ;
@@ -690,7 +700,7 @@ otb:Rotonde
 otb:Scheepvaartsein
   rdf:type owl:Class ;
   rdfs:label "O_5.2.2 Scheepvaartsein"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Seinlicht> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03062> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -701,7 +711,7 @@ otb:Scheepvaartsein
 otb:Schutsluis
   rdf:type owl:Class ;
   rdfs:label "O_2.4 Schutsluis"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Schutsluis> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03052> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -712,7 +722,7 @@ otb:Schutsluis
 otb:Technische_Installaties_Vaarwegen
   rdf:type owl:Class ;
   rdfs:label "O_5.2.1 Technische Installaties Vaarwegen"^^xsd:string ;
-  rdfs:subClassOf cbnltop:Installatieelement ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB00020> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -749,7 +759,7 @@ otb:Terreinen
 otb:Uitwisselpunt_Vaarweg
   rdf:type owl:Class ;
   rdfs:label "O_2.2 Uitwisselpunt Vaarweg"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/OntmoetingVanVerkeer> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01130> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -760,6 +770,7 @@ otb:Uitwisselpunt_Vaarweg
 otb:Uitwisselpunt_weg
   rdf:type owl:Class ;
   rdfs:label "O_1.1.3.1 Uitwisselpunt Weg"^^xsd:string ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01298> ;
   rdfs:subClassOf otb:Knooppunt ;
   owl:disjointWith otb:Kruising ;
   skos:definition "Een knooppunt waar uitwisseling van verkeer mogelijk is."^^xsd:string ;
@@ -770,7 +781,7 @@ otb:Uitwisselpunt_weg
 otb:VRI-camera
   rdf:type owl:Class ;
   rdfs:label "O_5.1.1.1 VRI-camera"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Camera> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01702> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -781,7 +792,7 @@ otb:VRI-camera
 otb:VRI_Weg
   rdf:type owl:Class ;
   rdfs:label "O_5.1.1 VRI Weg"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Verkeersregelinstallatie> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01921> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -793,7 +804,7 @@ otb:VRI_Weg
 otb:Vaarweg
   rdf:type owl:Class ;
   rdfs:label "O_2.1 Vaarweg"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Vaarweg> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03141> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -814,7 +825,7 @@ otb:Vaarwegbodem
 otb:Vaarwegennet
   rdf:type owl:Class ;
   rdfs:label "O_2 Vaarwegennet (traject)"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Netwerk> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01807> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -841,7 +852,7 @@ otb:Vast_kunstwerk
 otb:Verblijfspunt_Vaarweg
   rdf:type owl:Class ;
   rdfs:label "O_2.3 Verblijfspunt Vaarweg"^^xsd:string ;
-  rdfs:subClassOf cbnltop:Functieruimte ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB00046> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -852,7 +863,7 @@ otb:Verblijfspunt_Vaarweg
 otb:Verblijfspunt_Weg
   rdf:type owl:Class ;
   rdfs:label "O_1.1.4 Verblijfspunt Weg"^^xsd:string ;
-  rdfs:subClassOf cbnltop:Functieruimte ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB00046> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -869,7 +880,7 @@ otb:Verkeersgeleiding
 otb:Verkeersmanagementsysteem
   rdf:type owl:Class ;
   rdfs:label "O_5 Verkeersmanagementsysteem"^^xsd:string ;
-  rdfs:subClassOf cbnltop:Systeem ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB00048> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -908,21 +919,21 @@ otb:Verkeersteller
 otb:Verzorgingsplaats
   rdf:type owl:Class ;
   rdfs:label "O_1.1.4.4 Verzorgingsplaats"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Verzorgingsplaats> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03385> ;
   rdfs:subClassOf otb:Verblijfspunt_Weg ;
   skos:prefLabel "Verzorgingsplaats"^^xsd:string ;
 .
 otb:Vluchthaven
   rdf:type owl:Class ;
   rdfs:label "O_1.1.4.1 Vluchthaven"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Vluchthaven> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03413> ;
   rdfs:subClassOf otb:Verblijfspunt_Weg ;
   skos:prefLabel "Vluchthaven"^^xsd:string ;
 .
 otb:Voertuigkering
   rdf:type owl:Class ;
   rdfs:label "O_1.2.3 Voertuigkering"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Geleideconstructie> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01039> ;
   rdfs:subClassOf otb:Weginpassingsvoorzieningen ;
   skos:definition "Bermbeveiligingsconstructie of kerende leuning die tot doel heeft een gevarenzone af te schermen voor uit koers geraakte voertuigen. "^^xsd:string ;
   skos:note "Definitie RWS Objectenbibliotheek"^^xsd:string ;
@@ -931,7 +942,7 @@ otb:Voertuigkering
 otb:Waarnemingscamera_Wegverkeer
   rdf:type owl:Class ;
   rdfs:label "O_5.1.3.1 Waarnemingscamera Wegverkeer"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Camera> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01702> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -942,7 +953,7 @@ otb:Waarnemingscamera_Wegverkeer
 otb:Waarnemingssysteem_Wegverkeer
   rdf:type owl:Class ;
   rdfs:label "O_5.1.3 Waarnemingssysteem Wegverkeer"^^xsd:string ;
-  rdfs:subClassOf cbnltop:Systeem ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB00048> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -959,7 +970,7 @@ otb:Wachtplaats
 otb:Waterberging
   rdf:type owl:Class ;
   rdfs:label "O_3.1.5 Waterberging"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/WaterbergendGroen> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03470> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -970,7 +981,7 @@ otb:Waterberging
 otb:Waterhuishouding
   rdf:type owl:Class ;
   rdfs:label "O_6 Waterhuishouding"^^xsd:string ;
-  rdfs:subClassOf cbnltop:Systeem ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB00048> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -981,7 +992,7 @@ otb:Waterhuishouding
 otb:Weg
   rdf:type owl:Class ;
   rdfs:label "O_1.1 Weg"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Weg> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01031> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -994,7 +1005,7 @@ otb:Weg
 otb:Wegelement_Autoverkeer
   rdf:type owl:Class ;
   rdfs:label "O_1.1.1.1 Wegelement Autoverkeer"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Autoweg> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01255> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -1011,7 +1022,7 @@ otb:Wegelement_Autoverkeer
 otb:Wegelement_Busverkeer
   rdf:type owl:Class ;
   rdfs:label "O_1.1.1.2 Wegelement Busverkeer"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Autoweg> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01255> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -1028,7 +1039,7 @@ otb:Wegelement_Busverkeer
 otb:Wegelement_Fietsverkeer
   rdf:type owl:Class ;
   rdfs:label "O_1.1.1.3 Wegelement Fietsverkeer"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Fietspad> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01030> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -1053,7 +1064,7 @@ otb:Wegelement_HOV
 otb:Wegelement_Landbouwverkeer
   rdf:type owl:Class ;
   rdfs:label "O_1.1.1.4 Wegelement Landbouwverkeer"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Ventweg> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03353> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -1078,7 +1089,7 @@ otb:Wegelement_Openbaar_Vervoer
 otb:Wegelement_Voetgangersverkeer
   rdf:type owl:Class ;
   rdfs:label "O_1.1.1.6 Wegelement Voetgangersverkeer"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Voetpad> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB03292> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -1095,7 +1106,7 @@ otb:Wegelement_Voetgangersverkeer
 otb:Wegennet
   rdf:type owl:Class ;
   rdfs:label "O_1 Wegennet"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Wegennet> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01860> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -1108,7 +1119,7 @@ otb:Wegennet
 otb:Weginpassingsvoorzieningen
   rdf:type owl:Class ;
   rdfs:label "O_1.2 Weginpassingsvoorzieningen"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Voorziening> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01417> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
@@ -1119,7 +1130,7 @@ otb:Weginpassingsvoorzieningen
 otb:Wegvak
   rdf:type owl:Class ;
   rdfs:label "Wegvak"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Wegvak> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01241> ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1131,7 +1142,7 @@ otb:Wegvak
 otb:Wegverkeerssein
   rdf:type owl:Class ;
   rdfs:label "O_5.2.3 Wegverkeerssein"^^xsd:string ;
-  rdfs:subClassOf <http://ont.cbnl.org/cb/def/Bruglicht> ;
+  rdfs:subClassOf <http://ont.cbnl.org/cb/def/CB01665> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty otb:partOf ;
