@@ -1,8 +1,5 @@
 # baseURI: http://otl.noord-holland.nl/otl/2018/
 # imports: http://otl.noord-holland.nl/areaaldata-prop/v4.1/
-# imports: http://otl.noord-holland.nl/doc/v0.1/
-# imports: http://otl.noord-holland.nl/otb/v_MN/
-# imports: http://otl.noord-holland.nl/se/v0.1/
 # imports: http://www.buildingbits.nl/coins2/draft/IMBOR.rdf
 
 @prefix : <http://otl.noord-holland.nl/otl/2018/> .
@@ -10,7 +7,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix v_MN: <http://otl.noord-holland.nl/otb/v_MN/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://otl.noord-holland.nl/areaaldata/v4.1/bak_p>
@@ -23,6 +20,8 @@
     ] ;
 .
 <http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelBerm_v>
+  owl:disjointWith <http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelPlantvak_v> ;
+  owl:disjointWith <http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeel_v> ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
@@ -35,7 +34,9 @@
         ) ;
     ] ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeel_v>
+<http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelPlantvak_v>
+  owl:disjointWith <http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelBerm_v> ;
+  owl:disjointWith <http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeel_v> ;
   owl:equivalentClass [
       rdf:type owl:Class ;
       owl:intersectionOf (
@@ -78,12 +79,29 @@
         ) ;
     ] ;
 .
+<http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeel_v>
+  owl:disjointWith <http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelBerm_v> ;
+  owl:disjointWith <http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelPlantvak_v> ;
+  owl:equivalentClass <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Groenobject> ;
+.
+<http://otl.noord-holland.nl/areaaldata/v4.1/beheergrenzen_v>
+  skos:broadMatch <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Functionele_gebieden> ;
+.
+<http://otl.noord-holland.nl/areaaldata/v4.1/bordScheepvaart_p>
+  owl:equivalentClass <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Scheepvaartbord> ;
+.
+<http://otl.noord-holland.nl/areaaldata/v4.1/bordWegwijzer_p>
+  owl:equivalentClass <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Wegwijzer> ;
+.
+<http://otl.noord-holland.nl/areaaldata/v4.1/bordZwemwater_p>
+  skos:relatedMatch <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Informatiepaneel> ;
+.
+<http://otl.noord-holland.nl/areaaldata/v4.1/bord_p>
+  skos:relatedMatch <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Borden> ;
+.
 :
   rdf:type owl:Ontology ;
   owl:imports <http://otl.noord-holland.nl/areaaldata-prop/v4.1/> ;
-  owl:imports <http://otl.noord-holland.nl/doc/v0.1/> ;
-  owl:imports v_MN: ;
-  owl:imports <http://otl.noord-holland.nl/se/v0.1/> ;
   owl:imports <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf> ;
-  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+  owl:versionInfo "Created with TopBraid Composer" ;
 .
