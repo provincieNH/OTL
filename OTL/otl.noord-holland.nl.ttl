@@ -99,6 +99,21 @@
 <http://otl.noord-holland.nl/areaaldata/v4.1/bord_p>
   skos:relatedMatch <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Borden> ;
 .
+<http://otl.noord-holland.nl/areaaldata/v4.1/kastDRIS_p>
+  owl:equivalentClass <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#DRIS-kast> ;
+.
+<http://otl.noord-holland.nl/areaaldata/v4.1/kastOvl_p>
+  owl:equivalentClass <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#OV-kast> ;
+.
+<http://otl.noord-holland.nl/areaaldata/v4.1/kastVri_p>
+  owl:equivalentClass <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#VRI-kast> ;
+.
+<http://otl.noord-holland.nl/areaaldata/v4.1/kunstwerkBeweegbaar_p>
+  owl:equivalentClass <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Brug_type_beweegbare_brug> ;
+.
+<http://otl.noord-holland.nl/areaaldata/v4.1/kunstwerkVast_p>
+  owl:equivalentClass <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Brug_type_vaste_brug> ;
+.
 :
   rdf:type owl:Ontology ;
   owl:imports <http://otl.noord-holland.nl/areaaldata-prop/v4.1/> ;
