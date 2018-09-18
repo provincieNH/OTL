@@ -1,13 +1,110 @@
-# baseURI: http://otl.noord-holland.nl/core
+# baseURI: http://otl.noord-holland.nl/core/
+# imports: http://binkhoffmann.org/ontologies/top
 # prefix: core
 
-@prefix core: <http://otl.noord-holland.nl/core#> .
+@prefix core: <http://otl.noord-holland.nl/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://otl.noord-holland.nl/core>
+core:
   rdf:type owl:Ontology ;
+  owl:imports <http://binkhoffmann.org/ontologies/top> ;
   owl:versionInfo "Created with TopBraid Composer" ;
+.
+core:Gelijkvloers_Kruispunt
+  rdf:type owl:Class ;
+  rdfs:label "Gelijkvloers Kruispunt" ;
+  rdfs:subClassOf core:Kruispunt ;
+.
+core:Intersectie
+  rdf:type owl:Class ;
+  rdfs:label "Intersectie" ;
+  rdfs:subClassOf core:WegNode ;
+.
+core:Kruispunt
+  rdf:type owl:Class ;
+  rdfs:label "Kruispunt" ;
+  rdfs:subClassOf core:Intersectie ;
+.
+core:Netwerk
+  rdf:type owl:Class ;
+  rdfs:label "Netwerk" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Systeem> ;
+.
+core:NetwerkKruising
+  rdf:type owl:Class ;
+  rdfs:label "Netwerk kruising" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
+.
+core:NetwerkLink
+  rdf:type owl:Class ;
+  rdfs:label "Netwerk link" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
+.
+core:NetwerkNode
+  rdf:type owl:Class ;
+  rdfs:label "Netwerk node" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
+.
+core:Ongelijkvloers_Kruispunt
+  rdf:type owl:Class ;
+  rdfs:label "Ongelijkvloers Kruispunt" ;
+  rdfs:subClassOf core:Kruispunt ;
+.
+core:OpenbaarVervoerNetwerk
+  rdf:type owl:Class ;
+  rdfs:label "Openbaar vervoer netwerk" ;
+  rdfs:subClassOf core:Netwerk ;
+.
+core:Traject
+  rdf:type owl:Class ;
+  rdfs:label "Traject" ;
+  rdfs:subClassOf core:WegLink ;
+.
+core:VaarwegLink
+  rdf:type owl:Class ;
+  rdfs:label "Vaarweg link" ;
+  rdfs:subClassOf core:NetwerkLink ;
+.
+core:VaarwegNode
+  rdf:type owl:Class ;
+  rdfs:label "Vaarweg node" ;
+  rdfs:subClassOf core:NetwerkNode ;
+.
+core:VaarwegenNetwerk
+  rdf:type owl:Class ;
+  rdfs:label "Vaarwegen netwerk" ;
+  rdfs:subClassOf core:Netwerk ;
+.
+core:WegBaan
+  rdf:type owl:Class ;
+  rdfs:label "Weg baan" ;
+  rdfs:subClassOf core:WegLink ;
+.
+core:WegLink
+  rdf:type owl:Class ;
+  rdfs:label "Weg link" ;
+  rdfs:subClassOf core:NetwerkLink ;
+.
+core:WegNode
+  rdf:type owl:Class ;
+  rdfs:label "Weg node" ;
+  rdfs:subClassOf core:NetwerkNode ;
+.
+core:WegStrook
+  rdf:type owl:Class ;
+  rdfs:label "Weg strook" ;
+  rdfs:subClassOf core:WegLink ;
+.
+core:WegVak
+  rdf:type owl:Class ;
+  rdfs:label "Weg vak" ;
+  rdfs:subClassOf core:WegLink ;
+.
+core:WegenNetwerk
+  rdf:type owl:Class ;
+  rdfs:label "Wegen netwerk" ;
+  rdfs:subClassOf core:Netwerk ;
 .
