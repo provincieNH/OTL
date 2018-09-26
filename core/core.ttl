@@ -1,13 +1,211 @@
-# baseURI: http://otl.noord-holland.nl/core
+# baseURI: http://otl.noord-holland.nl/core/
+# imports: http://binkhoffmann.org/ontologies/top
+# imports: http://www.w3.org/2004/02/skos/core
 # prefix: core
 
-@prefix core: <http://otl.noord-holland.nl/core#> .
+@prefix core: <http://otl.noord-holland.nl/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://otl.noord-holland.nl/core>
+core:
   rdf:type owl:Ontology ;
+  owl:imports <http://binkhoffmann.org/ontologies/top> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created with TopBraid Composer" ;
+.
+core:As
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDRuimte> ;
+.
+core:AsGeometrie
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDCoordinaat> ;
+.
+core:Baan
+  rdf:type owl:Class ;
+  rdfs:label "Baan"@nl-nl ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Artefact> ;
+  skos:definition "Gedeelte van een weg, in lengterichting begrensd door een beginraai en een eindraai, en in dwarsrichting begrensd door:  twee opeenvolgende overgangen verhard/onverhard of een overgang verhard/onverhard en een weggrens;"@nl-nl ;
+.
+core:BaanAs
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:WegAs ;
+.
+core:Constructie
+  rdf:type owl:Class ;
+  rdfs:label "Constructie"@nl-nl ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Artefact> ;
+.
+core:FietsNetwerk
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:Netwerk ;
+.
+core:GeleiderailConstructie
+  rdf:type owl:Class ;
+  rdfs:label "Geleiderail constructie" ;
+  rdfs:subClassOf core:ScheidendeConstructie ;
+.
+core:GeluidbeperkendeConstructie
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:ScheidendeConstructie ;
+  skos:definition "Samenstel van meerdere constructie delen dat een bepaald doel dient, en dat het resultaat is van een constructieproces"@nl-nl ;
+.
+core:Halte
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:VerblijfspuntWeg ;
+.
+core:Haven
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:VerblijfspuntVaarweg ;
+.
+core:Knooppunt
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:WegNode ;
+.
+core:Kruispunt
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:Knooppunt ;
+.
+core:Netwerk
+  rdf:type owl:Class ;
+  rdfs:label "Netwerk" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Systeem> ;
+  skos:definition "Samenstelling van netwerkelementen, waaronder nodes, links en kruisingen."@nl-NL ;
+.
+core:NetwerkKruising
+  rdf:type owl:Class ;
+  rdfs:label "Netwerk kruising" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
+  skos:definition "Locatie, waar een of meer netwerklinks elkaar ontmoeten, maar waar geen uitwisseling mogelijk is."@nl-NL ;
+.
+core:NetwerkLink
+  rdf:type owl:Class ;
+  rdfs:label "Netwerk link" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
+.
+core:NetwerkNode
+  rdf:type owl:Class ;
+  rdfs:label "Netwerk node" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
+.
+core:Oeverconstructie
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:ScheidendeConstructie ;
+  skos:definition """Een Oeverconstructie heeft als functie het achterliggende land te beschermen tegen het
+water."""@nl-nl ;
+.
+core:Oeverlijn
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDRuimte> ;
+.
+core:Oevervak
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
+  skos:definition "Een Oevervak is de rand van een kanaal, vaarweg of rivier. Het begint bij bodem van het nautisch profiel en gaat door tot 10m achter de oeverconstructie."@nl-nl ;
+.
+core:OpenbaarVervoerNetwerk
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:Netwerk ;
+.
+core:Parkeerplaats
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:VerblijfspuntWeg ;
+.
+core:Rotonde
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:Knooppunt ;
+.
+core:ScheidendeConstructie
+  rdf:type owl:Class ;
+  rdfs:label "Scheidende constructie"@nl-nl ;
+  rdfs:subClassOf core:Constructie ;
+.
+core:StrookAs
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:WegAs ;
+.
+core:Traject
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
+  skos:definition "Fysieke ruimte die een eenduidig afgebakende en samenhangende deelverzameling vormt in de topologie van het netwerk."@nl-nl ;
+  skos:scopeNote "Richtlijnen voor omvang van een wegtraject: + Een traject start/eindigt bij een eigendoms/beheergrens + Een traject start/eindigt bij een aansluiting op een weg van een hogere orde. + Een traject start/eindigt op een weg van een gelijke orde." ;
+.
+core:UitwisselpuntVaarweg
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:VaarwegNode ;
+.
+core:VaarwegAs
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:As ;
+.
+core:VaarwegLink
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:NetwerkLink ;
+.
+core:VaarwegNetwerk
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:Netwerk ;
+.
+core:VaarwegNode
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:NetwerkNode ;
+.
+core:VerblijfspuntVaarweg
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:VaarwegNode ;
+.
+core:VerblijfspuntWeg
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:WegNode ;
+.
+core:VerhardeBaan
+  rdf:type owl:Class ;
+  rdfs:label "Verharde baan"@nl-nl ;
+  rdfs:subClassOf core:Baan ;
+  skos:definition "Baan die een onderdeel vormt van een verhardingsoppervlak."@nl-nl ;
+.
+core:Vluchthaven
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:VerblijfspuntWeg ;
+.
+core:Wachtplaats
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:VerblijfspuntVaarweg ;
+.
+core:WegAs
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:As ;
+.
+core:WegBaan
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:WegLink ;
+.
+core:WegLink
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:NetwerkLink ;
+.
+core:WegNetwerk
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:Netwerk ;
+.
+core:WegNode
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:NetwerkNode ;
+.
+core:WegStrook
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:WegLink ;
+.
+core:WegVak
+  rdf:type owl:Class ;
+  rdfs:subClassOf core:WegLink ;
+.
+core:Wegberm
+  rdf:type owl:Class ;
+  rdfs:label "Wegberm"@nl-nl ;
+  rdfs:subClassOf core:Baan ;
+  skos:definition "Horizontaal of licht hellende veelal onverharde met gras of beplanting begroeide strook grond tussen de dragende kern van een (spoor)weg of dijk en het talud, kruin of bermsloot."@nl-nl ;
 .
