@@ -16,6 +16,12 @@ core:
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
+core:Afscheider
+  rdf:type owl:Class ;
+  rdfs:label "Afscheider" ;
+  rdfs:subClassOf core:Installatiedeel ;
+  skos:definition "Onderdeel van een statische afscheiderinstallatie, dat de daadwerkelijke scheidingfunctie uitvoert."@nl-nl ;
+.
 core:As
   rdf:type owl:Class ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDRuimte> ;
@@ -34,14 +40,50 @@ core:BaanAs
   rdf:type owl:Class ;
   rdfs:subClassOf core:WegAs ;
 .
+core:Bermsloot
+  rdf:type owl:Class ;
+  rdfs:label "Bermsloot" ;
+  rdfs:subClassOf core:Sloot ;
+  skos:definition "Bermstrook, bestemd voor afvoer van water, bestaande uit taluds en een natte of droge bodem."@nl-nl ;
+.
+core:Bouwwerk
+  rdf:type owl:Class ;
+  rdfs:label "Bouwwerk" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
+  skos:definition "Constructie van enige omvang, die op de plaats van bestemming hetzij direct hetzij indirect met de grond verbonden is, hetzij direct of indirect steun vindt in of op de grond, bedoeld om ter plaatse te functioneren."@nl-nl ;
+.
+core:Buis
+  rdf:type owl:Class ;
+  rdfs:label "Buis" ;
+  rdfs:subClassOf core:Leiding ;
+  skos:definition "Holle cilindrische leiding voor het geleiden van vloeistoffen, gassen of capsules."@nl-nl ;
+.
+core:Buisleiding
+  rdf:type owl:Class ;
+  rdfs:label "Buisleiding" ;
+  rdfs:subClassOf core:Buis ;
+  skos:definition "Holle cilindrische leiding voor transport van gevaarlijke stoffen."@nl-nl ;
+.
 core:Constructie
   rdf:type owl:Class ;
   rdfs:label "Constructie"@nl-nl ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Artefact> ;
 .
+core:Drainagebuis
+  rdf:type owl:Class ;
+  rdfs:label "Drainagebuis" ;
+  rdfs:subClassOf core:Buis ;
+  skos:definition "Buis bestemd voor drainage."@nl-nl ;
+.
 core:FietsNetwerk
   rdf:type owl:Class ;
   rdfs:subClassOf core:Netwerk ;
+.
+core:Gebouw
+  rdf:type owl:Class ;
+  rdfs:label "Gebouw" ;
+  rdfs:subClassOf core:Bouwwerk ;
+  skos:definition "Bouwwerk ter ondersteuning van een infrastructureel object of een deel van een bouwwerk, dat een voor mensen toegankelijk overdekte en geheel of gedeeltelijk met wanden omsloten ruimte vormt, dat bestemd en/of ingericht is voor menselijk verblijf, arbeid, installaties of handel."@nl-nl ;
 .
 core:GeleiderailConstructie
   rdf:type owl:Class ;
@@ -53,6 +95,12 @@ core:GeluidbeperkendeConstructie
   rdfs:subClassOf core:ScheidendeConstructie ;
   skos:definition "Samenstel van meerdere constructie delen dat een bepaald doel dient, en dat het resultaat is van een constructieproces"@nl-nl ;
 .
+core:Greppel
+  rdf:type owl:Class ;
+  rdfs:label "Greppel" ;
+  rdfs:subClassOf core:Sloot ;
+  skos:definition "Gegraven waterloop, veelal droogstaand, voor de afwatering en/of ontwatering van het omringende gebied, die afwatert op een sloot"@nl-nl ;
+.
 core:Halte
   rdf:type owl:Class ;
   rdfs:subClassOf core:VerblijfspuntWeg ;
@@ -61,13 +109,87 @@ core:Haven
   rdf:type owl:Class ;
   rdfs:subClassOf core:VerblijfspuntVaarweg ;
 .
+core:Inspectieput
+  rdf:type owl:Class ;
+  rdfs:label "Inspectie put" ;
+  rdfs:subClassOf core:Put ;
+  skos:definition "Put met afdichting om ondergrondse infrastructuur te inspecteren."@nl-nl ;
+.
+core:Installatie
+  rdf:type owl:Class ;
+  rdfs:label "Installatie" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Systeem> ;
+  skos:definition "Samenhangend systeem dat een bepaald doel dient."@nl-nl ;
+.
+core:Installatiedeel
+  rdf:type owl:Class ;
+  rdfs:label "Installatiedeel" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Artefact> ;
+.
+core:Kabel
+  rdf:type owl:Class ;
+  rdfs:label "Kabel" ;
+  rdfs:subClassOf core:Leiding ;
+  skos:definition "Een geleider die is voorzien van een ommanteling en bestemd is voor transport van energie of data."@nl-nl ;
+.
+core:Kabels_en_Leidingen
+  rdf:type owl:Class ;
+  rdfs:label "Kabels en Leidingen" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#OngeordendeVerzameling> ;
+.
 core:Knooppunt
   rdf:type owl:Class ;
   rdfs:subClassOf core:WegNode ;
 .
+core:Kolk
+  rdf:type owl:Class ;
+  rdfs:label "Kolk" ;
+  rdfs:subClassOf core:Put ;
+  skos:definition "Constructie bestemd om het hemelwater dat op de verharding valt in te zamelen en af te voeren."@nl-nl ;
+.
+core:Kolkleiding
+  rdf:type owl:Class ;
+  rdfs:label "Kolkleiding" ;
+  rdfs:subClassOf core:Buis ;
+  skos:definition "Overdekt of ondergronds afvoerkanaal voor vuil- of hemelwater."@nl-nl ;
+.
 core:Kruispunt
   rdf:type owl:Class ;
   rdfs:subClassOf core:Knooppunt ;
+.
+core:Kunstwerk
+  rdf:type owl:Class ;
+  rdfs:label "Kunstwerk" ;
+  rdfs:subClassOf core:OverigBouwwerk ;
+  skos:definition "Bouwwerk, geen gebouw zijnde, dat de realisatie vormt van een kruising van netwerklinks."@nl-nl ;
+.
+core:Leiding
+  rdf:type owl:Class ;
+  rdfs:label "Leiding" ;
+  rdfs:subClassOf core:Installatiedeel ;
+  skos:definition "Buis of kabel bestemd voor de voortgeleiding van materie, energie of data."@nl-nl ;
+.
+core:LeidingNetwerk
+  rdf:type owl:Class ;
+  rdfs:label "Leiding netwerk" ;
+  rdfs:subClassOf core:Netwerk ;
+.
+core:Leidingelement
+  rdf:type owl:Class ;
+  rdfs:label "Leidingelement" ;
+  rdfs:subClassOf core:Installatiedeel ;
+  skos:definition "Fysiek object bestemd voor een specifieke functie (schakelen, bufferen, begrenzen etc) binnen het transport van materie (vloeistoffen, gassen), energie of gegevens."@nl-nl ;
+.
+core:Mantelbuis
+  rdf:type owl:Class ;
+  rdfs:label "Mantelbuis" ;
+  rdfs:subClassOf core:Leiding ;
+  skos:definition "Buis voor bescherming van kabels, buizen en HDPE buizen"@nl-nl ;
+.
+core:Materieel_Gladheidsbestrijding
+  rdf:type owl:Class ;
+  rdfs:label "Materieel Gladheidsbestrijding" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#OngeordendeVerzameling> ;
 .
 core:Netwerk
   rdf:type owl:Class ;
@@ -110,9 +232,36 @@ core:OpenbaarVervoerNetwerk
   rdf:type owl:Class ;
   rdfs:subClassOf core:Netwerk ;
 .
+core:OpenbareVerlichtingsInstallatie
+  rdf:type owl:Class ;
+  rdfs:label "Openbare verlichtings Installatie" ;
+  rdfs:subClassOf core:Installatie ;
+.
+core:Opstallen
+  rdf:type owl:Class ;
+  rdfs:label "Opstallen" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#OngeordendeVerzameling> ;
+.
+core:OverigBouwwerk
+  rdf:type owl:Class ;
+  rdfs:label "Overig bouwwerk" ;
+  rdfs:subClassOf core:Bouwwerk ;
+  skos:definition "Bouwwerk of gedeelte daarvan, voor zover dat geen gebouw of onderdeel daarvan is (en niet bedoeld voor permanent menselijk verblijf)."@nl-nl ;
+.
 core:Parkeerplaats
   rdf:type owl:Class ;
   rdfs:subClassOf core:VerblijfspuntWeg ;
+.
+core:Put
+  rdf:type owl:Class ;
+  rdfs:label "Put" ;
+  rdfs:subClassOf core:Leidingelement ;
+  skos:definition "Kokervormige constructie aangebracht onder de grond, die toegang geeft tot de aangesloten rioolleidingen en een verwijderbare deksel heeft."@nl-nl ;
+.
+core:RioolNetwerk
+  rdf:type owl:Class ;
+  rdfs:label "Riool netwerk" ;
+  rdfs:subClassOf core:LeidingNetwerk ;
 .
 core:Rotonde
   rdf:type owl:Class ;
@@ -123,9 +272,20 @@ core:ScheidendeConstructie
   rdfs:label "Scheidende constructie"@nl-nl ;
   rdfs:subClassOf core:Constructie ;
 .
+core:Sloot
+  rdf:type owl:Class ;
+  rdfs:label "Sloot" ;
+  rdfs:subClassOf core:Waterloop ;
+  skos:definition "Algemene benaming voor een waterloop van beperkte breedte die stilstaand of slechts langzaam stromend water bevat."@nl-nl ;
+.
 core:StrookAs
   rdf:type owl:Class ;
   rdfs:subClassOf core:WegAs ;
+.
+core:Terreinen
+  rdf:type owl:Class ;
+  rdfs:label "Terreinen" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#OngeordendeVerzameling> ;
 .
 core:Traject
   rdf:type owl:Class ;
@@ -167,6 +327,11 @@ core:VerhardeBaan
   rdfs:subClassOf core:Baan ;
   skos:definition "Baan die een onderdeel vormt van een verhardingsoppervlak."@nl-nl ;
 .
+core:VerkeersregelInstallatie
+  rdf:type owl:Class ;
+  rdfs:label "Verkeersregel installatie" ;
+  rdfs:subClassOf core:Installatie ;
+.
 core:Vluchthaven
   rdf:type owl:Class ;
   rdfs:subClassOf core:VerblijfspuntWeg ;
@@ -174,6 +339,30 @@ core:Vluchthaven
 core:Wachtplaats
   rdf:type owl:Class ;
   rdfs:subClassOf core:VerblijfspuntVaarweg ;
+  skos:definition "Ligplaats die de mogelijkheid biedt om gedurende korte tijd af te meren in afwachting van een schutting, brugopening, laden of lossen."@nl-nl ;
+.
+core:Waterdeel
+  rdf:type owl:Class ;
+  rdfs:label "Waterdeel" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
+  skos:definition "Kleinste functioneel onafhankelijk stukje (oppervlakte)water met gelijkblijvende, homogene eigenschappen en relaties dat er binnen het objecttype (oppervlakte)Water van NEN 3610 wordt onderscheiden, en dat permanent met water bedekt is."@nl-nl ;
+.
+core:Waterhuishouding
+  rdf:type owl:Class ;
+  rdfs:label "Waterhuishouding" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Systeem> ;
+.
+core:Waterloop
+  rdf:type owl:Class ;
+  rdfs:label "Waterloop" ;
+  rdfs:subClassOf core:Waterdeel ;
+  skos:definition "Een voor de waterbeheersing bestemde geul die meestal permanent water bevat (zoals rivier, kanaal, beek, sloot, gracht)."@nl-nl ;
+.
+core:Watervlakte
+  rdf:type owl:Class ;
+  rdfs:label "Watervlakte" ;
+  rdfs:subClassOf core:Waterdeel ;
+  skos:definition "Alle oppervlakken die vrij permanent met zoet water zijn bedekt. (zoals meer, plas, ven, vijver)."@nl-nl ;
 .
 core:WegAs
   rdf:type owl:Class ;
@@ -208,4 +397,16 @@ core:Wegberm
   rdfs:label "Wegberm"@nl-nl ;
   rdfs:subClassOf core:Baan ;
   skos:definition "Horizontaal of licht hellende veelal onverharde met gras of beplanting begroeide strook grond tussen de dragende kern van een (spoor)weg of dijk en het talud, kruin of bermsloot."@nl-nl ;
+.
+core:Wegdeel
+  rdf:type owl:Class ;
+  rdfs:label "Wegdeel" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
+  skos:definition "Kleinste functioneel onafhankelijk stukje van een NEN 3610 Weg met gelijkblijvende, homogene eigenschappen en relaties en primair bedoeld voor gebruik door weg-, spoor- en vliegverkeer te land."@nl-nl ;
+.
+core:Zandvang
+  rdf:type owl:Class ;
+  rdfs:label "Zandvang" ;
+  rdfs:subClassOf core:Afscheider ;
+  skos:definition "Afscheiderinstallatie die op basis van zwaartekracht zorgtdraagt voor ontmenging van zand en afvalwater."@nl-nl ;
 .
