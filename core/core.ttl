@@ -61,11 +61,15 @@ core:Armatuur
 .
 core:As
   rdf:type owl:Class ;
+  rdfs:label "As (fysieke ruimte)" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDRuimte> ;
+  skos:definition "Hartlijn"@nl-nl ;
 .
 core:AsGeometrie
   rdf:type owl:Class ;
+  rdfs:label "As (geometrie)" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDCoordinaat> ;
+  skos:definition "Geometrische representatie van de hartlijn."@nl-nl ;
 .
 core:Baan
   rdf:type owl:Class ;
@@ -75,7 +79,9 @@ core:Baan
 .
 core:BaanAs
   rdf:type owl:Class ;
+  rdfs:label "Baanas" ;
   rdfs:subClassOf core:WegAs ;
+  skos:definition "Hartlijn van de baan."@nl-nl ;
 .
 core:BegroeidTerreindeel
   rdf:type owl:Class ;
@@ -374,7 +380,9 @@ core:Faunaraster
 .
 core:FietsNetwerk
   rdf:type owl:Class ;
+  rdfs:label "Fietsnetwerk" ;
   rdfs:subClassOf core:Netwerk ;
+  skos:definition "Samenstelling van netwerkelementen ten behoeve van Fietsverkeer."@nl-nl ;
 .
 core:FunctioneelGebied
   rdf:type owl:Class ;
@@ -428,6 +436,7 @@ core:GelijkvloerseNetwerkKruising
 .
 core:GeluidbeperkendeConstructie
   rdf:type owl:Class ;
+  rdfs:label "Geluidbeperkende constructie" ;
   rdfs:subClassOf core:ScheidendeConstructie ;
   skos:definition "Constructie die geluidshinder langs de weg vermindert"@nl-nl ;
 .
@@ -451,10 +460,14 @@ core:Greppel
 .
 core:Halte
   rdf:type owl:Class ;
+  rdfs:label "Halte" ;
   rdfs:subClassOf core:VerblijfspuntWeg ;
+  skos:definition "Het geheel van objecten behorende bij een stopplaats van een autobus."@nl-nl ;
+  skos:scopeNote "STOPPLACE in NDOV terminologie" ;
 .
 core:Haven
   rdf:type owl:Class ;
+  rdfs:label "Haven" ;
   rdfs:subClassOf core:VerblijfspuntVaarweg ;
   skos:definition "Een natuurlijke of aangelegde veilige ligplaats voor schepen."@nl-nl ;
 .
@@ -564,6 +577,12 @@ core:Kolkleiding
   rdfs:label "Kolkleiding" ;
   rdfs:subClassOf core:Buis ;
   skos:definition "Overdekt of ondergronds afvoerkanaal voor vuil- of hemelwater."@nl-nl ;
+.
+core:Kruinlijn
+  rdf:type owl:Class ;
+  rdfs:label "Kruinlijn" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDRuimte> ;
+  skos:definition "Lijn over het hoogste deel van de dijk (dijk is een waterkering op het land, bestaande uit een opgeworpen aarden wal)."@nl-nl ;
 .
 core:KruisenInfrastructuur
   rdf:type owl:Class ;
@@ -694,16 +713,20 @@ core:Oeverbescherming
 .
 core:Oeverconstructie
   rdf:type owl:Class ;
+  rdfs:label "Oeverconstructie" ;
   rdfs:subClassOf core:KerendeConstructie ;
   skos:definition """Een Oeverconstructie heeft als functie het achterliggende land te beschermen tegen het
 water."""@nl-nl ;
 .
 core:Oeverlijn
   rdf:type owl:Class ;
+  rdfs:label "Oeverlijn" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDRuimte> ;
+  skos:definition "Niet zichtbare lijn die een bepaalde waterstand aangeeft, zoals deze zich voordoet op (een) bepaald(e) tijdstip(pen), aan de oever van een rivier, kanaal, meer of zee."@nl-nl ;
 .
 core:Oevervak
   rdf:type owl:Class ;
+  rdfs:label "Overvak" ;
   rdfs:subClassOf core:FunctioneelGebied ;
   skos:definition "Een Oevervak is de rand van een kanaal, vaarweg of rivier. Het begint bij bodem van het nautisch profiel en gaat door tot 10m achter de oeverconstructie."@nl-nl ;
 .
@@ -732,7 +755,9 @@ core:OntsluitenProvinciaalNetwerk
 .
 core:OpenbaarVervoerNetwerk
   rdf:type owl:Class ;
+  rdfs:label "Openbaar vervoer netwerk" ;
   rdfs:subClassOf core:Netwerk ;
+  skos:definition "Het geheel aan netwerk elementen bestemd voor het openbaar vervoer."@nl-nl ;
 .
 core:OpenbareVerlichtingsInstallatie
   rdf:type owl:Class ;
@@ -768,7 +793,10 @@ core:Paal
 .
 core:Parkeerplaats
   rdf:type owl:Class ;
+  rdfs:label "Parkeerplaats" ;
   rdfs:subClassOf core:VerblijfspuntWeg ;
+  skos:definition "Een ruimte die is bestemd voor het parkeren van één voertuig."@nl-nl ;
+  skos:definition "Locatie bestemd voor het parkeren van motorvoertuigen."@nl-nl ;
 .
 core:Plantvak
   rdf:type owl:Class ;
@@ -796,6 +824,7 @@ core:Raster
 .
 core:Rijstrook
   rdf:type owl:Class ;
+  rdfs:label "Rijstrook" ;
   rdfs:subClassOf core:WegLink ;
   skos:definition "Door doorgetrokken of onderbroken strepen gemarkeerd gedeelte van de rijbaan van zodanige breedte dat bestuurders van motorvoertuigen op meer dan twee wielen daarvan gebruik kunnen maken."@nl-nl ;
 .
@@ -895,7 +924,9 @@ core:Spuisluis
 .
 core:StrookAs
   rdf:type owl:Class ;
+  rdfs:label "Strookas" ;
   rdfs:subClassOf core:WegAs ;
+  skos:definition "Hartlijn van de strook."@nl-nl ;
 .
 core:Stuw
   rdf:type owl:Class ;
@@ -922,6 +953,7 @@ core:Terreinen
 .
 core:Traject
   rdf:type owl:Class ;
+  rdfs:label "Traject" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
   skos:definition "Fysieke ruimte die een eenduidig afgebakende en samenhangende deelverzameling vormt in de topologie van het netwerk."@nl-nl ;
   skos:scopeNote "Richtlijnen voor omvang van een wegtraject: + Een traject start/eindigt bij een eigendoms/beheergrens + Een traject start/eindigt bij een aansluiting op een weg van een hogere orde. + Een traject start/eindigt op een weg van een gelijke orde." ;
@@ -940,6 +972,7 @@ core:Tunnelbak
 .
 core:UitwisselpuntVaarweg
   rdf:type owl:Class ;
+  rdfs:label "Uitwisselpunt vaarweg" ;
   rdfs:subClassOf core:VaarwegNode ;
   skos:definition "Een uitwisselpunt tussen hoofdwaterwegen en regionale vaarwegen."@nl-nl ;
 .
@@ -957,20 +990,25 @@ core:Vaarweg
 .
 core:VaarwegAs
   rdf:type owl:Class ;
+  rdfs:label "Vaarwegas" ;
   rdfs:subClassOf core:As ;
+  skos:definition "Hartlijn van de vaarweg"@nl-nl ;
 .
 core:VaarwegLink
   rdf:type owl:Class ;
+  rdfs:label "Vaarweglink" ;
   rdfs:subClassOf core:NetwerkLink ;
   skos:definition "Relatie tussen twee Vaarwegnodes die een directe verbinding in het vaarwegennetwerk voorstelt."@nl-nl ;
 .
 core:VaarwegNetwerk
   rdf:type owl:Class ;
+  rdfs:label "Vaarwegnetwerk" ;
   rdfs:subClassOf core:Netwerk ;
   skos:definition "Het vaarwegennet bestaat uit alle verbindingen voor het vaarwegverkeer."@nl-nl ;
 .
 core:VaarwegNode
   rdf:type owl:Class ;
+  rdfs:label "Vaarwegnode" ;
   rdfs:subClassOf core:NetwerkNode ;
   skos:definition "Node in het vaarwegennetwerk."@nl-nl ;
 .
@@ -988,6 +1026,7 @@ core:VasteBrug
 .
 core:VerblijfspuntVaarweg
   rdf:type owl:Class ;
+  rdfs:label "Verblijfspunt vaarweg" ;
   rdfs:subClassOf core:VaarwegNode ;
   skos:definition "Een locatie die de vaarweggebruikers verzorging en/of verblijf biedt."@nl-nl ;
 .
@@ -995,6 +1034,7 @@ core:VerblijfspuntWeg
   rdf:type owl:Class ;
   rdfs:label "Verblijfspunt weg" ;
   rdfs:subClassOf core:Wegnode ;
+  skos:definition "Een locatie die de weggebruikers verzorging en/of verblijf biedt."@nl-nl ;
 .
 core:VerhardeBaan
   rdf:type owl:Class ;
@@ -1057,7 +1097,9 @@ core:Viaduct
 .
 core:Vluchthaven
   rdf:type owl:Class ;
+  rdfs:label "Vluchthaven" ;
   rdfs:subClassOf core:VerblijfspuntWeg ;
+  skos:definition "Een langs de rijbaan van een weg gelegen weggedeelte dat in geval van nood verblijf biedt aan de weggebruiker."@nl-nl ;
 .
 core:WaarnemingsCamera
   rdf:type owl:Class ;
@@ -1074,6 +1116,7 @@ core:Waarschuwingsmarkering
 .
 core:Wachtplaats
   rdf:type owl:Class ;
+  rdfs:label "Wachtplaats" ;
   rdfs:subClassOf core:VerblijfspuntVaarweg ;
   skos:definition "Ligplaats die de mogelijkheid biedt om gedurende korte tijd af te meren in afwachting van een schutting, brugopening, laden of lossen."@nl-nl ;
 .
@@ -1123,20 +1166,25 @@ core:Weg
 .
 core:WegAs
   rdf:type owl:Class ;
+  rdfs:label "Wegas" ;
   rdfs:subClassOf core:As ;
+  skos:definition "Hartlijn van de weg."@nl-nl ;
 .
 core:WegBaan
   rdf:type owl:Class ;
+  rdfs:label "Wegbaan" ;
   rdfs:subClassOf core:WegLink ;
   skos:definition "Verbinding tussen twee baanjuncties die een rechtstreekse verbinding in het netwerk voorstelt."@nl-nl ;
 .
 core:WegLink
   rdf:type owl:Class ;
+  rdfs:label "Weglink" ;
   rdfs:subClassOf core:NetwerkLink ;
   skos:definition "Relatie tussen twee wegnodes die een directe verbinding in het wegennetwerk voorstelt."@nl-nl ;
 .
 core:WegNetwerk
   rdf:type owl:Class ;
+  rdfs:label "Wegnetwerk" ;
   rdfs:subClassOf core:Netwerk ;
   skos:definition "Het wegennet bestaat uit alle verbindingswegen voor het wegverkeer."@nl-nl ;
 .
@@ -1167,6 +1215,7 @@ core:Wegnode
 .
 core:Wegvak
   rdf:type owl:Class ;
+  rdfs:label "Wegvak" ;
   rdfs:subClassOf core:WegLink ;
   skos:definition "Relatie tussen twee Wegjuncties die een directe verbinding in het wegennetwerk voorstelt."@nl-nl ;
   skos:scopeNote "Een Wegvak is een verkeerskundig homogeen deel van een Wegennetwerk." ;
