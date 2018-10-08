@@ -47,39 +47,19 @@ ad:begroeidTerreindeelPlantvak_v
       owl:intersectionOf (
           <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#Groenobject>
           [
-            rdf:type owl:Class ;
-            owl:unionOf (
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_planten> ;
-                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
-                ]
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_bosplantsoen> ;
-                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
-                ]
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_bodembedekkers> ;
-                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
-                ]
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_haag> ;
-                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
-                ]
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_struikrozen> ;
-                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
-                ]
-                [
-                  rdf:type owl:Restriction ;
-                  owl:hasValue <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_heesters> ;
-                  owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
-                ]
-              ) ;
+            rdf:type owl:Restriction ;
+            owl:hasValue [
+                rdf:type owl:Class ;
+                owl:oneOf (
+                    <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_planten>
+                    <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_bosplantsoen>
+                    <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_bodembedekkers>
+                    <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_haag>
+                    <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_struikrozen>
+                    <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type_heesters>
+                  ) ;
+              ] ;
+            owl:onProperty <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf#type> ;
           ]
         ) ;
     ] ;

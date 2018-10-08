@@ -1,0 +1,37 @@
+# baseURI: http://otl.noord-holland.nl/otb/era_v0.9/
+# imports: http://otl.noord-holland.nl/core/
+
+@prefix : <http://otl.noord-holland.nl/otb/era_v0.9/> .
+@prefix otb: <http://otl.noord-holland.nl/otb/era_v0.9/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+otb:
+  rdf:type owl:Ontology ;
+  owl:imports <http://otl.noord-holland.nl/core/> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+otb:Abri
+  rdf:type owl:Class ;
+  rdfs:label "Abri" ;
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/OverigBouwwerk> ;
+  owl:equivalentClass <http://otl.noord-holland.nl/core/Abri> ;
+  skos:definition "Een abri of wachthuisje is een kleine, niet afgesloten wachtruimte die beschutting biedt tegen weer en wind."@nl-nl ;
+.
+otb:Beweegbaar_Kunstwerk
+  rdf:type owl:Class ;
+  rdfs:label "Beweegbaar kunstwerk" ;
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Kunstwerk> ;
+  owl:equivalentClass <http://otl.noord-holland.nl/core/BeweegbaarKunstwerk> ;
+  skos:definition "Een beweegbare verbinding voor verkeer tussen minimaal twee punten die gescheiden worden door waterwegen en variabele doorvaarthoogte biedt."@nl-nl ;
+.
+otb:Vast_Kunstwerk
+  rdf:type owl:Class ;
+  rdfs:label "Vast kunstwerk" ;
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Kunstwerk> ;
+  owl:equivalentClass <http://otl.noord-holland.nl/core/VastKunstwerk> ;
+  skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen."@nl-nl ;
+.
