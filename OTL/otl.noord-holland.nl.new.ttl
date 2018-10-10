@@ -1,0 +1,18 @@
+# baseURI: http://otl.noord-holland.nl/otl/new/
+# imports: http://mapping.otl.noord-holland.nl/areaaldata/v4.1/
+# imports: http://mapping.otl.noord-holland.nl/otb/v_MN/
+
+@prefix : <http://otl.noord-holland.nl/otl/new/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix v4.1: <http://mapping.otl.noord-holland.nl/areaaldata/v4.1/> .
+@prefix v_MN: <http://mapping.otl.noord-holland.nl/otb/v_MN/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:
+  rdf:type owl:Ontology ;
+  owl:imports v4.1: ;
+  owl:imports v_MN: ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
