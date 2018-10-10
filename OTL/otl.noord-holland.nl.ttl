@@ -1,7 +1,6 @@
 # baseURI: http://otl.noord-holland.nl/otl/2018/
 # imports: http://otl.noord-holland.nl/areaaldata-prop/v4.1/
 # imports: http://otl.noord-holland.nl/otb/v_MN/
-# imports: http://www.buildingbits.nl/coins2/draft/IMBOR.rdf
 
 @prefix : <http://otl.noord-holland.nl/otl/2018/> .
 @prefix ad: <http://otl.noord-holland.nl/areaaldata/v4.1/> .
@@ -626,6 +625,5 @@ otb:Zwemwaterborden
   rdf:type owl:Ontology ;
   owl:imports adprop: ;
   owl:imports otb: ;
-  owl:imports <http://www.buildingbits.nl/coins2/draft/IMBOR.rdf> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
