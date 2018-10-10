@@ -1,20 +1,43 @@
 # baseURI: http://mapping.otl.noord-holland.nl/areaaldata/v4.1/
 # imports: http://otl.noord-holland.nl/areaaldata-prop/v4.1/
 # imports: http://otl.noord-holland.nl/core/
+# prefix: ad_mapping
 
 @prefix : <http://mapping.otl.noord-holland.nl/areaaldata/v4.1/> .
+@prefix ad_mapping: <http://mapping.otl.noord-holland.nl/areaaldata/v4.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix spin: <http://spinrdf.org/spin#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:
+ad_mapping:
   rdf:type owl:Ontology ;
   spin:imports <http://topbraid.org/spin/rdfsplus> ;
   owl:imports <http://otl.noord-holland.nl/areaaldata-prop/v4.1/> ;
   owl:imports <http://otl.noord-holland.nl/core/> ;
   owl:versionInfo "Created with TopBraid Composer" ;
+.
+<http://otl.noord-holland.nl/core/Abri>
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:intersectionOf (
+          <http://otl.noord-holland.nl/areaaldata/v4.1/overigBouwwerk_v>
+          [
+            rdf:type owl:Restriction ;
+            owl:hasValue [
+                rdf:type owl:Class ;
+                owl:oneOf (
+                    <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecOBWVlak_abriOverig>
+                    <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecOBWVlak_abriOFN>
+                    <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecOBWVlak_abriOnbekend>
+                    <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecOBWVlak_abriR-net>
+                  ) ;
+              ] ;
+            owl:onProperty <http://otl.noord-holland.nl/areaaldata-prop/v4.1/TYPESPEC> ;
+          ]
+        ) ;
+    ] ;
 .
 <http://otl.noord-holland.nl/core/Bermplank>
   owl:equivalentClass [
@@ -28,4 +51,45 @@
           ]
         ) ;
     ] ;
+.
+<http://otl.noord-holland.nl/core/BeweegbaarKunstwerk>
+  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/kunstwerkBeweegbaar_p> ;
+.
+<http://otl.noord-holland.nl/core/Geluidsscherm>
+  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/geluidwerendeVoorziening_l> ;
+.
+<http://otl.noord-holland.nl/core/Kolkleiding>
+  rdfs:subClassOf <http://otl.noord-holland.nl/areaaldata/v4.1/buis_l> ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:intersectionOf (
+          <http://otl.noord-holland.nl/areaaldata/v4.1/buis_l>
+          [
+            rdf:type owl:Restriction ;
+            owl:hasValue [
+                rdf:type owl:Class ;
+                owl:oneOf (
+                    <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecBUI_RVV>
+                    <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecBUI_Rioolvrijverval>
+                  ) ;
+              ] ;
+            owl:onProperty <http://otl.noord-holland.nl/areaaldata-prop/v4.1/TYPESPEC> ;
+          ]
+        ) ;
+    ] ;
+.
+<http://otl.noord-holland.nl/core/Schutsluis>
+  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/schutsluis_p> ;
+.
+<http://otl.noord-holland.nl/core/VastKunstwerk>
+  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/kunstwerkVast_p> ;
+.
+<http://otl.noord-holland.nl/core/Weg>
+  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/weg_l> ;
+.
+<http://otl.noord-holland.nl/core/Wegdeel>
+  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/wegdeel_v> ;
+.
+<http://otl.noord-holland.nl/core/Wegvak>
+  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/wegvak_v> ;
 .

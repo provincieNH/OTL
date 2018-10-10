@@ -575,7 +575,6 @@ core:Kolk
 core:Kolkleiding
   rdf:type owl:Class ;
   rdfs:label "Kolkleiding" ;
-  rdfs:subClassOf core:Buis ;
   skos:definition "Overdekt of ondergronds afvoerkanaal voor vuil- of hemelwater."@nl-nl ;
 .
 core:Kruinlijn
@@ -744,6 +743,7 @@ core:OngelijkvloersKruispunt
 .
 core:OngelijkvloerseNetwerkKruising
   rdf:type owl:Class ;
+  core:wordtGerealiseerdDoor core:Kunstwerk ;
   rdfs:label "Ongelijkvloerse netwerk kruising" ;
   rdfs:subClassOf core:NetwerkKruising ;
   skos:definition "Op een ongelijkvloerse kruising worden de betrokken links structureel vertikaal van elkaar gescheiden."@nl-nl ;
@@ -1215,6 +1215,7 @@ core:Wegnode
 .
 core:Wegvak
   rdf:type owl:Class ;
+  core:wordtGerealiseerdDoor core:Wegdeel ;
   rdfs:label "Wegvak" ;
   rdfs:subClassOf core:WegLink ;
   skos:definition "Relatie tussen twee Wegjuncties die een directe verbinding in het wegennetwerk voorstelt."@nl-nl ;
@@ -1294,4 +1295,8 @@ core:vervultFunctie
   rdfs:domain <http://binkhoffmann.org/ontologies/top#FysiekeRuimte> ;
   rdfs:label "vervult functie" ;
   rdfs:range <http://binkhoffmann.org/ontologies/top#Functie> ;
+.
+core:wordtGerealiseerdDoor
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "wordt gerealiseerd door" ;
 .

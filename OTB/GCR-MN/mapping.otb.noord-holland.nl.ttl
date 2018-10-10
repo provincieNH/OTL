@@ -1,15 +1,16 @@
 # baseURI: http://mapping.otl.noord-holland.nl/otb/v_MN/
 # imports: http://otl.noord-holland.nl/core/
 # imports: http://otl.noord-holland.nl/otb/v_MN/
+# prefix: otb_mapping
 
-@prefix : <http://mapping.otl.noord-holland.nl/otb/v_MN/> .
+@prefix otb_mapping: <http://mapping.otl.noord-holland.nl/otb/v_MN/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix spin: <http://spinrdf.org/spin#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:
+otb_mapping:
   rdf:type owl:Ontology ;
   spin:imports <http://topbraid.org/spin/owlrl-all> ;
   owl:imports <http://otl.noord-holland.nl/core/> ;
@@ -23,4 +24,82 @@
 <http://otl.noord-holland.nl/otb/v_MN/Bermplankjes>
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Paal> ;
   owl:equivalentClass <http://otl.noord-holland.nl/core/Bermplank> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Beweegbaar_kunstwerk>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/BeweegbaarKunstwerk> ;
+  owl:equivalentClass <http://otl.noord-holland.nl/core/BeweegbaarKunstwerk> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/DRIS-paneel>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/DRIS_Paneel> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Draagkrachtige_berm>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Wegberm> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Ecoduct>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Ecoduct> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Faunaraster>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Faunaraster> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Kolkleiding>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Kolkleiding> ;
+  owl:equivalentClass <http://otl.noord-holland.nl/core/Kolkleiding> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Kruising>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/NetwerkKruising> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Kruispunt>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/GelijkvloersKruispunt> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Kunstwerk>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Kunstwerk> ;
+  owl:equivalentClass <http://otl.noord-holland.nl/core/Kunstwerk> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Openbare_Verlichting>
+  owl:equivalentClass <http://otl.noord-holland.nl/core/OpenbareVerlichtingsInstallatie> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Perron>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Wegdeel> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Provinciaal_systeem>
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Systeem> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Riool>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/RioolNetwerk> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Rotonde>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Rotonde> ;
+  owl:equivalentClass <http://otl.noord-holland.nl/core/Rotonde> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Scheepvaartsein>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Scheepvaartsein> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Schutsluis>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Schutsluis> ;
+  owl:equivalentClass <http://otl.noord-holland.nl/core/Schutsluis> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Telkast>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Kast> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Telpaal>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Detector> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Uitwisselpunt_weg>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Intersectie> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/VRI_Weg>
+  owl:equivalentClass <http://otl.noord-holland.nl/core/VerkeersregelInstallatie> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Vast_kunstwerk>
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/VastKunstwerk> ;
+  owl:equivalentClass <http://otl.noord-holland.nl/core/VastKunstwerk> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Weg>
+  owl:equivalentClass <http://otl.noord-holland.nl/core/Weg> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Wegvak>
+  owl:equivalentClass <http://otl.noord-holland.nl/core/Wegvak> ;
+.
+<http://otl.noord-holland.nl/otb/v_MN/Wegverkeerssein>
+  owl:equivalentClass <http://otl.noord-holland.nl/core/VerkeersregelInstallatie> ;
 .
