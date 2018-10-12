@@ -1,8 +1,8 @@
-# baseURI: http://otl.noord-holland.nl/otl/new/
+# baseURI: http://otl.noord-holland.nl/otl/2018/
 # imports: http://mapping.otl.noord-holland.nl/areaaldata/v4.1/
 # imports: http://mapping.otl.noord-holland.nl/otb/v_MN/
 
-@prefix : <http://otl.noord-holland.nl/otl/new/> .
+@prefix : <http://otl.noord-holland.nl/otl/2018/> .
 @prefix ad_mapping: <http://mapping.otl.noord-holland.nl/areaaldata/v4.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
