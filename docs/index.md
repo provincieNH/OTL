@@ -37,7 +37,7 @@ In de uitwerking ziet dar er dan als volgt uit:
 ![otl voorbeeld](https://github.com/provincieNH/OTL/raw/master/Documentatie/OTL-structuur.jpg "otl voorbeeld")
 
 
-Meer detail voorbeelden en documentatie is te raadplegen via de online [sparql-visualizer](https://madsholten.github.io/sparql-visualizer/?file=https://github.com/provincieNH/OTL/raw/master/Documentatie/data.json)
+Meer detail voorbeelden en documentatie is te raadplegen via de online [sparql-visualizer](https://madsholten.github.io/sparql-visualizer/?file=https://raw.githubusercontent.com/provincieNH/OTL/master/docs/data.json)
 
 En het model is ook gevisualiseerd in D3.js [hier](otl-viz),
 en in HTML weergave [hier](otl-doc).
