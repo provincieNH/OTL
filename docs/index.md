@@ -9,6 +9,10 @@ Meer detail voorbeelden en documentatie is te raadplegen via de online [sparql-v
 
 ============================
 
+De visie op de OTL van Noord-Holland kan als volgt weergegeven worden:
+![otl](https://github.com/provincieNH/OTL/raw/master/docs/otl-pnh.jpg "otl")
+
+
 De OTL is in RDF/OWL opgebouwd:
 
 * de map core bevat de basis ontologie waarop de OTL gebaseerd is. Deze ontologie bestaat uit 2 namespaces:
@@ -22,7 +26,6 @@ De OTL is in RDF/OWL opgebouwd:
 	* otb: de otb concepten
 	* mapping.otb: de mapping van de otb naar de core namespace
 	
-
 * de map areaaldata bevat een rdf/owl file van het areaaldatamodel wat ook beschreven staat op: https://github.com/provincieNH/ILS/
 
 	update juli 2018: er is een map 4.1 bijgekomen waar het Areaaldata 4.1 datamodel in staat
@@ -37,10 +40,10 @@ De OTL is in RDF/OWL opgebouwd:
 
 * de map SE bevat een subset van het SE uitwisselingsmodel. Dit is nog een zeer experimentele ontologie. De kans is groot dat deze nog gaat wijzigen.
 
+* de map DOC bevat een eerste aanzet voor een documenten metamodel. Dit is nog een zeer experimentele ontologie. De kans is groot dat deze nog gaat wijzigen.
+
 In de map COINS staat de COINS 2.0 compatible library van het Areaaldatamodel.
 
-De visie op de OTL kan als volgt weergegeven worden:
-![otl](https://github.com/provincieNH/OTL/raw/master/docs/otl-pnh.jpg "otl")
 
 In de uitwerking ziet dar er dan als volgt uit:
 ![otl voorbeeld](https://github.com/provincieNH/OTL/raw/master/docs/OTL-structuur.jpg "otl voorbeeld")
