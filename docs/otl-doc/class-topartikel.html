@@ -1,0 +1,1865 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="static/libs/img/favicon.ico">
+
+	
+		<title>OntoDocs > http://otl.noord-holland.nl/otl/2018/</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="static/libs/bootswatch3_2/simplex/bootstrap.min.css" rel="stylesheet">
+    <link href="static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="static/custom/css/familytree.css" rel="stylesheet">
+    <link href="static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    /*max-height: 500px;*/
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://otl.noord-holland.nl/otl/2018/</code></a></li>
+        
+
+       
+
+
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (513)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_72"><a  href="class-adaanduidingeisvoorzorgsmaatr_p.html">ad:aanduidingEisVoorzorgsmaatr_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_73"><a  href="class-adaanduidingverzoekcontact_p.html">ad:aanduidingVerzoekContact_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_74"><a  href="class-adadres_tbl.html">ad:adres_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_75"><a  href="class-adareaaldata.html">ad:areaaldata</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_76"><a  href="class-adbak_p.html">ad:bak_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_77"><a  href="class-adbegroeidterreindeelbermkr_l.html">ad:begroeidTerreindeelBermKr_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_78"><a  href="class-adbegroeidterreindeelberm_v.html">ad:begroeidTerreindeelBerm_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_79"><a  href="class-adbegroeidterreindeelkruin_l.html">ad:begroeidTerreindeelKruin_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_80"><a  href="class-adbegroeidterreindeelplkr_l.html">ad:begroeidTerreindeelPlKr_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_81"><a  href="class-adbegroeidterreindeelplantvak_v.html">ad:begroeidTerreindeelPlantvak_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_82"><a  href="class-adbegroeidterreindeel_v.html">ad:begroeidTerreindeel_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_83"><a  href="class-adbeheergrenzen_v.html">ad:beheergrenzen_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_84"><a  href="class-adbeschoeiinginspectie_tbl.html">ad:beschoeiingInspectie_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_85"><a  href="class-adbodem_v.html">ad:bodem_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_86"><a  href="class-adbordscheepvaart_p.html">ad:bordScheepvaart_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_87"><a  href="class-adbordwegwijzer_p.html">ad:bordWegwijzer_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_88"><a  href="class-adbordzwemwater_p.html">ad:bordZwemwater_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_89"><a  href="class-adbord_p.html">ad:bord_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_90"><a  href="class-adbouwdeelgeluidsscherm_tbl.html">ad:bouwdeelGeluidsscherm_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_91"><a  href="class-adbouwdeelkunstwerk_tbl.html">ad:bouwdeelKunstwerk_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_92"><a  href="class-adbouwdeeloevervak_tbl.html">ad:bouwdeelOevervak_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_93"><a  href="class-adbuis_l.html">ad:buis_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_94"><a  href="class-adbuisleiding_v.html">ad:buisleiding_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_95"><a  href="class-adconcessieverlener_tbl.html">ad:concessieverlener_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_96"><a  href="class-adcrowinspectie_tbl.html">ad:crowInspectie_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_97"><a  href="class-adcrowinspectieresultaat_tbl.html">ad:crowInspectieresultaat_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_98"><a  href="class-adcrowmeting_tbl.html">ad:crowMeting_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_99"><a  href="class-addieptetovmaaiveld_p.html">ad:diepteTovMaaiveld_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_100"><a  href="class-addoorvaartmaat_p.html">ad:doorvaartmaat_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_101"><a  href="class-adecohoofdstructuur_v.html">ad:ecoHoofdstructuur_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_102"><a  href="class-adecoverbzone_v.html">ad:ecoVerbZone_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_103"><a  href="class-adecopassage_l.html">ad:ecopassage_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_104"><a  href="class-adelectriciteitskabel_l.html">ad:electriciteitskabel_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_105"><a  href="class-adfaunavoorziening_v.html">ad:faunavoorziening_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_106"><a  href="class-adfietsparkeervoorziening_l.html">ad:fietsparkeervoorziening_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_107"><a  href="class-adfunctioneelgebied_v.html">ad:functioneelGebied_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_108"><a  href="class-adgebiedscontractregio_v.html">ad:gebiedscontractregio_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_109"><a  href="class-adgebouwinstallatie_v.html">ad:gebouwInstallatie_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_110"><a  href="class-adgeluidwerendevoorziening_l.html">ad:geluidwerendeVoorziening_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_111"><a  href="class-adhalte_v.html">ad:halte_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_112"><a  href="class-adinstallatie_p.html">ad:installatie_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_113"><a  href="class-adkabelbed_v.html">ad:kabelbed_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_114"><a  href="class-adkastdris_p.html">ad:kastDRIS_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_115"><a  href="class-adkastovl_p.html">ad:kastOvl_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_116"><a  href="class-adkastvri_p.html">ad:kastVri_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_117"><a  href="class-adkast_p.html">ad:kast_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_118"><a  href="class-adkruispunt_p.html">ad:kruispunt_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_119"><a  href="class-adkunstwerkbeweegbaar_p.html">ad:kunstwerkBeweegbaar_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_120"><a  href="class-adkunstwerkvast_p.html">ad:kunstwerkVast_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_121"><a  href="class-adkunstwerkdeel_l.html">ad:kunstwerkdeel_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_122"><a  href="class-adkunstwerkdeel_mp.html">ad:kunstwerkdeel_mp</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_123"><a  href="class-adkunstwerkdeel_v.html">ad:kunstwerkdeel_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_124"><a  href="class-adkwelement_tbl.html">ad:kwElement_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_125"><a  href="class-adlamp_p.html">ad:lamp_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_126"><a  href="class-adlantaarn_p.html">ad:lantaarn_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_127"><a  href="class-adleidingelement_p.html">ad:leidingelement_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_128"><a  href="class-adligplaatsstrook_v.html">ad:ligplaatsstrook_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_129"><a  href="class-admantelbuis_v.html">ad:mantelbuis_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_130"><a  href="class-admastdraagconstructie_p.html">ad:mastDraagconstructie_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_131"><a  href="class-admetadomeinen_tbl.html">ad:metaDomeinen_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_132"><a  href="class-adnenconditiescore_tbl.html">ad:nenConditiescore_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_133"><a  href="class-adneninspectie_tbl.html">ad:nenInspectie_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_134"><a  href="class-adoeverreparatie_p.html">ad:oeverReparatie_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_135"><a  href="class-adoevervak_v.html">ad:oevervak_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_136"><a  href="class-adonbegroeidterreindeelkruin_l.html">ad:onbegroeidTerreindeelKruin_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_137"><a  href="class-adonbegroeidterreindeel_v.html">ad:onbegroeidTerreindeel_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_138"><a  href="class-adonderdeel_tbl.html">ad:onderdeel_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_139"><a  href="class-adondersteunendwaterdeel_v.html">ad:ondersteunendWaterdeel_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_140"><a  href="class-adondersteunendwegdeelkruin_l.html">ad:ondersteunendWegdeelKruin_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_141"><a  href="class-adondersteunendwegdeelplkr_l.html">ad:ondersteunendWegdeelPlKr_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_142"><a  href="class-adondersteunendwegdeelplantvak_v.html">ad:ondersteunendWegdeelPlantvak_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_143"><a  href="class-adondersteunendwegdeel_v.html">ad:ondersteunendWegdeel_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_144"><a  href="class-adongeclassificeerdobject_v.html">ad:ongeclassificeerdObject_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_145"><a  href="class-adoverbruggingsdeel_v.html">ad:overbruggingsdeel_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_146"><a  href="class-adoverigbouwwerk_v.html">ad:overigBouwwerk_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_147"><a  href="class-adoverigescheiding_l.html">ad:overigeScheiding_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_148"><a  href="class-adoverigescheiding_v.html">ad:overigeScheiding_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_149"><a  href="class-adpaalafbakening_p.html">ad:paalAfbakening_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_150"><a  href="class-adpaaldraagconstructie_p.html">ad:paalDraagconstructie_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_151"><a  href="class-adpandhuisnummerreeks_t.html">ad:pandHuisnummerreeks_t</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_152"><a  href="class-adpand_v.html">ad:pand_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_153"><a  href="class-adplaatsbepalingspunt_p.html">ad:plaatsbepalingspunt_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_154"><a  href="class-adput_p.html">ad:put_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_155"><a  href="class-adrecreatieplek_v.html">ad:recreatieplek_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_156"><a  href="class-adscheidinggeleidewand_l.html">ad:scheidingGeleidewand_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_157"><a  href="class-adscheidinggeluidsscherm_l.html">ad:scheidingGeluidsscherm_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_158"><a  href="class-adscheidingoevervak_l.html">ad:scheidingOevervak_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_159"><a  href="class-adscheiding_l.html">ad:scheiding_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_160"><a  href="class-adscheiding_v.html">ad:scheiding_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_161"><a  href="class-adschutsluis_p.html">ad:schutsluis_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_162"><a  href="class-adsensor_l.html">ad:sensor_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_163"><a  href="class-adsensor_p.html">ad:sensor_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_164"><a  href="class-adspoor_l.html">ad:spoor_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_165"><a  href="class-adspoorrail_l.html">ad:spoorrail_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_166"><a  href="class-adstraatmeubilairlichtpunt_p.html">ad:straatmeubilairLichtpunt_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_167"><a  href="class-adstraatmeubilair_p.html">ad:straatmeubilair_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_168"><a  href="class-adtelecommunicatiekabel_l.html">ad:telecommunicatiekabel_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_169"><a  href="class-adtelpaal_p.html">ad:telpaal_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_170"><a  href="class-adtheorhectometrering_p.html">ad:theorHectometrering_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_171"><a  href="class-adtraject_v.html">ad:traject_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_172"><a  href="class-adtunneldeel_v.html">ad:tunneldeel_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_173"><a  href="class-aduithouder_p.html">ad:uithouder_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_174"><a  href="class-aduitleggerportaal_l.html">ad:uitleggerPortaal_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_175"><a  href="class-adutiliteitsnet_tbl.html">ad:utiliteitsNet_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_176"><a  href="class-advaarweg_l.html">ad:vaarweg_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_177"><a  href="class-advaarwegdeeltraject_v.html">ad:vaarwegdeeltraject_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_178"><a  href="class-advaarwegdeeltrajectas_l.html">ad:vaarwegdeeltrajectas_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_179"><a  href="class-advegetatieobject_l.html">ad:vegetatieObject_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_180"><a  href="class-advegetatieobject_p.html">ad:vegetatieObject_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_181"><a  href="class-advegetatieobject_v.html">ad:vegetatieObject_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_182"><a  href="class-advtainspectie_tbl.html">ad:vtaInspectie_tbl</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_183"><a  href="class-adwaterdeel_v.html">ad:waterdeel_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_184"><a  href="class-adwaterinrichtingselement_l.html">ad:waterinrichtingselement_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_185"><a  href="class-adwaterinrichtingselement_p.html">ad:waterinrichtingselement_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_186"><a  href="class-adwaterloop_l.html">ad:waterloop_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_187"><a  href="class-adweg_l.html">ad:weg_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_188"><a  href="class-adwegdeelkruin_l.html">ad:wegdeelKruin_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_189"><a  href="class-adwegdeelperron_v.html">ad:wegdeelPerron_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_190"><a  href="class-adwegdeel_v.html">ad:wegdeel_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_191"><a  href="class-adweginrichtingselement_l.html">ad:weginrichtingselement_l</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_192"><a  href="class-adweginrichtingselement_p.html">ad:weginrichtingselement_p</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_193"><a  href="class-adweginrichtingselement_v.html">ad:weginrichtingselement_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_194"><a  href="class-adwegvak_v.html">ad:wegvak_v</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_195"><a  href="class-coreaanlooproute.html">core:Aanlooproute</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_196"><a  href="class-coreabri.html">core:Abri</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_197"><a  href="class-coreactievemarkering.html">core:Actievemarkering</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_198"><a  href="class-coreafscheider.html">core:Afscheider</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_199"><a  href="class-coreafvalbak.html">core:Afvalbak</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_200"><a  href="class-coreaquaduct.html">core:Aquaduct</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_201"><a  href="class-corearmatuur.html">core:Armatuur</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_202"><a  href="class-coreas.html">core:As</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_203"><a  href="class-coreasgeometrie.html">core:AsGeometrie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_204"><a  href="class-corebaan.html">core:Baan</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_205"><a  href="class-corebaanas.html">core:BaanAs</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_206"><a  href="class-corebegroeidterreindeel.html">core:BegroeidTerreindeel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_207"><a  href="class-corebeheerobjecten_nen2767-4.html">core:Beheerobjecten_NEN2767-4</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_208"><a  href="class-corebelijning.html">core:Belijning</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_209"><a  href="class-coreberm.html">core:Berm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_210"><a  href="class-corebermplank.html">core:Bermplank</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_211"><a  href="class-corebermsloot.html">core:Bermsloot</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_212"><a  href="class-corebeschoeiing.html">core:Beschoeiing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_213"><a  href="class-corebeschrijving.html">core:Beschrijving</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_214"><a  href="class-corebeweegbaarkunstwerk.html">core:BeweegbaarKunstwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_215"><a  href="class-corebodem.html">core:Bodem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_216"><a  href="class-corebord.html">core:Bord</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_217"><a  href="class-corebouwdelen_nen2767-4.html">core:Bouwdelen_NEN2767-4</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_218"><a  href="class-corebouwwerk.html">core:Bouwwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_219"><a  href="class-corebuis.html">core:Buis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_220"><a  href="class-corebuisleiding.html">core:Buisleiding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_221"><a  href="class-corecamera.html">core:Camera</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_222"><a  href="class-corecamera_vri.html">core:Camera_VRI</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_223"><a  href="class-coreconditioneren_en_inpassen.html">core:Conditioneren_en_inpassen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_224"><a  href="class-coreconstructie.html">core:Constructie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_225"><a  href="class-coredrip_paneel.html">core:DRIP_Paneel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_226"><a  href="class-coredris_kast.html">core:DRIS_Kast</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_227"><a  href="class-coredris_paneel.html">core:DRIS_Paneel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_228"><a  href="class-coredamwand.html">core:Damwand</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_229"><a  href="class-coredatakabel.html">core:Datakabel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_230"><a  href="class-coredetectielus.html">core:Detectielus</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_231"><a  href="class-coredetectielus_vri.html">core:Detectielus_VRI</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_232"><a  href="class-coredetectielus_verkeersteller.html">core:Detectielus_Verkeersteller</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_233"><a  href="class-coredetector.html">core:Detector</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_234"><a  href="class-coredocument.html">core:Document</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_235"><a  href="class-coredraagconstructie.html">core:Draagconstructie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_236"><a  href="class-coredrainagebuis.html">core:Drainagebuis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_237"><a  href="class-coredrielichter.html">core:Drielichter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_238"><a  href="class-coredrukknop.html">core:Drukknop</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_239"><a  href="class-coreduiker.html">core:Duiker</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_240"><a  href="class-coreecoduct.html">core:Ecoduct</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_241"><a  href="class-coreecologischnetwerk.html">core:EcologischNetwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_242"><a  href="class-coreecologischeverbindingszone.html">core:EcologischeVerbindingszone</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_243"><a  href="class-coreecopassage.html">core:Ecopassage</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_244"><a  href="class-coreeenlichter.html">core:Eenlichter</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_245"><a  href="class-coreeis.html">core:Eis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_246"><a  href="class-coreeistekst.html">core:Eistekst</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_247"><a  href="class-coreelecticiteitskabel.html">core:Electiciteitskabel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_248"><a  href="class-coreelektrischeinstallatie.html">core:ElektrischeInstallatie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_249"><a  href="class-coreelementen_nen2767-4.html">core:Elementen_NEN2767-4</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_250"><a  href="class-corefaciliterendataverzamelsysteem.html">core:FaciliterenDataverzamelSysteem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_251"><a  href="class-corefaciliterenecologischnetwerk.html">core:FaciliterenEcologischNetwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_252"><a  href="class-corefaciliterenoverigevoorzieningen.html">core:FaciliterenOverigeVoorzieningen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_253"><a  href="class-corefaciliterenvaarwegennetwerk.html">core:FaciliterenVaarwegenNetwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_254"><a  href="class-corefaciliterenwatermanagementsysteem.html">core:FaciliterenWatermanagementSysteem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_255"><a  href="class-corefaciliterenwegennetwerk.html">core:FaciliterenWegenNetwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_256"><a  href="class-corefaunaraster.html">core:Faunaraster</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_257"><a  href="class-corefietsnetwerk.html">core:FietsNetwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_258"><a  href="class-corefunctioneelgebied.html">core:FunctioneelGebied</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_259"><a  href="class-coregms_kast.html">core:GMS_Kast</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_260"><a  href="class-coregebied.html">core:Gebied</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_261"><a  href="class-coregebouw.html">core:Gebouw</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_262"><a  href="class-coregedenkteken.html">core:Gedenkteken</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_263"><a  href="class-coregeleidelijn.html">core:Geleidelijn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_264"><a  href="class-coregeleiderailconstructie.html">core:GeleiderailConstructie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_265"><a  href="class-coregelijkvloerskruispunt.html">core:GelijkvloersKruispunt</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_266"><a  href="class-coregelijkvloersenetwerkkruising.html">core:GelijkvloerseNetwerkKruising</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_267"><a  href="class-coregeluidbeperkendeconstructie.html">core:GeluidbeperkendeConstructie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_268"><a  href="class-coregeluidsscherm.html">core:Geluidsscherm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_269"><a  href="class-coregeluidswal.html">core:Geluidswal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_270"><a  href="class-coregreppel.html">core:Greppel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_271"><a  href="class-coregroepering.html">core:Groepering</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_272"><a  href="class-corehalte.html">core:Halte</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_273"><a  href="class-corehaven.html">core:Haven</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_274"><a  href="class-corehek.html">core:Hek</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_275"><a  href="class-coreinformatierepresentatie.html">core:InformatieRepresentatie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_276"><a  href="class-coreinformatiebord.html">core:Informatiebord</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_277"><a  href="class-coreinrichtingselement.html">core:Inrichtingselement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_278"><a  href="class-coreinspectieput.html">core:Inspectieput</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_279"><a  href="class-coreinstallatie.html">core:Installatie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_280"><a  href="class-coreinstallatiedeel.html">core:Installatiedeel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_281"><a  href="class-coreinstapmarkering.html">core:Instapmarkering</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_282"><a  href="class-coreinstructie.html">core:Instructie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_283"><a  href="class-coreintersectie.html">core:Intersectie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_284"><a  href="class-corekabel.html">core:Kabel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_285"><a  href="class-corekabels_en_leidingen.html">core:Kabels_en_Leidingen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_286"><a  href="class-corekademuur.html">core:Kademuur</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_287"><a  href="class-corekast.html">core:Kast</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_288"><a  href="class-corekerendeconstructie.html">core:KerendeConstructie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_289"><a  href="class-coreknooppunt.html">core:Knooppunt</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_290"><a  href="class-corekolk.html">core:Kolk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_291"><a  href="class-corekolkleiding.html">core:Kolkleiding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_292"><a  href="class-corekruinlijn.html">core:Kruinlijn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_293"><a  href="class-corekruiseninfrastructuur.html">core:KruisenInfrastructuur</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_294"><a  href="class-corekunstobject.html">core:Kunstobject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_295"><a  href="class-corekunstwerk.html">core:Kunstwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_296"><a  href="class-corelantaarn.html">core:Lantaarn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_297"><a  href="class-coreleiding.html">core:Leiding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_298"><a  href="class-coreleidingnetwerk.html">core:LeidingNetwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_299"><a  href="class-coreleidingelement.html">core:Leidingelement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_300"><a  href="class-coremanagenverkeer.html">core:ManagenVerkeer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_301"><a  href="class-coremantelbuis.html">core:Mantelbuis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_302"><a  href="class-coremarkering.html">core:Markering</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_303"><a  href="class-coremast.html">core:Mast</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_304"><a  href="class-corematerieel_gladheidsbestrijding.html">core:Materieel_Gladheidsbestrijding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_305"><a  href="class-corematrixbord.html">core:Matrixbord</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_306"><a  href="class-coremuur.html">core:Muur</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_307"><a  href="class-corenatuurlijkgebied.html">core:NatuurlijkGebied</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_308"><a  href="class-corenegenoog.html">core:Negenoog</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_309"><a  href="class-corenetwerk.html">core:Netwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_310"><a  href="class-corenetwerkkruising.html">core:NetwerkKruising</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_311"><a  href="class-corenetwerklink.html">core:NetwerkLink</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_312"><a  href="class-corenetwerknode.html">core:NetwerkNode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_313"><a  href="class-corenetwerkgebied.html">core:Netwerkgebied</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_314"><a  href="class-coreovl_kast.html">core:OVL_Kast</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_315"><a  href="class-coreoeverbescherming.html">core:Oeverbescherming</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_316"><a  href="class-coreoeverconstructie.html">core:Oeverconstructie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_317"><a  href="class-coreoeverlijn.html">core:Oeverlijn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_318"><a  href="class-coreoevervak.html">core:Oevervak</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_319"><a  href="class-coreonderdoorgang.html">core:Onderdoorgang</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_320"><a  href="class-coreongelijkvloerskruispunt.html">core:OngelijkvloersKruispunt</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_321"><a  href="class-coreongelijkvloersenetwerkkruising.html">core:OngelijkvloerseNetwerkKruising</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_322"><a  href="class-coreontsluitenprovinciaalnetwerk.html">core:OntsluitenProvinciaalNetwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_323"><a  href="class-coreopenbaarvervoernetwerk.html">core:OpenbaarVervoerNetwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_324"><a  href="class-coreopenbareverlichtingsinstallatie.html">core:OpenbareVerlichtingsInstallatie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_325"><a  href="class-coreopstallen.html">core:Opstallen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_326"><a  href="class-coreoverigbouwwerk.html">core:OverigBouwwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_327"><a  href="class-coreoverkluizing.html">core:Overkluizing</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_328"><a  href="class-corepaal.html">core:Paal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_329"><a  href="class-coreparkeerplaats.html">core:Parkeerplaats</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_330"><a  href="class-coreplantvak.html">core:Plantvak</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_331"><a  href="class-coreprocedure.html">core:Procedure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_332"><a  href="class-coreput.html">core:Put</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_333"><a  href="class-coreraster.html">core:Raster</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_334"><a  href="class-coreregistratiefgebied.html">core:RegistratiefGebied</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_335"><a  href="class-corerijstrook.html">core:Rijstrook</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_336"><a  href="class-corerioolnetwerk.html">core:RioolNetwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_337"><a  href="class-corerotonde.html">core:Rotonde</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_338"><a  href="class-coreroute.html">core:Route</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_339"><a  href="class-corescheepvaartsein.html">core:Scheepvaartsein</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_340"><a  href="class-corescheepvaartverkeersbord.html">core:Scheepvaartverkeersbord</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_341"><a  href="class-corescheidendeconstructie.html">core:ScheidendeConstructie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_342"><a  href="class-coreschutsluis.html">core:Schutsluis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_343"><a  href="class-coresensor.html">core:Sensor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_344"><a  href="class-coresifon.html">core:Sifon</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_345"><a  href="class-coresignaalgever.html">core:Signaalgever</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_346"><a  href="class-coresleutelkluis.html">core:Sleutelkluis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_347"><a  href="class-coresloot.html">core:Sloot</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_348"><a  href="class-coresluis.html">core:Sluis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_349"><a  href="class-corespecificatie.html">core:Specificatie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_350"><a  href="class-corespuisluis.html">core:Spuisluis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_351"><a  href="class-corestrookas.html">core:StrookAs</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_352"><a  href="class-corestuw.html">core:Stuw</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_353"><a  href="class-coreterrein.html">core:Terrein</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_354"><a  href="class-coreterreindeel.html">core:Terreindeel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_355"><a  href="class-coreterreinen.html">core:Terreinen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_356"><a  href="class-coretraject.html">core:Traject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_357"><a  href="class-coretunnel.html">core:Tunnel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_358"><a  href="class-coretunnelbak.html">core:Tunnelbak</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_359"><a  href="class-coreuitwisselpuntvaarweg.html">core:UitwisselpuntVaarweg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_360"><a  href="class-corevri_kast.html">core:VRI_Kast</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_361"><a  href="class-corevaarweg.html">core:Vaarweg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_362"><a  href="class-corevaarwegas.html">core:VaarwegAs</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_363"><a  href="class-corevaarweglink.html">core:VaarwegLink</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_364"><a  href="class-corevaarwegnetwerk.html">core:VaarwegNetwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_365"><a  href="class-corevaarwegnode.html">core:VaarwegNode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_366"><a  href="class-corevastkunstwerk.html">core:VastKunstwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_367"><a  href="class-corevastebrug.html">core:VasteBrug</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_368"><a  href="class-coreverblijfspuntvaarweg.html">core:VerblijfspuntVaarweg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_369"><a  href="class-coreverblijfspuntweg.html">core:VerblijfspuntWeg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_370"><a  href="class-coreverhardebaan.html">core:VerhardeBaan</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_371"><a  href="class-coreverkeerscentrale.html">core:Verkeerscentrale</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_372"><a  href="class-coreverkeersmanagementsysteem.html">core:Verkeersmanagementsysteem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_373"><a  href="class-coreverkeersmanagementsysteem_vaarweg.html">core:Verkeersmanagementsysteem_vaarweg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_374"><a  href="class-coreverkeersmanagementsysteem_weg.html">core:Verkeersmanagementsysteem_weg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_375"><a  href="class-coreverkeersplein.html">core:Verkeersplein</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_376"><a  href="class-coreverkeersregelinstallatie.html">core:VerkeersregelInstallatie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_377"><a  href="class-coreverkeersteken.html">core:Verkeersteken</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_378"><a  href="class-coreviaduct.html">core:Viaduct</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_379"><a  href="class-corevluchthaven.html">core:Vluchthaven</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_380"><a  href="class-corewaarnemingscamera.html">core:WaarnemingsCamera</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_381"><a  href="class-corewaarschuwingsmarkering.html">core:Waarschuwingsmarkering</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_382"><a  href="class-corewachtplaats.html">core:Wachtplaats</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_383"><a  href="class-corewaterbergingsgebied.html">core:Waterbergingsgebied</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_384"><a  href="class-corewaterdeel.html">core:Waterdeel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_385"><a  href="class-corewaterhuishouding.html">core:Waterhuishouding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_386"><a  href="class-corewaterloop.html">core:Waterloop</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_387"><a  href="class-corewaterstaankundigwerk.html">core:WaterstaankundigWerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_388"><a  href="class-corewatervlakte.html">core:Watervlakte</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_389"><a  href="class-coreweg.html">core:Weg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_390"><a  href="class-corewegas.html">core:WegAs</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_391"><a  href="class-corewegbaan.html">core:WegBaan</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_392"><a  href="class-coreweglink.html">core:WegLink</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_393"><a  href="class-corewegnetwerk.html">core:WegNetwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_394"><a  href="class-corewegberm.html">core:Wegberm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_395"><a  href="class-corewegdeel.html">core:Wegdeel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_396"><a  href="class-corewegmarkering.html">core:Wegmarkering</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_397"><a  href="class-corewegnode.html">core:Wegnode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_398"><a  href="class-corewegvak.html">core:Wegvak</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_399"><a  href="class-corewegverkeersbord.html">core:Wegverkeersbord</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_400"><a  href="class-corewegverkeerslantaarn.html">core:Wegverkeerslantaarn</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_401"><a  href="class-corewegwijzer.html">core:Wegwijzer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_402"><a  href="class-corezandvang.html">core:Zandvang</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_403"><a  href="class-corezwemwaterbord.html">core:Zwemwaterbord</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_404"><a  href="class-otbabri.html">otb:Abri</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_405"><a  href="class-otbactieve_markering_led.html">otb:Actieve_markering_LED</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_406"><a  href="class-otbbebakening_en_bebording.html">otb:Bebakening_en_bebording</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_407"><a  href="class-otbbelijning.html">otb:Belijning</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_408"><a  href="class-otbbeplanting_langs_wegen_vaarwegen_en_terreinen.html">otb:Beplanting_langs_Wegen_Vaarwegen_en_Terreinen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_409"><a  href="class-otbbermbeplanting.html">otb:Bermbeplanting</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_410"><a  href="class-otbbermplankjes.html">otb:Bermplankjes</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_411"><a  href="class-otbbermsloot_greppel.html">otb:Bermsloot_greppel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_412"><a  href="class-otbbesturing_dbs_vaarwegen.html">otb:Besturing_DBS_Vaarwegen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_413"><a  href="class-otbbesturingskast_matrixpaneel_vaarwegen.html">otb:Besturingskast_matrixpaneel_Vaarwegen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_414"><a  href="class-otbbetonning.html">otb:Betonning</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_415"><a  href="class-otbbeweegbaar_kunstwerk.html">otb:Beweegbaar_kunstwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_416"><a  href="class-otbbewegwijzering.html">otb:Bewegwijzering</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_417"><a  href="class-otbbouwdeel_beweegbaar_kunstwerk.html">otb:Bouwdeel_Beweegbaar_kunstwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_418"><a  href="class-otbbouwdeel_geluidwerende_constructie.html">otb:Bouwdeel_Geluidwerende_constructie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_419"><a  href="class-otbbouwdeel_nen_2767-4_oever.html">otb:Bouwdeel_NEN_2767-4_Oever</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_420"><a  href="class-otbbouwdeel_nen_2767-4_schutsluis.html">otb:Bouwdeel_NEN_2767-4_Schutsluis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_421"><a  href="class-otbbouwdeel_vast_kunstwerk.html">otb:Bouwdeel_Vast_kunstwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_422"><a  href="class-otbbushalte.html">otb:Bushalte</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_423"><a  href="class-otbcamera_vaarweg.html">otb:Camera_Vaarweg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_424"><a  href="class-otbdris-paneel.html">otb:DRIS-paneel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_425"><a  href="class-otbdataverzamelsysteem.html">otb:Dataverzamelsysteem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_426"><a  href="class-otbdetectielus.html">otb:Detectielus</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_427"><a  href="class-otbdetectielus_verkeersteller.html">otb:Detectielus_Verkeersteller</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_428"><a  href="class-otbdraagconstructie_dris.html">otb:Draagconstructie_DRIS</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_429"><a  href="class-otbdraagconstructie_matrixpaneel_vaarwegen.html">otb:Draagconstructie_matrixpaneel_Vaarwegen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_430"><a  href="class-otbdraagkrachtige_berm.html">otb:Draagkrachtige_berm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_431"><a  href="class-otbecoduct.html">otb:Ecoduct</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_432"><a  href="class-otbecologisch_netwerk.html">otb:Ecologisch_netwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_433"><a  href="class-otbecologische_verbindingen.html">otb:Ecologische_verbindingen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_434"><a  href="class-otbecologische_verbindingszone.html">otb:Ecologische_verbindingszone</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_435"><a  href="class-otbecopassages.html">otb:Ecopassages</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_436"><a  href="class-otbecotopen.html">otb:Ecotopen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_437"><a  href="class-otbelement_beweegbaar_kunstwerk.html">otb:Element_Beweegbaar_kunstwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_438"><a  href="class-otbelement_nen_2767-4_oever.html">otb:Element_NEN_2767-4_Oever</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_439"><a  href="class-otbelement_nen_2767-4_schutsluis.html">otb:Element_NEN_2767-4_Schutsluis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_440"><a  href="class-otbelement_vast_kunstwerk.html">otb:Element_Vast_kunstwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_441"><a  href="class-otbenergieverzorging_zonnepaneel.html">otb:Energieverzorging_zonnepaneel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_442"><a  href="class-otbfaunaraster.html">otb:Faunaraster</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_443"><a  href="class-otbgeluidscherm.html">otb:Geluidscherm</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_444"><a  href="class-otbgeluidwerende_constructie.html">otb:Geluidwerende_constructie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_445"><a  href="class-otbgladheidsmeldsysteem.html">otb:Gladheidsmeldsysteem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_446"><a  href="class-otbhabitats.html">otb:Habitats</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_447"><a  href="class-otbhaven.html">otb:Haven</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_448"><a  href="class-otbinformatievoorziening_drip_vaarweg.html">otb:Informatievoorziening_DRIP_Vaarweg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_449"><a  href="class-otbkabels_en_leidingen.html">otb:Kabels_en_Leidingen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_450"><a  href="class-otbknooppunt.html">otb:Knooppunt</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_451"><a  href="class-otbkolk_en_put.html">otb:Kolk_en_put</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_452"><a  href="class-otbkolkleiding.html">otb:Kolkleiding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_453"><a  href="class-otbkruising.html">otb:Kruising</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_454"><a  href="class-otbkruispunt.html">otb:Kruispunt</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_455"><a  href="class-otbkunstwerk.html">otb:Kunstwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_456"><a  href="class-otblichtopstanden.html">otb:Lichtopstanden</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_457"><a  href="class-otbmarkering_en_belijning.html">otb:Markering_en_belijning</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_458"><a  href="class-otbmaterieel_gladheidsbestrijding.html">otb:Materieel_gladheidsbestrijding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_459"><a  href="class-otbnatuurlijke_overgangen.html">otb:Natuurlijke_overgangen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_460"><a  href="class-otboever.html">otb:Oever</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_461"><a  href="class-otboeverbeplanting.html">otb:Oeverbeplanting</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_462"><a  href="class-otbonderdelen_vri.html">otb:Onderdelen_VRI</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_463"><a  href="class-otbopenbare_verlichting.html">otb:Openbare_Verlichting</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_464"><a  href="class-otbopstallen.html">otb:Opstallen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_465"><a  href="class-otboverige_voorzieningen.html">otb:Overige_voorzieningen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_466"><a  href="class-otbparkeerplaats.html">otb:Parkeerplaats</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_467"><a  href="class-otbperron.html">otb:Perron</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_468"><a  href="class-otbpresentatiepaneel_matrix_vaarwegen.html">otb:Presentatiepaneel_matrix_Vaarwegen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_469"><a  href="class-otbprovinciaal_systeem.html">otb:Provinciaal_systeem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_470"><a  href="class-otbriool.html">otb:Riool</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_471"><a  href="class-otbrotonde.html">otb:Rotonde</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_472"><a  href="class-otbscheepvaartsein.html">otb:Scheepvaartsein</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_473"><a  href="class-otbschutsluis.html">otb:Schutsluis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_474"><a  href="class-otbtechnische_installaties_vaarwegen.html">otb:Technische_Installaties_Vaarwegen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_475"><a  href="class-otbtelkast.html">otb:Telkast</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_476"><a  href="class-otbtelpaal.html">otb:Telpaal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_477"><a  href="class-otbterreinen.html">otb:Terreinen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_478"><a  href="class-otbuitwisselpunt_vaarweg.html">otb:Uitwisselpunt_Vaarweg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_479"><a  href="class-otbuitwisselpunt_weg.html">otb:Uitwisselpunt_weg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_480"><a  href="class-otbvri-camera.html">otb:VRI-camera</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_481"><a  href="class-otbvri_weg.html">otb:VRI_Weg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_482"><a  href="class-otbvaarweg.html">otb:Vaarweg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_483"><a  href="class-otbvaarwegbodem.html">otb:Vaarwegbodem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_484"><a  href="class-otbvaarwegennet.html">otb:Vaarwegennet</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_485"><a  href="class-otbvaarweggeleiding.html">otb:Vaarweggeleiding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_486"><a  href="class-otbvast_kunstwerk.html">otb:Vast_kunstwerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_487"><a  href="class-otbverblijfspunt_vaarweg.html">otb:Verblijfspunt_Vaarweg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_488"><a  href="class-otbverblijfspunt_weg.html">otb:Verblijfspunt_Weg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_489"><a  href="class-otbverkeersgeleiding.html">otb:Verkeersgeleiding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_490"><a  href="class-otbverkeersmanagementsysteem.html">otb:Verkeersmanagementsysteem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_491"><a  href="class-otbverkeersmanagementsysteem_vaarweg.html">otb:Verkeersmanagementsysteem_Vaarweg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_492"><a  href="class-otbverkeersmanagementsysteem_weg.html">otb:Verkeersmanagementsysteem_Weg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_493"><a  href="class-otbverkeersteller.html">otb:Verkeersteller</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_494"><a  href="class-otbverzorgingsplaats.html">otb:Verzorgingsplaats</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_495"><a  href="class-otbvluchthaven.html">otb:Vluchthaven</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_496"><a  href="class-otbvoertuigkering.html">otb:Voertuigkering</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_497"><a  href="class-otbwaarnemingscamera_wegverkeer.html">otb:Waarnemingscamera_Wegverkeer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_498"><a  href="class-otbwaarnemingssysteem_wegverkeer.html">otb:Waarnemingssysteem_Wegverkeer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_499"><a  href="class-otbwachtplaats.html">otb:Wachtplaats</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_500"><a  href="class-otbwaterberging.html">otb:Waterberging</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_501"><a  href="class-otbwaterhuishouding.html">otb:Waterhuishouding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_502"><a  href="class-otbweg.html">otb:Weg</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_503"><a  href="class-otbwegelement_autoverkeer.html">otb:Wegelement_Autoverkeer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_504"><a  href="class-otbwegelement_busverkeer.html">otb:Wegelement_Busverkeer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_505"><a  href="class-otbwegelement_fietsverkeer.html">otb:Wegelement_Fietsverkeer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_506"><a  href="class-otbwegelement_hov.html">otb:Wegelement_HOV</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_507"><a  href="class-otbwegelement_landbouwverkeer.html">otb:Wegelement_Landbouwverkeer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_508"><a  href="class-otbwegelement_openbaar_vervoer.html">otb:Wegelement_Openbaar_Vervoer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_509"><a  href="class-otbwegelement_voetgangersverkeer.html">otb:Wegelement_Voetgangersverkeer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_510"><a  href="class-otbwegennet.html">otb:Wegennet</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_511"><a  href="class-otbweginpassingsvoorzieningen.html">otb:Weginpassingsvoorzieningen</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_512"><a  href="class-otbwegvak.html">otb:Wegvak</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_513"><a  href="class-otbwegverkeerssein.html">otb:Wegverkeerssein</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_514"><a  href="class-otbzwemwaterborden.html">otb:Zwemwaterborden</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_2"><a  href="class-topabstractobject.html">top:AbstractObject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_3"><a  href="class-topactiviteit.html">top:Activiteit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_4"><a  href="class-topalinea.html">top:Alinea</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_5"><a  href="class-topartefact.html">top:Artefact</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_6"><a class="active" href="class-topartikel.html">top:Artikel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_7"><a  href="class-topasset.html">top:Asset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_8"><a  href="class-topboek.html">top:Boek</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_9"><a  href="class-topboekstructuur.html">top:BoekStructuur</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_10"><a  href="class-topbolcoordinaat.html">top:BolCoordinaat</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_11"><a  href="class-topbrief.html">top:Brief</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_12"><a  href="class-topcode.html">top:Code</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_13"><a  href="class-topcoordinaat.html">top:Coordinaat</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_14"><a  href="class-topcylindercoordinaat.html">top:CylinderCoordinaat</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_15"><a  href="class-topdeelhoofdstuk.html">top:Deelhoofdstuk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_16"><a  href="class-topdier.html">top:Dier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_17"><a  href="class-topdriedcoordinaat.html">top:DrieDCoordinaat</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_18"><a  href="class-topdriedruimte.html">top:DrieDRuimte</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_19"><a  href="class-topeendcoordinaat.html">top:EenDCoordinaat</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_20"><a  href="class-topeendruimte.html">top:EenDRuimte</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_21"><a  href="class-topeenheid.html">top:Eenheid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_22"><a  href="class-topelectrischestroom.html">top:ElectrischeStroom</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_23"><a  href="class-topemail.html">top:Email</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_24"><a  href="class-topemailstructuur.html">top:EmailStructuur</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_25"><a  href="class-topenergie.html">top:Energie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_26"><a  href="class-topfunctie.html">top:Functie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_27"><a  href="class-topfysiekobject.html">top:FysiekObject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_28"><a  href="class-topfysiekeruimte.html">top:FysiekeRuimte</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_29"><a  href="class-topgeordendeverzameling.html">top:GeordendeVerzameling</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_30"><a  href="class-topgrind.html">top:Grind</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_31"><a  href="class-tophoeveelheid.html">top:Hoeveelheid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_32"><a  href="class-tophoeveelheidstof.html">top:HoeveelheidStof</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_33"><a  href="class-tophoofdstuk.html">top:Hoofdstuk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_34"><a  href="class-topid.html">top:ID</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_35"><a  href="class-topijzer.html">top:IJzer</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_36"><a  href="class-topinformatie.html">top:Informatie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_37"><a  href="class-topkenmerk.html">top:Kenmerk</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_38"><a  href="class-toplabel.html">top:Label</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_39"><a  href="class-toplengte.html">top:Lengte</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_40"><a  href="class-toplichtsterkte.html">top:Lichtsterkte</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_41"><a  href="class-toplid.html">top:Lid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_42"><a  href="class-topmassa.html">top:Massa</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_43"><a  href="class-topmateriaal.html">top:Materiaal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_44"><a  href="class-topmemo.html">top:Memo</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_45"><a  href="class-topmetaal.html">top:Metaal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_46"><a  href="class-topnl-sfbcode.html">top:NL-sfbCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_47"><a  href="class-topnatuurlijkobject.html">top:NatuurlijkObject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_48"><a  href="class-topnuldruimte.html">top:NulDRuimte</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_49"><a  href="class-topobject.html">top:Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_50"><a  href="class-topongeordendeverzameling.html">top:OngeordendeVerzameling</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_51"><a  href="class-toporganisatie.html">top:Organisatie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_52"><a  href="class-topparagraaf.html">top:Paragraaf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_53"><a  href="class-toppersoon.html">top:Persoon</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_54"><a  href="class-topplant.html">top:Plant</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_55"><a  href="class-toppostcode.html">top:Postcode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_56"><a  href="class-topprestatie.html">top:Prestatie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_57"><a  href="class-topprocess.html">top:Process</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_58"><a  href="class-toprapport.html">top:Rapport</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_59"><a  href="class-toprol.html">top:Rol</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_60"><a  href="class-topsignificantie.html">top:Significantie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_61"><a  href="class-topsysteem.html">top:Systeem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_62"><a  href="class-toptemperatuur.html">top:Temperatuur</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_63"><a  href="class-toptijd.html">top:Tijd</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_64"><a  href="class-toptijdsduur.html">top:Tijdsduur</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_65"><a  href="class-toptweedcoordinaat.html">top:TweeDCoordinaat</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_66"><a  href="class-toptweedruimte.html">top:TweeDRuimte</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_67"><a  href="class-topvegetatie.html">top:Vegetatie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_68"><a  href="class-topverslag.html">top:Verslag</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_69"><a  href="class-topverzameling.html">top:Verzameling</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_70"><a  href="class-topvlakcoordinaat.html">top:VlakCoordinaat</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_71"><a  href="class-topzand.html">top:Zand</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (13)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_516"><a   href="prop-adherkomstdefinitie.html">ad:herkomstDefinitie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_517"><a   href="prop-adisbgt_object.html">ad:isBGT_Object</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_518"><a   href="prop-adpositionelenauwkeurigheid.html">ad:positioneleNauwkeurigheid</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_515"><a   href="prop-corebestaatuit.html">core:bestaatUit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_519"><a   href="prop-coreheeftbeschrijving.html">core:heeftBeschrijving</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_520"><a   href="prop-coreisonderdeelvan.html">core:isOnderdeelVan</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_521"><a   href="prop-corerealiseert.html">core:realiseert</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_522"><a   href="prop-corespecificeertactiviteit.html">core:specificeertActiviteit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_523"><a   href="prop-corespecificeertfunctie.html">core:specificeertFunctie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_524"><a   href="prop-corespecificeertobject.html">core:specificeertObject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_525"><a   href="prop-corevervultfunctie.html">core:vervultFunctie</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_526"><a   href="prop-corewordtgerealiseerddoor.html">core:wordtGerealiseerdDoor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_527"><a   href="prop-otbpartof.html">otb:partOf</a></li>
+          
+
+        
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+
+
+
+        
+
+
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-classes.html">Classes</a>
+    </li>
+      <li class="active">
+            http://binkhoffmann.org/ontologies/top#Artikel
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+            <h1>
+
+                top:Artikel
+                
+                    <small class="label label-info label-xs">leaf node</small>
+                  
+
+            </h1>
+            <hr>
+
+
+
+            <div class="tree-container">
+            <div class="tree">
+                <ul>
+                    
+
+                        
+
+                        <li>
+
+                          <a href="class-topgeordendeverzameling.html" title="'Geordende verzameling' - Een geordende verzameling is een verzameling waarvan de gebundelde dingen een volgorde hebben.">top:GeordendeVerzameling</a>
+
+                          <ul>
+
+                            <li><a style="font-weight: bold;" title="'Artikel'">top:Artikel</a>
+                            
+                              </li>
+
+                          </ul>
+
+                          </li>
+                        
+
+                    
+
+                </ul>
+            </div>
+            </div>
+
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">URI</h3>
+            </div>
+            <div class="panel-body">
+
+                <code>http://binkhoffmann.org/ontologies/top#Artikel</code>
+            </div>
+          </div>
+           </div></div>
+
+           
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Label</h3>
+            </div>
+            <div class="panel-body">
+
+                Artikel
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+           
+
+
+
+
+           
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Superclasses (2)</h3>
+            </div>
+            <div class="panel-body">
+
+            
+                    <li><a href="class-topgeordendeverzameling.html" title="http://binkhoffmann.org/ontologies/top#GeordendeVerzameling">top:GeordendeVerzameling</a></li><li><a href="class-topverzameling.html" title="http://binkhoffmann.org/ontologies/top#Verzameling">top:Verzameling</a></li>
+            
+
+            </div>
+          </div>
+           </div></div>
+           
+
+
+
+          
+
+
+
+         
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+            <div class="panel-body" style="overflow: auto;">
+
+                <p>Instances of top:Artikel can have the following properties:</p>
+            </div>
+             <table class="table table-bordered" style="overflow: auto;">
+
+                <tr class="table-classproperties">
+                    <th>PROPERTY</th><th>TYPE</th><th>DESCRIPTION</th><th>RANGE</th>
+                </tr>
+
+                
+
+                    
+
+                    
+
+                    
+
+                
+
+                    
+
+                    
+
+                        <tr class="table-inheritanceinfo">
+                            <th colspan="4" class="treeinfo"><span class="label label-default">From class <a title="owl:Thing" href="class-owlthing.html" class="fromclass_link">owl:Thing</a></span>
+                            </th>
+                        </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="core:realiseert" href="prop-corerealiseert.html">core:realiseert</a>
+                                </td>
+                                <td class="secondtd">
+                                    <i>owl:ObjectProperty<i>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="fourthtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td class="firsttd">
+                                    <a class="propcolor" title="core:wordtGerealiseerdDoor" href="prop-corewordtgerealiseerddoor.html">core:wordtGerealiseerdDoor</a>
+                                </td>
+                                <td class="secondtd">
+                                    <i>owl:ObjectProperty<i>
+                                </td>
+                                <td class="thirdtd">
+                                    <span>--</span>
+                                </td>
+                                <td class="fourthtd">
+                                    
+                                        <i>owl:Thing</i>
+                                    
+                                </td>
+                            </tr>
+
+                            
+
+                    
+
+                    
+
+                
+
+            </table>
+
+
+          </div>
+           </div></div>
+
+        
+
+
+
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Implementation</h3>
+            </div>
+            <div class="panel-body implementation-panel">
+
+                
+
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;http://otl.noord-holland.nl/otl/2018/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">ad:</span><span class="w"> </span><span class="nv">&lt;http://otl.noord-holland.nl/areaaldata/v4.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">ad_mapping:</span><span class="w"> </span><span class="nv">&lt;http://mapping.otl.noord-holland.nl/areaaldata/v4.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">adwl:</span><span class="w"> </span><span class="nv">&lt;http://otl.noord-holland.nl/areaaldata-wl/v4.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">cbnltop:</span><span class="w"> </span><span class="nv">&lt;http://ont.cbnl.org/top/def/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">core:</span><span class="w"> </span><span class="nv">&lt;http://otl.noord-holland.nl/core/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dc:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/elements/1.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">foaf:</span><span class="w"> </span><span class="nv">&lt;http://xmlns.com/foaf/0.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nv">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">otb:</span><span class="w"> </span><span class="nv">&lt;http://otl.noord-holland.nl/otb/v_MN/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">otb_mapping:</span><span class="w"> </span><span class="nv">&lt;http://mapping.otl.noord-holland.nl/otb/v_MN/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">skos:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">spin:</span><span class="w"> </span><span class="nv">&lt;http://spinrdf.org/spin#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">top:</span><span class="w"> </span><span class="nv">&lt;http://binkhoffmann.org/ontologies/top#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">vann:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/vocab/vann/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">void:</span><span class="w"> </span><span class="nv">&lt;http://rdfs.org/ns/void#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+
+<span class="nn">top:</span><span class="nt">Artikel</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">owl:</span><span class="nt">Class</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w"> </span><span class="s">&quot;Artikel&quot;</span><span class="o">@</span><span class="ge">nl-nl</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">rdfs:</span><span class="nt">subClassOf</span><span class="w"> </span><span class="nn">top:</span><span class="nt">GeordendeVerzameling</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nn">owl:</span><span class="nt">disjointWith</span><span class="w"> </span><span class="nn">top:</span><span class="nt">Alinea</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nn">top:</span><span class="nt">BoekStructuur</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nn">top:</span><span class="nt">Deelhoofdstuk</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nn">top:</span><span class="nt">EmailStructuur</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nn">top:</span><span class="nt">Hoofdstuk</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nn">top:</span><span class="nt">Lid</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nn">top:</span><span class="nt">Paragraaf</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nn">top:</span><span class="nt">Process</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+</pre></div>
+
+
+                
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on 12th October 2018 with <a href="https://github.com/lambdamusic/OntoDocs">OntoDocs</a> (v1.2.1)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="static/libs/chartjs-2_4_0/chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+
+  
+  
+
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_6").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
