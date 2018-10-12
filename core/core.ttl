@@ -387,7 +387,7 @@ core:FietsNetwerk
 core:FunctioneelGebied
   rdf:type owl:Class ;
   rdfs:label "Functioneel gebied" ;
-  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
+  rdfs:subClassOf core:Gebied ;
   skos:definition "Begrensd en benoemd gebied dat door een functionele eenheid beschreven wordt."@nl-nl ;
 .
 core:GMS_Kast
@@ -395,6 +395,13 @@ core:GMS_Kast
   rdfs:label "GMS Kast" ;
   rdfs:subClassOf core:Kast ;
   skos:definition "Kast ten behoeve van het meten van weers- en wegdekomstandigheden."@nl-nl ;
+.
+core:Gebied
+  rdf:type owl:Class ;
+  rdfs:label "Gebied" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
+  skos:definition "Begrensd ruimtelijk object dat een op- of indeling van het aardoppervlak vormt."@nl-nl ;
+  skos:note "Het begrip 'gebied' komt overeen met 'land use' in INSPIRE en BGT/IMGEO, en heeft betrekking op het sociaal-economisch en ecologisch gebruik van het aardoppervlak, dat zich binnen de grenzen van het gebied bevindt. Een gebied kan worden gerealiseerd door de fysieke objecten (waaronder terrein), die zich binnen die ruimte bevinden." ;
 .
 core:Gebouw
   rdf:type owl:Class ;
@@ -575,6 +582,7 @@ core:Kolk
 core:Kolkleiding
   rdf:type owl:Class ;
   rdfs:label "Kolkleiding" ;
+  rdfs:subClassOf core:Buis ;
   skos:definition "Overdekt of ondergronds afvoerkanaal voor vuil- of hemelwater."@nl-nl ;
 .
 core:Kruinlijn
@@ -596,6 +604,7 @@ core:Kunstobject
 .
 core:Kunstwerk
   rdf:type owl:Class ;
+  core:realiseert core:OngelijkvloerseNetwerkKruising ;
   rdfs:label "Kunstwerk" ;
   rdfs:subClassOf core:OverigBouwwerk ;
   skos:definition "Bouwwerk, geen gebouw zijnde, dat de realisatie vormt van een kruising van netwerklinks."@nl-nl ;
@@ -662,6 +671,12 @@ core:Muur
   rdfs:label "Muur" ;
   rdfs:subClassOf core:ScheidendeConstructie ;
   skos:definition "Gelaagde opeenstapeling van stenen (voorzien van bindingsmiddel) of beton."@nl-nl ;
+.
+core:NatuurlijkGebied
+  rdf:type owl:Class ;
+  rdfs:label "Natuurlijk gebied" ;
+  rdfs:subClassOf core:Gebied ;
+  skos:definition "Begrensd en benoemd gebied dat beschreven wordt op basis van natuurlijke eigenschappen."@nl-nl ;
 .
 core:Negenoog
   rdf:type owl:Class ;
@@ -1197,6 +1212,7 @@ core:Wegberm
 .
 core:Wegdeel
   rdf:type owl:Class ;
+  core:realiseert core:Wegvak ;
   rdfs:label "Wegdeel" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
   skos:definition "Kleinste functioneel onafhankelijk stukje van een NEN 3610 Weg met gelijkblijvende, homogene eigenschappen en relaties en primair bedoeld voor gebruik door weg-, spoor- en vliegverkeer te land."@nl-nl ;
@@ -1272,6 +1288,11 @@ core:isOnderdeelVan
   rdfs:range <http://binkhoffmann.org/ontologies/top#Object> ;
   owl:inverseOf core:bestaatUit ;
 .
+core:realiseert
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "realiseert" ;
+  owl:inverseOf core:wordtGerealiseerdDoor ;
+.
 core:specificeertActiviteit
   rdf:type owl:ObjectProperty ;
   rdfs:domain core:Specificatie ;
@@ -1299,4 +1320,5 @@ core:vervultFunctie
 core:wordtGerealiseerdDoor
   rdf:type owl:ObjectProperty ;
   rdfs:label "wordt gerealiseerd door" ;
+  owl:inverseOf core:realiseert ;
 .
