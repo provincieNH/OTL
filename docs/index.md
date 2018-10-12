@@ -1,5 +1,12 @@
 # OTL Provincie Noord-Holland
 
+De __OTL__ is gevisualiseerd met [__D3.js__](otl-viz),
+en te raadplegen in [__HTML__](otl-doc). Deze documentatie is gegenereerd met behulp van de [Ontodocs](https://github.com/lambdamusic/Ontodocs) library.
+
+Meer detail voorbeelden en documentatie is te raadplegen via de online [sparql-visualizer](https://madsholten.github.io/sparql-visualizer/?file=https://raw.githubusercontent.com/provincieNH/OTL/master/docs/data.json)
+
+============================
+
 De OTL is in RDF/OWL opgebouwd:
 
 * de map core bevat de basis ontologie waarop de OTL gebaseerd is. Deze ontologie bestaat uit 2 namespaces:
@@ -7,7 +14,7 @@ De OTL is in RDF/OWL opgebouwd:
 	 * core: dit is een extensie op de top concepten.
 
 * de map OTB bevat de objecttypeboom zoals deze in vraagspecificaties wordt gebruikt. 
-	**Deze is gemapt naar CBNL met rdfs:subclassOf** Onderlinge relaties in de objecttypeboom zijn gedefinieerd met pnh_otb:partOf
+	Deze is gemapt naar CBNL met rdfs:subclassOf Onderlinge relaties in de objecttypeboom zijn gedefinieerd met pnh_otb:partOf
 
 	Deze map bevat 2 submappen. Een aanzet voor de OTB structuur op basis van het ERA project, en een GCR-MN map waarin de op de huidige vastgestelde structuur staat. Deze set is opgedeeld in 2 namespaces:
 	* otb: de otb concepten
@@ -31,13 +38,11 @@ De OTL is in RDF/OWL opgebouwd:
 In de map COINS staat de COINS 2.0 compatible library van het Areaaldatamodel.
 
 De visie op de OTL kan als volgt weergegeven worden:
-![otl](https://github.com/provincieNH/OTL/raw/master/Documentatie/otl-pnh.jpg "otl")
+![otl](https://github.com/provincieNH/OTL/raw/master/docs/otl-pnh.jpg "otl")
 
 In de uitwerking ziet dar er dan als volgt uit:
-![otl voorbeeld](https://github.com/provincieNH/OTL/raw/master/Documentatie/OTL-structuur.jpg "otl voorbeeld")
+![otl voorbeeld](https://github.com/provincieNH/OTL/raw/master/docs/OTL-structuur.jpg "otl voorbeeld")
 
 
-Meer detail voorbeelden en documentatie is te raadplegen via de online [sparql-visualizer](https://madsholten.github.io/sparql-visualizer/?file=https://raw.githubusercontent.com/provincieNH/OTL/master/docs/data.json)
 
-En het model is ook gevisualiseerd in D3.js [hier](otl-viz),
-en in HTML weergave [hier](otl-doc).
+
