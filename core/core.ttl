@@ -106,7 +106,6 @@ core:Berm
   rdfs:label "Berm" ;
   rdfs:subClassOf core:BegroeidTerreindeel ;
   skos:definition "Horizontaal of licht hellende veelal onverharde met gras of beplanting begroeide strook grond tussen de dragende kern van een (spoor)weg of dijk en het talud, kruin of bermsloot."@nl-nl ;
-  skos:scopeNote "Let op dat het hier gaat om het NIET verkeerskundig van belang zijnde deel van de berm. Het verkeerskundig van belang zijnde deel van de berm valt onder het begrip Wegberm." ;
 .
 core:Bermplank
   rdf:type owl:Class ;
@@ -1163,7 +1162,7 @@ core:Waterbergingsgebied
 core:Waterdeel
   rdf:type owl:Class ;
   rdfs:label "Waterdeel" ;
-  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
+  rdfs:subClassOf core:Terreindeel ;
   skos:definition "Kleinste functioneel onafhankelijk stukje (oppervlakte)water met gelijkblijvende, homogene eigenschappen en relaties dat er binnen het objecttype (oppervlakte)Water van NEN 3610 wordt onderscheiden, en dat permanent met water bedekt is."@nl-nl ;
 .
 core:Waterhuishouding
@@ -1233,7 +1232,7 @@ core:Wegdeel
   rdf:type owl:Class ;
   core:realiseert core:Wegvak ;
   rdfs:label "Wegdeel" ;
-  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
+  rdfs:subClassOf core:Terreindeel ;
   skos:definition "Kleinste functioneel onafhankelijk stukje van een NEN 3610 Weg met gelijkblijvende, homogene eigenschappen en relaties en primair bedoeld voor gebruik door weg-, spoor- en vliegverkeer te land."@nl-nl ;
 .
 core:Wegmarkering

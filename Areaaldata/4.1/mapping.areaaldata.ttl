@@ -328,7 +328,7 @@ ad_mapping:
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Traject> ;
 .
 <http://otl.noord-holland.nl/areaaldata/v4.1/tunneldeel_v>
-  rdfs:subClassOf <http://otl.noord-holland.nl/core/Kunstwerk> ;
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/VastKunstwerk> ;
 .
 <http://otl.noord-holland.nl/areaaldata/v4.1/uithouder_p>
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Draagconstructie> ;
