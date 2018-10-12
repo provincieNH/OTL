@@ -138,6 +138,13 @@ core:BeweegbaarKunstwerk
   rdfs:subClassOf core:Kunstwerk ;
   skos:definition "Een beweegbare verbinding voor verkeer tussen minimaal twee punten die gescheiden worden door waterwegen en variabele doorvaarthoogte biedt."@nl-nl ;
 .
+core:Bodem
+  rdf:type owl:Class ;
+  rdfs:label "Bodem" ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
+  skos:definition "De bodem is de bovenste laag van de aardkorst."@nl-nl ;
+  skos:note "De definitie in de bodemkunde is specifieker, namelijk die laag van de aardkorst die door planten beworteld wordt (de rhizosfeer), of waarin zich bodemvormende processen afspelen."@nl-nl ;
+.
 core:Bord
   rdf:type owl:Class ;
   rdfs:label "Bord" ;
@@ -464,6 +471,12 @@ core:Greppel
   rdfs:label "Greppel" ;
   rdfs:subClassOf core:Sloot ;
   skos:definition "Gegraven waterloop, veelal droogstaand, voor de afwatering en/of ontwatering van het omringende gebied, die afwatert op een sloot"@nl-nl ;
+.
+core:Groepering
+  rdf:type owl:Class ;
+  rdfs:label "Groepering" ;
+  rdfs:subClassOf core:InformatieRepresentatie ;
+  skos:definition "Een abstractieprincipe waarbij een relatie tussen entiteiten van hetzelfde type, in de vorm van een overeenkomstige eigenschap, wordt gezien als een nieuwe entiteit(type) van een hoger niveau."@nl-nl ;
 .
 core:Halte
   rdf:type owl:Class ;
@@ -836,6 +849,12 @@ core:Raster
   rdfs:label "Raster" ;
   rdfs:subClassOf core:ScheidendeConstructie ;
   skos:definition "Constructie bestaande uit bijvoorbeeld palen, latten of spijlen voor het scheiden van verschillende terreingedeelten."@nl-nl ;
+.
+core:RegistratiefGebied
+  rdf:type owl:Class ;
+  rdfs:label "Registratief gebied" ;
+  rdfs:subClassOf core:Gebied ;
+  skos:definition "Op basis van wet- of regelgeving afgebakend gebied dat als eenheid geldt van politiek/bestuurlijke verantwoordelijkheid of voor bedrijfsvoering. Bron RWS-OTL 2016"@nl-nl ;
 .
 core:Rijstrook
   rdf:type owl:Class ;

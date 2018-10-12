@@ -250,7 +250,7 @@ otb_mapping:
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Vaarweg> ;
 .
 <http://otl.noord-holland.nl/otb/v_MN/Vaarwegbodem>
-  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Bodem> ;
 .
 <http://otl.noord-holland.nl/otb/v_MN/Vaarwegennet>
   rdfs:subClassOf <http://otl.noord-holland.nl/core/VaarwegNetwerk> ;
