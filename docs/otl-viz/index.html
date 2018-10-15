@@ -42056,12 +42056,12 @@ function update(vis, tree, diagonal, source, root) {
       .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
       .attr("dy", ".35em")
       .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-      .text(function(d) { return d.name; })
+      .text(function(d) { return d.qname; })
       .style("fill-opacity", 1e-6)
       .on("click", function(d) { showpanel(d.objid); })
 	  .on("mouseover", function(d){
 			d3.select(this).attr("fill", "darkorange");
-			tooltip.text(d.qname);
+			tooltip.text(d.name);
 			tooltip.style("visibility", "visible"); }
 		)
       .on("mousemove", function(d){return tooltip.style("top",
