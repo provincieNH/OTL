@@ -3,7 +3,7 @@
 De __OTL__ is gevisualiseerd met <a href="https://provincienh.github.io/OTL/otl-viz" target="_blank">__D3.js__</a>,
 en te raadplegen in <a href="https://provincienh.github.io/OTL/otl-doc" target="_blank">__HTML__</a>. Deze documentatie is gegenereerd met behulp van de [Ontodocs](https://github.com/lambdamusic/Ontodocs) library.
 
-
+Een uitleg over de structuur van de OTL kan [__hier__](otl_uitleg.md) gevonden worden.
 
 Meer detail voorbeelden en documentatie is te raadplegen via de online [sparql-visualizer](https://madsholten.github.io/sparql-visualizer/?file=https://raw.githubusercontent.com/provincieNH/OTL/master/docs/data.json)
 
