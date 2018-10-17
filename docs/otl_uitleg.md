@@ -26,4 +26,4 @@ Voor elk van deze begrippen is er dus een afzonderlijke plek in de structuur van
 Afhankelijk van de 'view' die je hebt op de OTL zie je misschien maar een deel van de gehele structuur. Dus in bijvoorbeeld Areaaldata bestaat het objecttype Wegdeel. Dit past het beste bij de context van de fysieke weg.
 
 De verbinding tussen deze verschillende concepten kan gelegd worden via een 'wordtGerealiseerdDoor' of een 'bestaatUit' relatie. Dus het ruimtelijke concept weg wordt gerealiseerd door (o.a.) de fysieke weg. En andersom realiseert een wegdeel een wegvak.
-![Wegdeel realiseert Wegvak](https://github.com/provincieNH/OTL/raw/master/docs/wegdeel-wegvak.jpg "Wegdeel realiseert Wegvak")
+<img src="https://github.com/provincieNH/OTL/raw/master/docs/wegdeel-wegvak.jpg" width="1200">
