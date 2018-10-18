@@ -870,6 +870,12 @@ core:RioolNetwerk
   rdfs:label "Riool netwerk" ;
   rdfs:subClassOf core:LeidingNetwerk ;
 .
+core:Risico
+  rdf:type owl:Class ;
+  rdfs:label "Risico"@nl-nl ;
+  rdfs:subClassOf core:Toestand ;
+  skos:definition "Een toestand waarbij er kans op een ongewenste gebeurtenis is."@nl-nl ;
+.
 core:Rotonde
   rdf:type owl:Class ;
   rdfs:label "Rotonde" ;
@@ -983,6 +989,12 @@ core:Terreinen
   rdf:type owl:Class ;
   rdfs:label "Terreinen" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#OngeordendeVerzameling> ;
+.
+core:Toestand
+  rdf:type owl:Class ;
+  rdfs:label "Toestand"@nl-nl ;
+  rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Kenmerk> ;
+  skos:definition "De toestand waarin een object verkeerd."@nl-nl ;
 .
 core:Traject
   rdf:type owl:Class ;
