@@ -1,6 +1,5 @@
 # baseURI: http://otl.noord-holland.nl/core/
 # imports: http://binkhoffmann.org/ontologies/top
-# imports: http://www.w3.org/2004/02/skos/core
 # prefix: core
 
 @prefix core: <http://otl.noord-holland.nl/core/> .
@@ -13,81 +12,80 @@
 core:
   rdf:type owl:Ontology ;
   owl:imports <http://binkhoffmann.org/ontologies/top> ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 core:Aanlooproute
   rdf:type owl:Class ;
+  rdfs:comment "Route die aansluiting maakt van een vertrekplaats."@nl-nl ;
   rdfs:label "Aanlooproute" ;
   rdfs:subClassOf core:Route ;
-  skos:definition "Route die aansluiting maakt van een vertrekplaats."@nl-nl ;
   skos:scopeNote "Term gebruikt in de context van toegankelijk openbaar vervoer."@nl-nl ;
 .
 core:Abri
   rdf:type owl:Class ;
+  rdfs:comment "Een abri of wachthuisje is een kleine, niet afgesloten wachtruimte die beschutting biedt tegen weer en wind."@nl-nl ;
   rdfs:label "Abri" ;
   rdfs:subClassOf core:OverigBouwwerk ;
-  skos:definition "Een abri of wachthuisje is een kleine, niet afgesloten wachtruimte die beschutting biedt tegen weer en wind."@nl-nl ;
 .
 core:Actievemarkering
   rdf:type owl:Class ;
+  rdfs:comment "Actieve markering is een markering in het wegdek die zelf licht geeft."@nl-nl ;
   rdfs:label "Actievemarkering" ;
   rdfs:subClassOf core:Markering ;
-  skos:definition "Actieve markering is een markering in het wegdek die zelf licht geeft."@nl-nl ;
 .
 core:Afscheider
   rdf:type owl:Class ;
+  rdfs:comment "Onderdeel van een statische afscheiderinstallatie, dat de daadwerkelijke scheidingfunctie uitvoert."@nl-nl ;
   rdfs:label "Afscheider" ;
   rdfs:subClassOf core:Installatiedeel ;
-  skos:definition "Onderdeel van een statische afscheiderinstallatie, dat de daadwerkelijke scheidingfunctie uitvoert."@nl-nl ;
 .
 core:Afvalbak
   rdf:type owl:Class ;
+  rdfs:comment "Bak in de openbare ruimte voor het verzamelen van afval"@nl-nl ;
   rdfs:label "Afvalbak" ;
   rdfs:subClassOf core:Inrichtingselement ;
-  skos:definition "Bak in de openbare ruimte voor het verzamelen van afval"@nl-nl ;
 .
 core:Aquaduct
   rdf:type owl:Class ;
+  rdfs:comment "Overbrugging waarbij de waterweg middels een bakvormige constructie over weg, waterweg of terrein heengaat."@nl-nl ;
   rdfs:label "Aquaduct" ;
   rdfs:subClassOf core:VastKunstwerk ;
-  skos:definition "Overbrugging waarbij de waterweg middels een bakvormige constructie over weg, waterweg of terrein heengaat."@nl-nl ;
 .
 core:Armatuur
   rdf:type owl:Class ;
+  rdfs:comment "Behuizing voor één of meer lichtbronnen inclusief alle elektronische componenten voor het juist richten en het beschermen van de lamp"@nl-nl ;
   rdfs:label "Armatuur" ;
   rdfs:subClassOf core:Installatiedeel ;
-  skos:definition "Behuizing voor één of meer lichtbronnen inclusief alle elektronische componenten voor het juist richten en het beschermen van de lamp"@nl-nl ;
 .
 core:As
   rdf:type owl:Class ;
+  rdfs:comment "Hartlijn"@nl-nl ;
   rdfs:label "As (fysieke ruimte)" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDRuimte> ;
-  skos:definition "Hartlijn"@nl-nl ;
 .
 core:AsGeometrie
   rdf:type owl:Class ;
+  rdfs:comment "Geometrische representatie van de hartlijn."@nl-nl ;
   rdfs:label "As (geometrie)" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDCoordinaat> ;
-  skos:definition "Geometrische representatie van de hartlijn."@nl-nl ;
 .
 core:Baan
   rdf:type owl:Class ;
+  rdfs:comment "Gedeelte van een weg, in lengterichting begrensd door een beginraai en een eindraai, en in dwarsrichting begrensd door:  twee opeenvolgende overgangen verhard/onverhard of een overgang verhard/onverhard en een weggrens;"@nl-nl ;
   rdfs:label "Baan"@nl-nl ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
-  skos:definition "Gedeelte van een weg, in lengterichting begrensd door een beginraai en een eindraai, en in dwarsrichting begrensd door:  twee opeenvolgende overgangen verhard/onverhard of een overgang verhard/onverhard en een weggrens;"@nl-nl ;
 .
 core:BaanAs
   rdf:type owl:Class ;
+  rdfs:comment "Hartlijn van de baan."@nl-nl ;
   rdfs:label "Baanas" ;
   rdfs:subClassOf core:WegAs ;
-  skos:definition "Hartlijn van de baan."@nl-nl ;
 .
 core:BegroeidTerreindeel
   rdf:type owl:Class ;
+  rdfs:comment "Ruimtelijk voorkomen van vegetatie in samenhang met de plaats waar ze groeien en in de rangschikking die zij uit zichzelf (spontaan, natuurlijk of aangeplant) hebben aangenomen."@nl-nl ;
   rdfs:label "Begroeid terreindeel" ;
   rdfs:subClassOf core:Terreindeel ;
-  skos:definition "Ruimtelijk voorkomen van vegetatie in samenhang met de plaats waar ze groeien en in de rangschikking die zij uit zichzelf (spontaan, natuurlijk of aangeplant) hebben aangenomen."@nl-nl ;
 .
 core:Beheerobjecten_NEN2767-4
   rdf:type owl:Class ;
@@ -96,35 +94,35 @@ core:Beheerobjecten_NEN2767-4
 .
 core:Belijning
   rdf:type owl:Class ;
+  rdfs:comment "Belijning is de formele vertaling van alignement (een geheel van rijlijnen, bochten en bogen in wegen en spoorwegen)."@nl-nl ;
   rdfs:label "Belijning" ;
   rdfs:subClassOf core:Markering ;
-  skos:definition "Belijning is de formele vertaling van alignement (een geheel van rijlijnen, bochten en bogen in wegen en spoorwegen)."@nl-nl ;
   skos:scopeNote "In het dagelijks spraakgebruik wordt de term belijning heel vaak ten onrechte gebruikt voor de markering op het wegdek."@nl-nl ;
 .
 core:Berm
   rdf:type owl:Class ;
+  rdfs:comment "Horizontaal of licht hellende veelal onverharde met gras of beplanting begroeide strook grond tussen de dragende kern van een (spoor)weg of dijk en het talud, kruin of bermsloot."@nl-nl ;
   rdfs:label "Berm" ;
   rdfs:subClassOf core:BegroeidTerreindeel ;
-  skos:definition "Horizontaal of licht hellende veelal onverharde met gras of beplanting begroeide strook grond tussen de dragende kern van een (spoor)weg of dijk en het talud, kruin of bermsloot."@nl-nl ;
 .
 core:Bermplank
   rdf:type owl:Class ;
+  rdfs:comment "Een reflectorpaal of bermplank laten het wegverloop en de wegrand zien, met name in omstandigheden met slecht zicht, zoals mist, donkerheid en regen."@nl-nl ;
   rdfs:label "Bermplank" ;
   rdfs:subClassOf core:Markering ;
   rdfs:subClassOf core:Paal ;
-  skos:definition "Een reflectorpaal of bermplank laten het wegverloop en de wegrand zien, met name in omstandigheden met slecht zicht, zoals mist, donkerheid en regen."@nl-nl ;
 .
 core:Bermsloot
   rdf:type owl:Class ;
+  rdfs:comment "Bermstrook, bestemd voor afvoer van water, bestaande uit taluds en een natte of droge bodem."@nl-nl ;
   rdfs:label "Bermsloot" ;
   rdfs:subClassOf core:Sloot ;
-  skos:definition "Bermstrook, bestemd voor afvoer van water, bestaande uit taluds en een natte of droge bodem."@nl-nl ;
 .
 core:Beschoeiing
   rdf:type owl:Class ;
+  rdfs:comment "Grondkerende constructie bestaande uit een dunne wand die afkalving van de walkant moet voorkomen"@nl-nl ;
   rdfs:label "Beschoeiing" ;
   rdfs:subClassOf core:KerendeConstructie ;
-  skos:definition "Grondkerende constructie bestaande uit een dunne wand die afkalving van de walkant moet voorkomen"@nl-nl ;
 .
 core:Beschrijving
   rdf:type owl:Class ;
@@ -133,22 +131,22 @@ core:Beschrijving
 .
 core:BeweegbaarKunstwerk
   rdf:type owl:Class ;
+  rdfs:comment "Een beweegbare verbinding voor verkeer tussen minimaal twee punten die gescheiden worden door waterwegen en variabele doorvaarthoogte biedt."@nl-nl ;
   rdfs:label "Beweegbaar kunstwerk" ;
   rdfs:subClassOf core:Kunstwerk ;
-  skos:definition "Een beweegbare verbinding voor verkeer tussen minimaal twee punten die gescheiden worden door waterwegen en variabele doorvaarthoogte biedt."@nl-nl ;
 .
 core:Bodem
   rdf:type owl:Class ;
+  rdfs:comment "De bodem is de bovenste laag van de aardkorst."@nl-nl ;
   rdfs:label "Bodem" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
-  skos:definition "De bodem is de bovenste laag van de aardkorst."@nl-nl ;
   skos:note "De definitie in de bodemkunde is specifieker, namelijk die laag van de aardkorst die door planten beworteld wordt (de rhizosfeer), of waarin zich bodemvormende processen afspelen."@nl-nl ;
 .
 core:Bord
   rdf:type owl:Class ;
+  rdfs:comment "Paneel waarop (statische) informatie wordt afgebeeld, verwoord in tekst, pictogram of code."@nl-nl ;
   rdfs:label "Bord" ;
   rdfs:subClassOf core:Inrichtingselement ;
-  skos:definition "Paneel waarop (statische) informatie wordt afgebeeld, verwoord in tekst, pictogram of code."@nl-nl ;
 .
 core:Bouwdelen_NEN2767-4
   rdf:type owl:Class ;
@@ -157,21 +155,21 @@ core:Bouwdelen_NEN2767-4
 .
 core:Bouwwerk
   rdf:type owl:Class ;
+  rdfs:comment "Constructie van enige omvang, die op de plaats van bestemming hetzij direct hetzij indirect met de grond verbonden is, hetzij direct of indirect steun vindt in of op de grond, bedoeld om ter plaatse te functioneren."@nl-nl ;
   rdfs:label "Bouwwerk" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
-  skos:definition "Constructie van enige omvang, die op de plaats van bestemming hetzij direct hetzij indirect met de grond verbonden is, hetzij direct of indirect steun vindt in of op de grond, bedoeld om ter plaatse te functioneren."@nl-nl ;
 .
 core:Buis
   rdf:type owl:Class ;
+  rdfs:comment "Holle cilindrische leiding voor het geleiden van vloeistoffen, gassen of capsules."@nl-nl ;
   rdfs:label "Buis" ;
   rdfs:subClassOf core:Leiding ;
-  skos:definition "Holle cilindrische leiding voor het geleiden van vloeistoffen, gassen of capsules."@nl-nl ;
 .
 core:Buisleiding
   rdf:type owl:Class ;
+  rdfs:comment "Holle cilindrische leiding voor transport van gevaarlijke stoffen."@nl-nl ;
   rdfs:label "Buisleiding" ;
   rdfs:subClassOf core:Buis ;
-  skos:definition "Holle cilindrische leiding voor transport van gevaarlijke stoffen."@nl-nl ;
 .
 core:CROW_Publicatie_233
   rdf:type core:Document ;
@@ -179,15 +177,15 @@ core:CROW_Publicatie_233
 .
 core:Camera
   rdf:type owl:Class ;
+  rdfs:comment "Sensor voor de registratie van beelden van situaties, waarvan direkte observatie moeilijk of niet permanent mogelijk is."@nl-nl ;
   rdfs:label "Camera" ;
   rdfs:subClassOf core:Sensor ;
-  skos:definition "Sensor voor de registratie van beelden van situaties, waarvan direkte observatie moeilijk of niet permanent mogelijk is."@nl-nl ;
 .
 core:Camera_VRI
   rdf:type owl:Class ;
+  rdfs:comment "Sensor voor de registratie van beelden van situaties, specifiek bij Verkeersregelinstallaties."@nl-nl ;
   rdfs:label "Camera VRI" ;
   rdfs:subClassOf core:Camera ;
-  skos:definition "Sensor voor de registratie van beelden van situaties, specifiek bij Verkeersregelinstallaties."@nl-nl ;
 .
 core:Conditioneren_en_inpassen
   rdf:type owl:Class ;
@@ -196,81 +194,81 @@ core:Conditioneren_en_inpassen
 .
 core:Constructie
   rdf:type owl:Class ;
+  rdfs:comment "Samenstel van meerdere constructie delen dat een bepaald doel dient, en dat het resultaat is van een constructieproces"@nl-nl ;
   rdfs:label "Constructie"@nl-nl ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
-  skos:definition "Samenstel van meerdere constructie delen dat een bepaald doel dient, en dat het resultaat is van een constructieproces"@nl-nl ;
 .
 core:DRIP_Paneel
   rdf:type owl:Class ;
+  rdfs:comment "Dynamisch Route-informatie Paneel.  Een instrument waarmee route-informatie kan worden gegeven aan de (vaar)weggebruiker."@nl-nl ;
   rdfs:label "DRIP Paneel" ;
   rdfs:subClassOf core:Signaalgever ;
-  skos:definition "Dynamisch Route-informatie Paneel.  Een instrument waarmee route-informatie kan worden gegeven aan de (vaar)weggebruiker."@nl-nl ;
 .
 core:DRIS_Kast
   rdf:type owl:Class ;
+  rdfs:comment "Kast ten behoeve van de regeling van DRIS panelen."@nl-nl ;
   rdfs:label "DRIS Kast" ;
   rdfs:subClassOf core:Kast ;
-  skos:definition "Kast ten behoeve van de regeling van DRIS panelen."@nl-nl ;
 .
 core:DRIS_Paneel
   rdf:type owl:Class ;
+  rdfs:comment "Dynamisch reizigersinformatiesysteem. Een instrument waarmee informatie gegeven kan worden aan reizigers met het Openbaar Vervoer."@nl-nl ;
   rdfs:label "DRIS Paneel" ;
   rdfs:subClassOf core:Signaalgever ;
-  skos:definition "Dynamisch reizigersinformatiesysteem. Een instrument waarmee informatie gegeven kan worden aan reizigers met het Openbaar Vervoer."@nl-nl ;
 .
 core:Damwand
   rdf:type owl:Class ;
+  rdfs:comment "Grond- en/ of waterkerende constructie bestaande uit verticale losse en in de grond aangebrachte elementen die met elkaar zijn verbonden."@nl-nl ;
   rdfs:label "Damwand" ;
   rdfs:subClassOf core:KerendeConstructie ;
-  skos:definition "Grond- en/ of waterkerende constructie bestaande uit verticale losse en in de grond aangebrachte elementen die met elkaar zijn verbonden."@nl-nl ;
 .
 core:Datakabel
   rdf:type owl:Class ;
+  rdfs:comment "Kabel voor voortgeleiding van elektronische of lichtsignalen"@nl-nl ;
   rdfs:label "Datakabel" ;
   rdfs:subClassOf core:Kabel ;
-  skos:definition "Kabel voor voortgeleiding van elektronische of lichtsignalen"@nl-nl ;
 .
 core:Detectielus
   rdf:type owl:Class ;
+  rdfs:comment "Luskabel aangebracht in het wegdek voor het detecteren van voertuigen"@nl-nl ;
   rdfs:label "Detectielus" ;
   rdfs:subClassOf core:Detector ;
-  skos:definition "Luskabel aangebracht in het wegdek voor het detecteren van voertuigen"@nl-nl ;
 .
 core:Detectielus_VRI
   rdf:type owl:Class ;
+  rdfs:comment "Een inductielus, geplaatst in gefreesde sleuven in het wegdek, in staat om een verkeer te detecteren ten behoeve van de Verkeersregelinstallatie."@nl-nl ;
   rdfs:label "Detectielus VRI" ;
   rdfs:subClassOf core:Detectielus ;
-  skos:definition "Een inductielus, geplaatst in gefreesde sleuven in het wegdek, in staat om een verkeer te detecteren ten behoeve van de Verkeersregelinstallatie."@nl-nl ;
 .
 core:Detectielus_Verkeersteller
   rdf:type owl:Class ;
+  rdfs:comment "Een inductielus van koperdraad verzonken in het wegdek waarmee met behulp van elektronica een voertuig kan worden waargenomen."@nl-nl ;
   rdfs:label "Detectielus Verkeersteller" ;
   rdfs:subClassOf core:Detectielus ;
-  skos:definition "Een inductielus van koperdraad verzonken in het wegdek waarmee met behulp van elektronica een voertuig kan worden waargenomen."@nl-nl ;
 .
 core:Detector
   rdf:type owl:Class ;
+  rdfs:comment "Meetinstrument waarmee een voorwerp of een bepaalde toestand in een bepaalde omgeving kan worden aangetoond"@nl-nl ;
   rdfs:label "Detector" ;
   rdfs:subClassOf core:Sensor ;
-  skos:definition "Meetinstrument waarmee een voorwerp of een bepaalde toestand in een bepaalde omgeving kan worden aangetoond"@nl-nl ;
 .
 core:Document
   rdf:type owl:Class ;
+  rdfs:comment "Informatieobject dat aanvullende informatie bevat over één of meer Concepten. De structuur van de informatie in het Document is niet bekend: het is een black box."@nl-nl ;
   rdfs:label "Document" ;
   rdfs:subClassOf core:InformatieRepresentatie ;
-  skos:definition "Informatieobject dat aanvullende informatie bevat over één of meer Concepten. De structuur van de informatie in het Document is niet bekend: het is een black box."@nl-nl ;
 .
 core:Draagconstructie
   rdf:type owl:Class ;
+  rdfs:comment "Constructie die bestemd is om belasting te dragen."@nl-nl ;
   rdfs:label "Draagconstructie" ;
   rdfs:subClassOf core:Constructie ;
-  skos:definition "Constructie die bestemd is om belasting te dragen."@nl-nl ;
 .
 core:Drainagebuis
   rdf:type owl:Class ;
+  rdfs:comment "Buis bestemd voor drainage."@nl-nl ;
   rdfs:label "Drainagebuis" ;
   rdfs:subClassOf core:Buis ;
-  skos:definition "Buis bestemd voor drainage."@nl-nl ;
 .
 core:Drielichter
   rdf:type owl:Class ;
@@ -279,39 +277,39 @@ core:Drielichter
 .
 core:Drukknop
   rdf:type owl:Class ;
+  rdfs:comment "Detector waarmee de verkeersdeelnemer zich meldt bij een verkeersregelinstallatie"@nl-nl ;
   rdfs:label "Drukknop (VRI)" ;
   rdfs:subClassOf core:Detector ;
-  skos:definition "Detector waarmee de verkeersdeelnemer zich meldt bij een verkeersregelinstallatie"@nl-nl ;
 .
 core:Duiker
   rdf:type owl:Class ;
+  rdfs:comment "Waterdoorgang onder een weg of dijk welke zorg draagt voor een wederzijdse verbinding van twee wateren of waterlopen."@nl-nl ;
   rdfs:label "Duiker" ;
   rdfs:subClassOf core:VastKunstwerk ;
-  skos:definition "Waterdoorgang onder een weg of dijk welke zorg draagt voor een wederzijdse verbinding van twee wateren of waterlopen."@nl-nl ;
 .
 core:Ecoduct
   rdf:type owl:Class ;
+  rdfs:comment "Vaste verbinding in de vorm van een viaduct voor passages van dieren over een weg of spoorweg"@nl-nl ;
   rdfs:label "Ecoduct" ;
   rdfs:subClassOf core:Viaduct ;
-  skos:definition "Vaste verbinding in de vorm van een viaduct voor passages van dieren over een weg of spoorweg"@nl-nl ;
 .
 core:EcologischNetwerk
   rdf:type owl:Class ;
+  rdfs:comment "Verzameling van netwerkelementen, bestemd voor de verplaatsing van grote en kleine dieren (fauna)."@nl-nl ;
   rdfs:label "Ecologisch netwerk" ;
   rdfs:subClassOf core:Netwerk ;
-  skos:definition "Verzameling van netwerkelementen, bestemd voor de verplaatsing van grote en kleine dieren (fauna)."@nl-nl ;
 .
 core:EcologischeVerbindingszone
   rdf:type owl:Class ;
+  rdfs:comment "Landschappelijk element van per diersoort of ecosysteemtype verschillend formaat, vorm en vegetatietype dat verbindingen in het landschap voor die diersoort of dat ecosysteemtype behoudt of verbetert."@nl-nl ;
   rdfs:label "Ecologische verbindingszone" ;
   rdfs:subClassOf core:NetwerkLink ;
-  skos:definition "Landschappelijk element van per diersoort of ecosysteemtype verschillend formaat, vorm en vegetatietype dat verbindingen in het landschap voor die diersoort of dat ecosysteemtype behoudt of verbetert."@nl-nl ;
 .
 core:Ecopassage
   rdf:type owl:Class ;
+  rdfs:comment "Ongelijkvoerse kruising van netwerklinks, die tot doel heeft passages van dieren mogelijk te maken."@nl-nl ;
   rdfs:label "Ecopassage" ;
   rdfs:subClassOf core:OngelijkvloerseNetwerkKruising ;
-  skos:definition "Ongelijkvoerse kruising van netwerklinks, die tot doel heeft passages van dieren mogelijk te maken."@nl-nl ;
 .
 core:Eenlichter
   rdf:type owl:Class ;
@@ -320,28 +318,28 @@ core:Eenlichter
 .
 core:Eis
   rdf:type owl:Class ;
+  rdfs:comment "A singular documented physical or functional need that a particular design, product or process must be able to perform."@en-gb ;
+  rdfs:comment "Noodzakelijke voorwaarde voor iets."@nl-nl ;
   rdfs:label "Eis" ;
   rdfs:subClassOf core:Specificatie ;
-  skos:definition "A singular documented physical or functional need that a particular design, product or process must be able to perform."@en-gb ;
-  skos:definition "Noodzakelijke voorwaarde voor iets."@nl-nl ;
 .
 core:Eistekst
   rdf:type owl:Class ;
+  rdfs:comment "Beschrijving van een eis."@nl-nl ;
   rdfs:label "Eistekst" ;
   rdfs:subClassOf core:InformatieRepresentatie ;
-  skos:definition "Beschrijving van een eis."@nl-nl ;
 .
 core:Electiciteitskabel
   rdf:type owl:Class ;
+  rdfs:comment "Kabel bestemd voor het transport van elektriciteit."@nl-nl ;
   rdfs:label "Electiciteitskabel" ;
   rdfs:subClassOf core:Kabel ;
-  skos:definition "Kabel bestemd voor het transport van elektriciteit."@nl-nl ;
 .
 core:ElektrischeInstallatie
   rdf:type owl:Class ;
+  rdfs:comment "Installatie bestaande uit elektrotechnische componenten."@nl-nl ;
   rdfs:label "Elektrische installatie" ;
   rdfs:subClassOf core:Installatie ;
-  skos:definition "Installatie bestaande uit elektrotechnische componenten."@nl-nl ;
 .
 core:Elementen_NEN2767-4
   rdf:type owl:Class ;
@@ -380,121 +378,121 @@ core:FaciliterenWegenNetwerk
 .
 core:Faunaraster
   rdf:type owl:Class ;
+  rdfs:comment "Raster specifiek bedoeld om fauna tegen te houden."@nl-nl ;
   rdfs:label "Faunaraster" ;
   rdfs:subClassOf core:Raster ;
-  skos:definition "Raster specifiek bedoeld om fauna tegen te houden."@nl-nl ;
 .
 core:FietsNetwerk
   rdf:type owl:Class ;
+  rdfs:comment "Samenstelling van netwerkelementen ten behoeve van Fietsverkeer."@nl-nl ;
   rdfs:label "Fietsnetwerk" ;
   rdfs:subClassOf core:Netwerk ;
-  skos:definition "Samenstelling van netwerkelementen ten behoeve van Fietsverkeer."@nl-nl ;
 .
 core:FunctioneelGebied
   rdf:type owl:Class ;
+  rdfs:comment "Begrensd en benoemd gebied dat door een functionele eenheid beschreven wordt."@nl-nl ;
   rdfs:label "Functioneel gebied" ;
   rdfs:subClassOf core:Gebied ;
-  skos:definition "Begrensd en benoemd gebied dat door een functionele eenheid beschreven wordt."@nl-nl ;
 .
 core:GMS_Kast
   rdf:type owl:Class ;
+  rdfs:comment "Kast ten behoeve van het meten van weers- en wegdekomstandigheden."@nl-nl ;
   rdfs:label "GMS Kast" ;
   rdfs:subClassOf core:Kast ;
-  skos:definition "Kast ten behoeve van het meten van weers- en wegdekomstandigheden."@nl-nl ;
 .
 core:Gebied
   rdf:type owl:Class ;
+  rdfs:comment "Begrensd ruimtelijk object dat een op- of indeling van het aardoppervlak vormt."@nl-nl ;
   rdfs:label "Gebied" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
-  skos:definition "Begrensd ruimtelijk object dat een op- of indeling van het aardoppervlak vormt."@nl-nl ;
   skos:note "Het begrip 'gebied' komt overeen met 'land use' in INSPIRE en BGT/IMGEO, en heeft betrekking op het sociaal-economisch en ecologisch gebruik van het aardoppervlak, dat zich binnen de grenzen van het gebied bevindt. Een gebied kan worden gerealiseerd door de fysieke objecten (waaronder terrein), die zich binnen die ruimte bevinden." ;
 .
 core:Gebouw
   rdf:type owl:Class ;
+  rdfs:comment "Bouwwerk ter ondersteuning van een infrastructureel object of een deel van een bouwwerk, dat een voor mensen toegankelijk overdekte en geheel of gedeeltelijk met wanden omsloten ruimte vormt, dat bestemd en/of ingericht is voor menselijk verblijf, arbeid, installaties of handel."@nl-nl ;
   rdfs:label "Gebouw" ;
   rdfs:subClassOf core:Bouwwerk ;
-  skos:definition "Bouwwerk ter ondersteuning van een infrastructureel object of een deel van een bouwwerk, dat een voor mensen toegankelijk overdekte en geheel of gedeeltelijk met wanden omsloten ruimte vormt, dat bestemd en/of ingericht is voor menselijk verblijf, arbeid, installaties of handel."@nl-nl ;
 .
 core:Gedenkteken
   rdf:type owl:Class ;
+  rdfs:comment "Standbeeld, gedenksteen of bouwwerk opgericht ter herinnering aan een persoon of een belangrijke gebeurtenis of van algemeen belang."@nl-nl ;
   rdfs:label "Gedenkteken" ;
   rdfs:subClassOf core:Inrichtingselement ;
-  skos:definition "Standbeeld, gedenksteen of bouwwerk opgericht ter herinnering aan een persoon of een belangrijke gebeurtenis of van algemeen belang."@nl-nl ;
 .
 core:Geleidelijn
   rdf:type owl:Class ;
   core:heeftBeschrijving core:CROW_Publicatie_233 ;
+  rdfs:comment """Een geleidelijn biedt tastbare en visuele ondersteuning bij verplaatsen
+in openbare ruimten en in gebouwen."""@nl-nl ;
   rdfs:label "Geleidelijn" ;
   rdfs:subClassOf core:Markering ;
-  skos:definition """Een geleidelijn biedt tastbare en visuele ondersteuning bij verplaatsen
-in openbare ruimten en in gebouwen."""@nl-nl ;
 .
 core:GeleiderailConstructie
   rdf:type owl:Class ;
+  rdfs:comment "Lijnvormige Geleideconstructie samengesteld uit planken, afstandhouders en stijlen."@nl-nl ;
   rdfs:label "Geleiderail constructie" ;
   rdfs:subClassOf core:ScheidendeConstructie ;
-  skos:definition "Lijnvormige Geleideconstructie samengesteld uit planken, afstandhouders en stijlen."@nl-nl ;
 .
 core:GelijkvloersKruispunt
   rdf:type owl:Class ;
+  rdfs:comment "Kruispunt waarvan de weg-orientatielijnen elkaar snijden."@nl-nl ;
   rdfs:label "Gelijkvloers kruispunt" ;
   rdfs:subClassOf core:Intersectie ;
-  skos:definition "Kruispunt waarvan de weg-orientatielijnen elkaar snijden."@nl-nl ;
 .
 core:GelijkvloerseNetwerkKruising
   rdf:type owl:Class ;
+  rdfs:comment "Op een gelijkvloerse kruising wordt de gedeelde verkeersruimte beurtelings aan een of meerdere niet-conflicterende (verkeers)stromen toebedeeld."@nl-nl ;
   rdfs:label "Gelijkvloerse netwerk kruising" ;
   rdfs:subClassOf core:NetwerkKruising ;
-  skos:definition "Op een gelijkvloerse kruising wordt de gedeelde verkeersruimte beurtelings aan een of meerdere niet-conflicterende (verkeers)stromen toebedeeld."@nl-nl ;
 .
 core:GeluidbeperkendeConstructie
   rdf:type owl:Class ;
+  rdfs:comment "Constructie die geluidshinder langs de weg vermindert"@nl-nl ;
   rdfs:label "Geluidbeperkende constructie" ;
   rdfs:subClassOf core:ScheidendeConstructie ;
-  skos:definition "Constructie die geluidshinder langs de weg vermindert"@nl-nl ;
 .
 core:Geluidsscherm
   rdf:type owl:Class ;
+  rdfs:comment "Scheiding bedoeld om geluidshinder in de buitenlucht te verminderen."@nl-nl ;
   rdfs:label "Geluidsscherm" ;
   rdfs:subClassOf core:GeluidbeperkendeConstructie ;
-  skos:definition "Scheiding bedoeld om geluidshinder in de buitenlucht te verminderen."@nl-nl ;
 .
 core:Geluidswal
   rdf:type owl:Class ;
+  rdfs:comment "Geluidbeperkende constructie bestaande uit een kern van zand of een ander vulmateriaal afgedekt met een laag grond waarop begroeiing mogelijk is."@nl-nl ;
   rdfs:label "Geluidswal" ;
   rdfs:subClassOf core:GeluidbeperkendeConstructie ;
-  skos:definition "Geluidbeperkende constructie bestaande uit een kern van zand of een ander vulmateriaal afgedekt met een laag grond waarop begroeiing mogelijk is."@nl-nl ;
 .
 core:Greppel
   rdf:type owl:Class ;
+  rdfs:comment "Gegraven waterloop, veelal droogstaand, voor de afwatering en/of ontwatering van het omringende gebied, die afwatert op een sloot"@nl-nl ;
   rdfs:label "Greppel" ;
   rdfs:subClassOf core:Sloot ;
-  skos:definition "Gegraven waterloop, veelal droogstaand, voor de afwatering en/of ontwatering van het omringende gebied, die afwatert op een sloot"@nl-nl ;
 .
 core:Groepering
   rdf:type owl:Class ;
+  rdfs:comment "Een abstractieprincipe waarbij een relatie tussen entiteiten van hetzelfde type, in de vorm van een overeenkomstige eigenschap, wordt gezien als een nieuwe entiteit(type) van een hoger niveau."@nl-nl ;
   rdfs:label "Groepering" ;
   rdfs:subClassOf core:InformatieRepresentatie ;
-  skos:definition "Een abstractieprincipe waarbij een relatie tussen entiteiten van hetzelfde type, in de vorm van een overeenkomstige eigenschap, wordt gezien als een nieuwe entiteit(type) van een hoger niveau."@nl-nl ;
 .
 core:Halte
   rdf:type owl:Class ;
+  rdfs:comment "Het geheel van objecten behorende bij een stopplaats van een autobus."@nl-nl ;
   rdfs:label "Halte" ;
   rdfs:subClassOf core:VerblijfspuntWeg ;
-  skos:definition "Het geheel van objecten behorende bij een stopplaats van een autobus."@nl-nl ;
   skos:scopeNote "STOPPLACE in NDOV terminologie" ;
 .
 core:Haven
   rdf:type owl:Class ;
+  rdfs:comment "Een natuurlijke of aangelegde veilige ligplaats voor schepen."@nl-nl ;
   rdfs:label "Haven" ;
   rdfs:subClassOf core:VerblijfspuntVaarweg ;
-  skos:definition "Een natuurlijke of aangelegde veilige ligplaats voor schepen."@nl-nl ;
 .
 core:Hek
   rdf:type owl:Class ;
+  rdfs:comment "Een hekwerk of schutting, typisch ten behoeve van erfafscheiding."@nl-nl ;
   rdfs:label "Hek" ;
   rdfs:subClassOf core:ScheidendeConstructie ;
-  skos:definition "Een hekwerk of schutting, typisch ten behoeve van erfafscheiding."@nl-nl ;
 .
 core:InformatieRepresentatie
   rdf:type owl:Class ;
@@ -503,58 +501,58 @@ core:InformatieRepresentatie
 .
 core:Informatiebord
   rdf:type owl:Class ;
+  rdfs:comment "Bord dat algemene, bewegwijzering en overige informatie verschaft."@nl-nl ;
   rdfs:label "Informatiebord" ;
   rdfs:subClassOf core:Bord ;
-  skos:definition "Bord dat algemene, bewegwijzering en overige informatie verschaft."@nl-nl ;
 .
 core:Inrichtingselement
   rdf:type owl:Class ;
+  rdfs:comment "Een voorwerp dat gebruikt wordt in gebouwen en in de openbare ruimte om deze in te richten."@nl-nl ;
   rdfs:label "Inrichtingselement" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
-  skos:definition "Een voorwerp dat gebruikt wordt in gebouwen en in de openbare ruimte om deze in te richten."@nl-nl ;
 .
 core:Inspectieput
   rdf:type owl:Class ;
+  rdfs:comment "Put met afdichting om ondergrondse infrastructuur te inspecteren."@nl-nl ;
   rdfs:label "Inspectie put" ;
   rdfs:subClassOf core:Put ;
-  skos:definition "Put met afdichting om ondergrondse infrastructuur te inspecteren."@nl-nl ;
 .
 core:Installatie
   rdf:type owl:Class ;
+  rdfs:comment "Samenhangend systeem dat een bepaald doel dient."@nl-nl ;
   rdfs:label "Installatie" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Systeem> ;
-  skos:definition "Samenhangend systeem dat een bepaald doel dient."@nl-nl ;
 .
 core:Installatiedeel
   rdf:type owl:Class ;
+  rdfs:comment "Onderdeel van een installatie."@nl-nl ;
   rdfs:label "Installatiedeel" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
-  skos:definition "Onderdeel van een installatie."@nl-nl ;
 .
 core:Instapmarkering
   rdf:type owl:Class ;
   core:heeftBeschrijving core:CROW_Publicatie_233 ;
+  rdfs:comment "Specifieke vorm van informatiemarkering die wordt toegepast op bushaltes, ter hoogte van de instapplaats van het voertuig (voordeur)."@nl-nl ;
   rdfs:label "Instapmarkering" ;
   rdfs:subClassOf core:Markering ;
-  skos:definition "Specifieke vorm van informatiemarkering die wordt toegepast op bushaltes, ter hoogte van de instapplaats van het voertuig (voordeur)."@nl-nl ;
 .
 core:Instructie
   rdf:type owl:Class ;
+  rdfs:comment "Een richtlijn opgesteld voor een uit te voeren handeling."@nl-nl ;
   rdfs:label "Instructie" ;
   rdfs:subClassOf core:Specificatie ;
-  skos:definition "Een richtlijn opgesteld voor een uit te voeren handeling."@nl-nl ;
 .
 core:Intersectie
   rdf:type owl:Class ;
+  rdfs:comment "Verkeerskundige eenheid die het begin- of eindpunt vormt van een of meer Wegmenten, bestaande uit een van moment tot moment mogelijk wisselend aantal en in de tijd daardoor toenemend aantal Wegjuncties en/of Wegvakken."@nl-nl ;
   rdfs:label "Intersectie" ;
   rdfs:subClassOf core:Wegnode ;
-  skos:definition "Verkeerskundige eenheid die het begin- of eindpunt vormt van een of meer Wegmenten, bestaande uit een van moment tot moment mogelijk wisselend aantal en in de tijd daardoor toenemend aantal Wegjuncties en/of Wegvakken."@nl-nl ;
 .
 core:Kabel
   rdf:type owl:Class ;
+  rdfs:comment "Een geleider die is voorzien van een ommanteling en bestemd is voor transport van energie of data."@nl-nl ;
   rdfs:label "Kabel" ;
   rdfs:subClassOf core:Leiding ;
-  skos:definition "Een geleider die is voorzien van een ommanteling en bestemd is voor transport van energie of data."@nl-nl ;
 .
 core:Kabels_en_Leidingen
   rdf:type owl:Class ;
@@ -563,45 +561,45 @@ core:Kabels_en_Leidingen
 .
 core:Kademuur
   rdf:type owl:Class ;
+  rdfs:comment "Verticale wand ter scheiding van land en water, opgebouwd uit een muur van (soms) gemetselde stenen of gestort beton."@nl-nl ;
   rdfs:label "Kademuur" ;
   rdfs:subClassOf core:KerendeConstructie ;
-  skos:definition "Verticale wand ter scheiding van land en water, opgebouwd uit een muur van (soms) gemetselde stenen of gestort beton."@nl-nl ;
 .
 core:Kast
   rdf:type owl:Class ;
+  rdfs:comment "Afsluitbare behuizing die dient om iets in op te bergen en/of te beschermen."@nl-nl ;
   rdfs:label "Kast" ;
   rdfs:subClassOf core:Installatiedeel ;
-  skos:definition "Afsluitbare behuizing die dient om iets in op te bergen en/of te beschermen."@nl-nl ;
 .
 core:KerendeConstructie
   rdf:type owl:Class ;
+  rdfs:comment "Constructie die bedoeld is om grond en/of water te keren."@nl-nl ;
   rdfs:label "Kerende constructie" ;
   rdfs:subClassOf core:ScheidendeConstructie ;
-  skos:definition "Constructie die bedoeld is om grond en/of water te keren."@nl-nl ;
 .
 core:Knooppunt
   rdf:type owl:Class ;
+  rdfs:comment "Kruispunt van ongelijkvloerse wegen."@nl-NL ;
   rdfs:label "Knooppunt" ;
   rdfs:subClassOf core:OngelijkvloersKruispunt ;
-  skos:definition "Kruispunt van ongelijkvloerse wegen."@nl-NL ;
 .
 core:Kolk
   rdf:type owl:Class ;
+  rdfs:comment "Constructie bestemd om het hemelwater dat op de verharding valt in te zamelen en af te voeren."@nl-nl ;
   rdfs:label "Kolk" ;
   rdfs:subClassOf core:Put ;
-  skos:definition "Constructie bestemd om het hemelwater dat op de verharding valt in te zamelen en af te voeren."@nl-nl ;
 .
 core:Kolkleiding
   rdf:type owl:Class ;
+  rdfs:comment "Overdekt of ondergronds afvoerkanaal voor vuil- of hemelwater."@nl-nl ;
   rdfs:label "Kolkleiding" ;
   rdfs:subClassOf core:Buis ;
-  skos:definition "Overdekt of ondergronds afvoerkanaal voor vuil- of hemelwater."@nl-nl ;
 .
 core:Kruinlijn
   rdf:type owl:Class ;
+  rdfs:comment "Lijn over het hoogste deel van de dijk (dijk is een waterkering op het land, bestaande uit een opgeworpen aarden wal)."@nl-nl ;
   rdfs:label "Kruinlijn" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDRuimte> ;
-  skos:definition "Lijn over het hoogste deel van de dijk (dijk is een waterkering op het land, bestaande uit een opgeworpen aarden wal)."@nl-nl ;
 .
 core:KruisenInfrastructuur
   rdf:type owl:Class ;
@@ -610,28 +608,28 @@ core:KruisenInfrastructuur
 .
 core:Kunstobject
   rdf:type owl:Class ;
+  rdfs:comment "Object dat is gemaakt door een kunstenaar zijnde beeldende kunst."@nl-nl ;
   rdfs:label "Kunstobject" ;
   rdfs:subClassOf core:Inrichtingselement ;
-  skos:definition "Object dat is gemaakt door een kunstenaar zijnde beeldende kunst."@nl-nl ;
 .
 core:Kunstwerk
   rdf:type owl:Class ;
   core:realiseert core:OngelijkvloerseNetwerkKruising ;
+  rdfs:comment "Bouwwerk, geen gebouw zijnde, dat de realisatie vormt van een kruising van netwerklinks."@nl-nl ;
   rdfs:label "Kunstwerk" ;
   rdfs:subClassOf core:OverigBouwwerk ;
-  skos:definition "Bouwwerk, geen gebouw zijnde, dat de realisatie vormt van een kruising van netwerklinks."@nl-nl ;
 .
 core:Lantaarn
   rdf:type owl:Class ;
+  rdfs:comment "Armatuur met één of meerdere lichtbronnen die verkeerstromen doormiddel van lichtsignalen reguleert."@nl-nl ;
   rdfs:label "Lantaarn" ;
   rdfs:subClassOf core:Installatiedeel ;
-  skos:definition "Armatuur met één of meerdere lichtbronnen die verkeerstromen doormiddel van lichtsignalen reguleert."@nl-nl ;
 .
 core:Leiding
   rdf:type owl:Class ;
+  rdfs:comment "Buis of kabel bestemd voor de voortgeleiding van materie, energie of data."@nl-nl ;
   rdfs:label "Leiding" ;
   rdfs:subClassOf core:Installatiedeel ;
-  skos:definition "Buis of kabel bestemd voor de voortgeleiding van materie, energie of data."@nl-nl ;
 .
 core:LeidingNetwerk
   rdf:type owl:Class ;
@@ -640,9 +638,9 @@ core:LeidingNetwerk
 .
 core:Leidingelement
   rdf:type owl:Class ;
+  rdfs:comment "Fysiek object bestemd voor een specifieke functie (schakelen, bufferen, begrenzen etc) binnen het transport van materie (vloeistoffen, gassen), energie of gegevens."@nl-nl ;
   rdfs:label "Leidingelement" ;
   rdfs:subClassOf core:Installatiedeel ;
-  skos:definition "Fysiek object bestemd voor een specifieke functie (schakelen, bufferen, begrenzen etc) binnen het transport van materie (vloeistoffen, gassen), energie of gegevens."@nl-nl ;
 .
 core:ManagenVerkeer
   rdf:type owl:Class ;
@@ -651,21 +649,21 @@ core:ManagenVerkeer
 .
 core:Mantelbuis
   rdf:type owl:Class ;
+  rdfs:comment "Buis voor bescherming van kabels, buizen en HDPE buizen"@nl-nl ;
   rdfs:label "Mantelbuis" ;
   rdfs:subClassOf core:Leiding ;
-  skos:definition "Buis voor bescherming van kabels, buizen en HDPE buizen"@nl-nl ;
 .
 core:Markering
   rdf:type owl:Class ;
+  rdfs:comment "Geheel van aangebrachte figuraties en lijnen om informatie te verlenen, te regelen of ter aanduiding van iets."@nl-nl ;
   rdfs:label "Markering" ;
   rdfs:subClassOf core:Verkeersteken ;
-  skos:definition "Geheel van aangebrachte figuraties en lijnen om informatie te verlenen, te regelen of ter aanduiding van iets."@nl-nl ;
 .
 core:Mast
   rdf:type owl:Class ;
+  rdfs:comment "Draagconstructie, bestaande uit een verticale buispaal, die wordt gebruikt om iets op hoogte te brengen."@nl-nl ;
   rdfs:label "Mast" ;
   rdfs:subClassOf core:Draagconstructie ;
-  skos:definition "Draagconstructie, bestaande uit een verticale buispaal, die wordt gebruikt om iets op hoogte te brengen."@nl-nl ;
 .
 core:Materieel_Gladheidsbestrijding
   rdf:type owl:Class ;
@@ -674,21 +672,21 @@ core:Materieel_Gladheidsbestrijding
 .
 core:Matrixbord
   rdf:type owl:Class ;
+  rdfs:comment "Een instrument dat verschillende symbolen en snelheden kan tonen. RVV-Bord A3"@nl-nl ;
   rdfs:label "Matrixbord" ;
   rdfs:subClassOf core:Wegverkeersbord ;
-  skos:definition "Een instrument dat verschillende symbolen en snelheden kan tonen. RVV-Bord A3"@nl-nl ;
 .
 core:Muur
   rdf:type owl:Class ;
+  rdfs:comment "Gelaagde opeenstapeling van stenen (voorzien van bindingsmiddel) of beton."@nl-nl ;
   rdfs:label "Muur" ;
   rdfs:subClassOf core:ScheidendeConstructie ;
-  skos:definition "Gelaagde opeenstapeling van stenen (voorzien van bindingsmiddel) of beton."@nl-nl ;
 .
 core:NatuurlijkGebied
   rdf:type owl:Class ;
+  rdfs:comment "Begrensd en benoemd gebied dat beschreven wordt op basis van natuurlijke eigenschappen."@nl-nl ;
   rdfs:label "Natuurlijk gebied" ;
   rdfs:subClassOf core:Gebied ;
-  skos:definition "Begrensd en benoemd gebied dat beschreven wordt op basis van natuurlijke eigenschappen."@nl-nl ;
 .
 core:Negenoog
   rdf:type owl:Class ;
@@ -697,83 +695,83 @@ core:Negenoog
 .
 core:Netwerk
   rdf:type owl:Class ;
+  rdfs:comment "Samenstelling van netwerkelementen, waaronder nodes, links en kruisingen."@nl-NL ;
   rdfs:label "Netwerk" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Systeem> ;
-  skos:definition "Samenstelling van netwerkelementen, waaronder nodes, links en kruisingen."@nl-NL ;
 .
 core:NetwerkKruising
   rdf:type owl:Class ;
+  rdfs:comment "Locatie, waar een of meer netwerklinks elkaar ontmoeten, maar waar geen uitwisseling mogelijk is."@nl-NL ;
   rdfs:label "Netwerk kruising" ;
   rdfs:subClassOf core:Netwerkgebied ;
-  skos:definition "Locatie, waar een of meer netwerklinks elkaar ontmoeten, maar waar geen uitwisseling mogelijk is."@nl-NL ;
 .
 core:NetwerkLink
   rdf:type owl:Class ;
+  rdfs:comment "Relatie tussen twee Nodes die een directe verbinding in het netwerk voorstelt."@nl-nl ;
   rdfs:label "Netwerk link" ;
   rdfs:subClassOf core:Netwerkgebied ;
-  skos:definition "Relatie tussen twee Nodes die een directe verbinding in het netwerk voorstelt."@nl-nl ;
 .
 core:NetwerkNode
   rdf:type owl:Class ;
+  rdfs:comment "Netwerkelement dat het begin- of eindpunt vormt van een of meer Links."@nl-nl ;
   rdfs:label "Netwerk node" ;
   rdfs:subClassOf core:Netwerkgebied ;
-  skos:definition "Netwerkelement dat het begin- of eindpunt vormt van een of meer Links."@nl-nl ;
 .
 core:Netwerkgebied
   rdf:type owl:Class ;
+  rdfs:comment "Fysieke ruimte dat een eenduidig afgebakende en samenhangende deelverzameling vormt in de topologie van het netwerk."@nl-nl ;
   rdfs:label "Netwerkgebied" ;
   rdfs:subClassOf core:FunctioneelGebied ;
-  skos:definition "Fysieke ruimte dat een eenduidig afgebakende en samenhangende deelverzameling vormt in de topologie van het netwerk."@nl-nl ;
 .
 core:OVL_Kast
   rdf:type owl:Class ;
+  rdfs:comment "Kast langs de kant van de weg waarin een kWh meter van het energieleverend bedrijf en diverse schakel en beveiligingscomponenten zijn ondergebracht ten behoeve van een Openbare Verlichtingsinstallatie."@nl-nl ;
   rdfs:label "OVL Kast" ;
   rdfs:subClassOf core:Kast ;
-  skos:definition "Kast langs de kant van de weg waarin een kWh meter van het energieleverend bedrijf en diverse schakel en beveiligingscomponenten zijn ondergebracht ten behoeve van een Openbare Verlichtingsinstallatie."@nl-nl ;
 .
 core:Oeverbescherming
   rdf:type owl:Class ;
+  rdfs:comment "Grondkerende constructie, meestal van blokken, om afkalving van de oever te voorkomen."@nl-nl ;
   rdfs:label "Oeverbescherming" ;
   rdfs:subClassOf core:KerendeConstructie ;
-  skos:definition "Grondkerende constructie, meestal van blokken, om afkalving van de oever te voorkomen."@nl-nl ;
 .
 core:Oeverconstructie
   rdf:type owl:Class ;
+  rdfs:comment """Een Oeverconstructie heeft als functie het achterliggende land te beschermen tegen het
+water."""@nl-nl ;
   rdfs:label "Oeverconstructie" ;
   rdfs:subClassOf core:KerendeConstructie ;
-  skos:definition """Een Oeverconstructie heeft als functie het achterliggende land te beschermen tegen het
-water."""@nl-nl ;
 .
 core:Oeverlijn
   rdf:type owl:Class ;
+  rdfs:comment "Niet zichtbare lijn die een bepaalde waterstand aangeeft, zoals deze zich voordoet op (een) bepaald(e) tijdstip(pen), aan de oever van een rivier, kanaal, meer of zee."@nl-nl ;
   rdfs:label "Oeverlijn" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#EenDRuimte> ;
-  skos:definition "Niet zichtbare lijn die een bepaalde waterstand aangeeft, zoals deze zich voordoet op (een) bepaald(e) tijdstip(pen), aan de oever van een rivier, kanaal, meer of zee."@nl-nl ;
 .
 core:Oevervak
   rdf:type owl:Class ;
+  rdfs:comment "Een Oevervak is de rand van een kanaal, vaarweg of rivier. Het begint bij bodem van het nautisch profiel en gaat door tot 10m achter de oeverconstructie."@nl-nl ;
   rdfs:label "Overvak" ;
   rdfs:subClassOf core:FunctioneelGebied ;
-  skos:definition "Een Oevervak is de rand van een kanaal, vaarweg of rivier. Het begint bij bodem van het nautisch profiel en gaat door tot 10m achter de oeverconstructie."@nl-nl ;
 .
 core:Onderdoorgang
   rdf:type owl:Class ;
+  rdfs:comment "Korte ongelijkvloerse verbinding die bestemd is voor wegverkeer onder een weg of spoorweg door."@nl-nl ;
   rdfs:label "Onderdoorgang" ;
   rdfs:subClassOf core:VastKunstwerk ;
-  skos:definition "Korte ongelijkvloerse verbinding die bestemd is voor wegverkeer onder een weg of spoorweg door."@nl-nl ;
 .
 core:OngelijkvloersKruispunt
   rdf:type owl:Class ;
+  rdfs:comment "Kruispunt waarvan de weg-orientatielijnen elkaar kruisen."@nl-nl ;
   rdfs:label "Ongelijkvloers kruispunt" ;
   rdfs:subClassOf core:Intersectie ;
-  skos:definition "Kruispunt waarvan de weg-orientatielijnen elkaar kruisen."@nl-nl ;
 .
 core:OngelijkvloerseNetwerkKruising
   rdf:type owl:Class ;
   core:wordtGerealiseerdDoor core:Kunstwerk ;
+  rdfs:comment "Op een ongelijkvloerse kruising worden de betrokken links structureel vertikaal van elkaar gescheiden."@nl-nl ;
   rdfs:label "Ongelijkvloerse netwerk kruising" ;
   rdfs:subClassOf core:NetwerkKruising ;
-  skos:definition "Op een ongelijkvloerse kruising worden de betrokken links structureel vertikaal van elkaar gescheiden."@nl-nl ;
 .
 core:OntsluitenProvinciaalNetwerk
   rdf:type owl:Class ;
@@ -782,9 +780,9 @@ core:OntsluitenProvinciaalNetwerk
 .
 core:OpenbaarVervoerNetwerk
   rdf:type owl:Class ;
+  rdfs:comment "Het geheel aan netwerk elementen bestemd voor het openbaar vervoer."@nl-nl ;
   rdfs:label "Openbaar vervoer netwerk" ;
   rdfs:subClassOf core:Netwerk ;
-  skos:definition "Het geheel aan netwerk elementen bestemd voor het openbaar vervoer."@nl-nl ;
 .
 core:OpenbareVerlichtingsInstallatie
   rdf:type owl:Class ;
@@ -802,64 +800,64 @@ core:Opstallen
 .
 core:OverigBouwwerk
   rdf:type owl:Class ;
+  rdfs:comment "Bouwwerk of gedeelte daarvan, voor zover dat geen gebouw of onderdeel daarvan is (en niet bedoeld voor permanent menselijk verblijf)."@nl-nl ;
   rdfs:label "Overig bouwwerk" ;
   rdfs:subClassOf core:Bouwwerk ;
-  skos:definition "Bouwwerk of gedeelte daarvan, voor zover dat geen gebouw of onderdeel daarvan is (en niet bedoeld voor permanent menselijk verblijf)."@nl-nl ;
 .
 core:Overkluizing
   rdf:type owl:Class ;
+  rdfs:comment "Een aan beide zijden niet toegankelijke constructie onder een weg, spoorweg, kade of dijk om kruisende kabels en leidingen te beschermen en te geleiden."@nl-nl ;
   rdfs:label "Overkluizing" ;
   rdfs:subClassOf core:VastKunstwerk ;
-  skos:definition "Een aan beide zijden niet toegankelijke constructie onder een weg, spoorweg, kade of dijk om kruisende kabels en leidingen te beschermen en te geleiden."@nl-nl ;
 .
 core:Paal
   rdf:type owl:Class ;
+  rdfs:comment "Langwerpig voorwerp van bijvoorbeeld hout, ijzer, steen dat in de grond staat"@nl-nl ;
   rdfs:label "Paal" ;
   rdfs:subClassOf core:Inrichtingselement ;
-  skos:definition "Langwerpig voorwerp van bijvoorbeeld hout, ijzer, steen dat in de grond staat"@nl-nl ;
 .
 core:Parkeerplaats
   rdf:type owl:Class ;
+  rdfs:comment "Een ruimte die is bestemd voor het parkeren van één voertuig."@nl-nl ;
+  rdfs:comment "Locatie bestemd voor het parkeren van motorvoertuigen."@nl-nl ;
   rdfs:label "Parkeerplaats" ;
   rdfs:subClassOf core:VerblijfspuntWeg ;
-  skos:definition "Een ruimte die is bestemd voor het parkeren van één voertuig."@nl-nl ;
-  skos:definition "Locatie bestemd voor het parkeren van motorvoertuigen."@nl-nl ;
 .
 core:Plantvak
   rdf:type owl:Class ;
+  rdfs:comment "BegroeidTerreindeel met aangelegde beplanting, meestal gras, heesters of struiken."@nl-nl ;
   rdfs:label "Plantvak" ;
   rdfs:subClassOf core:BegroeidTerreindeel ;
-  skos:definition "BegroeidTerreindeel met aangelegde beplanting, meestal gras, heesters of struiken."@nl-nl ;
 .
 core:Procedure
   rdf:type owl:Class ;
+  rdfs:comment "Een reeks instructies die op volgorde moet worden uitgevoerd."@nl-nl ;
   rdfs:label "Procedure" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#GeordendeVerzameling> ;
-  skos:definition "Een reeks instructies die op volgorde moet worden uitgevoerd."@nl-nl ;
 .
 core:Put
   rdf:type owl:Class ;
+  rdfs:comment "Kokervormige constructie aangebracht onder de grond, die toegang geeft tot de aangesloten rioolleidingen en een verwijderbare deksel heeft."@nl-nl ;
   rdfs:label "Put" ;
   rdfs:subClassOf core:Leidingelement ;
-  skos:definition "Kokervormige constructie aangebracht onder de grond, die toegang geeft tot de aangesloten rioolleidingen en een verwijderbare deksel heeft."@nl-nl ;
 .
 core:Raster
   rdf:type owl:Class ;
+  rdfs:comment "Constructie bestaande uit bijvoorbeeld palen, latten of spijlen voor het scheiden van verschillende terreingedeelten."@nl-nl ;
   rdfs:label "Raster" ;
   rdfs:subClassOf core:ScheidendeConstructie ;
-  skos:definition "Constructie bestaande uit bijvoorbeeld palen, latten of spijlen voor het scheiden van verschillende terreingedeelten."@nl-nl ;
 .
 core:RegistratiefGebied
   rdf:type owl:Class ;
+  rdfs:comment "Op basis van wet- of regelgeving afgebakend gebied dat als eenheid geldt van politiek/bestuurlijke verantwoordelijkheid of voor bedrijfsvoering. Bron RWS-OTL 2016"@nl-nl ;
   rdfs:label "Registratief gebied" ;
   rdfs:subClassOf core:Gebied ;
-  skos:definition "Op basis van wet- of regelgeving afgebakend gebied dat als eenheid geldt van politiek/bestuurlijke verantwoordelijkheid of voor bedrijfsvoering. Bron RWS-OTL 2016"@nl-nl ;
 .
 core:Rijstrook
   rdf:type owl:Class ;
+  rdfs:comment "Door doorgetrokken of onderbroken strepen gemarkeerd gedeelte van de rijbaan van zodanige breedte dat bestuurders van motorvoertuigen op meer dan twee wielen daarvan gebruik kunnen maken."@nl-nl ;
   rdfs:label "Rijstrook" ;
   rdfs:subClassOf core:WegLink ;
-  skos:definition "Door doorgetrokken of onderbroken strepen gemarkeerd gedeelte van de rijbaan van zodanige breedte dat bestuurders van motorvoertuigen op meer dan twee wielen daarvan gebruik kunnen maken."@nl-nl ;
 .
 core:RioolNetwerk
   rdf:type owl:Class ;
@@ -872,118 +870,118 @@ core:RioolNetwerk
 .
 core:Risico
   rdf:type owl:Class ;
+  rdfs:comment "Een toestand waarbij er kans op een ongewenste gebeurtenis is."@nl-nl ;
   rdfs:label "Risico"@nl-nl ;
   rdfs:subClassOf core:Toestand ;
-  skos:definition "Een toestand waarbij er kans op een ongewenste gebeurtenis is."@nl-nl ;
 .
 core:Rotonde
   rdf:type owl:Class ;
+  rdfs:comment "Verkeersplein waar het verkeer op het plein voorrang heeft en waarop de wegen radiaal aansluiten."@nl-nl ;
   rdfs:label "Rotonde" ;
   rdfs:subClassOf core:Verkeersplein ;
-  skos:definition "Verkeersplein waar het verkeer op het plein voorrang heeft en waarop de wegen radiaal aansluiten."@nl-nl ;
 .
 core:Route
   rdf:type owl:Class ;
+  rdfs:comment "Een logische samenstelling van ruimtes die een min of meer aaneengesloten pad vormen."@nl-nl ;
   rdfs:label "Route" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
-  skos:definition "Een logische samenstelling van ruimtes die een min of meer aaneengesloten pad vormen."@nl-nl ;
 .
 core:Scheepvaartsein
   rdf:type owl:Class ;
+  rdfs:comment "Armatuur met één of meerdere lichtbronnen die verkeerstromen van de scheepvaart doormiddel van lichtsignalen reguleert."@nl-nl ;
   rdfs:label "Scheepvaartsein" ;
   rdfs:subClassOf core:Lantaarn ;
-  skos:definition "Armatuur met één of meerdere lichtbronnen die verkeerstromen van de scheepvaart doormiddel van lichtsignalen reguleert."@nl-nl ;
 .
 core:Scheepvaartverkeersbord
   rdf:type owl:Class ;
+  rdfs:comment "Bord waarop een scheepvaartverkeersteken is aangebracht."@nl-nl ;
   rdfs:label "Scheepvaartverkeersbord" ;
   rdfs:subClassOf core:Bord ;
-  skos:definition "Bord waarop een scheepvaartverkeersteken is aangebracht."@nl-nl ;
 .
 core:ScheidendeConstructie
   rdf:type owl:Class ;
+  rdfs:comment "Meestal lineaire constructie bedoeld als een obstakel om twee gebieden van elkaar te scheiden."@nl-nl ;
   rdfs:label "Scheidende constructie"@nl-nl ;
   rdfs:subClassOf core:Constructie ;
-  skos:definition "Meestal lineaire constructie bedoeld als een obstakel om twee gebieden van elkaar te scheiden."@nl-nl ;
 .
 core:Schutsluis
   rdf:type owl:Class ;
+  rdfs:comment "OverigBouwwerk waarmee schepen een waterstandsverschil kunnen overbruggen door aanpassing van het niveauverschil in de schutlsuis. Tevens dient de schutsluis voor het keren van buitenwater"@nl-nl ;
   rdfs:label "Schutsluis" ;
   rdfs:subClassOf core:Sluis ;
-  skos:definition "OverigBouwwerk waarmee schepen een waterstandsverschil kunnen overbruggen door aanpassing van het niveauverschil in de schutlsuis. Tevens dient de schutsluis voor het keren van buitenwater"@nl-nl ;
 .
 core:Sensor
   rdf:type owl:Class ;
+  rdfs:comment "Installatiedeel dat één of meer fysische grootheden in zijn waarnemingsgebied kan waarnemen en omzet in een (elektrisch) signaal."@nl-nl ;
   rdfs:label "Sensor" ;
   rdfs:subClassOf core:Installatiedeel ;
-  skos:definition "Installatiedeel dat één of meer fysische grootheden in zijn waarnemingsgebied kan waarnemen en omzet in een (elektrisch) signaal."@nl-nl ;
 .
 core:Sifon
   rdf:type owl:Class ;
+  rdfs:comment "Kunstwerk om een rivier, beek of poldertocht onder een andere waterloop (watergang) door te leiden die een ander waterpeil heeft. Omdat sifons tevens een waterkerende functie hebben moeten ze aan beide zijden afsluitbaar zijn."@nl-nl ;
   rdfs:label "Sifon" ;
   rdfs:subClassOf core:Duiker ;
-  skos:definition "Kunstwerk om een rivier, beek of poldertocht onder een andere waterloop (watergang) door te leiden die een ander waterpeil heeft. Omdat sifons tevens een waterkerende functie hebben moeten ze aan beide zijden afsluitbaar zijn."@nl-nl ;
 .
 core:Signaalgever
   rdf:type owl:Class ;
+  rdfs:comment "Installatiedeel die het gedrag van één of meerdere personen beïnvloed (informeren, waarschuwen, adviseren, gebieden of verbieden) door middel van het geven van een signaal."@nl-nl ;
   rdfs:label "Signaalgever" ;
   rdfs:subClassOf core:Installatiedeel ;
-  skos:definition "Installatiedeel die het gedrag van één of meerdere personen beïnvloed (informeren, waarschuwen, adviseren, gebieden of verbieden) door middel van het geven van een signaal."@nl-nl ;
 .
 core:Sleutelkluis
   rdf:type owl:Class ;
+  rdfs:comment "Een aan muur of vloer verankerde, afsluitbare kast, waarin de sleutels van andere objecten georganiseerd bewaard worden."@nl-nl ;
   rdfs:label "Sleutelkluis" ;
   rdfs:subClassOf core:Kast ;
-  skos:definition "Een aan muur of vloer verankerde, afsluitbare kast, waarin de sleutels van andere objecten georganiseerd bewaard worden."@nl-nl ;
 .
 core:Sloot
   rdf:type owl:Class ;
+  rdfs:comment "Algemene benaming voor een waterloop van beperkte breedte die stilstaand of slechts langzaam stromend water bevat."@nl-nl ;
   rdfs:label "Sloot" ;
   rdfs:subClassOf core:Waterloop ;
-  skos:definition "Algemene benaming voor een waterloop van beperkte breedte die stilstaand of slechts langzaam stromend water bevat."@nl-nl ;
 .
 core:Sluis
   rdf:type owl:Class ;
+  rdfs:comment "Door middel van deuren te openen waterkering, die de verbinding vormt tussen twee wateren met een ongelijk waterniveau of met verschillende waterkwaliteit. Een sluis is opgebouwd uit onder andere sluishoofden, kolk en sluisdeuren."@nl-nl ;
   rdfs:label "Sluis" ;
   rdfs:subClassOf core:WaterstaankundigWerk ;
-  skos:definition "Door middel van deuren te openen waterkering, die de verbinding vormt tussen twee wateren met een ongelijk waterniveau of met verschillende waterkwaliteit. Een sluis is opgebouwd uit onder andere sluishoofden, kolk en sluisdeuren."@nl-nl ;
 .
 core:Specificatie
   rdf:type owl:Class ;
+  rdfs:comment "An explicit set of requirements to be satisfied by an object."@en-gb ;
+  rdfs:comment "Een opsomming van kenmerken."@nl-nl ;
   rdfs:label "Specificatie" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Informatie> ;
-  skos:definition "An explicit set of requirements to be satisfied by an object."@en-gb ;
-  skos:definition "Een opsomming van kenmerken."@nl-nl ;
 .
 core:Spuisluis
   rdf:type owl:Class ;
+  rdfs:comment "Sluis die dient om overtollig water uit een water of gebied af te voeren."@nl-nl ;
   rdfs:label "Spuisluis" ;
   rdfs:subClassOf core:Sluis ;
-  skos:definition "Sluis die dient om overtollig water uit een water of gebied af te voeren."@nl-nl ;
 .
 core:StrookAs
   rdf:type owl:Class ;
+  rdfs:comment "Hartlijn van de strook."@nl-nl ;
   rdfs:label "Strookas" ;
   rdfs:subClassOf core:WegAs ;
-  skos:definition "Hartlijn van de strook."@nl-nl ;
 .
 core:Stuw
   rdf:type owl:Class ;
+  rdfs:comment "Waterbouwkundige constructie die het water in een loop, beek of rivier opstuwt zodat het waterpeil bovenstrooms kan worden verhoogd en/ of geregeld."@nl-nl ;
   rdfs:label "Stuw" ;
   rdfs:subClassOf core:WaterstaankundigWerk ;
-  skos:definition "Waterbouwkundige constructie die het water in een loop, beek of rivier opstuwt zodat het waterpeil bovenstrooms kan worden verhoogd en/ of geregeld."@nl-nl ;
 .
 core:Terrein
   rdf:type owl:Class ;
+  rdfs:comment "Door een type landgebruik gekarakteriseerd, zichtbaar begrensd stuk grond."@nl-nl ;
   rdfs:label "Terrein" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
-  skos:definition "Door een type landgebruik gekarakteriseerd, zichtbaar begrensd stuk grond."@nl-nl ;
 .
 core:Terreindeel
   rdf:type owl:Class ;
+  rdfs:comment "Kleinste functioneel onafhankelijk stukje van een terrein dat er binnen het objecttype Terrein van NEN 3610 wordt onderscheiden."@nl-nl ;
   rdfs:label "Terreindeel" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#FysiekObject> ;
-  skos:definition "Kleinste functioneel onafhankelijk stukje van een terrein dat er binnen het objecttype Terrein van NEN 3610 wordt onderscheiden."@nl-nl ;
 .
 core:Terreinen
   rdf:type owl:Class ;
@@ -992,130 +990,130 @@ core:Terreinen
 .
 core:Toestand
   rdf:type owl:Class ;
+  rdfs:comment "De toestand waarin een object verkeerd."@nl-nl ;
   rdfs:label "Toestand"@nl-nl ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Kenmerk> ;
-  skos:definition "De toestand waarin een object verkeerd."@nl-nl ;
 .
 core:Traject
   rdf:type owl:Class ;
+  rdfs:comment "Fysieke ruimte die een eenduidig afgebakende en samenhangende deelverzameling vormt in de topologie van het netwerk."@nl-nl ;
   rdfs:label "Traject" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#DrieDRuimte> ;
-  skos:definition "Fysieke ruimte die een eenduidig afgebakende en samenhangende deelverzameling vormt in de topologie van het netwerk."@nl-nl ;
   skos:scopeNote "Richtlijnen voor omvang van een wegtraject: + Een traject start/eindigt bij een eigendoms/beheergrens + Een traject start/eindigt bij een aansluiting op een weg van een hogere orde. + Een traject start/eindigt op een weg van een gelijke orde." ;
 .
 core:Tunnel
   rdf:type owl:Class ;
+  rdfs:comment "Kunstmatig aangelegde geboorde, afgezonken of in het droge gebouwde koker of buisvormige gang onder maaiveldniveau, dat aan beide zijdes is voorzien van een open bakconstructie, met als doel om spoor- en/ of wegverkeer tussen twee punten over een grote afstand mogelijk te maken."@nl-nl ;
   rdfs:label "Tunnel" ;
   rdfs:subClassOf core:VastKunstwerk ;
-  skos:definition "Kunstmatig aangelegde geboorde, afgezonken of in het droge gebouwde koker of buisvormige gang onder maaiveldniveau, dat aan beide zijdes is voorzien van een open bakconstructie, met als doel om spoor- en/ of wegverkeer tussen twee punten over een grote afstand mogelijk te maken."@nl-nl ;
 .
 core:Tunnelbak
   rdf:type owl:Class ;
+  rdfs:comment "Aan de bovenzijde open constructie met tenminste 2 wanden en een vloer om een spoor- of autoweg ten opzichte van het omliggende maaiveld verdiept te laten liggen."@nl-nl ;
   rdfs:label "Tunnelbak" ;
   rdfs:subClassOf core:VastKunstwerk ;
-  skos:definition "Aan de bovenzijde open constructie met tenminste 2 wanden en een vloer om een spoor- of autoweg ten opzichte van het omliggende maaiveld verdiept te laten liggen."@nl-nl ;
 .
 core:UitwisselpuntVaarweg
   rdf:type owl:Class ;
+  rdfs:comment "Een uitwisselpunt tussen hoofdwaterwegen en regionale vaarwegen."@nl-nl ;
   rdfs:label "Uitwisselpunt vaarweg" ;
   rdfs:subClassOf core:VaarwegNode ;
-  skos:definition "Een uitwisselpunt tussen hoofdwaterwegen en regionale vaarwegen."@nl-nl ;
 .
 core:VRI_Kast
   rdf:type owl:Class ;
+  rdfs:comment "Kast ten behoeve van de regeling van het verkeer."@nl-nl ;
   rdfs:label "VRI Kast" ;
   rdfs:subClassOf core:Kast ;
-  skos:definition "Kast ten behoeve van de regeling van het verkeer."@nl-nl ;
 .
 core:Vaarweg
   rdf:type owl:Class ;
+  rdfs:comment "Voor het openbaar scheepvaartverkeer openstaand, aaneengesloten stuk oppervlaktewater dat in doorvaart tenminste voldoet of zal gaan voldoen aan een vrije doorvaarthoogte van 2,45 meter en een diepte van 1,10 meter, beide ten opzichte van het ter plaatse geldende zomerstreefpeil, de gemiddelde waterstand, of in getijdegebieden het NAP."@nl-nl ;
   rdfs:label "Vaarweg" ;
   rdfs:subClassOf core:Route ;
-  skos:definition "Voor het openbaar scheepvaartverkeer openstaand, aaneengesloten stuk oppervlaktewater dat in doorvaart tenminste voldoet of zal gaan voldoen aan een vrije doorvaarthoogte van 2,45 meter en een diepte van 1,10 meter, beide ten opzichte van het ter plaatse geldende zomerstreefpeil, de gemiddelde waterstand, of in getijdegebieden het NAP."@nl-nl ;
 .
 core:VaarwegAs
   rdf:type owl:Class ;
+  rdfs:comment "Hartlijn van de vaarweg"@nl-nl ;
   rdfs:label "Vaarwegas" ;
   rdfs:subClassOf core:As ;
-  skos:definition "Hartlijn van de vaarweg"@nl-nl ;
 .
 core:VaarwegLink
   rdf:type owl:Class ;
+  rdfs:comment "Relatie tussen twee Vaarwegnodes die een directe verbinding in het vaarwegennetwerk voorstelt."@nl-nl ;
   rdfs:label "Vaarweglink" ;
   rdfs:subClassOf core:NetwerkLink ;
-  skos:definition "Relatie tussen twee Vaarwegnodes die een directe verbinding in het vaarwegennetwerk voorstelt."@nl-nl ;
 .
 core:VaarwegNetwerk
   rdf:type owl:Class ;
+  rdfs:comment "Het vaarwegennet bestaat uit alle verbindingen voor het vaarwegverkeer."@nl-nl ;
   rdfs:label "Vaarwegnetwerk" ;
   rdfs:subClassOf core:Netwerk ;
-  skos:definition "Het vaarwegennet bestaat uit alle verbindingen voor het vaarwegverkeer."@nl-nl ;
 .
 core:VaarwegNode
   rdf:type owl:Class ;
+  rdfs:comment "Node in het vaarwegennetwerk."@nl-nl ;
   rdfs:label "Vaarwegnode" ;
   rdfs:subClassOf core:NetwerkNode ;
-  skos:definition "Node in het vaarwegennetwerk."@nl-nl ;
 .
 core:VastKunstwerk
   rdf:type owl:Class ;
+  rdfs:comment "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen."@nl-nl ;
   rdfs:label "Vast kunstwerk" ;
   rdfs:subClassOf core:Kunstwerk ;
-  skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen."@nl-nl ;
 .
 core:VasteBrug
   rdf:type owl:Class ;
+  rdfs:comment "Vaste verbinding voor verkeer tussen minimaal twee punten die gescheiden wordt door water."@nl-nl ;
   rdfs:label "Vaste brug" ;
   rdfs:subClassOf core:VastKunstwerk ;
-  skos:definition "Vaste verbinding voor verkeer tussen minimaal twee punten die gescheiden wordt door water."@nl-nl ;
 .
 core:VerblijfspuntVaarweg
   rdf:type owl:Class ;
+  rdfs:comment "Een locatie die de vaarweggebruikers verzorging en/of verblijf biedt."@nl-nl ;
   rdfs:label "Verblijfspunt vaarweg" ;
   rdfs:subClassOf core:VaarwegNode ;
-  skos:definition "Een locatie die de vaarweggebruikers verzorging en/of verblijf biedt."@nl-nl ;
 .
 core:VerblijfspuntWeg
   rdf:type owl:Class ;
+  rdfs:comment "Een locatie die de weggebruikers verzorging en/of verblijf biedt."@nl-nl ;
   rdfs:label "Verblijfspunt weg" ;
   rdfs:subClassOf core:Wegnode ;
-  skos:definition "Een locatie die de weggebruikers verzorging en/of verblijf biedt."@nl-nl ;
 .
 core:VerhardeBaan
   rdf:type owl:Class ;
+  rdfs:comment "Baan die een onderdeel vormt van een verhardingsoppervlak."@nl-nl ;
   rdfs:label "Verharde baan"@nl-nl ;
   rdfs:subClassOf core:Baan ;
-  skos:definition "Baan die een onderdeel vormt van een verhardingsoppervlak."@nl-nl ;
 .
 core:Verkeerscentrale
   rdf:type owl:Class ;
+  rdfs:comment "Gebouw met een operationele instelling voor het op afstand bedienen en monitoren van (vaar)weggebonden installaties die de verkeersstromen geleiden."@nl-nl ;
   rdfs:label "Verkeerscentrale" ;
   rdfs:subClassOf core:Gebouw ;
-  skos:definition "Gebouw met een operationele instelling voor het op afstand bedienen en monitoren van (vaar)weggebonden installaties die de verkeersstromen geleiden."@nl-nl ;
 .
 core:Verkeersmanagementsysteem
   rdf:type owl:Class ;
+  rdfs:comment "Het geheel van objecten die samen het structureren en sturen van verkeersstromen voor een optimaal gebruik mogelijk maken."@nl-nl ;
   rdfs:label "Verkeersmanagementsysteem" ;
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Systeem> ;
-  skos:definition "Het geheel van objecten die samen het structureren en sturen van verkeersstromen voor een optimaal gebruik mogelijk maken."@nl-nl ;
 .
 core:Verkeersmanagementsysteem_vaarweg
   rdf:type owl:Class ;
+  rdfs:comment "Het geheel van objecten die samen het structureren en sturen van verkeersstromen op het water voor een optimaal gebruik mogelijk maken."@nl-nl ;
   rdfs:label "Verkeersmanagementsysteem vaarweg" ;
   rdfs:subClassOf core:Verkeersmanagementsysteem ;
-  skos:definition "Het geheel van objecten die samen het structureren en sturen van verkeersstromen op het water voor een optimaal gebruik mogelijk maken."@nl-nl ;
 .
 core:Verkeersmanagementsysteem_weg
   rdf:type owl:Class ;
+  rdfs:comment "Het geheel van objecten die samen het structureren en sturen van verkeersstromen op de weg voor een optimaal gebruik mogelijk maken."@nl-nl ;
   rdfs:label "Verkeersmanagementsysteem weg" ;
   rdfs:subClassOf core:Verkeersmanagementsysteem ;
-  skos:definition "Het geheel van objecten die samen het structureren en sturen van verkeersstromen op de weg voor een optimaal gebruik mogelijk maken."@nl-nl ;
 .
 core:Verkeersplein
   rdf:type owl:Class ;
+  rdfs:comment "Gelijkvloers kruispunt waar het verkeer in een rondgaande beweging wordt afgewikkeld."@nl-nl ;
   rdfs:label "Verkeersplein" ;
   rdfs:subClassOf core:GelijkvloersKruispunt ;
-  skos:definition "Gelijkvloers kruispunt waar het verkeer in een rondgaande beweging wordt afgewikkeld."@nl-nl ;
 .
 core:VerkeersregelInstallatie
   rdf:type owl:Class ;
@@ -1130,52 +1128,52 @@ core:VerkeersregelInstallatie
 .
 core:Verkeersteken
   rdf:type owl:Class ;
+  rdfs:comment "Object dat een richtlijn, gebod of verbod aangeeft aan het verkeer."@nl-nl ;
   rdfs:label "Verkeersteken" ;
   rdfs:subClassOf core:Inrichtingselement ;
-  skos:definition "Object dat een richtlijn, gebod of verbod aangeeft aan het verkeer."@nl-nl ;
 .
 core:Viaduct
   rdf:type owl:Class ;
+  rdfs:comment "Kunstwerk dat een vaste overbrugging vormt over een weg, spoorweg of terrein."@nl-nl ;
   rdfs:label "Viaduct" ;
   rdfs:subClassOf core:VastKunstwerk ;
-  skos:definition "Kunstwerk dat een vaste overbrugging vormt over een weg, spoorweg of terrein."@nl-nl ;
 .
 core:Vluchthaven
   rdf:type owl:Class ;
+  rdfs:comment "Een langs de rijbaan van een weg gelegen weggedeelte dat in geval van nood verblijf biedt aan de weggebruiker."@nl-nl ;
   rdfs:label "Vluchthaven" ;
   rdfs:subClassOf core:VerblijfspuntWeg ;
-  skos:definition "Een langs de rijbaan van een weg gelegen weggedeelte dat in geval van nood verblijf biedt aan de weggebruiker."@nl-nl ;
 .
 core:WaarnemingsCamera
   rdf:type owl:Class ;
+  rdfs:comment "Sensor voor de registratie van beelden van het (vaar)wegverkeer."@nl-nl ;
   rdfs:label "Waarnemings camera" ;
   rdfs:subClassOf core:Camera ;
-  skos:definition "Sensor voor de registratie van beelden van het (vaar)wegverkeer."@nl-nl ;
 .
 core:Waarschuwingsmarkering
   rdf:type owl:Class ;
   core:heeftBeschrijving core:CROW_Publicatie_233 ;
+  rdfs:comment "Markering om te attenderen op eventueel gevaar of vragen om extra oplettendheid van de visueel beperkte reiziger."@nl-nl ;
   rdfs:label "Waarschuwingsmarkering" ;
   rdfs:subClassOf core:Markering ;
-  skos:definition "Markering om te attenderen op eventueel gevaar of vragen om extra oplettendheid van de visueel beperkte reiziger."@nl-nl ;
 .
 core:Wachtplaats
   rdf:type owl:Class ;
+  rdfs:comment "Ligplaats die de mogelijkheid biedt om gedurende korte tijd af te meren in afwachting van een schutting, brugopening, laden of lossen."@nl-nl ;
   rdfs:label "Wachtplaats" ;
   rdfs:subClassOf core:VerblijfspuntVaarweg ;
-  skos:definition "Ligplaats die de mogelijkheid biedt om gedurende korte tijd af te meren in afwachting van een schutting, brugopening, laden of lossen."@nl-nl ;
 .
 core:Waterbergingsgebied
   rdf:type owl:Class ;
+  rdfs:comment "Terrein met als functie het tijdelijk of langdurig bergen van (regen)wateroverschotten uit de omgeving."@nl-nl ;
   rdfs:label "Waterbergingsgebied" ;
   rdfs:subClassOf core:FunctioneelGebied ;
-  skos:definition "Terrein met als functie het tijdelijk of langdurig bergen van (regen)wateroverschotten uit de omgeving."@nl-nl ;
 .
 core:Waterdeel
   rdf:type owl:Class ;
+  rdfs:comment "Kleinste functioneel onafhankelijk stukje (oppervlakte)water met gelijkblijvende, homogene eigenschappen en relaties dat er binnen het objecttype (oppervlakte)Water van NEN 3610 wordt onderscheiden, en dat permanent met water bedekt is."@nl-nl ;
   rdfs:label "Waterdeel" ;
   rdfs:subClassOf core:Terreindeel ;
-  skos:definition "Kleinste functioneel onafhankelijk stukje (oppervlakte)water met gelijkblijvende, homogene eigenschappen en relaties dat er binnen het objecttype (oppervlakte)Water van NEN 3610 wordt onderscheiden, en dat permanent met water bedekt is."@nl-nl ;
 .
 core:Waterhuishouding
   rdf:type owl:Class ;
@@ -1187,116 +1185,116 @@ core:Waterhuishouding
 .
 core:Waterloop
   rdf:type owl:Class ;
+  rdfs:comment "Een voor de waterbeheersing bestemde geul die meestal permanent water bevat (zoals rivier, kanaal, beek, sloot, gracht)."@nl-nl ;
   rdfs:label "Waterloop" ;
   rdfs:subClassOf core:Waterdeel ;
-  skos:definition "Een voor de waterbeheersing bestemde geul die meestal permanent water bevat (zoals rivier, kanaal, beek, sloot, gracht)."@nl-nl ;
 .
 core:WaterstaankundigWerk
   rdf:type owl:Class ;
+  rdfs:comment "Werk ten behoeve van Waterkwantiteits- of Waterkeringenbeheer."@nl-nl ;
   rdfs:label "Waterstaankundig werk" ;
   rdfs:subClassOf core:OverigBouwwerk ;
-  skos:definition "Werk ten behoeve van Waterkwantiteits- of Waterkeringenbeheer."@nl-nl ;
 .
 core:Watervlakte
   rdf:type owl:Class ;
+  rdfs:comment "Alle oppervlakken die vrij permanent met zoet water zijn bedekt. (zoals meer, plas, ven, vijver)."@nl-nl ;
   rdfs:label "Watervlakte" ;
   rdfs:subClassOf core:Waterdeel ;
-  skos:definition "Alle oppervlakken die vrij permanent met zoet water zijn bedekt. (zoals meer, plas, ven, vijver)."@nl-nl ;
 .
 core:Weg
   rdf:type owl:Class ;
+  rdfs:comment "Een gebaande, en daardoor begaanbare, verbinding tussen twee of meer punten om verplaatsingen mogelijk te maken."@nl-nl ;
   rdfs:label "Weg" ;
   rdfs:subClassOf core:Route ;
-  skos:definition "Een gebaande, en daardoor begaanbare, verbinding tussen twee of meer punten om verplaatsingen mogelijk te maken."@nl-nl ;
 .
 core:WegAs
   rdf:type owl:Class ;
+  rdfs:comment "Hartlijn van de weg."@nl-nl ;
   rdfs:label "Wegas" ;
   rdfs:subClassOf core:As ;
-  skos:definition "Hartlijn van de weg."@nl-nl ;
 .
 core:WegBaan
   rdf:type owl:Class ;
+  rdfs:comment "Verbinding tussen twee baanjuncties die een rechtstreekse verbinding in het netwerk voorstelt."@nl-nl ;
   rdfs:label "Wegbaan" ;
   rdfs:subClassOf core:WegLink ;
-  skos:definition "Verbinding tussen twee baanjuncties die een rechtstreekse verbinding in het netwerk voorstelt."@nl-nl ;
 .
 core:WegLink
   rdf:type owl:Class ;
+  rdfs:comment "Relatie tussen twee wegnodes die een directe verbinding in het wegennetwerk voorstelt."@nl-nl ;
   rdfs:label "Weglink" ;
   rdfs:subClassOf core:NetwerkLink ;
-  skos:definition "Relatie tussen twee wegnodes die een directe verbinding in het wegennetwerk voorstelt."@nl-nl ;
 .
 core:WegNetwerk
   rdf:type owl:Class ;
+  rdfs:comment "Het wegennet bestaat uit alle verbindingswegen voor het wegverkeer."@nl-nl ;
   rdfs:label "Wegnetwerk" ;
   rdfs:subClassOf core:Netwerk ;
-  skos:definition "Het wegennet bestaat uit alle verbindingswegen voor het wegverkeer."@nl-nl ;
 .
 core:Wegberm
   rdf:type owl:Class ;
+  rdfs:comment "Gedeelte van een weg tussen verkeersbanen of tussen een buitenste verkeersbaan en de naastgelegen weggrens."@nl-nl ;
   rdfs:label "Wegberm"@nl-nl ;
   rdfs:subClassOf core:Baan ;
-  skos:definition "Gedeelte van een weg tussen verkeersbanen of tussen een buitenste verkeersbaan en de naastgelegen weggrens."@nl-nl ;
   skos:scopeNote "Let op dat het hier gaat om het gedeelte van de berm wat een verkeerskundige functie vervult. Het overige deel van de berm valt onder BegroeidTerreindeel -> Berm" ;
 .
 core:Wegdeel
   rdf:type owl:Class ;
   core:realiseert core:Wegvak ;
+  rdfs:comment "Kleinste functioneel onafhankelijk stukje van een NEN 3610 Weg met gelijkblijvende, homogene eigenschappen en relaties en primair bedoeld voor gebruik door weg-, spoor- en vliegverkeer te land."@nl-nl ;
   rdfs:label "Wegdeel" ;
   rdfs:subClassOf core:Terreindeel ;
-  skos:definition "Kleinste functioneel onafhankelijk stukje van een NEN 3610 Weg met gelijkblijvende, homogene eigenschappen en relaties en primair bedoeld voor gebruik door weg-, spoor- en vliegverkeer te land."@nl-nl ;
 .
 core:Wegmarkering
   rdf:type owl:Class ;
+  rdfs:comment "Het geheel aan tekens die op het wegdek staan aangegeven en het verkeer door middel van de visuele informatie geleiden."@nl-nl ;
   rdfs:label "Wegmarkering" ;
   rdfs:subClassOf core:Markering ;
-  skos:definition "Het geheel aan tekens die op het wegdek staan aangegeven en het verkeer door middel van de visuele informatie geleiden."@nl-nl ;
 .
 core:Wegnode
   rdf:type owl:Class ;
+  rdfs:comment "Node in het wegennetwerk."@nl-nl ;
   rdfs:label "Wegnode" ;
   rdfs:subClassOf core:NetwerkNode ;
-  skos:definition "Node in het wegennetwerk."@nl-nl ;
 .
 core:Wegvak
   rdf:type owl:Class ;
   core:wordtGerealiseerdDoor core:Wegdeel ;
+  rdfs:comment "Relatie tussen twee Wegjuncties die een directe verbinding in het wegennetwerk voorstelt."@nl-nl ;
   rdfs:label "Wegvak" ;
   rdfs:subClassOf core:WegLink ;
-  skos:definition "Relatie tussen twee Wegjuncties die een directe verbinding in het wegennetwerk voorstelt."@nl-nl ;
   skos:scopeNote "Een Wegvak is een verkeerskundig homogeen deel van een Wegennetwerk." ;
 .
 core:Wegverkeersbord
   rdf:type owl:Class ;
+  rdfs:comment "Bord waarop een wegverkeersteken is aangebracht en waarvan de uitvoering van dit wegverkeersteken wettelijk is voorgeschreven."@nl-nl ;
   rdfs:label "Wegverkeersbord" ;
   rdfs:subClassOf core:Bord ;
   rdfs:subClassOf core:Verkeersteken ;
-  skos:definition "Bord waarop een wegverkeersteken is aangebracht en waarvan de uitvoering van dit wegverkeersteken wettelijk is voorgeschreven."@nl-nl ;
 .
 core:Wegverkeerslantaarn
   rdf:type owl:Class ;
+  rdfs:comment "Armatuur met één of meerdere lichtbronnen die verkeerstromen op de weg doormiddel van lichtsignalen reguleert."@nl-nl ;
   rdfs:label "Wegverkeerslantaarn" ;
   rdfs:subClassOf core:Lantaarn ;
-  skos:definition "Armatuur met één of meerdere lichtbronnen die verkeerstromen op de weg doormiddel van lichtsignalen reguleert."@nl-nl ;
 .
 core:Wegwijzer
   rdf:type owl:Class ;
+  rdfs:comment "Bord dat op, langs of boven de verharding is aangebracht om de weggebruiker te helpen bij het bepalen van zijn route."@nl-nl ;
   rdfs:label "Wegwijzer" ;
   rdfs:subClassOf core:Bord ;
-  skos:definition "Bord dat op, langs of boven de verharding is aangebracht om de weggebruiker te helpen bij het bepalen van zijn route."@nl-nl ;
 .
 core:Zandvang
   rdf:type owl:Class ;
+  rdfs:comment "Afscheiderinstallatie die op basis van zwaartekracht zorgtdraagt voor ontmenging van zand en afvalwater."@nl-nl ;
   rdfs:label "Zandvang" ;
   rdfs:subClassOf core:Afscheider ;
-  skos:definition "Afscheiderinstallatie die op basis van zwaartekracht zorgtdraagt voor ontmenging van zand en afvalwater."@nl-nl ;
 .
 core:Zwemwaterbord
   rdf:type owl:Class ;
+  rdfs:comment "Een paneel waarop informatie wordt afgebeeld ten behoeve van zwemwater locaties."@nl-nl ;
   rdfs:label "Zwemwaterbord" ;
   rdfs:subClassOf core:Bord ;
-  skos:definition "Een paneel waarop informatie wordt afgebeeld ten behoeve van zwemwater locaties."@nl-nl ;
 .
 core:bestaatUit
   rdf:type rdf:Property ;
