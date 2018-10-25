@@ -6,7 +6,6 @@ en te raadplegen in <a href="https://provincienh.github.io/OTL/otl-doc" target="
 Een uitleg over de structuur van de OTL kan [__hier__](otl_uitleg.md) gevonden worden.
 
 Meer detail voorbeelden en documentatie is te raadplegen via de online [sparql-visualizer](https://madsholten.github.io/sparql-visualizer/?file=https://raw.githubusercontent.com/provincieNH/OTL/master/docs/data.json)
-
 (werkt alleen in Chrome/Firefox, niet in Internet Explorer)
 
 ============================
