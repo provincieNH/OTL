@@ -7,6 +7,8 @@ Een uitleg over de structuur van de OTL kan [__hier__](otl_uitleg.md) gevonden w
 
 Meer detail voorbeelden en documentatie is te raadplegen via de online [sparql-visualizer](https://madsholten.github.io/sparql-visualizer/?file=https://raw.githubusercontent.com/provincieNH/OTL/master/docs/data.json)
 
+(werkt alleen in Chrome/Firefox, niet in Internet Explorer)
+
 ============================
 
 De visie op de OTL van Noord-Holland kan als volgt weergegeven worden:
