@@ -1208,7 +1208,8 @@ ad:utiliteitsNet_tbl a owl:Class ;
     ad:herkomstDefinitie "IMKL (2015)" ;
     ad:isBGT_Object "Nee" ;
     ad:positioneleNauwkeurigheid "n.v.t." ;
-    rdfs:subClassOf ad:areaaldata .
+    rdfs:subClassOf ad:areaaldata ;
+    skos:definition "Een verzameling netwerkelementen die tot ��n type nutsvoorzieningennet behoren. (Bron: INSPIRE)" .
 
 ad:vaarweg_l a owl:Class ;
     rdfs:label "vaarweg_l" ;
