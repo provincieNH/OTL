@@ -1,0 +1,13 @@
+curl -X POST -H "Content-Type:application/x-turtle" -T /D/Source/OTL/reference_ontologies/top.ttl  http://localhost:7200/repositories/OTL2018/statements
+curl -X POST -H "Content-Type:application/x-turtle" -T /D/Source/OTL/core/core.ttl  http://localhost:7200/repositories/OTL2018/statements
+
+curl -X POST -H "Content-Type:application/x-turtle" -T /D/Source/OTL/Areaaldata/4.1/areaaldata-adwl.ttl  http://localhost:7200/repositories/OTL2018/statements
+curl -X POST -H "Content-Type:application/x-turtle" -T /D/Source/OTL/Areaaldata/4.1/areaaldata.ttl  http://localhost:7200/repositories/OTL2018/statements
+curl -X POST -H "Content-Type:application/x-turtle" -T /D/Source/OTL/Areaaldata/4.1/areaaldata_properties.ttl  http://localhost:7200/repositories/OTL2018/statements
+curl -X POST -H "Content-Type:application/x-turtle" -T /D/Source/OTL/Areaaldata/4.1/mapping.areaaldata.ttl  http://localhost:7200/repositories/OTL2018/statements
+
+curl -X POST -H "Content-Type:application/x-turtle" -T /D/Source/OTL/OTB/GCR-MN/otb.noord-holland.ttl  http://localhost:7200/repositories/OTL2018/statements
+curl -X POST -H "Content-Type:application/x-turtle" -T /D/Source/OTL/OTB/GCR-MN/mapping.otb.noord-holland.ttl  http://localhost:7200/repositories/OTL2018/statements
+
+curl -X POST -H "Content-Type:application/x-turtle" -T /D/Source/OTL/OTL/otl.noord-holland.nl.2018.ttl  http://localhost:7200/repositories/OTL2018/statements
+
