@@ -1,8 +1,8 @@
-# baseURI: http://otl.noord-holland.nl/areaaldata/v4.1/
- # imports: http://otl.noord-holland.nl/areaaldata-wl/v4.1/
+# baseURI: http://otl.noord-holland.nl/areaaldata/4.1_d1/
+ # imports: http://otl.noord-holland.nl/areaaldata-wl/4.1_d1/
  
-@prefix ad: <http://otl.noord-holland.nl/areaaldata/v4.1/> .
-@prefix adwl: <http://otl.noord-holland.nl/areaaldata-wl/v4.1/> .
+@prefix ad: <http://otl.noord-holland.nl/areaaldata/4.1_d1/> .
+@prefix adwl: <http://otl.noord-holland.nl/areaaldata-wl/4.1_d1/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -713,7 +713,7 @@ ad:kabelbed_v a owl:Class ;
     ad:isBGT_Object "Nee" ;
     ad:positioneleNauwkeurigheid "7,5 cm" ;
     rdfs:subClassOf ad:areaaldata ;
-    skos:definition "ruimtebeslag dat door een gemeenschappelijk tracé van één of meer kabels, buizen, HDPE- en-of mantebluizen; die toebehoren aan één netwerkbeheerder; wordt gevormd" .
+    skos:definition "ruimtebeslag dat door een gemeenschappelijk tracÃ© van Ã©Ã©n of meer kabels, buizen, HDPE- en-of mantebluizen; die toebehoren aan Ã©Ã©n netwerkbeheerder; wordt gevormd" .
 
 ad:kastDRIS_p a owl:Class ;
     rdfs:label "kastDRIS_p" ;
@@ -1105,7 +1105,7 @@ ad:sensor_l a owl:Class ;
     ad:isBGT_Object "Nee" ;
     ad:positioneleNauwkeurigheid "15 cm" ;
     rdfs:subClassOf ad:areaaldata ;
-    skos:definition "Een fysiek detectiesysteem bestaande uit wikkelingen (lussen) in het wegdek bijvoorbeeld voor het beïnvloeden van de regeling van verkeerslichten of een virtueel detectieveld van een videodetector of radardetector, gebruikt voor het beïnvloeden van regelingen van verkeerslichten" .
+    skos:definition "Een fysiek detectiesysteem bestaande uit wikkelingen (lussen) in het wegdek bijvoorbeeld voor het beÃ¯nvloeden van de regeling van verkeerslichten of een virtueel detectieveld van een videodetector of radardetector, gebruikt voor het beÃ¯nvloeden van regelingen van verkeerslichten" .
 
 ad:sensor_p a owl:Class ;
     rdfs:label "sensor_p" ;
@@ -1209,7 +1209,7 @@ ad:utiliteitsNet_tbl a owl:Class ;
     ad:isBGT_Object "Nee" ;
     ad:positioneleNauwkeurigheid "n.v.t." ;
     rdfs:subClassOf ad:areaaldata ;
-    skos:definition "Een verzameling netwerkelementen die tot ��n type nutsvoorzieningennet behoren. (Bron: INSPIRE)" .
+    skos:definition "Een verzameling netwerkelementen die tot ï¿½ï¿½n type nutsvoorzieningennet behoren. (Bron: INSPIRE)" .
 
 ad:vaarweg_l a owl:Class ;
     rdfs:label "vaarweg_l" ;

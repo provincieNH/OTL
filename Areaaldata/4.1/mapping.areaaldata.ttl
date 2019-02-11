@@ -1,410 +1,410 @@
-# baseURI: http://mapping.otl.noord-holland.nl/areaaldata/v4.1/
-# imports: http://otl.noord-holland.nl/areaaldata-prop/v4.1/
+# baseURI: http://mapping.otl.noord-holland.nl/areaaldata/4.1_d1/
+# imports: http://otl.noord-holland.nl/areaaldata-prop/4.1_d1/
 # imports: http://otl.noord-holland.nl/core/
-# prefix: ad_mapping
 
-@prefix : <http://mapping.otl.noord-holland.nl/areaaldata/v4.1/> .
-@prefix ad_mapping: <http://mapping.otl.noord-holland.nl/areaaldata/v4.1/> .
+@prefix : <http://mapping.otl.noord-holland.nl/areaaldata/4.1_d1/> .
+@prefix ad: <http://otl.noord-holland.nl/areaaldata/4.1_d1/> .
+@prefix ad_mapping: <http://mapping.otl.noord-holland.nl/areaaldata/4.1_d1/> .
+@prefix adprop: <http://otl.noord-holland.nl/areaaldata-prop/4.1_d1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix spin: <http://spinrdf.org/spin#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ad_mapping:
-  rdf:type owl:Ontology ;
-  spin:imports <http://topbraid.org/spin/rdfsplus> ;
-  owl:imports <http://otl.noord-holland.nl/areaaldata-prop/v4.1/> ;
+  a owl:Ontology ;
+  <http://spinrdf.org/spin#imports> <http://topbraid.org/spin/rdfsplus> ;
+  owl:imports adprop: ;
   owl:imports <http://otl.noord-holland.nl/core/> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-<http://otl.noord-holland.nl/areaaldata-prop/v4.1/Functioneel>
+adprop:Functioneel
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Groepering> ;
 .
-<http://otl.noord-holland.nl/areaaldata-prop/v4.1/Inrichtend>
+adprop:Inrichtend
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Groepering> ;
 .
-<http://otl.noord-holland.nl/areaaldata-prop/v4.1/Opdelend>
+adprop:Opdelend
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Groepering> ;
 .
-<http://otl.noord-holland.nl/areaaldata-prop/v4.1/buitenFds>
+adprop:buitenFds
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Groepering> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/aanduidingEisVoorzorgsmaatr_p>
+ad:aanduidingEisVoorzorgsmaatr_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/aanduidingVerzoekContact_p>
+ad:aanduidingVerzoekContact_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/adres_tbl>
+ad:adres_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/areaaldata>
+ad:areaaldata
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Groepering> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/bak_p>
+ad:bak_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Inrichtingselement> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelBermKr_l>
+ad:begroeidTerreindeelBermKr_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kruinlijn> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelBerm_v>
+ad:begroeidTerreindeelBerm_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Berm> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelKruin_l>
+ad:begroeidTerreindeelKruin_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kruinlijn> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelPlKr_l>
+ad:begroeidTerreindeelPlKr_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kruinlijn> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeelPlantvak_v>
+ad:begroeidTerreindeelPlantvak_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Plantvak> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/begroeidTerreindeel_v>
+ad:begroeidTerreindeel_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/BegroeidTerreindeel> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/beheergrenzen_v>
+ad:beheergrenzen_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/RegistratiefGebied> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/beschoeiingInspectie_tbl>
+ad:beschoeiingInspectie_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/bodem_v>
+ad:bodem_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Bodem> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/bordScheepvaart_p>
+ad:bordScheepvaart_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Scheepvaartverkeersbord> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/bordWegwijzer_p>
+ad:bordWegwijzer_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Wegwijzer> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/bordZwemwater_p>
+ad:bordZwemwater_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Zwemwaterbord> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/bord_p>
+ad:bord_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Bord> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/bouwdeelGeluidsscherm_tbl>
+ad:bouwdeelGeluidsscherm_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Bouwdelen_NEN2767-4> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/bouwdeelKunstwerk_tbl>
+ad:bouwdeelKunstwerk_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Bouwdelen_NEN2767-4> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/bouwdeelOevervak_tbl>
+ad:bouwdeelOevervak_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Bouwdelen_NEN2767-4> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/buis_l>
+ad:buis_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Buis> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/buisleiding_v>
+ad:buisleiding_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Buisleiding> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/concessieverlener_tbl>
+ad:concessieverlener_tbl
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Rol> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/crowInspectie_tbl>
+ad:crowInspectie_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/crowInspectieresultaat_tbl>
+ad:crowInspectieresultaat_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/crowMeting_tbl>
+ad:crowMeting_tbl
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Informatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/diepteTovMaaiveld_p>
+ad:diepteTovMaaiveld_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/doorvaartmaat_p>
+ad:doorvaartmaat_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/ecoHoofdstructuur_v>
+ad:ecoHoofdstructuur_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/RegistratiefGebied> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/ecoVerbZone_v>
+ad:ecoVerbZone_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/EcologischeVerbindingszone> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/ecopassage_l>
+ad:ecopassage_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Ecopassage> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/electriciteitskabel_l>
+ad:electriciteitskabel_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Electiciteitskabel> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/faunavoorziening_v>
+ad:faunavoorziening_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Ecopassage> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/fietsparkeervoorziening_l>
+ad:fietsparkeervoorziening_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Inrichtingselement> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/functioneelGebied_v>
+ad:functioneelGebied_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/FunctioneelGebied> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/gebiedscontractregio_v>
+ad:gebiedscontractregio_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/RegistratiefGebied> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/gebouwInstallatie_v>
+ad:gebouwInstallatie_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/OverigBouwwerk> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/geluidwerendeVoorziening_l>
+ad:geluidwerendeVoorziening_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/GeluidbeperkendeConstructie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/halte_v>
+ad:halte_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Halte> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/installatie_p>
+ad:installatie_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Installatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kabelbed_v>
+ad:kabelbed_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/RegistratiefGebied> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kastDRIS_p>
+ad:kastDRIS_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/DRIS_Kast> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kastOvl_p>
+ad:kastOvl_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/OVL_Kast> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kastVri_p>
+ad:kastVri_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/VRI_Kast> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kast_p>
+ad:kast_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kast> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kruispunt_p>
+ad:kruispunt_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Intersectie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kunstwerkBeweegbaar_p>
+ad:kunstwerkBeweegbaar_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/BeweegbaarKunstwerk> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kunstwerkVast_p>
+ad:kunstwerkVast_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/VastKunstwerk> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kunstwerkdeel_l>
+ad:kunstwerkdeel_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kunstwerk> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kunstwerkdeel_mp>
+ad:kunstwerkdeel_mp
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kunstwerk> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kunstwerkdeel_v>
+ad:kunstwerkdeel_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kunstwerk> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/kwElement_tbl>
+ad:kwElement_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Elementen_NEN2767-4> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/lamp_p>
+ad:lamp_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Armatuur> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/lantaarn_p>
+ad:lantaarn_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Lantaarn> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/leidingelement_p>
+ad:leidingelement_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Leidingelement> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/ligplaatsstrook_v>
+ad:ligplaatsstrook_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/RegistratiefGebied> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/mantelbuis_v>
+ad:mantelbuis_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Buis> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/mastDraagconstructie_p>
+ad:mastDraagconstructie_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Mast> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/metaDomeinen_tbl>
+ad:metaDomeinen_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/nenConditiescore_tbl>
+ad:nenConditiescore_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/nenInspectie_tbl>
+ad:nenInspectie_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/oeverReparatie_p>
+ad:oeverReparatie_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/oevervak_v>
+ad:oevervak_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Oevervak> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/onbegroeidTerreindeelKruin_l>
+ad:onbegroeidTerreindeelKruin_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kruinlijn> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/onbegroeidTerreindeel_v>
+ad:onbegroeidTerreindeel_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Terreindeel> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/onderdeel_tbl>
+ad:onderdeel_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Installatiedeel> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/ondersteunendWaterdeel_v>
+ad:ondersteunendWaterdeel_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Terreindeel> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/ondersteunendWegdeelKruin_l>
+ad:ondersteunendWegdeelKruin_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kruinlijn> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/ondersteunendWegdeelPlKr_l>
+ad:ondersteunendWegdeelPlKr_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kruinlijn> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/ondersteunendWegdeelPlantvak_v>
+ad:ondersteunendWegdeelPlantvak_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Plantvak> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/ondersteunendWegdeel_v>
+ad:ondersteunendWegdeel_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Terreindeel> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/overbruggingsdeel_v>
+ad:overbruggingsdeel_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kunstwerk> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/overigBouwwerk_v>
+ad:overigBouwwerk_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/OverigBouwwerk> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/overigeScheiding_l>
+ad:overigeScheiding_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/ScheidendeConstructie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/overigeScheiding_v>
+ad:overigeScheiding_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/ScheidendeConstructie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/paalAfbakening_p>
+ad:paalAfbakening_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Paal> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/paalDraagconstructie_p>
+ad:paalDraagconstructie_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Draagconstructie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/pandHuisnummerreeks_t>
+ad:pandHuisnummerreeks_t
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/pand_v>
+ad:pand_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Gebouw> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/plaatsbepalingspunt_p>
+ad:plaatsbepalingspunt_p
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#NulDRuimte> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/put_p>
+ad:put_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Put> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/recreatieplek_v>
+ad:recreatieplek_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/FunctioneelGebied> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/scheidingGeleidewand_l>
+ad:scheidingGeleidewand_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/ScheidendeConstructie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/scheidingGeluidsscherm_l>
+ad:scheidingGeluidsscherm_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Geluidsscherm> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/scheidingOevervak_l>
+ad:scheidingOevervak_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/KerendeConstructie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/scheiding_l>
+ad:scheiding_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/ScheidendeConstructie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/scheiding_v>
+ad:scheiding_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/ScheidendeConstructie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/schutsluis_p>
+ad:schutsluis_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Schutsluis> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/sensor_l>
+ad:sensor_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Sensor> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/sensor_p>
+ad:sensor_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Sensor> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/spoor_l>
+ad:spoor_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/As> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/spoorrail_l>
+ad:spoorrail_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Constructie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/straatmeubilairLichtpunt_p>
+ad:straatmeubilairLichtpunt_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Armatuur> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/straatmeubilair_p>
+ad:straatmeubilair_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Inrichtingselement> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/telecommunicatiekabel_l>
+ad:telecommunicatiekabel_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Datakabel> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/telpaal_p>
+ad:telpaal_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Paal> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/theorHectometrering_p>
+ad:theorHectometrering_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/traject_v>
+ad:traject_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Traject> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/tunneldeel_v>
+ad:tunneldeel_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/VastKunstwerk> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/uithouder_p>
+ad:uithouder_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Draagconstructie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/uitleggerPortaal_l>
+ad:uitleggerPortaal_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Draagconstructie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/utiliteitsNet_tbl>
+ad:utiliteitsNet_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/LeidingNetwerk> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/vaarweg_l>
+ad:vaarweg_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Vaarweg> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/vaarwegdeeltraject_v>
+ad:vaarwegdeeltraject_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/VaarwegLink> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/vaarwegdeeltrajectas_l>
+ad:vaarwegdeeltrajectas_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/VaarwegAs> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/vegetatieObject_l>
+ad:vegetatieObject_l
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Plant> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/vegetatieObject_p>
+ad:vegetatieObject_p
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Plant> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/vegetatieObject_v>
+ad:vegetatieObject_v
   rdfs:subClassOf <http://binkhoffmann.org/ontologies/top#Plant> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/vtaInspectie_tbl>
+ad:vtaInspectie_tbl
   rdfs:subClassOf <http://otl.noord-holland.nl/core/InformatieRepresentatie> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/waterdeel_v>
+ad:waterdeel_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Waterdeel> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/waterinrichtingselement_l>
+ad:waterinrichtingselement_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Inrichtingselement> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/waterinrichtingselement_p>
+ad:waterinrichtingselement_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Inrichtingselement> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/waterloop_l>
+ad:waterloop_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Waterloop> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/weg_l>
+ad:weg_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Weg> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/wegdeelKruin_l>
+ad:wegdeelKruin_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Kruinlijn> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/wegdeelPerron_v>
+ad:wegdeelPerron_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Wegdeel> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/wegdeel_v>
+ad:wegdeel_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Wegdeel> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/weginrichtingselement_l>
+ad:weginrichtingselement_l
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Inrichtingselement> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/weginrichtingselement_p>
+ad:weginrichtingselement_p
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Inrichtingselement> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/weginrichtingselement_v>
+ad:weginrichtingselement_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Inrichtingselement> ;
 .
-<http://otl.noord-holland.nl/areaaldata/v4.1/wegvak_v>
+ad:wegvak_v
   rdfs:subClassOf <http://otl.noord-holland.nl/core/Wegvak> ;
 .
 <http://otl.noord-holland.nl/core/Abri>
   owl:equivalentClass [
-      rdf:type owl:Class ;
+      a owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.1/overigBouwwerk_v>
+          ad:overigBouwwerk_v
           [
-            rdf:type owl:Restriction ;
+            a owl:Restriction ;
             owl:hasValue [
-                rdf:type owl:Class ;
+                a owl:Class ;
                 owl:oneOf (
                     <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecOBWVlak_abriOverig>
                     <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecOBWVlak_abriOFN>
@@ -412,62 +412,62 @@ ad_mapping:
                     <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecOBWVlak_abriR-net>
                   ) ;
               ] ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata-prop/v4.1/TYPESPEC_typeSpecOBWVlak> ;
+            owl:onProperty adprop:TYPESPEC_typeSpecOBWVlak ;
           ]
         ) ;
     ] ;
 .
 <http://otl.noord-holland.nl/core/Bermplank>
   owl:equivalentClass [
-      rdf:type owl:Class ;
+      a owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.1/paalAfbakening_p>
+          ad:paalAfbakening_p
           [
-            rdf:type owl:Restriction ;
+            a owl:Restriction ;
             owl:hasValue <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecPALAfbakening_Bermplankonbekend> ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata-prop/v4.1/TYPESPEC_typeSpecPALAfbakening> ;
+            owl:onProperty adprop:TYPESPEC_typeSpecPALAfbakening ;
           ]
         ) ;
     ] ;
 .
 <http://otl.noord-holland.nl/core/BeweegbaarKunstwerk>
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/kunstwerkBeweegbaar_p> ;
+  owl:equivalentClass ad:kunstwerkBeweegbaar_p ;
 .
 <http://otl.noord-holland.nl/core/Geluidsscherm>
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/geluidwerendeVoorziening_l> ;
+  owl:equivalentClass ad:geluidwerendeVoorziening_l ;
 .
 <http://otl.noord-holland.nl/core/Kolkleiding>
-  rdfs:subClassOf <http://otl.noord-holland.nl/areaaldata/v4.1/buis_l> ;
+  rdfs:subClassOf ad:buis_l ;
   owl:equivalentClass [
-      rdf:type owl:Class ;
+      a owl:Class ;
       owl:intersectionOf (
-          <http://otl.noord-holland.nl/areaaldata/v4.1/buis_l>
+          ad:buis_l
           [
-            rdf:type owl:Restriction ;
+            a owl:Restriction ;
             owl:hasValue [
-                rdf:type owl:Class ;
+                a owl:Class ;
                 owl:oneOf (
                     <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecBUI_RVV>
                     <http://otl.noord-holland.nl/areaaldata-wl/v4.1/typeSpecBUI_Rioolvrijverval>
                   ) ;
               ] ;
-            owl:onProperty <http://otl.noord-holland.nl/areaaldata-prop/v4.1/TYPESPEC_typeSpecBUI> ;
+            owl:onProperty adprop:TYPESPEC_typeSpecBUI ;
           ]
         ) ;
     ] ;
 .
 <http://otl.noord-holland.nl/core/Schutsluis>
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/schutsluis_p> ;
+  owl:equivalentClass ad:schutsluis_p ;
 .
 <http://otl.noord-holland.nl/core/VastKunstwerk>
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/kunstwerkVast_p> ;
+  owl:equivalentClass ad:kunstwerkVast_p ;
 .
 <http://otl.noord-holland.nl/core/Weg>
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/weg_l> ;
+  owl:equivalentClass ad:weg_l ;
 .
 <http://otl.noord-holland.nl/core/Wegdeel>
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/wegdeel_v> ;
+  owl:equivalentClass ad:wegdeel_v ;
 .
 <http://otl.noord-holland.nl/core/Wegvak>
-  owl:equivalentClass <http://otl.noord-holland.nl/areaaldata/v4.1/wegvak_v> ;
+  owl:equivalentClass ad:wegvak_v ;
 .

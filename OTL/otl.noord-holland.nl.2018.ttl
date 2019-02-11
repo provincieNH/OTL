@@ -1,6 +1,6 @@
 # baseURI: http://otl.noord-holland.nl/otl/2018/
 # imports: http://binkhoffmann.org/ontologies/top
-# imports: http://mapping.otl.noord-holland.nl/areaaldata/v4.1/
+# imports: http://mapping.otl.noord-holland.nl/areaaldata/4.1_d1/
 # imports: http://mapping.otl.noord-holland.nl/otb/v_MN/
 # imports: http://otl.noord-holland.nl/core/
 
@@ -8,11 +8,11 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix v4.1: <http://mapping.otl.noord-holland.nl/areaaldata/v4.1/> .
+@prefix v4.1: <http://mapping.otl.noord-holland.nl/areaaldata/4.1_d1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 :
-  rdf:type owl:Ontology ;
+  a owl:Ontology ;
   owl:imports <http://binkhoffmann.org/ontologies/top> ;
   owl:imports v4.1: ;
   owl:imports <http://mapping.otl.noord-holland.nl/otb/v_MN/> ;
