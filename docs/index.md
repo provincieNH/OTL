@@ -27,15 +27,21 @@ De OTL is in RDF/OWL opgebouwd:
 	* otb: de otb concepten
 	* mapping.otb: de mapping van de otb naar de core namespace
 	
-* de map areaaldata bevat een rdf/owl file van het areaaldatamodel wat ook beschreven staat op: https://github.com/provincieNH/ILS/
+* de map areaaldata bevat een rdf/owl file van het areaaldatamodel wat ook beschreven staat op: [https://github.com/provincieNH/Leveren_Geoinformatie/](https://github.com/provincieNH/Leveren_Geoinformatie/)
 
 	update juli 2018: er is een map 4.1 bijgekomen waar het Areaaldata 4.1 datamodel in staat
 	
-	Het areaaldata model is opgedeeld in 4 namespaces:
+	__update feb 2019:__ de namespace van het areaaldatamodel is aangepast naar 4.1_d1 (domeinlijsten versie 1), analoog aan de versienummering van Areaaldata zelf.
+    Er is nu ook een SHACL file bijgekomen waarin de contraints zijn gemodelleerd.
+	
+	Het areaaldata model is opgedeeld in 5 namespaces:
 	* areaaldata: dit zijn alleen de class definities
 	* areaaldata-wl: dit zijn de waardelijsten
 	* areaaldata-prop: dit zijn de eigenschappen
 	* mapping.areaaldata: dit is de mapping van areaaldata op de core namespace
+	* areaaldata.shapes: dit is de Shacl file met contstraints
+	
+	meer informatie over de implementatie van shacl kan  [__hier__](shacl_uitleg.md) gevonden worden
 
 * de map OTL bevat de totale ontologie waarbij de mappings van otb, areaaldata en de core geimporteerd zijn.
 
