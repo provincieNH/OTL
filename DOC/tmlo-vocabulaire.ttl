@@ -25,18 +25,21 @@ tmlo:
 tmlo:Activiteit
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Activiteit" ;
+  rdfs:comment "Het geheel van taken, functies, activiteiten en transacties die op basis van een mandaat worden uitgevoerd door een actor." ;
   rdfs:label "Activiteit" ;
   rdfs:subClassOf tmlo:Ontstaanscontext ;
 .
 tmlo:Actor
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Actor" ;
+  rdfs:comment "Een organisatie of persoon verantwoordelijk voor of betrokken bij het opmaken, opnemen van archiefbescheiden en/of processen van informatie- en archiefbeheer." ;
   rdfs:label "Actor" ;
   rdfs:subClassOf tmlo:Ontstaanscontext ;
 .
 tmlo:ActorGeautoriseerdeNaamType
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/ActorGeautoriseerdeNaamType" ;
+  rdfs:comment "De benaming(en), waaronder een actor bekend is." ;
   rdfs:label "Actor geautoriseerde naam type" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
   skos:prefLabel "Actor geautoriseerde naam type" ;
@@ -48,24 +51,28 @@ tmlo:Afdeling
 tmlo:Archief
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Archief" ;
+  rdfs:comment "Geheel van informatieobjecten, ontvangen of opgemaakt door een archiefvormer." ;
   rdfs:label "Archief" ;
   rdfs:subClassOf tmlo:Record ;
 .
 tmlo:Archiefstuk
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Archiefstuk" ;
+  rdfs:comment "Enkelvoudig informatieobject of informatie-eenheid." ;
   rdfs:label "Archiefstuk" ;
   rdfs:subClassOf tmlo:Record ;
 .
 tmlo:ArchiefstukRelatie
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/ArchiefstukRelatie" ;
+  rdfs:comment "Het andere Archiefstuk dat in verband staat tot het Archiefstuk." ;
   rdfs:label "Archiefstuk relatie" ;
   rdfs:subClassOf tmlo:Relatieklasse ;
 .
 tmlo:ArchiefstukRelatieType
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/ArchiefstukRelatieType" ;
+  rdfs:comment "Nadere aanduiding van aard van de relatie van het archiefstuk tot het andere archiefstuk." ;
   rdfs:label "Archiefstuk relatie type" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
 .
@@ -80,12 +87,14 @@ tmlo:Besluit
 tmlo:Bestand
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Bestand" ;
+  rdfs:comment "Fysieke/technische aspecten van een (deel van een) archiefstuk." ;
   rdfs:label "Bestand" ;
   rdfs:subClassOf owl:Thing ;
 .
 tmlo:Bestandsnaam
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Bestandsnaam" ;
+  rdfs:comment "Korte omschrijving van een digitaal bestand of benaming." ;
   rdfs:label "Bestandsnaam" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
@@ -96,6 +105,7 @@ tmlo:CONFIDENTIEEL
 tmlo:Classificatie
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Classificatie" ;
+  rdfs:comment "Samenvoeging van archiefbestanddelen tot één nieuw geheel met een eigen identiteit." ;
   rdfs:label "Classificatie" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
@@ -106,6 +116,7 @@ tmlo:Conversie
 tmlo:Creatieapplicatie
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Creatieapplicatie" ;
+  rdfs:comment "Omschrijving van de applicatie waarmee het bestand gemaakt is." ;
   rdfs:label "Creatieapplicatie" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
@@ -116,12 +127,14 @@ tmlo:Cyclic_redundancy_checks
 tmlo:Dekking
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Dekking" ;
+  rdfs:comment "Nadere aanduiding van tijd en ruimte waarin record kan worden gepositioneerd." ;
   rdfs:label "Dekking" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
 tmlo:DekkingTijdType
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/DekkingTijdType" ;
+  rdfs:comment "Aanduiding van het type van de periode waarin het record van kracht is / was dan wel bestond." ;
   rdfs:label "Dekking tijd type" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
   skos:editorialNote "nh 20-2-2019: onduidelijk uit de documentatie wat er precies in deze waardelijst zou moeten zitten...." ;
@@ -129,54 +142,63 @@ tmlo:DekkingTijdType
 tmlo:Dekking_Geografischgebied
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Dekking_Geografischgebied" ;
+  rdfs:comment "Ruimtelijke afbakening van de locatie waarop het record  betrekking heeft of van kracht is." ;
   rdfs:label "Dekking Geografischgebied" ;
   rdfs:subClassOf tmlo:Dekking ;
 .
 tmlo:Dekking_inTijd
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Dekking_inTijd" ;
+  rdfs:comment "Geeft positionering in de tijd aan, waarin iets van kracht is / was dan wel bestond." ;
   rdfs:label "Dekking in tijd" ;
   rdfs:subClassOf tmlo:Dekking ;
 .
 tmlo:Dossier
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Dossier" ;
+  rdfs:comment "Geheel van fysieke of virtueel gekoppelde informatieobjecten die op één zaak betrekking hebben." ;
   rdfs:label "Dossier" ;
   rdfs:subClassOf tmlo:Record ;
 .
 tmlo:DossierRelatie
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/DossierRelatie" ;
+  rdfs:comment "Het andere Dossier dat in verband staat tot het Dossier." ;
   rdfs:label "Dossier relatie" ;
   rdfs:subClassOf tmlo:Relatieklasse ;
 .
 tmlo:DossierRelatieType
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/DossierRelatieType" ;
+  rdfs:comment "Nadere aanduiding van aard van de relatie van het dossier tot het andere dossier." ;
   rdfs:label "Dossier relatie type" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
 .
 tmlo:EventType
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/EventType" ;
+  rdfs:comment "Soort activiteit of gebeurtenis." ;
   rdfs:label "Event type" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
 .
 tmlo:Eventgeschiedenis
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Eventgeschiedenis" ;
+  rdfs:comment "Vastlegging van het ontstaan en wijzigingen van een record." ;
   rdfs:label "Eventgeschiedenis" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
 tmlo:Eventplan
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Eventplan" ;
+  rdfs:comment "Geeft activiteiten of gebeurtenissen weer die in de toekomst van belang zijn voor het record." ;
   rdfs:label "Eventplan" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
 tmlo:Externidentificatiekenmerk
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Externidentificatiekenmerk" ;
+  rdfs:comment "Kenmerken, toegekend aan een record buiten de huidige beheeromgeving." ;
   rdfs:label "Externidentificatiekenmerk" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
@@ -191,12 +213,14 @@ tmlo:Functionaris
 tmlo:Fysiekeintegriteit
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Fysiekeintegriteit" ;
+  rdfs:comment "Uitdrukking van mate van volledigheid en onbeschadigd zijn van digitaal bestand." ;
   rdfs:label "Fysiekeintegriteit" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
 tmlo:FysiekeintegriteitAlgoritmeType
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/FysiekeintegriteitAlgoritmeType" ;
+  rdfs:comment "Aanduiding van algoritme, gebruikt om de checksum te maken." ;
   rdfs:label "Fysiekeintegriteit algoritme type" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
 .
@@ -207,18 +231,22 @@ tmlo:GEHEIM
 tmlo:Gebruiksrecht
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Gebruiksrecht" ;
+  rdfs:comment "Gebruik van het record anders dan raadpleging." ;
   rdfs:label "Gebruiksrecht" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
 tmlo:Gebruiksrechtvoorwaarde
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Gebruiksrechtvoorwaarde" ;
+  rdfs:comment "Voorwaarde verbonden aan het gebruik van het record anders dan raadpleging." ;
   rdfs:label "Gebruiksrechtvoorwaarde" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
 tmlo:Gegevensgroeptype
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Gegevensgroeptype" ;
+  rdfs:comment """De UML-representatie van een gegevensgroeptype,
+uitgedrukt in een stereotype van UML-Class (metaclass).""" ;
   rdfs:label "Gegevensgroeptype" ;
   rdfs:subClassOf owl:Thing ;
   skos:editorialNote "groepering van alle complexe objecteigenschappen" ;
@@ -230,18 +258,21 @@ tmlo:INTERN
 tmlo:IndicatieType
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/IndicatieType" ;
+  rdfs:comment "Aanwijzing. Keuzelijst: Ja, Nee" ;
   rdfs:label "Indicatie type" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
 .
 tmlo:Integriteit
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Integriteit" ;
+  rdfs:comment "Volledigheid van een record (juist, volledig, tijdig, geautoriseerd)." ;
   rdfs:label "Integriteit" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
 tmlo:IntegriteitKwalificatieType
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/IntegriteitKwalificatieType" ;
+  rdfs:comment "Typering van de mate van integriteit van het Record." ;
   rdfs:label "Integriteit kwalificatie type" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
 .
@@ -264,24 +295,28 @@ tmlo:Nee
 tmlo:Ontstaanscontext
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Ontstaanscontext" ;
+  rdfs:comment "De verantwoordelijken voor de creatie van het record en de door hen uitgevoerde activiteiten bij de creatie. " ;
   rdfs:label "Ontstaanscontext" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
 tmlo:OntstaanscontextAggregatieniveauType
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/OntstaanscontextAggregatieniveauType" ;
+  rdfs:comment "Onderscheidt de niveaus waarop een actor kan worden beschreven." ;
   rdfs:label "Ontstaanscontext aggregatieniveau type" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
 .
 tmlo:Openbaarheid
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Openbaarheid" ;
+  rdfs:comment "Indicatie van beperkingen aan de raadpleging." ;
   rdfs:label "Openbaarheid" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
 tmlo:Openbaarheidbeperking
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Openbaarheidbeperking" ;
+  rdfs:comment "Beperking aan de raadpleging." ;
   rdfs:label "Openbaarheidbeperking" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
@@ -300,6 +335,7 @@ tmlo:Overdracht
 tmlo:Plaats
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Plaats" ;
+  rdfs:comment "Fysieke of virtuele locatie van het record." ;
   rdfs:label "Plaats" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
@@ -314,42 +350,50 @@ tmlo:Publicatie
 tmlo:Record
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Record" ;
+  rdfs:comment "Een informatieobject of een verzameling van logisch geordende samenhangende informatieobjecten." ;
   rdfs:label "Record" ;
   rdfs:subClassOf owl:Thing ;
 .
 tmlo:Redactie_GenreType
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Redactie_GenreType" ;
+  rdfs:comment "Type archiefstuk met een specifieke stijl, inhoud of vorm." ;
   rdfs:label "Redactie Genre type" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
 .
 tmlo:Relatieklasse
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Relatieklasse" ;
+  rdfs:comment """ De UML-representatie van een Relatieklasse, uitgedrukt in
+een stereotype van UML-associationClass (metaclass). """ ;
   rdfs:label "Relatieklasse" ;
   rdfs:subClassOf owl:Thing ;
 .
 tmlo:Serie
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Serie" ;
+  rdfs:comment "Verzameling van dossiers, fysieke archiefbestanddelen en/of stukken, numeriek, alfabetisch, chronologische of logisch geordend, ontstaan vanuit een identieke \"handeling\", dan wel een identieke vorm hebbend dan wel verwante inhoud bevattend." ;
   rdfs:label "Serie" ;
   rdfs:subClassOf tmlo:Record ;
 .
 tmlo:Taal
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Taal" ;
+  rdfs:comment "Coderingen van talen conform ISO 639-2/B." ;
   rdfs:label "Taal" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
 .
 tmlo:TaalArchiefstuk
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/TaalArchiefstuk" ;
+  rdfs:comment "Aanduiding van de taal waarin de inhoud van het archiefstuk gesteld is. " ;
   rdfs:label "Taal archiefstuk" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
 tmlo:TaalDossier
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/TaalDossier" ;
+  rdfs:comment "Aanduiding van de taal waarin de archiefstukken in het dossier gesteld zijn." ;
   rdfs:label "Taal dossier" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
@@ -378,18 +422,21 @@ tmlo:Verslag
 tmlo:Vertrouwelijkheid
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Vertrouwelijkheid" ;
+  rdfs:comment "Indicatie van niveau van vertrouwelijkheid van de informatie." ;
   rdfs:label "Vertrouwelijkheid" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
 tmlo:VertrouwelijkheidsNiveauType
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/VertrouwelijkheidsNiveauType" ;
+  rdfs:comment "Aanduiding van het niveau van vertrouwelijkheid." ;
   rdfs:label "Vertrouwelijkheids niveau type" ;
   rdfs:subClassOf tmlo:Waardenlijsten ;
 .
 tmlo:Vertrouwelijkheidsniveau
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Vertrouwelijkheidsniveau" ;
+  rdfs:comment "Classificatie van de vertrouwelijkheid van de informatie." ;
   rdfs:label "Vertrouwelijkheidsniveau" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .
@@ -400,6 +447,7 @@ tmlo:Vervallen_beperkingen_openbaarheid
 tmlo:Vorm
   a owl:Class ;
   dcterms:subject "http://otl.noord-holland.nl/tmlo/id/concept/v0.5/Vorm" ;
+  rdfs:comment "Redactie, verschijningsvorm en structuur van het record." ;
   rdfs:label "Vorm" ;
   rdfs:subClassOf tmlo:Gegevensgroeptype ;
 .

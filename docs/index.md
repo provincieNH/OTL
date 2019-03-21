@@ -49,6 +49,8 @@ De OTL is in RDF/OWL opgebouwd:
 
 * de map DOC bevat een eerste aanzet voor een documenten metamodel. Dit is nog een zeer experimentele ontologie. De kans is groot dat deze nog gaat wijzigen.
 
+__update feb 2019:__ er is een ontologie gemaakt op basis van TMLO. Deze gaat nog uitgebreid worden met noord-holland specifieke zaken... hier is de <a href="https://provincienh.github.io/OTL/tmlo-doc" target="_blank">__TMLO__</a> versie te vinden.
+
 In de map COINS staat de COINS 2.0 compatible library van het Areaaldatamodel.
 
 

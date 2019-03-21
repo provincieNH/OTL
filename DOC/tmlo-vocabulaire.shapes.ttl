@@ -1,4 +1,6 @@
 # baseURI: http://otl.noord-holland.nl/def/tmlo/v0.5/.shapes
+# imports: http://datashapes.org/dash
+# imports: http://otl.noord-holland.nl/def/tmlo/v0.5/
 
 @prefix : <http://otl.noord-holland.nl/def/tmlo/v0.5/.shapes#> .
 @prefix concept: <http://definities.geostandaarden.nl/nen3610/id/concept/> .
@@ -18,6 +20,11 @@
 @prefix tosh: <http://topbraid.org/tosh#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://otl.noord-holland.nl/def/tmlo/v0.5/.shapes>
+  a owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports tmlo: ;
+.
 tmlo:Dekking_inTijd-dekkingintijd_dekkingintijdtype
   a sh:PropertyShape ;
   sh:path tmlo:dekkingintijd_dekkingintijdtype ;
@@ -478,7 +485,6 @@ shape:Gebruiksrechtvoorwaarde-gebruiksrechtvoorwaarde_omschrijving
 shape:Identificatiekenmerk
   a sh:NodeShape ;
   rdfs:label "Identificatiekenmerk" ;
-  rdfs:subClassOf rdfs:Resource ;
   sh:property [
       sh:path nen3610:lokaalID ;
       sh:datatype xsd:string ;
