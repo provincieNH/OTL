@@ -44,6 +44,7 @@ de infrastructuur.""" ;
   rdfs:label "Beheersovereenkomst" ;
   skos:definition """Een beheersovereenkomst is een document waarin specifieke beheer- en onderhoudsafspraken worden
 vastgelegd tussen Provincie Noord-Holland en andere beheerders.""" ;
+  skos:inScheme :Assetmanagement ;
 .
 :Eigendomsgrens
   a skos:Concept ;
@@ -52,6 +53,7 @@ vastgelegd tussen Provincie Noord-Holland en andere beheerders.""" ;
   skos:broader <http://ont.cbnl.org/cb/def/CB01092> ;
   skos:definition """De eigendomsgrens geeft aan tot waar het eigendomsrecht van de provincie reikt, zoals vastgelegd bij het
 Kadaster.""" ;
+  skos:inScheme :Assetmanagement ;
 .
 :Gebiedsgrens
   a skos:Concept ;
@@ -60,6 +62,7 @@ Kadaster.""" ;
   skos:broader <http://ont.cbnl.org/cb/def/CB01092> ;
   skos:definition """Gebiedsgrens is een organisatorische grens binnen de provincie Noord-Holland. Deze geeft aan in welke
 gebieden BSP het beheer en onderhoud van de provinciale infrastructuur heeft georganiseerd.""" ;
+  skos:inScheme :Assetmanagement ;
 .
 :Onderhoudsgrens
   a skos:Concept ;
@@ -68,6 +71,7 @@ gebieden BSP het beheer en onderhoud van de provinciale infrastructuur heeft geo
   skos:broader <http://ont.cbnl.org/cb/def/CB01092> ;
   skos:definition """Het onderhoud is afgebakend tot waar de wettelijke verplichting van de provincie reikt om infrastructureel areaal te
 onderhouden.""" ;
+  skos:inScheme :Assetmanagement ;
   skos:scopeNote """Dit onderhoud reikt vaak verder dan de beheergrens. Immers, tot het onderhoud behoren tevens
 objecten die buiten de beheergrens gelegen zijn, maar verbonden zijn aan de objecten welke tot de beheer- en
 onderhoudsverplichting van de (vaar)weg behoren. Ten behoeve van de onderhoudsverdeling tussen beheerders en
@@ -84,6 +88,7 @@ voor een VRI op de weg/gebied van een andere beheerder.""" ;
   skos:broader <http://ont.cbnl.org/cb/def/CB01092> ;
   skos:definition """De projectgrens is de geografische afbakening die wordt gelegd om het gebied waarbinnen alles gedaan kan
 worden om het project te kunnen realiseren.""" ;
+  skos:inScheme :Assetmanagement ;
   skos:scopeNote """Deze grens is het uitgangspunt voor het gesprek tussen de
 gebiedsaannemer en het IPM-team van het project, dat leidt tot een afspraak in een coördinatieovereenkomst.""" ;
 .
@@ -95,6 +100,7 @@ gebiedsaannemer en het IPM-team van het project, dat leidt tot een afspraak in e
   skos:broader <http://ont.cbnl.org/cb/def/CB01092> ;
   skos:definition """In het kader van assetmanagement is een systeem een samenwerkend geheel van individuele assets. Dit
 samenwerkende geheel dient één of meerdere functies.""" ;
+  skos:inScheme :Assetmanagement ;
   skos:scopeNote """Het systeem ‘weg’ dient bijvoorbeeld de functie ‘bereikbaarheid’. Een voorbeeld is het geheel aan verhardingen,
 belijningen, verkeersregelinstallaties, dat samen het systeem ‘weg’ voortbrengt.
 Assetbeheerplan 2017 16 Provincie Noord-Holland
