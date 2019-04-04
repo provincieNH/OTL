@@ -1,8 +1,8 @@
 # baseURI: http://otl.noord-holland.nl/tmlo/id/concept/v0.5/
 # imports: http://purl.org/dc/terms/
 # imports: http://www.w3.org/2004/02/skos/core
+# prefix: tmlo
 
-@prefix concept: <http://otl.noord-holland.nl/tmlo/id/concept/v0.5/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
 @prefix nen3610: <http://definities.geostandaarden.nl/def/nen3610#> .
@@ -10,83 +10,93 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://otl.noord-holland.nl/tmlo/id/conceptscheme/v0.5/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tmlo: <http://otl.noord-holland.nl/tmlo/id/concept/v0.5/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-concept:
+tmlo:
   a owl:Ontology ;
   owl:imports dcterms: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
 .
-concept:Activiteit
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Activiteit
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Het geheel van taken, functies, activiteiten en transacties die op basis van een mandaat worden uitgevoerd door een actor." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Activiteit"@nl ;
   skos:scopeNote """Betreft het proces dat, of de zaak die aan het archiefstuk ten grondslag ligt. 
 Deze informatie zou ook kunnen worden afgeleid van het classificatieschema (zie element 5), mits dit aansluit op de taken / processen. Dit schema dient echter stabiel in de tijd te zijn en daarom is meer gedetailleerde en actuele informatie noodzakelijk ten aanzien van de feitelijke bevoegdheden en verantwoordelijkheden waarmee een proces of zaak is ingeregeld op het moment dat het archiefstuk wordt opgemaakt, ontvangen en/of gebruikt.
 De gegevens kunnen bijvoorbeeld ontleend worden aan een zaaktypecatalogus of een processenhandboek.
 De activiteit worden bij voorkeur vastgelegd in combinatie met de actor (of actoren) die de activiteit uitvoert.""" ;
 .
-concept:Actor
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Actor
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Een organisatie of persoon verantwoordelijk voor of betrokken bij het opmaken, opnemen van archiefbescheiden en/of processen van informatie- en archiefbeheer." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Actor"@nl ;
 .
-concept:ActorGeautoriseerdeNaamType
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:ActorGeautoriseerdeNaamType
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "De benaming(en), waaronder een actor bekend is." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "ActorGeautoriseerdeNaamType"@nl ;
 .
-concept:Archief
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Archief
+  a skos:Concept ;
   dcterms:source "Nationaal Archief o.b.v. Richtlijn metagegevens overheidsinformatie (2009)" ;
   skos:definition "Geheel van informatieobjecten, ontvangen of opgemaakt door een archiefvormer." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Archief"@nl ;
 .
-concept:Archiefstuk
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Archiefstuk
+  a skos:Concept ;
   dcterms:source "Nationaal Archief o.b.v. Richtlijn metagegevens overheidsinformatie (2009)" ;
   skos:definition "Enkelvoudig informatieobject of informatie-eenheid." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Archiefstuk"@nl ;
 .
-concept:ArchiefstukRelatie
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:ArchiefstukRelatie
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Het andere Archiefstuk dat in verband staat tot het Archiefstuk." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "ArchiefstukRelatie"@nl ;
   skos:scopeNote """Het betreft de uitwerking van element 15 van de 'Richtlijn metagegevens overheidsinformatie' (2009) voor het kunnen specificeren dat het archiefstuk een relatie heeft tot een ander archiefstuk. 
 
 Hiermee kan bijvoorbeeld een relatie gelegd worde van het archiefstuk zijnde een advies naar het archiefstuk zijnde de aanvraag voor dat advies. Het is niet bedoeld om archiefstukken aan elkaar te relateren om aan te geven dat ze gezamenlijk een dossier vormen. Daarvoor is de relatie 'Archiefstuk maakt deel uit van Dossier' bedoeld.
 
 Element 15.1 (Relatie-ID) betreft de identificatie van het andere archiefstuk. Element 15.2 (Type relatie) betreft het gelijknamige element van de relatieklasse. Met element 15.3 wordt de periode vastgelegd waarin de relatie tussen beide archiefstukken bestond. """ ;
 .
-concept:ArchiefstukRelatieType
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:ArchiefstukRelatieType
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Nadere aanduiding van aard van de relatie van het archiefstuk tot het andere archiefstuk." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "ArchiefstukRelatieType"@nl ;
 .
-concept:Bestand
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Bestand
+  a skos:Concept ;
   dcterms:source "Nationaal Archief o.b.v. Richtlijn metagegevens overheidsinformatie (2009)" ;
   skos:definition "Fysieke/technische aspecten van een (deel van een) archiefstuk." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Bestand"@nl ;
 .
-concept:Bestandsnaam
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Bestandsnaam
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Korte omschrijving van een digitaal bestand of benaming." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Bestandsnaam"@nl ;
 .
-concept:Classificatie
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Classificatie
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Samenvoeging van archiefbestanddelen tot één nieuw geheel met een eigen identiteit." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Classificatie"@nl ;
   skos:scopeNote """Betreft het groeperen van archiefbescheiden op basis van het gehanteerde classificatieschema. 
 
 Aan te bevelen is om zoveel mogelijk classificatie op dossierniveau toe te passen en niet op archiefstukniveau (de archiefstukken in het dossier overerven dan de classificatie van het dossier). 
@@ -97,127 +107,150 @@ Tracht aan de klassen op vergelijkbare wijze ook andere informatie-eigenschappen
 
 Wanneer op een bepaald moment een nieuw classificatieschema wordt ingevoerd, worden bestaande stukken naar het nieuwe schema geconverteerd, waarbij de oude classificatie-informatie bewaard blijft. Dat betekent dat bij elk record waarbij de bestaande classificatie vermeld is, element 5.4 van een einddatum voorzien wordt en een tweede set aan elementen 5.1 – 5.4 van waarden voorzien wordt overeenkomstig de nieuwe classificatie. Element 5 is immers herhaalbaar.""" ;
 .
-concept:Creatieapplicatie
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Creatieapplicatie
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Omschrijving van de applicatie waarmee het bestand gemaakt is." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Creatieapplicatie"@nl ;
   skos:scopeNote """Betreft de applicatie waarmee het bestand gemaakt is dat nu deel uitmaakt van het record. Indien het bestand met MS-Word gecreëerd is en later omgezet is naar .pdf, dan wordt de applicatie vermeld waarmee het pdf-bestand gegenereerd is. Voorgaande creatie-applicaties kunnen met element 12 (Event geschiedenis) vastgelegd worden.  
 Verschaft extra informatie over de mogelijkheid het archiefstuk te raadplegen wanneer dit op basis van de informatie over het bestandsformaat niet mogelijk blijkt. Dit kan worden veroorzaakt door incompatibiliteit van bestandsformaten.
 Verplicht te registreren indien bekend en indien het bestandsformaat (element 21.5) niet van een waarde voorzien kan worden omdat het niet voor komt in het Pronom-register.""" ;
 .
-concept:Dekking
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Dekking
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Nadere aanduiding van tijd en ruimte waarin record kan worden gepositioneerd." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:narrower tmlo:Dekking_Geografischgebied ;
+  skos:narrower tmlo:Dekking_inTijd ;
+  skos:prefLabel "Dekking"@nl ;
 .
-concept:DekkingTijdType
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:DekkingTijdType
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Aanduiding van het type van de periode waarin het record van kracht is / was dan wel bestond." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "DekkingTijdType"@nl ;
 .
-concept:Dekking_Geografischgebied
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Dekking_Geografischgebied
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
+  skos:broader tmlo:Dekking ;
   skos:definition "Ruimtelijke afbakening van de locatie waarop het record  betrekking heeft of van kracht is." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Dekking_Geografischgebied"@nl ;
 .
-concept:Dekking_inTijd
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Dekking_inTijd
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
+  skos:broader tmlo:Dekking ;
   skos:definition "Geeft positionering in de tijd aan, waarin iets van kracht is / was dan wel bestond." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Dekking_inTijd"@nl ;
 .
-concept:Dossier
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Dossier
+  a skos:Concept ;
   dcterms:source "Nationaal Archief o.b.v. Richtlijn metagegevens overheidsinformatie (2009)" ;
   skos:definition "Geheel van fysieke of virtueel gekoppelde informatieobjecten die op één zaak betrekking hebben." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Dossier"@nl ;
 .
-concept:DossierRelatie
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:DossierRelatie
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Het andere Dossier dat in verband staat tot het Dossier." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "DossierRelatie"@nl ;
 .
-concept:DossierRelatieType
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:DossierRelatieType
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Nadere aanduiding van aard van de relatie van het dossier tot het andere dossier." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "DossierRelatieType"@nl ;
   skos:scopeNote """Het element specificeert de aard van de relatie c.q. het verband tussen de twee dossiers. Een voorbeeld is \"is vervolg op\" om aan te geven dat een bezwaarzaakdossier volgend is op een vergunningzaakdossier en een handhavingszaakdossier volgend is op een controle- oftewel toezichtzaakdossier.
 
 De waarde \"maakt deel uit van\" mag niet gebruikt worden omdat voor dit type relatie specifieke relatiesoorten gemodelleerd zijn vanuit Dossier. 
 
 Het verdient aanbeveling de typeaanduidingen te ontlenen aan een, daartoe op te stellen, waardenlijst. Bijvoorbeeld uit de van toepassing zijnde zaaktypecatalogus of het RGBZ.""" ;
 .
-concept:EventType
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:EventType
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Soort activiteit of gebeurtenis." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "EventType"@nl ;
   skos:scopeNote """Invulling afhankelijk van het proces waarin het record betrokken is (bijvoorbeeld: creatie, publicatie) en de soort van het record (archiefstuk, dossier, etc.).
 
 Het verdient aanbeveling de type-aanduiding te ontlenen aan een waardenlijst per soort record. """ ;
 .
-concept:Eventgeschiedenis
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Eventgeschiedenis
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Vastlegging van het ontstaan en wijzigingen van een record." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Eventgeschiedenis"@nl ;
 .
-concept:Eventplan
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Eventplan
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Geeft activiteiten of gebeurtenissen weer die in de toekomst van belang zijn voor het record." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Eventplan"@nl ;
 .
-concept:Externidentificatiekenmerk
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Externidentificatiekenmerk
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Kenmerken, toegekend aan een record buiten de huidige beheeromgeving." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Externidentificatiekenmerk"@nl ;
   skos:scopeNote "Hiermee blijven records ook onder hun andere (eerder gegeven) kenmerken bekend, zoals toegekend door (afdelingen van) de organisatie die het record heeft gecreëerd en haar ketenpartners." ;
 .
-concept:Fysiekeintegriteit
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Fysiekeintegriteit
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Uitdrukking van mate van volledigheid en onbeschadigd zijn van digitaal bestand." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Fysiekeintegriteit"@nl ;
   skos:scopeNote "Een waarde waarmee in een later stadium de integriteit kan worden gecontroleerd. Bijvoorbeeld door berekening van de checksum, of door middel van een digitale handtekening of digitaal watermerk." ;
 .
-concept:FysiekeintegriteitAlgoritmeType
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:FysiekeintegriteitAlgoritmeType
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Aanduiding van algoritme, gebruikt om de checksum te maken." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "FysiekeintegriteitAlgoritmeType"@nl ;
 .
-concept:Gebruiksrecht
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Gebruiksrecht
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Gebruik van het record anders dan raadpleging." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Gebruiksrecht"@nl ;
+  skos:related tmlo:Gebruiksrechtvoorwaarde ;
   skos:scopeNote """Veelal is een record vrij te gebruiken. Zo niet dan worden de gebruiksvoorwaarden vermeld zoals auteursrechtelijke beperkingen en voorschriften voor het citeren uit, en verwijzen naar het record.
 Met de 'Indicatie gebruiksrecht' wordt aangegeven of er op enig moment sprake was, is of zal zijn van gebruiksrechtbeperkingen. Indien daarvan sprake is, dan wordt de beperking(en) en de periode(s) vermeld met 'Gebruiksrechtvoorwaarde'. 
 Voor een record kunnen gelijktijdig verschillende typen gebruiksrechten gelden.
 Door vastlegging van gebruiksrechten bij een serie of dossier kunnen deze rechten gelden voor alle dossiers van de serie en de daarvan deel uit makende archiefstukken respectievelijk voor alle archiefstukken die deel uit maken van het dossier. Bij afwijkende gebruiksrechten van een specifieke archiefstuk kunnen deze bij dat archiefstuk vastgelegd worden.""" ;
 .
-concept:Gebruiksrechtvoorwaarde
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Gebruiksrechtvoorwaarde
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Voorwaarde verbonden aan het gebruik van het record anders dan raadpleging." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Gebruiksrechtvoorwaarde"@nl ;
+  skos:related tmlo:Gebruiksrecht ;
   skos:scopeNote """Indien er sprake is van beperkende gebruiksrechten, dan worden met dit (groep)element de beperkende voorwaarden vastgelegd. Van meerdere voorwaarden kan sprake zijn; evenzo vaak wordt dit element van waarden voorzien. 
 In de loop der tijd kunnen gebruiksrechten wijzigen; met de elementen Begindatum en Einddatum kan een gebruiksrecht in tijd begrensd worden.""" ;
 .
-concept:Gegevensgroeptype
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Gegevensgroeptype
+  a skos:Concept ;
   dcterms:source "Metamodel voor informatiemodellen door KING en Kadaster - versie 1.0" ;
   skos:definition """De UML-representatie van een gegevensgroeptype,
 uitgedrukt in een stereotype van UML-Class (metaclass).""" ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Gegevensgroeptype"@nl ;
   skos:scopeNote """Een groep van eigenschappen van een object, waarvan de eigenschappen niet in het
 object, maar in de gegevensgroep zijn ondergebracht, vanwege semantische of
 modelmatige overwegingen. De eigenschappen van een object worden als bij elkaar
@@ -228,59 +261,69 @@ onderdeel c.q. het gegevensgroeptype.
 Voorbeeld: gegevensgroeptype Geboorte bij INGESCHREVEN NATUURLIJK PERSOON,
 gegevensgroeptype Koopsom bij KADASTRALE ONROERENDE ZAAK""" ;
 .
-concept:IndicatieType
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:IndicatieType
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Aanwijzing. Keuzelijst: Ja, Nee" ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "IndicatieType"@nl ;
 .
-concept:Integriteit
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Integriteit
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Volledigheid van een record (juist, volledig, tijdig, geautoriseerd)." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Integriteit"@nl ;
   skos:scopeNote """Na migratie of emulatie of bij verdenking van ongeautoriseerde wijziging, dient te worden vastgesteld of het record nog volledig is. De voorwaarden zijn dat de vorm en de metagegevens behouden zijn. In dat geval kan de waarde ‘Integer’ worden gegeven. Indien het record niet integer is, dan wordt daarop een toelichting gegeven. 
 Voor alle duidelijkheid, hier wordt de inhoudelijke (logische) integriteit bedoeld. Niet de technische (element Bestand . Fysieke integriteit).""" ;
 .
-concept:IntegriteitKwalificatieType
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:IntegriteitKwalificatieType
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Typering van de mate van integriteit van het Record." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "IntegriteitKwalificatieType"@nl ;
 .
-concept:Ontstaanscontext
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Ontstaanscontext
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "De verantwoordelijken voor de creatie van het record en de door hen uitgevoerde activiteiten bij de creatie. " ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Ontstaanscontext"@nl ;
 .
-concept:OntstaanscontextAggregatieniveauType
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:OntstaanscontextAggregatieniveauType
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Onderscheidt de niveaus waarop een actor kan worden beschreven." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "OntstaanscontextAggregatieniveauType"@nl ;
   skos:scopeNote "Niveau in de hiërarchie van de actor. Van belang voor uitwisselbaarheid. De hogere aggregatieniveaus erven de jurisdictie over op de lagere." ;
 .
-concept:Openbaarheid
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Openbaarheid
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Indicatie van beperkingen aan de raadpleging." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Openbaarheid"@nl ;
+  skos:related tmlo:Openbaarheidbeperking ;
   skos:scopeNote """Openbaarheid gaat pas spelen bij overbrenging en wordt dan bepaald. Een stuk kan na overbrenging openbaar zijn ondanks dat het daarvoor vertrouwelijk of geheim was. 
 Met de 'Indicatie openbaarheid' wordt aangegeven of er op enig moment sprake was, is of zal zijn van een mate van beperking van de openbaarheid. Indien daarvan sprake is, dan wordt het niveau(s) en de periode(s) vermeld met 'Vertrouwelijkheidsniveau'.""" ;
 .
-concept:Openbaarheidbeperking
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Openbaarheidbeperking
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Beperking aan de raadpleging." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Openbaarheidbeperking"@nl ;
+  skos:related tmlo:Openbaarheid ;
   skos:scopeNote "Indien er sprake is van beperking aan de openbaarheid, dan wordt met dit (groep)element  de aard van de beperking vastgelegd. In de loop der tijd zal een beperking aan de openbaarheid afnemen. Met de elementen Begindatum en Einddatum kan de mate van openbaarheid in tijd begrensd worden. Zo kunnen verschillende beperkingen aan de openbaarheid per periode gespecificeerd worden. Per record kan op één moment slechts sprake zijn van één (set aan) beperking(en) aan de openbaarheid." ;
 .
-concept:Plaats
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Plaats
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Fysieke of virtuele locatie van het record." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Plaats"@nl ;
   skos:scopeNote """Doel is het beheer en de terugvindbaarheid van het record en de bestanden die er deel van uit maken. Het gaat hier over de vindplaats van het archiefstuk, dossier, serie of het archief. Dat kan een fysieke locatie zijn, zoals het adres van een gebouw waarin zich de records bevinden, of een virtuele locatie: een 'webadres' dat direct toegang verschaft tot het record en haar bestanden. Beide is ook mogelijk ofschoon het aan te bevelen is om een fysieke locatie op een zo hoog mogelijk aggregatieniveau vast te leggen. 
 De metagegevens van het record kunnen apart van de bestanden opgeslagen worden of bij die bestanden. In de praktijk zal het waarschijnlijk een combinatie van gescheiden opslag en embedding (inkapseling) zijn. Inkapseling heeft als voordeel dat de metagegevens onlosmakelijk verbonden zijn met het bestand maar een dergelijke decentrale bewaring heeft nadelen bij automatische zoekopdrachten. Opslag van de metagegevens in een centrale databank is daarom beter, maar vraagt een bijzondere zorg voor de koppeling met de desbetreffende bestanden.
 
@@ -290,94 +333,109 @@ Voorbeelden:
 Fysieke locatie: het BAG-adres van de desbetreffende locatie, in de volgorde straatnaam, huisnummer, -letter en toevoeging, postcode, woonplaats. Of de benaming van een applicatie waarin en waarmee het record beheerd wordt of de locatie van offline storage.
 Virtuele locatie: de URI van de virtuele locatie zoals ”http://ergens/absolute/URI/met/verwijzing/naar/tekst\".""" ;
 .
-concept:Record
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Record
+  a skos:Concept ;
   dcterms:source "Richtlijn metagegevens overheidsinformatie (2009)" ;
   skos:definition "Een informatieobject of een verzameling van logisch geordende samenhangende informatieobjecten." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Record"@nl ;
 .
-concept:Redactie_GenreType
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Redactie_GenreType
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Type archiefstuk met een specifieke stijl, inhoud of vorm." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Redactie_GenreType"@nl ;
   skos:scopeNote "Aan te bevelen is om gebruik te maken van een waardenlijst, bij voorkeur de documenttypen zoals benoemd in NEN 2084. " ;
 .
-concept:Relatieklasse
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Relatieklasse
+  a skos:Concept ;
   dcterms:source "Metamodel voor informatiemodellen door KING en Kadaster - versie 1.0" ;
   skos:definition """ De UML-representatie van een Relatieklasse, uitgedrukt in
 een stereotype van UML-associationClass (metaclass). """ ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Relatieklasse"@nl ;
   skos:scopeNote """Een relatiesoort waarover gegevens over de relatie tussen twee soorten objecten (in de
 vorm van een derde soort object) worden vastgelegd. Een relatieklasse bestaat alleen als
 de relatie tussen beide objecten bestaat.
 Voorbeeld: relatieklasse OUDER-KIND RELATIE, relatieklasse FUNCTIONARIS""" ;
 .
-concept:Serie
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Serie
+  a skos:Concept ;
   dcterms:source "Nationaal Archief o.b.v. Richtlijn metagegevens overheidsinformatie (2009)" ;
   skos:definition "Verzameling van dossiers, fysieke archiefbestanddelen en/of stukken, numeriek, alfabetisch, chronologische of logisch geordend, ontstaan vanuit een identieke \"handeling\", dan wel een identieke vorm hebbend dan wel verwante inhoud bevattend." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Serie"@nl ;
 .
-concept:Taal
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Taal
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Coderingen van talen conform ISO 639-2/B." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:narrower tmlo:TaalArchiefstuk ;
+  skos:narrower tmlo:TaalDossier ;
+  skos:prefLabel "Taal"@nl ;
 .
-concept:TaalArchiefstuk
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:TaalArchiefstuk
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
+  skos:broader tmlo:Taal ;
   skos:definition "Aanduiding van de taal waarin de inhoud van het archiefstuk gesteld is. " ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "TaalArchiefstuk"@nl ;
   skos:scopeNote """Voor de taalaanduiding van een archiefstuk gebruiken we de ISO-norm 639-2/B. 
 Veelal is een archiefstuk in het Nederlands gesteld: gegevenswaarde \"dut\". 
 Indien een archiefstuk uit meerdere bestanden bestaat dan kunnen meerdere talen van toepassing zijn die alle vermeld dienen te worden.
 Indien alle archiefstukken van één dossier in dezelfde taal gesteld zijn, dan volstaat de vermelding van die taal bij het Dossier.""" ;
 .
-concept:TaalDossier
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:TaalDossier
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
+  skos:broader tmlo:Taal ;
   skos:definition "Aanduiding van de taal waarin de archiefstukken in het dossier gesteld zijn." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "TaalDossier"@nl ;
   skos:scopeNote """Voor de taalaanduiding van (de archiefstukken in) een dossier gebruiken we de ISO-norm 639-2/B. 
 Veelal zijn die archiefstukken in het Nederlands gesteld: gegevenswaarde \"dut\". 
 De archiefstukken in een dossier kunnen in meerdere talen opgesteld zijn; deze dienen alle vermeld te worden.""" ;
 .
-concept:Vertrouwelijkheid
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Vertrouwelijkheid
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Indicatie van niveau van vertrouwelijkheid van de informatie." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Vertrouwelijkheid"@nl ;
   skos:scopeNote """Heeft ten doel het afschermen van informatie tegen inzage door onbevoegden. Indien daarvan sprake is, geeft het aan waarvoor, door wie en gedurende welke periode deze informatie wel, niet of beperkt mag worden ingezien en op welk moment de beperking afloopt of moet worden heroverwogen. 
 Het niveau van vertrouwelijkheid wordt bij elk record vermeld, tenzij sprake is van overerving van serie of dossier. Het wordt in ieder geval vermeld indien er sprake is van enige mate van vertrouwelijkheid. 
 Met de 'Indicatie vertrouwelijkheid' wordt aangegeven of er op enig moment sprake was, is of zal zijn van een mate van vertrouwelijkheid. Indien daarvan sprake is, dan wordt het niveau(s) en de periode(s) vermeld met 'Vertrouwelijkheidsniveau'. 
 
 De mate van vertrouwelijkheid heeft betrekking op de periode voorafgaand aan de overbrenging.""" ;
 .
-concept:VertrouwelijkheidsNiveauType
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:VertrouwelijkheidsNiveauType
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Aanduiding van het niveau van vertrouwelijkheid." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "VertrouwelijkheidsNiveauType"@nl ;
   skos:scopeNote "De aanduiding van het niveau van vertrouwelijkheid kent een vaste waardenlijst, afgeleid van het Besluit voorschrift informatiebeveiliging rijksdienst bijzondere informatie (VIRBI)." ;
 .
-concept:Vertrouwelijkheidsniveau
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Vertrouwelijkheidsniveau
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Classificatie van de vertrouwelijkheid van de informatie." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Vertrouwelijkheidsniveau"@nl ;
   skos:scopeNote "Indien er sprake is van een mate van vertrouwelijkheid, dan wordt met dit (groep)element  het vertrouwelijkheidsniveau vastgelegd. In de loop der tijd zal de mate van vertrouwelijkheid afnemen. Met de elementen Begindatum en Einddatum kan een niveau van vertrouwelijkheid in tijd begrensd worden. Zo kunnen verschillende niveaus van vertrouwelijkheid per periode gespecificeerd worden. Per record kan op één moment slechts sprake zijn van één niveau van vertrouwelijkheid." ;
 .
-concept:Vorm
-  a skos:Concept ; 
- skos:inScheme schema:documentenstructuur ;
+tmlo:Vorm
+  a skos:Concept ;
   dcterms:source "TMLO 1.2 concept 1 d.d. 15-2-2017" ;
   skos:definition "Redactie, verschijningsvorm en structuur van het record." ;
+  skos:inScheme tmlo:documentenstructuur ;
+  skos:prefLabel "Vorm"@nl ;
   skos:scopeNote "Vastleggen essentiële kenmerken van een archiefstuk met als doel na migratie of emulatie de integriteit te kunnen vaststellen. Van belang voor bijvoorbeeld: e-mail met bijlagen, kaarten, etc. Kan gebruikt worden om aan te geven dat een archiefstuk de vorm heeft van tekst, database, spreadsheet, grafisch, audio, maar ook type document (brief, nota, overeenkomst, factuur). De structuurkenmerken als header en body van (de inhoud van) een archiefstuk worden in dit element vermeld." ;
 .
-schema:documentenstructuur
+tmlo:documentenstructuur
   a skos:ConceptScheme ;
   rdfs:label "documentenstructuur begrippenkader" ;
 .
