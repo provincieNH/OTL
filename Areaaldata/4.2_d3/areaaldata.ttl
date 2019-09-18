@@ -1,9 +1,6 @@
 # baseURI: http://otl.noord-holland.nl/areaaldata/4.2_d3/
-# imports: http://otl.noord-holland.nl/areaaldata-wl/4.2_d3/
-# imports: http://www.opengis.net/ont/geosparql#
-# imports: https://w3id.org/def/basicsemantics-owl
-# prefix: ad
-
+ # imports: http://otl.noord-holland.nl/areaaldata-wl/4.2_d3/
+ 
 @prefix ad: <http://otl.noord-holland.nl/areaaldata/4.2_d3/> .
 @prefix adwl: <http://otl.noord-holland.nl/areaaldata-wl/4.2_d3/> .
 @prefix bs: <https://w3id.org/def/basicsemantics-owl#> .
@@ -15,1517 +12,1396 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ad:
-  a owl:Ontology ;
-  owl:imports adwl: ;
-  owl:imports geo: ;
-  owl:imports <https://w3id.org/def/basicsemantics-owl> ;
-.
-ad:adres_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "adres_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Een object met adresgegevens, om naar te verwijzen vanuit kunstwerken, vri_; en ovl_kasten" ;
-.
-ad:areaaldata
-  a owl:Class ;
-  rdfs:label "areaaldata objecttypen" ;
-.
-ad:bak_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "bak_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Object met een permanent karakter dat dient om iets in op te bergen of te verzamelen." ;
-.
-ad:begroeidTerreindeelBermKr_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "begroeidTerreindeelBermKr_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE" ;
-.
-ad:begroeidTerreindeelBerm_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "begroeidTerreindeelBerm_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een ecologische berm met een vegetatie van grassen en kruiden. BGT Begroeid Terreindeel, verbijzonderd naar fysiek voorkomen groenvoorziening: gras- en kruidachtigen. Deze berm ligt verder dan 3 meter van een provinciale weg. Bermen dichter dan 3 meter bij een provinciale weg worden vastgelegd in ondersteunendWegdeel_v." ;
-.
-ad:begroeidTerreindeelKruin_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "begroeidTerreindeelKruin_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." ;
-.
-ad:begroeidTerreindeelPlKr_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "begroeidTerreindeelPlKr_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE" ;
-.
-ad:begroeidTerreindeelPlantvak_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "begroeidTerreindeelPlantvak_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Terreindeel met aangelegde beplanting, meestal planten, heesters of struiken. BGT Begroeid Terreindeel." ;
-.
-ad:begroeidTerreindeel_v
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT/PNH" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "begroeidTerreindeel_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kleinste functioneel onafhankelijk stukje van een terrein dat er binnen het objecttype Terrein van NEN 3610 wordt onderscheiden, met aaneengesloten vegetatie. Minus de specifieke objecten die PNH geadministreerd wil hebben in begroeidTerreindeelBerm_v en begroeidTerreindeelPlantvak_v" ;
-.
-ad:beheergrenzen_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "beheergrenzen_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "De beheergrens bakent de publiekrechtelijke zeggenschap en verantwoordelijkheid van de provincie over het" ;
-.
-ad:beschoeiingInspectie_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "beschoeiingInspectie_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:InformationObject ;
-  skos:definition "Inspectieobject met alle inspectiegegevens die ingewonnen zijn m.b.t. beschoeiingen" ;
-.
-ad:bodem_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "bodem_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Bodem van een waterdeel, hier worden de gegevens bijgehouden die van belang zijn voor o.a. baggeren" ;
-.
-ad:bordDRIS_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "bordDRIS_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een DRIS paneel (voor OV reizigers)" ;
-.
-ad:bordScheepvaart_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "bordScheepvaart_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een paneel waarop informatie wordt afgebeeld, specifiek bedoelt voor de scheepvaart." ;
-.
-ad:bordWegwijzer_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "bordWegwijzer_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Constructie voorzien van een of meer panelen met informatie ten behoeve van de bewegwijzering." ;
-.
-ad:bordZwemwater_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "bordZwemwater_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een paneel waarop informatie wordt afgebeeld ten behoeve van zwemwater locaties." ;
-.
-ad:bord_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "bord_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een paneel waarop informatie wordt afgebeeld. Dit zijn zowel RVV borden als matrix borden (voor automobilisten);  DRIP panelen zijn in Areaaldata te vinden als matrix borden met een TOPdesk ID" ;
-.
-ad:bouwdeelGeluidsscherm_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "bouwdeelGeluidsscherm_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Laagste niveau van decompositie van geluidwerende voorziening via geluidwerende constructie. Het begrip NEN Bouwdeel is niet gedefinieerd." ;
-.
-ad:bouwdeelKunstwerk_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "bouwdeelKunstwerk_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Laagste niveau van decompositie van kunstwerk_vast via kwElement. Het begrip NEN Bouwdeel is niet gedefinieerd." ;
-.
-ad:bouwdeelOevervak_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "bouwdeelOevervak_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Laagste niveau van decompositie van scheidingWater_l. Het begrip NEN Bouwdeel is niet gedefinieerd." ;
-.
-ad:buis_l
-  a owl:Class ;
-  ad:herkomstDefinitie "IMKL1.2.1" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "buis_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Holle leiding voor het doorstromen van gassen, vloeistoffen of capsules, bestemd om hetzij gas," ;
-.
-ad:concessieverlener_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/NDOV" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "concessieverlener_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Verlener van de [Concessie]" ;
-.
-ad:crowInspectie_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "crowInspectie_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:Activity ;
-  skos:definition "Een inspectie geeft een momentopname weer hoe een wegvakonderdeel er op dat moment bij ligt; de" ;
-.
-ad:crowInspectieresultaat_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "crowInspectieresultaat_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:InformationObject ;
-  skos:definition "Een inspectie geeft een momentopname weer hoe een PNH wegvakonderdeel er op dat moment bijligt. De" ;
-.
-ad:crowMeting_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "crowMeting_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:InformationObject ;
-  skos:definition "Een inspectie geeft een momentopname weer hoe een PNH wegvakonderdeel er op dat moment bijligt. De CROW norm wordt gebruikt. Het object Meting is bedoelt om de Metingen van een bepaalt wegvakonderdeel vast te leggen. Metingen zijn: langsonvlakheid, stroefheid, zetting, spoorvorming, comfortindex" ;
-.
-ad:doorvaartmaat_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "doorvaartmaat_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:InformationObject ;
-  skos:definition "Aanduiding van Doorvaarthoogte bij bijv. Kunstwerken" ;
-.
-ad:ecoHoofdstructuur_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "ecoHoofdstructuur_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "De ecologische hoofdstructuur is een samenhangend netwerk van bestaande en nog te ontwikkelen belangrijke natuurgebieden. Met dit vlak wordt het gebied afgebakend wat als EHS wordt aangemerkt." ;
-.
-ad:ecoVerbZone_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "ecoVerbZone_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "De ecologische hoofdstructuur is een samenhangend netwerk van bestaande en nog te ontwikkelen belangrijke natuurgebieden. Met dit vlak wordt het gebied afgebakend wat als Verbindigszone wordt aangemerkt." ;
-.
-ad:ecopassage_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "ecopassage_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een passage onder of boven een weg voor dieren. Behoort toe aan een faunavoorziening." ;
-.
-ad:electriciteitskabel_l
-  a owl:Class ;
-  ad:herkomstDefinitie "IMKL (2015)" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "electriciteitskabel_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een aansluiting of reeks aansluitingen van een nutsvoorzieningennet voor het overbrengen van elektriciteit van de ene locatie naar een andere. (Bron: INSPIRE)" ;
-.
-ad:faunavoorziening_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "faunavoorziening_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Een faunavoorziening is een voorziening die het passeren door dieren van infrastructuur geleidt, bevordert of juist voorkomt (bron: Leidraad Faunavoorzieningen bij Infrastructuur)." ;
-.
-ad:fietsparkeervoorziening_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "fietsparkeervoorziening_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een duurzaam verankerd rek in de openbare ruimte voor het stallen van fietsen. Voor Fietsenstallingen/kluizen wordt de omtrek van de constructie als lijn vastgelegd." ;
-.
-ad:functioneelGebied_v
-  a owl:Class ;
-  ad:herkomstDefinitie "IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "functioneelGebied_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Begrensd en benoemd gebied dat door een functionele eenheid beschreven wordt." ;
-.
-ad:gebiedscontractregio_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "gebiedscontractregio_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Perceelsindeling t.b.v. de onderhoudsbestekken en contractregio's." ;
-.
-ad:gebouwInstallatie_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "gebouwInstallatie_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een component aan de buitenzijde van een gebouw, die het aanzicht van het gebouw mede bepaalt." ;
-.
-ad:geluidwerendeVoorziening_l
-  a owl:Class ;
-  ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "geluidwerendeVoorziening_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen. De NEN 2767-4 decompositie wordt gevolgd, waarbij GELUIDWERENDE_VOORZIENING als Beheerobject is aangemaakt om het element 'geluidwerende constructie' van een bovenliggend beheerobject te voorzien." ;
-.
-ad:halte_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/NDOV" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "halte_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Het geheel van objecten behorende bij een stopplaats van een autobus. (Integraal Gegevens Model Ideaal Areaal 1.2). STOPPLACE in NDOV terminologie" ;
-.
-ad:herkomstDefinitie
-  a owl:AnnotationProperty ;
-  rdfs:domain ad:adres_tbl ;
-  rdfs:domain ad:bak_p ;
-  rdfs:domain ad:begroeidTerreindeelBermKr_l ;
-  rdfs:domain ad:begroeidTerreindeelBerm_v ;
-  rdfs:domain ad:begroeidTerreindeelKruin_l ;
-  rdfs:domain ad:begroeidTerreindeelPlKr_l ;
-  rdfs:domain ad:begroeidTerreindeelPlantvak_v ;
-  rdfs:domain ad:begroeidTerreindeel_v ;
-  rdfs:domain ad:beheergrenzen_v ;
-  rdfs:domain ad:beschoeiingInspectie_tbl ;
-  rdfs:domain ad:bodem_v ;
-  rdfs:domain ad:bordDRIS_p ;
-  rdfs:domain ad:bordScheepvaart_p ;
-  rdfs:domain ad:bordWegwijzer_p ;
-  rdfs:domain ad:bordZwemwater_p ;
-  rdfs:domain ad:bord_p ;
-  rdfs:domain ad:bouwdeelGeluidsscherm_tbl ;
-  rdfs:domain ad:bouwdeelKunstwerk_tbl ;
-  rdfs:domain ad:bouwdeelOevervak_tbl ;
-  rdfs:domain ad:buis_l ;
-  rdfs:domain ad:concessieverlener_tbl ;
-  rdfs:domain ad:crowInspectie_tbl ;
-  rdfs:domain ad:crowInspectieresultaat_tbl ;
-  rdfs:domain ad:crowMeting_tbl ;
-  rdfs:domain ad:doorvaartmaat_p ;
-  rdfs:domain ad:ecoHoofdstructuur_v ;
-  rdfs:domain ad:ecoVerbZone_v ;
-  rdfs:domain ad:ecopassage_l ;
-  rdfs:domain ad:electriciteitskabel_l ;
-  rdfs:domain ad:faunavoorziening_v ;
-  rdfs:domain ad:fietsparkeervoorziening_l ;
-  rdfs:domain ad:functioneelGebied_v ;
-  rdfs:domain ad:gebiedscontractregio_v ;
-  rdfs:domain ad:gebouwInstallatie_v ;
-  rdfs:domain ad:geluidwerendeVoorziening_l ;
-  rdfs:domain ad:halte_v ;
-  rdfs:domain ad:installatie_p ;
-  rdfs:domain ad:kastDRIS_p ;
-  rdfs:domain ad:kastOvl_p ;
-  rdfs:domain ad:kastVri_p ;
-  rdfs:domain ad:kast_p ;
-  rdfs:domain ad:kleinehaltedisplay_p ;
-  rdfs:domain ad:kruispunt_p ;
-  rdfs:domain ad:kunstwerk_p ;
-  rdfs:domain ad:kunstwerkdeel_l ;
-  rdfs:domain ad:kunstwerkdeel_mp ;
-  rdfs:domain ad:kunstwerkdeel_v ;
-  rdfs:domain ad:kwElement_tbl ;
-  rdfs:domain ad:lamp_p ;
-  rdfs:domain ad:lantaarn_p ;
-  rdfs:domain ad:leidingelement_p ;
-  rdfs:domain ad:ligplaatsstrook_v ;
-  rdfs:domain ad:mantelbuis_v ;
-  rdfs:domain ad:mastDraagconstructie_p ;
-  rdfs:domain ad:nenConditiescore_tbl ;
-  rdfs:domain ad:nenInspectie_tbl ;
-  rdfs:domain ad:oeverReparatie_p ;
-  rdfs:domain ad:oevervak_v ;
-  rdfs:domain ad:onbegroeidTerreindeelKruin_l ;
-  rdfs:domain ad:onbegroeidTerreindeel_v ;
-  rdfs:domain ad:onderdeel_tbl ;
-  rdfs:domain ad:ondersteunendWaterdeel_v ;
-  rdfs:domain ad:ondersteunendWegdeelKruin_l ;
-  rdfs:domain ad:ondersteunendWegdeel_v ;
-  rdfs:domain ad:ongeclassificeerdObject_v ;
-  rdfs:domain ad:overbruggingsdeel_v ;
-  rdfs:domain ad:overigBouwwerk_v ;
-  rdfs:domain ad:overigeScheiding_l ;
-  rdfs:domain ad:overigeScheiding_v ;
-  rdfs:domain ad:paalAfbakening_p ;
-  rdfs:domain ad:paalDraagconstructie_p ;
-  rdfs:domain ad:pandHuisnummerreeks_t ;
-  rdfs:domain ad:pand_v ;
-  rdfs:domain ad:peilbuis_p ;
-  rdfs:domain ad:perron_v ;
-  rdfs:domain ad:put_p ;
-  rdfs:domain ad:recreatieplek_v ;
-  rdfs:domain ad:scheidingGeleidewand_l ;
-  rdfs:domain ad:scheidingGeluidsscherm_l ;
-  rdfs:domain ad:scheidingWater_l ;
-  rdfs:domain ad:scheiding_l ;
-  rdfs:domain ad:scheiding_v ;
-  rdfs:domain ad:sensor_l ;
-  rdfs:domain ad:sensor_p ;
-  rdfs:domain ad:spoor_l ;
-  rdfs:domain ad:spoorrail_l ;
-  rdfs:domain ad:straatmeubilairAbri_p ;
-  rdfs:domain ad:straatmeubilairLichtpunt_p ;
-  rdfs:domain ad:straatmeubilair_p ;
-  rdfs:domain ad:telecommunicatiekabel_l ;
-  rdfs:domain ad:terugkeervoorziening_p ;
-  rdfs:domain ad:theorHectometrering_p ;
-  rdfs:domain ad:traject_v ;
-  rdfs:domain ad:tunneldeel_v ;
-  rdfs:domain ad:uithouder_p ;
-  rdfs:domain ad:uitleggerPortaal_l ;
-  rdfs:domain ad:utiliteitsNet_tbl ;
-  rdfs:domain ad:vaarweg_l ;
-  rdfs:domain ad:vaarwegdeeltraject_v ;
-  rdfs:domain ad:vaarwegdeeltrajectas_l ;
-  rdfs:domain ad:vegetatieObject_l ;
-  rdfs:domain ad:vegetatieObject_p ;
-  rdfs:domain ad:vegetatieObject_v ;
-  rdfs:domain ad:vtaInspectie_tbl ;
-  rdfs:domain ad:waterdeel_v ;
-  rdfs:domain ad:waterinrichtingselement_l ;
-  rdfs:domain ad:waterinrichtingselement_p ;
-  rdfs:domain ad:waterloop_l ;
-  rdfs:domain ad:weg_l ;
-  rdfs:domain ad:wegdeelKruin_l ;
-  rdfs:domain ad:wegdeel_v ;
-  rdfs:domain ad:weginrichtingselement_l ;
-  rdfs:domain ad:weginrichtingselement_p ;
-  rdfs:domain ad:weginrichtingselement_v ;
-  rdfs:domain ad:wegvak_v ;
-.
-ad:installatie_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "installatie_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Samenhangend systeem dat een bepaald doel dient. Bijv, zonnepaneel, boorgat, pomp" ;
-.
-ad:isBGT_Object
-  a owl:AnnotationProperty ;
-  rdfs:domain ad:adres_tbl ;
-  rdfs:domain ad:bak_p ;
-  rdfs:domain ad:begroeidTerreindeelBermKr_l ;
-  rdfs:domain ad:begroeidTerreindeelBerm_v ;
-  rdfs:domain ad:begroeidTerreindeelKruin_l ;
-  rdfs:domain ad:begroeidTerreindeelPlKr_l ;
-  rdfs:domain ad:begroeidTerreindeelPlantvak_v ;
-  rdfs:domain ad:begroeidTerreindeel_v ;
-  rdfs:domain ad:beheergrenzen_v ;
-  rdfs:domain ad:beschoeiingInspectie_tbl ;
-  rdfs:domain ad:bodem_v ;
-  rdfs:domain ad:bordDRIS_p ;
-  rdfs:domain ad:bordScheepvaart_p ;
-  rdfs:domain ad:bordWegwijzer_p ;
-  rdfs:domain ad:bordZwemwater_p ;
-  rdfs:domain ad:bord_p ;
-  rdfs:domain ad:bouwdeelGeluidsscherm_tbl ;
-  rdfs:domain ad:bouwdeelKunstwerk_tbl ;
-  rdfs:domain ad:bouwdeelOevervak_tbl ;
-  rdfs:domain ad:buis_l ;
-  rdfs:domain ad:concessieverlener_tbl ;
-  rdfs:domain ad:crowInspectie_tbl ;
-  rdfs:domain ad:crowInspectieresultaat_tbl ;
-  rdfs:domain ad:crowMeting_tbl ;
-  rdfs:domain ad:doorvaartmaat_p ;
-  rdfs:domain ad:ecoHoofdstructuur_v ;
-  rdfs:domain ad:ecoVerbZone_v ;
-  rdfs:domain ad:ecopassage_l ;
-  rdfs:domain ad:electriciteitskabel_l ;
-  rdfs:domain ad:faunavoorziening_v ;
-  rdfs:domain ad:fietsparkeervoorziening_l ;
-  rdfs:domain ad:functioneelGebied_v ;
-  rdfs:domain ad:gebiedscontractregio_v ;
-  rdfs:domain ad:gebouwInstallatie_v ;
-  rdfs:domain ad:geluidwerendeVoorziening_l ;
-  rdfs:domain ad:halte_v ;
-  rdfs:domain ad:installatie_p ;
-  rdfs:domain ad:kastDRIS_p ;
-  rdfs:domain ad:kastOvl_p ;
-  rdfs:domain ad:kastVri_p ;
-  rdfs:domain ad:kast_p ;
-  rdfs:domain ad:kleinehaltedisplay_p ;
-  rdfs:domain ad:kruispunt_p ;
-  rdfs:domain ad:kunstwerk_p ;
-  rdfs:domain ad:kunstwerkdeel_l ;
-  rdfs:domain ad:kunstwerkdeel_mp ;
-  rdfs:domain ad:kunstwerkdeel_v ;
-  rdfs:domain ad:kwElement_tbl ;
-  rdfs:domain ad:lamp_p ;
-  rdfs:domain ad:lantaarn_p ;
-  rdfs:domain ad:leidingelement_p ;
-  rdfs:domain ad:ligplaatsstrook_v ;
-  rdfs:domain ad:mantelbuis_v ;
-  rdfs:domain ad:mastDraagconstructie_p ;
-  rdfs:domain ad:nenConditiescore_tbl ;
-  rdfs:domain ad:nenInspectie_tbl ;
-  rdfs:domain ad:oeverReparatie_p ;
-  rdfs:domain ad:oevervak_v ;
-  rdfs:domain ad:onbegroeidTerreindeelKruin_l ;
-  rdfs:domain ad:onbegroeidTerreindeel_v ;
-  rdfs:domain ad:onderdeel_tbl ;
-  rdfs:domain ad:ondersteunendWaterdeel_v ;
-  rdfs:domain ad:ondersteunendWegdeelKruin_l ;
-  rdfs:domain ad:ondersteunendWegdeel_v ;
-  rdfs:domain ad:ongeclassificeerdObject_v ;
-  rdfs:domain ad:overbruggingsdeel_v ;
-  rdfs:domain ad:overigBouwwerk_v ;
-  rdfs:domain ad:overigeScheiding_l ;
-  rdfs:domain ad:overigeScheiding_v ;
-  rdfs:domain ad:paalAfbakening_p ;
-  rdfs:domain ad:paalDraagconstructie_p ;
-  rdfs:domain ad:pandHuisnummerreeks_t ;
-  rdfs:domain ad:pand_v ;
-  rdfs:domain ad:peilbuis_p ;
-  rdfs:domain ad:perron_v ;
-  rdfs:domain ad:put_p ;
-  rdfs:domain ad:recreatieplek_v ;
-  rdfs:domain ad:scheidingGeleidewand_l ;
-  rdfs:domain ad:scheidingGeluidsscherm_l ;
-  rdfs:domain ad:scheidingWater_l ;
-  rdfs:domain ad:scheiding_l ;
-  rdfs:domain ad:scheiding_v ;
-  rdfs:domain ad:sensor_l ;
-  rdfs:domain ad:sensor_p ;
-  rdfs:domain ad:spoor_l ;
-  rdfs:domain ad:spoorrail_l ;
-  rdfs:domain ad:straatmeubilairAbri_p ;
-  rdfs:domain ad:straatmeubilairLichtpunt_p ;
-  rdfs:domain ad:straatmeubilair_p ;
-  rdfs:domain ad:telecommunicatiekabel_l ;
-  rdfs:domain ad:terugkeervoorziening_p ;
-  rdfs:domain ad:theorHectometrering_p ;
-  rdfs:domain ad:traject_v ;
-  rdfs:domain ad:tunneldeel_v ;
-  rdfs:domain ad:uithouder_p ;
-  rdfs:domain ad:uitleggerPortaal_l ;
-  rdfs:domain ad:utiliteitsNet_tbl ;
-  rdfs:domain ad:vaarweg_l ;
-  rdfs:domain ad:vaarwegdeeltraject_v ;
-  rdfs:domain ad:vaarwegdeeltrajectas_l ;
-  rdfs:domain ad:vegetatieObject_l ;
-  rdfs:domain ad:vegetatieObject_p ;
-  rdfs:domain ad:vegetatieObject_v ;
-  rdfs:domain ad:vtaInspectie_tbl ;
-  rdfs:domain ad:waterdeel_v ;
-  rdfs:domain ad:waterinrichtingselement_l ;
-  rdfs:domain ad:waterinrichtingselement_p ;
-  rdfs:domain ad:waterloop_l ;
-  rdfs:domain ad:weg_l ;
-  rdfs:domain ad:wegdeelKruin_l ;
-  rdfs:domain ad:wegdeel_v ;
-  rdfs:domain ad:weginrichtingselement_l ;
-  rdfs:domain ad:weginrichtingselement_p ;
-  rdfs:domain ad:weginrichtingselement_v ;
-  rdfs:domain ad:wegvak_v ;
-.
-ad:kastDRIS_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "kastDRIS_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kast ten behoeve van de regeling van DRIS panelen" ;
-.
-ad:kastOvl_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "kastOvl_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kast ten behoeve van de regeling van de openbare verlichting." ;
-.
-ad:kastVri_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "kastVri_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kast ten behoeve van de regeling van verkeerslichten" ;
-.
-ad:kast_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "kast_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Object met een permanent karakter dat dient om iets in te bergen en te beschermen. __LET OP:__ OVL- en VRI-Kasten worden apart geadministreerd." ;
-.
-ad:kleinehaltedisplay_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "kleinehaltedisplay_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kleine halte display: klein scherm dat actuele vertrektijden toont, maar daarnaast ook een" ;
-.
-ad:kruispunt_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "kruispunt_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Kruisingen hebben een uniek nummer." ;
-.
-ad:kunstwerk_p
-  a owl:Class ;
-  ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "kunstwerk_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen. De NEN 2767-4 decompositie wordt gevolgd. Dit is een samenvattende feature class van de vorige feature classes: KunstwerkBeweegbaar_p, Kunstwerkvast_p en Schutsluis_p" ;
-.
-ad:kunstwerkdeel_l
-  a owl:Class ;
-  ad:herkomstDefinitie "IMGeo BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "kunstwerkdeel_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen met een breedte <30cm, bijvoorbeeld een duiker." ;
-.
-ad:kunstwerkdeel_mp
-  a owl:Class ;
-  ad:herkomstDefinitie "IMGeo BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "kunstwerkdeel_mp" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen. Bijvoorbeeld voetpunten van een elektriciteitsmast." ;
-.
-ad:kunstwerkdeel_v
-  a owl:Class ;
-  ad:herkomstDefinitie "IMGeo BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "kunstwerkdeel_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen met een breedte >30cm." ;
-.
-ad:kwElement_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "kwElement_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een NEN Element is gedefinieerd als \"een samenstel van bouwdelen die tezamen een afzonderlijk herkenbaar" ;
-.
-ad:lamp_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "lamp_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "component in een lantaarn of armatuur met als functie verlichten." ;
-.
-ad:lantaarn_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "lantaarn_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "De lichten van een verkeersregelinstallatie samen met het achtergrondschild en de zonnekappen" ;
-.
-ad:leidingelement_p
-  a owl:Class ;
-  ad:herkomstDefinitie "IMKL" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "leidingelement_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een ondergronds object dat bij een leiding of een themakaart hoort. __LET OP:__ dit is het objecttype waar kolken etc. in vastgelegd worden!" ;
-.
-ad:ligplaatsstrook_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "ligplaatsstrook_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Een Ligplaatsstrook is een gebied waar ligplaatsen toegestaan zijn" ;
-.
-ad:mantelbuis_v
-  a owl:Class ;
-  ad:herkomstDefinitie "IMKL 2015" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "mantelbuis_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een mantelbuis is een buis bestemd voor de doorvoer en bescherming van kabels" ;
-.
-ad:mastDraagconstructie_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "mastDraagconstructie_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Hoge draagconstructie, vervaardigd van metaal, hout, steen of kunststof dat dient om iets te dragen." ;
-.
-ad:nenConditiescore_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "nenConditiescore_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:InformationObject ;
-  skos:definition "Een inspectie geeft een momentopname weer hoe een kunswerk er voor staat. De NEN 2767-4 wordt gebruikt voor conditiescores. Het object NEN_Conditiescore is bedoelt om de inspectie resultaten van een bepaalt kunstwerk vast te leggen." ;
-.
-ad:nenInspectie_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "nenInspectie_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:Activity ;
-  skos:definition "Een inspectie geeft een conditiescore voor een kunstwerk. De NEN 2767-4 wordt gebruikt. Het object NEN_Inspectie is bedoelt om de algemene gegevens van een inspectie 'ronde' vast te leggen." ;
-.
-ad:oeverReparatie_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "oeverReparatie_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Een lokale reparatie aan een oevervak" ;
-.
-ad:oevervak_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "oevervak_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Een Oevervak is de rand van een kanaal, vaarweg of rivier. Het begint bij bodem van het nautisch profiel en gaat door tot 1m achter de oeverconstructie. __NB:__ Dit is het equivalent van Beheerobject bij Vaarwegen conform de NEN 2767-4 Decompositie. Een oevervak is ongeveer 100 meter lang en bestaat uit een uniforme oeverconstructie. De Oeverconstructie zelf is vastgelegd in [AREAALDATA.scheidingWater_l] en [AREAALDATA.bouwdeelOevervak_tbl]" ;
-.
-ad:onbegroeidTerreindeelKruin_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "onbegroeidTerreindeelKruin_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." ;
-.
-ad:onbegroeidTerreindeel_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "onbegroeidTerreindeel_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kleinste functioneel onafhankelijk stukje van een terrein, dat er binnen het objecttype Terrein van NEN 3610 wordt onderscheiden, zonder aaneengesloten vegetatie." ;
-.
-ad:onderdeel_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "onderdeel_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Component bij een mast, zoals een voorschakelapparaat, drukknop,rateltikker, windmeter, gms onderdeel" ;
-.
-ad:ondersteunendWaterdeel_v
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT/PNH" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "ondersteunendWaterdeel_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Object dat in het kader van de waterhuishouding periodiek gedeeltelijk of geheel met water is bedekt. Een vegetatie van voornamelijk riet en andere soorten langs een waterloop. In breedte variabel van 0,50 tot 3,00 meter." ;
-.
-ad:ondersteunendWegdeelKruin_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "ondersteunendWegdeelKruin_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." ;
-.
-ad:ondersteunendWegdeel_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "ondersteunendWegdeel_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een deel van de weg dat niet primair bedoeld is voor gebruik door het verkeer. Dit omvat o.a. verkeerseiland en berm daar waar de berm onderdeel uitmaakt van de constructie van de weg. Indien eeen berm geen onderdeel uitmaakt van de constructie van de weg, en verder dan 3 meter van een provinciale weg ligt, wordt deze vastgelegd in begroeidTerrteindeelBerm_v." ;
-.
-ad:ongeclassificeerdObject_v
-  a owl:Class ;
-  ad:herkomstDefinitie "IMGeo BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "ongeclassificeerdObject_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Object waarvoor geen bronhouder aangewezen is en/of dat niet nader is geclassificeerd. Er mogen geen nieuwe objecten van dit objecttype worden aangemaakt/aangeleverd." ;
-.
-ad:overbruggingsdeel_v
-  a owl:Class ;
-  ad:herkomstDefinitie "IMGeo BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "overbruggingsdeel_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Onderdeel van een beweegbare of vaste verbinding tussen twee punten, die door water, een weg of anderszins gescheiden zijn, dat essentieel is voor de constructie ." ;
-.
-ad:overigBouwwerk_v
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "overigBouwwerk_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Met de aarde verbonden duurzaam bouwwerk, dat niet valt onder de definities van een pand of kunstwerk." ;
-.
-ad:overigeScheiding_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "overigeScheiding_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie, met kleinere afmetingen dan toegestaan voor opname in de BGT" ;
-.
-ad:overigeScheiding_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "overigeScheiding_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie, met kleinere afmetingen dan toegestaan voor opname in de BGT" ;
-.
-ad:paalAfbakening_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "paalAfbakening_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Paal; Langwerpig stuk hout, ijzer, steen enz., dat in de grond staat. __LET OP:__ Areaaldata maakt onderscheidt in objecten die een primaire functie hebben als draagconstructie, deze worden in paalDraagconstructie_P of mastDraagconstructie_p geadministreerd. Objecten die primair bedoelt zijn om iets af te bakenen worden in dit objecttype geadministreerd. Dit zijn o.a. Bermplanken, Indexeringspalen en Schamppalen. ![Bermplank](D:\\bu_geodata_beheer\\gereedschap\\documentatie\\areaaldata_datamodel\\4.2d3\\Objectbladen\\06_Meubilair\\bermplank.png)" ;
-.
-ad:paalDraagconstructie_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "paalDraagconstructie_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Hoge draagconstructie, vervaardigd van metaal, hout, steen of kunststof dat dient om iets te dragen. __LET OP:__ In dit objecttype worden de IMGEO palen geadministreerd die primair een dragende functie hebben, zoals lichtmast, verkeersregelinstallatiepaal, verkeersbordpaal en haltepaal." ;
-.
-ad:pandHuisnummerreeks_t
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "pandHuisnummerreeks_t" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Bevat de reeks nummeraanduidingen behorend bij het pand ten behoeve van visualisatie." ;
-.
-ad:pand_v
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "pand_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een PAND is de kleinste bij de totstandkoming functioneel en bouwkundig-constructief zelfstandige eenheid die direct en duurzaam met de aarde is verbonden en betreedbaar en afsluitbaar is." ;
-.
-ad:peilbuis_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "peilbuis_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Peilbuis tbv opname grondwaterstanden." ;
-.
-ad:perron_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "perron_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kleinste functioneel onafhankelijk stuk van een NEN 3610 Weg met gelijkblijvende, homogene eigenschappen en relaties en primair bedoeld voor gebruik door weg-, spoor- en vliegverkeer te land. __LET OP:__ In dit objecttype worden een kopie van wegdeel_v met BGTPlustype Voetpad opgenomen die als perron bij een bushalte in gebruik is. ![Perron illustratie](D:\\bu_geodata_beheer\\gereedschap\\documentatie\\areaaldata_datamodel\\4.2d3\\Objectbladen\\08_Haltes\\perron.jpg)" ;
-.
-ad:positioneleNauwkeurigheid
-  a owl:AnnotationProperty ;
-  rdfs:domain ad:adres_tbl ;
-  rdfs:domain ad:bak_p ;
-  rdfs:domain ad:begroeidTerreindeelBermKr_l ;
-  rdfs:domain ad:begroeidTerreindeelBerm_v ;
-  rdfs:domain ad:begroeidTerreindeelKruin_l ;
-  rdfs:domain ad:begroeidTerreindeelPlKr_l ;
-  rdfs:domain ad:begroeidTerreindeelPlantvak_v ;
-  rdfs:domain ad:begroeidTerreindeel_v ;
-  rdfs:domain ad:beheergrenzen_v ;
-  rdfs:domain ad:beschoeiingInspectie_tbl ;
-  rdfs:domain ad:bodem_v ;
-  rdfs:domain ad:bordDRIS_p ;
-  rdfs:domain ad:bordScheepvaart_p ;
-  rdfs:domain ad:bordWegwijzer_p ;
-  rdfs:domain ad:bordZwemwater_p ;
-  rdfs:domain ad:bord_p ;
-  rdfs:domain ad:bouwdeelGeluidsscherm_tbl ;
-  rdfs:domain ad:bouwdeelKunstwerk_tbl ;
-  rdfs:domain ad:bouwdeelOevervak_tbl ;
-  rdfs:domain ad:buis_l ;
-  rdfs:domain ad:concessieverlener_tbl ;
-  rdfs:domain ad:crowInspectie_tbl ;
-  rdfs:domain ad:crowInspectieresultaat_tbl ;
-  rdfs:domain ad:crowMeting_tbl ;
-  rdfs:domain ad:doorvaartmaat_p ;
-  rdfs:domain ad:ecoHoofdstructuur_v ;
-  rdfs:domain ad:ecoVerbZone_v ;
-  rdfs:domain ad:ecopassage_l ;
-  rdfs:domain ad:electriciteitskabel_l ;
-  rdfs:domain ad:faunavoorziening_v ;
-  rdfs:domain ad:fietsparkeervoorziening_l ;
-  rdfs:domain ad:functioneelGebied_v ;
-  rdfs:domain ad:gebiedscontractregio_v ;
-  rdfs:domain ad:gebouwInstallatie_v ;
-  rdfs:domain ad:geluidwerendeVoorziening_l ;
-  rdfs:domain ad:halte_v ;
-  rdfs:domain ad:installatie_p ;
-  rdfs:domain ad:kastDRIS_p ;
-  rdfs:domain ad:kastOvl_p ;
-  rdfs:domain ad:kastVri_p ;
-  rdfs:domain ad:kast_p ;
-  rdfs:domain ad:kleinehaltedisplay_p ;
-  rdfs:domain ad:kruispunt_p ;
-  rdfs:domain ad:kunstwerk_p ;
-  rdfs:domain ad:kunstwerkdeel_l ;
-  rdfs:domain ad:kunstwerkdeel_mp ;
-  rdfs:domain ad:kunstwerkdeel_v ;
-  rdfs:domain ad:kwElement_tbl ;
-  rdfs:domain ad:lamp_p ;
-  rdfs:domain ad:lantaarn_p ;
-  rdfs:domain ad:leidingelement_p ;
-  rdfs:domain ad:ligplaatsstrook_v ;
-  rdfs:domain ad:mantelbuis_v ;
-  rdfs:domain ad:mastDraagconstructie_p ;
-  rdfs:domain ad:nenConditiescore_tbl ;
-  rdfs:domain ad:nenInspectie_tbl ;
-  rdfs:domain ad:oeverReparatie_p ;
-  rdfs:domain ad:oevervak_v ;
-  rdfs:domain ad:onbegroeidTerreindeelKruin_l ;
-  rdfs:domain ad:onbegroeidTerreindeel_v ;
-  rdfs:domain ad:onderdeel_tbl ;
-  rdfs:domain ad:ondersteunendWaterdeel_v ;
-  rdfs:domain ad:ondersteunendWegdeelKruin_l ;
-  rdfs:domain ad:ondersteunendWegdeel_v ;
-  rdfs:domain ad:ongeclassificeerdObject_v ;
-  rdfs:domain ad:overbruggingsdeel_v ;
-  rdfs:domain ad:overigBouwwerk_v ;
-  rdfs:domain ad:overigeScheiding_l ;
-  rdfs:domain ad:overigeScheiding_v ;
-  rdfs:domain ad:paalAfbakening_p ;
-  rdfs:domain ad:paalDraagconstructie_p ;
-  rdfs:domain ad:pandHuisnummerreeks_t ;
-  rdfs:domain ad:pand_v ;
-  rdfs:domain ad:peilbuis_p ;
-  rdfs:domain ad:perron_v ;
-  rdfs:domain ad:put_p ;
-  rdfs:domain ad:recreatieplek_v ;
-  rdfs:domain ad:scheidingGeleidewand_l ;
-  rdfs:domain ad:scheidingGeluidsscherm_l ;
-  rdfs:domain ad:scheidingWater_l ;
-  rdfs:domain ad:scheiding_l ;
-  rdfs:domain ad:scheiding_v ;
-  rdfs:domain ad:sensor_l ;
-  rdfs:domain ad:sensor_p ;
-  rdfs:domain ad:spoor_l ;
-  rdfs:domain ad:spoorrail_l ;
-  rdfs:domain ad:straatmeubilairAbri_p ;
-  rdfs:domain ad:straatmeubilairLichtpunt_p ;
-  rdfs:domain ad:straatmeubilair_p ;
-  rdfs:domain ad:telecommunicatiekabel_l ;
-  rdfs:domain ad:terugkeervoorziening_p ;
-  rdfs:domain ad:theorHectometrering_p ;
-  rdfs:domain ad:traject_v ;
-  rdfs:domain ad:tunneldeel_v ;
-  rdfs:domain ad:uithouder_p ;
-  rdfs:domain ad:uitleggerPortaal_l ;
-  rdfs:domain ad:utiliteitsNet_tbl ;
-  rdfs:domain ad:vaarweg_l ;
-  rdfs:domain ad:vaarwegdeeltraject_v ;
-  rdfs:domain ad:vaarwegdeeltrajectas_l ;
-  rdfs:domain ad:vegetatieObject_l ;
-  rdfs:domain ad:vegetatieObject_p ;
-  rdfs:domain ad:vegetatieObject_v ;
-  rdfs:domain ad:vtaInspectie_tbl ;
-  rdfs:domain ad:waterdeel_v ;
-  rdfs:domain ad:waterinrichtingselement_l ;
-  rdfs:domain ad:waterinrichtingselement_p ;
-  rdfs:domain ad:waterloop_l ;
-  rdfs:domain ad:weg_l ;
-  rdfs:domain ad:wegdeelKruin_l ;
-  rdfs:domain ad:wegdeel_v ;
-  rdfs:domain ad:weginrichtingselement_l ;
-  rdfs:domain ad:weginrichtingselement_p ;
-  rdfs:domain ad:weginrichtingselement_v ;
-  rdfs:domain ad:wegvak_v ;
-.
-ad:put_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "put_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Gegraven of geboorde kokervormige diepte waarin zich (vloei)stoffen bevinden. __LET OP:__ In dit objecttype worden alleen die objecten geadministreerd die __GEEN__ onderdeel uitmaken van een netwerk. Omdat deze definitie arbitrair is, maakt het attribuut appurtenancetype voorlopig gebruik van dezelfde domeinwaarden." ;
-.
-ad:recreatieplek_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "recreatieplek_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Terrein ingericht voor recreatief medegebruik" ;
-.
-ad:scheidingGeleidewand_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT/PNH" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "scheidingGeleidewand_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een kunststof of betonnen wand die dieren naar een ecopassage leidt. Behoort toe aan een faunavoorziening." ;
-.
-ad:scheidingGeluidsscherm_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT/PNH" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "scheidingGeluidsscherm_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie. __LET OP:__ Dit is het element niveau van de NEN 2767-4 decompositie van geluidwerende Voorzieningen __EN__ het BGT objecttype." ;
-.
-ad:scheidingWater_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT / NEN 2767-4 / PNH" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "scheidingWater_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een NEN Element is gedefinieerd als 'een samenstel van bouwdelen die tezamen een afzonderlijk herkenbaar" ;
-.
-ad:scheiding_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT/PNH" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "scheiding_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie, dat een breedte heeft van < 0,3 m.. __LET OP:__ geluidsscherm wordt geadministreerd in het objecttype scheidingGeluidsscherm_l. damwand, kademuur en walbescherming van vaarwegen worden geadministreerd in scheidingWater_l." ;
-.
-ad:scheiding_v
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "scheiding_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie, dat een breedte heeft van > 0,3 m." ;
-.
-ad:sensor_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT/PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "sensor_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een fysiek detectiesysteem bestaande uit wikkelingen (lussen) in het wegdek bijvoorbeeld voor het beÃ¯nvloeden van de regeling van verkeerslichten of een virtueel detectieveld van een videodetector of radardetector, gebruikt voor het beÃ¯nvloeden van regelingen van verkeerslichten ![Lus](D:\\bu_geodata_beheer\\gereedschap\\documentatie\\areaaldata_datamodel\\4.2d3\\Objectbladen\\04_Ovl_Vri\\lus_1.png)" ;
-.
-ad:sensor_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "sensor_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Apparaat voor de meting van een fysieke grootheid (bijv. temperatuur, licht, druk, elektriciteit). __LET OP:__ Snelheids camera's/roodlicht camera's zijn niet van de Provincie en worden NIET geregistreerd." ;
-.
-ad:spoor_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "spoor_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "De as van het spoor, dat wil zeggen het midden van twee stalen staven op een onderling vaste afstand, waarover trein, tram, of sneltram rijdt. __LET OP:__ Dit is het officiele BGT objecttype. spoorrail_l is het 'oude' objecttype wat op termijn uitgefaseerd zal worden." ;
-.
-ad:spoorrail_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "spoorrail_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Twee stalen staven op een onderling vaste afstand waarover trein, tram, metro of kraan rijden. __LET OP:__ Dit is het 'oude' objecttype wat op termijn uitgefaseerd zal worden. spoor_l is het BGT objecttype." ;
-.
-ad:straatmeubilairAbri_p
-  a owl:Class ;
-  ad:herkomstDefinitie "IMGEO/PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "straatmeubilairAbri_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een abri, gerepresenteerd als punt." ;
-.
-ad:straatmeubilairLichtpunt_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "straatmeubilairLichtpunt_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "in afwijking op de BGT/IMGEO indeling worden lichtpunten in dit objecttype geadministreerd. Het betreft hier armaturen en markeringsunits." ;
-.
-ad:straatmeubilair_p
-  a owl:Class ;
-  ad:herkomstDefinitie "IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "straatmeubilair_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een ruimtelijk object ter inrichting van de openbare ruimte. __LET OP:__ in afwijking op de BGT/IMGEO indeling worden lichtpunten in straatmeubilairLichtpunt_p." ;
-.
-ad:telecommunicatiekabel_l
-  a owl:Class ;
-  ad:herkomstDefinitie "IMKL1.2.1" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "telecommunicatiekabel_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een aansluiting of reeks aansluitingen van een nutsvoorzieningennet voor het overbrengen van signaalinformatie van de ene locatie naar een andere. (Bron: INSPIRE)" ;
-.
-ad:terugkeervoorziening_p
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT/PNH" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "terugkeervoorziening_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "een voorziening in een raster of geleidingswand waardoor fauna dat aan de wegkant van het raster/de geleidingswand staat weer aan de andere kant van het raster/de geleidingswand kan komen, maar waarbij dezelfde faunasoort aan de niet-wegkant niÃ©t het raster/de geleidingswand kan passeren om de weg op te komen." ;
-.
-ad:theorHectometrering_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "theorHectometrering_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Hectometrering (indexeringspunten) van de wegen, vaarwegen en OV-trajecten in beheer bij de PNH." ;
-.
-ad:traject_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "traject_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Een abstract functioneel gebied rondom een weg of vaarweg dat onder de verantwoordelijkheid van de provincie Noord-Holland valt. Richtlijnen voor omvang van een wegtraject:" ;
-.
-ad:tunneldeel_v
-  a owl:Class ;
-  ad:herkomstDefinitie "IMGeo BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "tunneldeel_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Onderdeel van een kunstmatig aangelegde, kokervormige onderdoorgang dat essentieel is voor de constructie." ;
-.
-ad:uithouder_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "uithouder_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een uithouder bevestigd aan een verlichtingsmast maakt het mogelijk om een daarvoor geschikt armatuur excentrisch van de mast te plaatsen zodat er een optimale lichtopbrengst gehaald wordt.(http://www.wegenwiki.nl/Uithouder) __NB:__ Als het een enkelvoudige lichtmast betreft worden de uithouder gegevens bij de draagconstructie vastgelegd." ;
-.
-ad:uitleggerPortaal_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "uitleggerPortaal_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Uitlegger/Portaal is het lijnvormige element van een uitlegger of portaal. In het geval van een uitlegger bestaat het totaal uit 1 mast (object in paalDraagconstructie_p) en een object in uitleggerPortaal_l. In het geval van een portaal bestaat het geheel uit 2 masten (objecten in paalDraagconstructie_p) en een object in uitleggerPortaal_l. Aan een uitleggePortaal kunnen vervolgens lantaarns of armaturen gekoppeld zijn." ;
-.
-ad:utiliteitsNet_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "utiliteitsNet_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:InformationObject ;
-  skos:definition "Een verzameling netwerkelementen die tot 1 type nutsvoorzieningennet behoren." ;
-.
-ad:vaarweg_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "vaarweg_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "De as van de verschillende vaarwegen zoals verwerkt in de grootschalige topografie." ;
-.
-ad:vaarwegdeeltraject_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "vaarwegdeeltraject_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Vaarwegdeeltraject is een abstract functioneel gebied waarvan" ;
-.
-ad:vaarwegdeeltrajectas_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "vaarwegdeeltrajectas_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "As van de vaarwegdeeltrajecten" ;
-.
-ad:vegetatieObject_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "vegetatieObject_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een lijnvormige beplanting van struiken. In verschijningsvorm variabel in breedte en hoogte. Vlakken zijn onderdeel van BGT object Begroeid terreindeel." ;
-.
-ad:vegetatieObject_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "vegetatieObject_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een opgaande beplanting met een stam en boomkroon. Verschijningsvorm: vrijuit groeiend, geknot of in gesnoeide vorm. Hoogte groter dan 1 meter en/of stamdikte groter dan 5 centimeter" ;
-.
-ad:vegetatieObject_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "vegetatieObject_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Vlakvormige groep gelijksoortige vegetatieobjecten met een beperkte omvang. __LET OP:__ In principe wordt dit objecttype in areaaldata vooralsnog niet gebruikt. Heggen worden als lijn geadministreerd in vegetatieObject_l, plantvakken worden geadministreerd in begroeidTerreindeel_v." ;
-.
-ad:vtaInspectie_tbl
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "vtaInspectie_tbl" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:InformationObject ;
-  skos:definition "Wettelijk verplichte inspectie van de veiligheid van bomen" ;
-.
-ad:waterdeel_v
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "waterdeel_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kleinste functioneel onafhankelijk stukje water met gelijkblijvende, homogene eigenschappen en relaties dat er binnen het objecttype Water van NEN 3610 wordt onderscheiden en dat permanent met water bedekt is." ;
-.
-ad:waterinrichtingselement_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "waterinrichtingselement_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een ruimtelijk object ter inrichting van het water. Dit objecttype is bedoeld om alleenstaande geleide- of remmingswerken in op te nemen. Daar waar een geleide- of" ;
-.
-ad:waterinrichtingselement_p
-  a owl:Class ;
-  ad:herkomstDefinitie "IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "waterinrichtingselement_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een ruimtelijk object ter inrichting van het water. Objecten als meerpalen en betonning worden in dit objecttype geadministreerd. Daar waar het object onderdeel uitmaakt van een kunstwerk wordt dit opgenomen in de NEN-2767-4 decompositie van het kunstwerk. In deze decompositie worden verder geen" ;
-.
-ad:waterloop_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "waterloop_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Terrein ingericht voor afvoer en berging van oppervlaktewater. BGT kent alleen vlakken. Dit objecttype zal uitgefaseerd worden." ;
-.
-ad:weg_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "weg_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "De as van de verschillende wegen zoals verwerkt in de grootschalige topografie" ;
-.
-ad:wegdeelKruin_l
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "wegdeelKruin_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." ;
-.
-ad:wegdeel_v
-  a owl:Class ;
-  ad:herkomstDefinitie "BGT" ;
-  ad:isBGT_Object "Ja" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "wegdeel_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Kleinste functioneel onafhankelijk stuk van een NEN 3610 Weg met gelijkblijvende, homogene eigenschappen" ;
-.
-ad:weginrichtingselement_l
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "weginrichtingselement_l" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een ruimtelijk object dat dient voor de inrichting van de openbare weg. __LET OP:__ Voornamelijk bedoelt om Geleideconstructies te administreren. Een geleiderail of vangrail is een barriÃ¨re die naast wegen wordt geplaatst om te voorkomen" ;
-.
-ad:weginrichtingselement_p
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "weginrichtingselement_p" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een ruimtelijk object dat dient voor de inrichting van de openbare weg" ;
-.
-ad:weginrichtingselement_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH/IMGEO" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "weginrichtingselement_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  skos:definition "Een ruimtelijk object dat dient voor de inrichting van de openbare weg." ;
-.
-ad:wegvak_v
-  a owl:Class ;
-  ad:herkomstDefinitie "PNH" ;
-  ad:isBGT_Object "Nee" ;
-  ad:positioneleNauwkeurigheid "None" ;
-  rdfs:label "wegvak_v" ;
-  rdfs:subClassOf ad:areaaldata ;
-  rdfs:subClassOf bs:SpatialRegion ;
-  skos:definition "Administratief afgebakend gedeelte van een weg waarbinnen de inspectiemetingen uitgevoerd worden." ;
-.
+ad: a owl:Ontology ;
+    owl:imports adwl:,
+        geo: .
+
+ad:herkomstDefinitie a owl:AnnotationProperty ;
+    rdfs:domain ad:adres_tbl,
+        ad:bak_p,
+        ad:begroeidTerreindeelBermKr_l,
+        ad:begroeidTerreindeelBerm_v,
+        ad:begroeidTerreindeelKruin_l,
+        ad:begroeidTerreindeelPlKr_l,
+        ad:begroeidTerreindeelPlantvak_v,
+        ad:begroeidTerreindeel_v,
+        ad:beheergrenzen_v,
+        ad:beschoeiingInspectie_tbl,
+        ad:bodem_v,
+        ad:bordDRIS_p,
+        ad:bordScheepvaart_p,
+        ad:bordWegwijzer_p,
+        ad:bordZwemwater_p,
+        ad:bord_p,
+        ad:bouwdeelGeluidsscherm_tbl,
+        ad:bouwdeelKunstwerk_tbl,
+        ad:bouwdeelOevervak_tbl,
+        ad:buis_l,
+        ad:concessieverlener_tbl,
+        ad:crowInspectie_tbl,
+        ad:crowInspectieresultaat_tbl,
+        ad:crowMeting_tbl,
+        ad:doorvaartmaat_p,
+        ad:ecoHoofdstructuur_v,
+        ad:ecoVerbZone_v,
+        ad:ecopassage_l,
+        ad:electriciteitskabel_l,
+        ad:faunavoorziening_v,
+        ad:fietsparkeervoorziening_l,
+        ad:functioneelGebied_v,
+        ad:gebiedscontractregio_v,
+        ad:gebouwInstallatie_v,
+        ad:geluidwerendeVoorziening_l,
+        ad:halte_v,
+        ad:installatie_p,
+        ad:kastDRIS_p,
+        ad:kastOvl_p,
+        ad:kastVri_p,
+        ad:kast_p,
+        ad:kleinehaltedisplay_p,
+        ad:kruispunt_p,
+        ad:kunstwerk_p,
+        ad:kunstwerkdeel_l,
+        ad:kunstwerkdeel_mp,
+        ad:kunstwerkdeel_v,
+        ad:kwElement_tbl,
+        ad:lamp_p,
+        ad:lantaarn_p,
+        ad:leidingelement_p,
+        ad:ligplaatsstrook_v,
+        ad:mantelbuis_v,
+        ad:mastDraagconstructie_p,
+        ad:nenConditiescore_tbl,
+        ad:nenInspectie_tbl,
+        ad:oeverReparatie_p,
+        ad:oevervak_v,
+        ad:onbegroeidTerreindeelKruin_l,
+        ad:onbegroeidTerreindeel_v,
+        ad:onderdeel_tbl,
+        ad:ondersteunendWaterdeel_v,
+        ad:ondersteunendWegdeelKruin_l,
+        ad:ondersteunendWegdeel_v,
+        ad:ongeclassificeerdObject_v,
+        ad:overbruggingsdeel_v,
+        ad:overigBouwwerk_v,
+        ad:overigeScheiding_l,
+        ad:overigeScheiding_v,
+        ad:paalAfbakening_p,
+        ad:paalDraagconstructie_p,
+        ad:pandHuisnummerreeks_t,
+        ad:pand_v,
+        ad:peilbuis_p,
+        ad:perron_v,
+        ad:put_p,
+        ad:recreatieplek_v,
+        ad:scheidingGeleidewand_l,
+        ad:scheidingGeluidsscherm_l,
+        ad:scheidingWater_l,
+        ad:scheiding_l,
+        ad:scheiding_v,
+        ad:sensor_l,
+        ad:sensor_p,
+        ad:spoor_l,
+        ad:spoorrail_l,
+        ad:straatmeubilairAbri_p,
+        ad:straatmeubilairLichtpunt_p,
+        ad:straatmeubilair_p,
+        ad:telecommunicatiekabel_l,
+        ad:terugkeervoorziening_p,
+        ad:theorHectometrering_p,
+        ad:traject_v,
+        ad:tunneldeel_v,
+        ad:uithouder_p,
+        ad:uitleggerPortaal_l,
+        ad:utiliteitsNet_tbl,
+        ad:vaarweg_l,
+        ad:vaarwegdeeltraject_v,
+        ad:vaarwegdeeltrajectas_l,
+        ad:vegetatieObject_l,
+        ad:vegetatieObject_p,
+        ad:vegetatieObject_v,
+        ad:vtaInspectie_tbl,
+        ad:waterdeel_v,
+        ad:waterinrichtingselement_l,
+        ad:waterinrichtingselement_p,
+        ad:waterloop_l,
+        ad:weg_l,
+        ad:wegdeelKruin_l,
+        ad:wegdeel_v,
+        ad:weginrichtingselement_l,
+        ad:weginrichtingselement_p,
+        ad:weginrichtingselement_v,
+        ad:wegvak_v .
+
+ad:isBGT_Object a owl:AnnotationProperty ;
+    rdfs:domain ad:adres_tbl,
+        ad:bak_p,
+        ad:begroeidTerreindeelBermKr_l,
+        ad:begroeidTerreindeelBerm_v,
+        ad:begroeidTerreindeelKruin_l,
+        ad:begroeidTerreindeelPlKr_l,
+        ad:begroeidTerreindeelPlantvak_v,
+        ad:begroeidTerreindeel_v,
+        ad:beheergrenzen_v,
+        ad:beschoeiingInspectie_tbl,
+        ad:bodem_v,
+        ad:bordDRIS_p,
+        ad:bordScheepvaart_p,
+        ad:bordWegwijzer_p,
+        ad:bordZwemwater_p,
+        ad:bord_p,
+        ad:bouwdeelGeluidsscherm_tbl,
+        ad:bouwdeelKunstwerk_tbl,
+        ad:bouwdeelOevervak_tbl,
+        ad:buis_l,
+        ad:concessieverlener_tbl,
+        ad:crowInspectie_tbl,
+        ad:crowInspectieresultaat_tbl,
+        ad:crowMeting_tbl,
+        ad:doorvaartmaat_p,
+        ad:ecoHoofdstructuur_v,
+        ad:ecoVerbZone_v,
+        ad:ecopassage_l,
+        ad:electriciteitskabel_l,
+        ad:faunavoorziening_v,
+        ad:fietsparkeervoorziening_l,
+        ad:functioneelGebied_v,
+        ad:gebiedscontractregio_v,
+        ad:gebouwInstallatie_v,
+        ad:geluidwerendeVoorziening_l,
+        ad:halte_v,
+        ad:installatie_p,
+        ad:kastDRIS_p,
+        ad:kastOvl_p,
+        ad:kastVri_p,
+        ad:kast_p,
+        ad:kleinehaltedisplay_p,
+        ad:kruispunt_p,
+        ad:kunstwerk_p,
+        ad:kunstwerkdeel_l,
+        ad:kunstwerkdeel_mp,
+        ad:kunstwerkdeel_v,
+        ad:kwElement_tbl,
+        ad:lamp_p,
+        ad:lantaarn_p,
+        ad:leidingelement_p,
+        ad:ligplaatsstrook_v,
+        ad:mantelbuis_v,
+        ad:mastDraagconstructie_p,
+        ad:nenConditiescore_tbl,
+        ad:nenInspectie_tbl,
+        ad:oeverReparatie_p,
+        ad:oevervak_v,
+        ad:onbegroeidTerreindeelKruin_l,
+        ad:onbegroeidTerreindeel_v,
+        ad:onderdeel_tbl,
+        ad:ondersteunendWaterdeel_v,
+        ad:ondersteunendWegdeelKruin_l,
+        ad:ondersteunendWegdeel_v,
+        ad:ongeclassificeerdObject_v,
+        ad:overbruggingsdeel_v,
+        ad:overigBouwwerk_v,
+        ad:overigeScheiding_l,
+        ad:overigeScheiding_v,
+        ad:paalAfbakening_p,
+        ad:paalDraagconstructie_p,
+        ad:pandHuisnummerreeks_t,
+        ad:pand_v,
+        ad:peilbuis_p,
+        ad:perron_v,
+        ad:put_p,
+        ad:recreatieplek_v,
+        ad:scheidingGeleidewand_l,
+        ad:scheidingGeluidsscherm_l,
+        ad:scheidingWater_l,
+        ad:scheiding_l,
+        ad:scheiding_v,
+        ad:sensor_l,
+        ad:sensor_p,
+        ad:spoor_l,
+        ad:spoorrail_l,
+        ad:straatmeubilairAbri_p,
+        ad:straatmeubilairLichtpunt_p,
+        ad:straatmeubilair_p,
+        ad:telecommunicatiekabel_l,
+        ad:terugkeervoorziening_p,
+        ad:theorHectometrering_p,
+        ad:traject_v,
+        ad:tunneldeel_v,
+        ad:uithouder_p,
+        ad:uitleggerPortaal_l,
+        ad:utiliteitsNet_tbl,
+        ad:vaarweg_l,
+        ad:vaarwegdeeltraject_v,
+        ad:vaarwegdeeltrajectas_l,
+        ad:vegetatieObject_l,
+        ad:vegetatieObject_p,
+        ad:vegetatieObject_v,
+        ad:vtaInspectie_tbl,
+        ad:waterdeel_v,
+        ad:waterinrichtingselement_l,
+        ad:waterinrichtingselement_p,
+        ad:waterloop_l,
+        ad:weg_l,
+        ad:wegdeelKruin_l,
+        ad:wegdeel_v,
+        ad:weginrichtingselement_l,
+        ad:weginrichtingselement_p,
+        ad:weginrichtingselement_v,
+        ad:wegvak_v .
+
+ad:positioneleNauwkeurigheid a owl:AnnotationProperty ;
+    rdfs:domain ad:adres_tbl,
+        ad:bak_p,
+        ad:begroeidTerreindeelBermKr_l,
+        ad:begroeidTerreindeelBerm_v,
+        ad:begroeidTerreindeelKruin_l,
+        ad:begroeidTerreindeelPlKr_l,
+        ad:begroeidTerreindeelPlantvak_v,
+        ad:begroeidTerreindeel_v,
+        ad:beheergrenzen_v,
+        ad:beschoeiingInspectie_tbl,
+        ad:bodem_v,
+        ad:bordDRIS_p,
+        ad:bordScheepvaart_p,
+        ad:bordWegwijzer_p,
+        ad:bordZwemwater_p,
+        ad:bord_p,
+        ad:bouwdeelGeluidsscherm_tbl,
+        ad:bouwdeelKunstwerk_tbl,
+        ad:bouwdeelOevervak_tbl,
+        ad:buis_l,
+        ad:concessieverlener_tbl,
+        ad:crowInspectie_tbl,
+        ad:crowInspectieresultaat_tbl,
+        ad:crowMeting_tbl,
+        ad:doorvaartmaat_p,
+        ad:ecoHoofdstructuur_v,
+        ad:ecoVerbZone_v,
+        ad:ecopassage_l,
+        ad:electriciteitskabel_l,
+        ad:faunavoorziening_v,
+        ad:fietsparkeervoorziening_l,
+        ad:functioneelGebied_v,
+        ad:gebiedscontractregio_v,
+        ad:gebouwInstallatie_v,
+        ad:geluidwerendeVoorziening_l,
+        ad:halte_v,
+        ad:installatie_p,
+        ad:kastDRIS_p,
+        ad:kastOvl_p,
+        ad:kastVri_p,
+        ad:kast_p,
+        ad:kleinehaltedisplay_p,
+        ad:kruispunt_p,
+        ad:kunstwerk_p,
+        ad:kunstwerkdeel_l,
+        ad:kunstwerkdeel_mp,
+        ad:kunstwerkdeel_v,
+        ad:kwElement_tbl,
+        ad:lamp_p,
+        ad:lantaarn_p,
+        ad:leidingelement_p,
+        ad:ligplaatsstrook_v,
+        ad:mantelbuis_v,
+        ad:mastDraagconstructie_p,
+        ad:nenConditiescore_tbl,
+        ad:nenInspectie_tbl,
+        ad:oeverReparatie_p,
+        ad:oevervak_v,
+        ad:onbegroeidTerreindeelKruin_l,
+        ad:onbegroeidTerreindeel_v,
+        ad:onderdeel_tbl,
+        ad:ondersteunendWaterdeel_v,
+        ad:ondersteunendWegdeelKruin_l,
+        ad:ondersteunendWegdeel_v,
+        ad:ongeclassificeerdObject_v,
+        ad:overbruggingsdeel_v,
+        ad:overigBouwwerk_v,
+        ad:overigeScheiding_l,
+        ad:overigeScheiding_v,
+        ad:paalAfbakening_p,
+        ad:paalDraagconstructie_p,
+        ad:pandHuisnummerreeks_t,
+        ad:pand_v,
+        ad:peilbuis_p,
+        ad:perron_v,
+        ad:put_p,
+        ad:recreatieplek_v,
+        ad:scheidingGeleidewand_l,
+        ad:scheidingGeluidsscherm_l,
+        ad:scheidingWater_l,
+        ad:scheiding_l,
+        ad:scheiding_v,
+        ad:sensor_l,
+        ad:sensor_p,
+        ad:spoor_l,
+        ad:spoorrail_l,
+        ad:straatmeubilairAbri_p,
+        ad:straatmeubilairLichtpunt_p,
+        ad:straatmeubilair_p,
+        ad:telecommunicatiekabel_l,
+        ad:terugkeervoorziening_p,
+        ad:theorHectometrering_p,
+        ad:traject_v,
+        ad:tunneldeel_v,
+        ad:uithouder_p,
+        ad:uitleggerPortaal_l,
+        ad:utiliteitsNet_tbl,
+        ad:vaarweg_l,
+        ad:vaarwegdeeltraject_v,
+        ad:vaarwegdeeltrajectas_l,
+        ad:vegetatieObject_l,
+        ad:vegetatieObject_p,
+        ad:vegetatieObject_v,
+        ad:vtaInspectie_tbl,
+        ad:waterdeel_v,
+        ad:waterinrichtingselement_l,
+        ad:waterinrichtingselement_p,
+        ad:waterloop_l,
+        ad:weg_l,
+        ad:wegdeelKruin_l,
+        ad:wegdeel_v,
+        ad:weginrichtingselement_l,
+        ad:weginrichtingselement_p,
+        ad:weginrichtingselement_v,
+        ad:wegvak_v .
+
+ad:adres_tbl a owl:Class ;
+    rdfs:label "adres_tbl" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Een object met adresgegevens, om naar te verwijzen vanuit kunstwerken, vri_; en ovl_kasten" .
+
+ad:bak_p a owl:Class ;
+    rdfs:label "bak_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Object met een permanent karakter dat dient om iets in op te bergen of te verzamelen." .
+
+ad:begroeidTerreindeelBermKr_l a owl:Class ;
+    rdfs:label "begroeidTerreindeelBermKr_l" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE" .
+
+ad:begroeidTerreindeelBerm_v a owl:Class ;
+    rdfs:label "begroeidTerreindeelBerm_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een ecologische berm met een vegetatie van grassen en kruiden. BGT Begroeid Terreindeel, verbijzonderd naar fysiek voorkomen groenvoorziening: gras- en kruidachtigen. Deze berm ligt verder dan 3 meter van een provinciale weg. Bermen dichter dan 3 meter bij een provinciale weg worden vastgelegd in ondersteunendWegdeel_v." .
+
+ad:begroeidTerreindeelKruin_l a owl:Class ;
+    rdfs:label "begroeidTerreindeelKruin_l" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." .
+
+ad:begroeidTerreindeelPlKr_l a owl:Class ;
+    rdfs:label "begroeidTerreindeelPlKr_l" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE" .
+
+ad:begroeidTerreindeelPlantvak_v a owl:Class ;
+    rdfs:label "begroeidTerreindeelPlantvak_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Terreindeel met aangelegde beplanting, meestal planten, heesters of struiken. BGT Begroeid Terreindeel." .
+
+ad:begroeidTerreindeel_v a owl:Class ;
+    rdfs:label "begroeidTerreindeel_v" ;
+    ad:herkomstDefinitie "BGT/PNH" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kleinste functioneel onafhankelijk stukje van een terrein dat er binnen het objecttype Terrein van NEN 3610 wordt onderscheiden, met aaneengesloten vegetatie. Minus de specifieke objecten die PNH geadministreerd wil hebben in begroeidTerreindeelBerm_v en begroeidTerreindeelPlantvak_v" .
+
+ad:beheergrenzen_v a owl:Class ;
+    rdfs:label "beheergrenzen_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "De beheergrens bakent de publiekrechtelijke zeggenschap en verantwoordelijkheid van de provincie over het" .
+
+ad:beschoeiingInspectie_tbl a owl:Class ;
+    rdfs:label "beschoeiingInspectie_tbl" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:InformationObject ;
+    skos:definition "Inspectieobject met alle inspectiegegevens die ingewonnen zijn m.b.t. beschoeiingen" .
+
+ad:bodem_v a owl:Class ;
+    rdfs:label "bodem_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Bodem van een waterdeel, hier worden de gegevens bijgehouden die van belang zijn voor o.a. baggeren" .
+
+ad:bordDRIS_p a owl:Class ;
+    rdfs:label "bordDRIS_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een DRIS paneel (voor OV reizigers)" .
+
+ad:bordScheepvaart_p a owl:Class ;
+    rdfs:label "bordScheepvaart_p" ;
+    ad:herkomstDefinitie "PNH/IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een paneel waarop informatie wordt afgebeeld, specifiek bedoelt voor de scheepvaart." .
+
+ad:bordWegwijzer_p a owl:Class ;
+    rdfs:label "bordWegwijzer_p" ;
+    ad:herkomstDefinitie "PNH/IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Constructie voorzien van een of meer panelen met informatie ten behoeve van de bewegwijzering." .
+
+ad:bordZwemwater_p a owl:Class ;
+    rdfs:label "bordZwemwater_p" ;
+    ad:herkomstDefinitie "PNH/IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een paneel waarop informatie wordt afgebeeld ten behoeve van zwemwater locaties." .
+
+ad:bord_p a owl:Class ;
+    rdfs:label "bord_p" ;
+    ad:herkomstDefinitie "PNH/IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een paneel waarop informatie wordt afgebeeld. Dit zijn zowel RVV borden als matrix borden (voor automobilisten);  DRIP panelen zijn in Areaaldata te vinden als matrix borden met een TOPdesk ID" .
+
+ad:bouwdeelGeluidsscherm_tbl a owl:Class ;
+    rdfs:label "bouwdeelGeluidsscherm_tbl" ;
+    ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Laagste niveau van decompositie van geluidwerende voorziening via geluidwerende constructie. Het begrip NEN Bouwdeel is niet gedefinieerd." .
+
+ad:bouwdeelKunstwerk_tbl a owl:Class ;
+    rdfs:label "bouwdeelKunstwerk_tbl" ;
+    ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Laagste niveau van decompositie van kunstwerk_vast via kwElement. Het begrip NEN Bouwdeel is niet gedefinieerd." .
+
+ad:bouwdeelOevervak_tbl a owl:Class ;
+    rdfs:label "bouwdeelOevervak_tbl" ;
+    ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Laagste niveau van decompositie van scheidingWater_l. Het begrip NEN Bouwdeel is niet gedefinieerd." .
+
+ad:buis_l a owl:Class ;
+    rdfs:label "buis_l" ;
+    ad:herkomstDefinitie "IMKL1.2.1" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Holle leiding voor het doorstromen van gassen, vloeistoffen of capsules, bestemd om hetzij gas," .
+
+ad:concessieverlener_tbl a owl:Class ;
+    rdfs:label "concessieverlener_tbl" ;
+    ad:herkomstDefinitie "PNH/NDOV" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Verlener van de [Concessie]" .
+
+ad:crowInspectie_tbl a owl:Class ;
+    rdfs:label "crowInspectie_tbl" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:Activity ;
+    skos:definition "Een inspectie geeft een momentopname weer hoe een wegvakonderdeel er op dat moment bij ligt; de" .
+
+ad:crowInspectieresultaat_tbl a owl:Class ;
+    rdfs:label "crowInspectieresultaat_tbl" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:InformationObject ;
+    skos:definition "Een inspectie geeft een momentopname weer hoe een PNH wegvakonderdeel er op dat moment bijligt. De" .
+
+ad:crowMeting_tbl a owl:Class ;
+    rdfs:label "crowMeting_tbl" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:InformationObject ;
+    skos:definition "Een inspectie geeft een momentopname weer hoe een PNH wegvakonderdeel er op dat moment bijligt. De CROW norm wordt gebruikt. Het object Meting is bedoelt om de Metingen van een bepaalt wegvakonderdeel vast te leggen. Metingen zijn: langsonvlakheid, stroefheid, zetting, spoorvorming, comfortindex" .
+
+ad:doorvaartmaat_p a owl:Class ;
+    rdfs:label "doorvaartmaat_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:InformationObject ;
+    skos:definition "Aanduiding van Doorvaarthoogte bij bijv. Kunstwerken" .
+
+ad:ecoHoofdstructuur_v a owl:Class ;
+    rdfs:label "ecoHoofdstructuur_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "De ecologische hoofdstructuur is een samenhangend netwerk van bestaande en nog te ontwikkelen belangrijke natuurgebieden. Met dit vlak wordt het gebied afgebakend wat als EHS wordt aangemerkt." .
+
+ad:ecoVerbZone_v a owl:Class ;
+    rdfs:label "ecoVerbZone_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "De ecologische hoofdstructuur is een samenhangend netwerk van bestaande en nog te ontwikkelen belangrijke natuurgebieden. Met dit vlak wordt het gebied afgebakend wat als Verbindigszone wordt aangemerkt." .
+
+ad:ecopassage_l a owl:Class ;
+    rdfs:label "ecopassage_l" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een passage onder of boven een weg voor dieren. Behoort toe aan een faunavoorziening." .
+
+ad:electriciteitskabel_l a owl:Class ;
+    rdfs:label "electriciteitskabel_l" ;
+    ad:herkomstDefinitie "IMKL (2015)" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een aansluiting of reeks aansluitingen van een nutsvoorzieningennet voor het overbrengen van elektriciteit van de ene locatie naar een andere. (Bron: INSPIRE)" .
+
+ad:faunavoorziening_v a owl:Class ;
+    rdfs:label "faunavoorziening_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Een faunavoorziening is een voorziening die het passeren door dieren van infrastructuur geleidt, bevordert of juist voorkomt (bron: Leidraad Faunavoorzieningen bij Infrastructuur)." .
+
+ad:fietsparkeervoorziening_l a owl:Class ;
+    rdfs:label "fietsparkeervoorziening_l" ;
+    ad:herkomstDefinitie "PNH/IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een duurzaam verankerd rek in de openbare ruimte voor het stallen van fietsen. Voor Fietsenstallingen/kluizen wordt de omtrek van de constructie als lijn vastgelegd." .
+
+ad:functioneelGebied_v a owl:Class ;
+    rdfs:label "functioneelGebied_v" ;
+    ad:herkomstDefinitie "IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Begrensd en benoemd gebied dat door een functionele eenheid beschreven wordt." .
+
+ad:gebiedscontractregio_v a owl:Class ;
+    rdfs:label "gebiedscontractregio_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Perceelsindeling t.b.v. de onderhoudsbestekken en contractregio's." .
+
+ad:gebouwInstallatie_v a owl:Class ;
+    rdfs:label "gebouwInstallatie_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een component aan de buitenzijde van een gebouw, die het aanzicht van het gebouw mede bepaalt." .
+
+ad:geluidwerendeVoorziening_l a owl:Class ;
+    rdfs:label "geluidwerendeVoorziening_l" ;
+    ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen. De NEN 2767-4 decompositie wordt gevolgd, waarbij GELUIDWERENDE_VOORZIENING als Beheerobject is aangemaakt om het element 'geluidwerende constructie' van een bovenliggend beheerobject te voorzien." .
+
+ad:halte_v a owl:Class ;
+    rdfs:label "halte_v" ;
+    ad:herkomstDefinitie "PNH/NDOV" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Het geheel van objecten behorende bij een stopplaats van een autobus. (Integraal Gegevens Model Ideaal Areaal 1.2). STOPPLACE in NDOV terminologie" .
+
+ad:installatie_p a owl:Class ;
+    rdfs:label "installatie_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Samenhangend systeem dat een bepaald doel dient. Bijv, zonnepaneel, boorgat, pomp" .
+
+ad:kastDRIS_p a owl:Class ;
+    rdfs:label "kastDRIS_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kast ten behoeve van de regeling van DRIS panelen" .
+
+ad:kastOvl_p a owl:Class ;
+    rdfs:label "kastOvl_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kast ten behoeve van de regeling van de openbare verlichting." .
+
+ad:kastVri_p a owl:Class ;
+    rdfs:label "kastVri_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kast ten behoeve van de regeling van verkeerslichten" .
+
+ad:kast_p a owl:Class ;
+    rdfs:label "kast_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Object met een permanent karakter dat dient om iets in te bergen en te beschermen. __LET OP:__ OVL- en VRI-Kasten worden apart geadministreerd." .
+
+ad:kleinehaltedisplay_p a owl:Class ;
+    rdfs:label "kleinehaltedisplay_p" ;
+    ad:herkomstDefinitie "PNH/IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kleine halte display: klein scherm dat actuele vertrektijden toont, maar daarnaast ook een" .
+
+ad:kruispunt_p a owl:Class ;
+    rdfs:label "kruispunt_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Kruisingen hebben een uniek nummer." .
+
+ad:kunstwerk_p a owl:Class ;
+    rdfs:label "kunstwerk_p" ;
+    ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen. De NEN 2767-4 decompositie wordt gevolgd. Dit is een samenvattende feature class van de vorige feature classes: KunstwerkBeweegbaar_p, Kunstwerkvast_p en Schutsluis_p" .
+
+ad:kunstwerkdeel_l a owl:Class ;
+    rdfs:label "kunstwerkdeel_l" ;
+    ad:herkomstDefinitie "IMGeo BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen met een breedte <30cm, bijvoorbeeld een duiker." .
+
+ad:kunstwerkdeel_mp a owl:Class ;
+    rdfs:label "kunstwerkdeel_mp" ;
+    ad:herkomstDefinitie "IMGeo BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen. Bijvoorbeeld voetpunten van een elektriciteitsmast." .
+
+ad:kunstwerkdeel_v a owl:Class ;
+    rdfs:label "kunstwerkdeel_v" ;
+    ad:herkomstDefinitie "IMGeo BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen met een breedte >30cm." .
+
+ad:kwElement_tbl a owl:Class ;
+    rdfs:label "kwElement_tbl" ;
+    ad:herkomstDefinitie "NEN 2767-4 / PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een NEN Element is gedefinieerd als \"een samenstel van bouwdelen die tezamen een afzonderlijk herkenbaar" .
+
+ad:lamp_p a owl:Class ;
+    rdfs:label "lamp_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "component in een lantaarn of armatuur met als functie verlichten." .
+
+ad:lantaarn_p a owl:Class ;
+    rdfs:label "lantaarn_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "De lichten van een verkeersregelinstallatie samen met het achtergrondschild en de zonnekappen" .
+
+ad:leidingelement_p a owl:Class ;
+    rdfs:label "leidingelement_p" ;
+    ad:herkomstDefinitie "IMKL" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een ondergronds object dat bij een leiding of een themakaart hoort. __LET OP:__ dit is het objecttype waar kolken etc. in vastgelegd worden!" .
+
+ad:ligplaatsstrook_v a owl:Class ;
+    rdfs:label "ligplaatsstrook_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Een Ligplaatsstrook is een gebied waar ligplaatsen toegestaan zijn" .
+
+ad:mantelbuis_v a owl:Class ;
+    rdfs:label "mantelbuis_v" ;
+    ad:herkomstDefinitie "IMKL 2015" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een mantelbuis is een buis bestemd voor de doorvoer en bescherming van kabels" .
+
+ad:mastDraagconstructie_p a owl:Class ;
+    rdfs:label "mastDraagconstructie_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Hoge draagconstructie, vervaardigd van metaal, hout, steen of kunststof dat dient om iets te dragen." .
+
+ad:nenConditiescore_tbl a owl:Class ;
+    rdfs:label "nenConditiescore_tbl" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:InformationObject ;
+    skos:definition "Een inspectie geeft een momentopname weer hoe een kunswerk er voor staat. De NEN 2767-4 wordt gebruikt voor conditiescores. Het object NEN_Conditiescore is bedoelt om de inspectie resultaten van een bepaalt kunstwerk vast te leggen." .
+
+ad:nenInspectie_tbl a owl:Class ;
+    rdfs:label "nenInspectie_tbl" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:Activity ;
+    skos:definition "Een inspectie geeft een conditiescore voor een kunstwerk. De NEN 2767-4 wordt gebruikt. Het object NEN_Inspectie is bedoelt om de algemene gegevens van een inspectie 'ronde' vast te leggen." .
+
+ad:oeverReparatie_p a owl:Class ;
+    rdfs:label "oeverReparatie_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Een lokale reparatie aan een oevervak" .
+
+ad:oevervak_v a owl:Class ;
+    rdfs:label "oevervak_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Een Oevervak is de rand van een kanaal, vaarweg of rivier. Het begint bij bodem van het nautisch profiel en gaat door tot 1m achter de oeverconstructie. __NB:__ Dit is het equivalent van Beheerobject bij Vaarwegen conform de NEN 2767-4 Decompositie. Een oevervak is ongeveer 100 meter lang en bestaat uit een uniforme oeverconstructie. De Oeverconstructie zelf is vastgelegd in [AREAALDATA.scheidingWater_l] en [AREAALDATA.bouwdeelOevervak_tbl]" .
+
+ad:onbegroeidTerreindeelKruin_l a owl:Class ;
+    rdfs:label "onbegroeidTerreindeelKruin_l" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." .
+
+ad:onbegroeidTerreindeel_v a owl:Class ;
+    rdfs:label "onbegroeidTerreindeel_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kleinste functioneel onafhankelijk stukje van een terrein, dat er binnen het objecttype Terrein van NEN 3610 wordt onderscheiden, zonder aaneengesloten vegetatie." .
+
+ad:onderdeel_tbl a owl:Class ;
+    rdfs:label "onderdeel_tbl" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Component bij een mast, zoals een voorschakelapparaat, drukknop,rateltikker, windmeter, gms onderdeel" .
+
+ad:ondersteunendWaterdeel_v a owl:Class ;
+    rdfs:label "ondersteunendWaterdeel_v" ;
+    ad:herkomstDefinitie "BGT/PNH" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Object dat in het kader van de waterhuishouding periodiek gedeeltelijk of geheel met water is bedekt. Een vegetatie van voornamelijk riet en andere soorten langs een waterloop. In breedte variabel van 0,50 tot 3,00 meter.  De Provincie heeft voornamelijk oevers en slootkanten in het areaal. Oevers en slootkanten zijn de delen die enerzijds begrensd worden door de waterlijn en anderzijds door een kant insteek. Een kantinsteek heeft altijd een bijbehorende taludlijn en hoeft niet te worden ingetekend." .
+
+ad:ondersteunendWegdeelKruin_l a owl:Class ;
+    rdfs:label "ondersteunendWegdeelKruin_l" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." .
+
+ad:ondersteunendWegdeel_v a owl:Class ;
+    rdfs:label "ondersteunendWegdeel_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een deel van de weg dat niet primair bedoeld is voor gebruik door het verkeer. Dit omvat o.a. verkeerseiland en berm daar waar de berm onderdeel uitmaakt van de constructie van de weg. Indien eeen berm geen onderdeel uitmaakt van de constructie van de weg, en verder dan 3 meter van een provinciale weg ligt, wordt deze vastgelegd in begroeidTerrteindeelBerm_v." .
+
+ad:ongeclassificeerdObject_v a owl:Class ;
+    rdfs:label "ongeclassificeerdObject_v" ;
+    ad:herkomstDefinitie "IMGeo BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Object waarvoor geen bronhouder aangewezen is en/of dat niet nader is geclassificeerd. Er mogen geen nieuwe objecten van dit objecttype worden aangemaakt/aangeleverd." .
+
+ad:overbruggingsdeel_v a owl:Class ;
+    rdfs:label "overbruggingsdeel_v" ;
+    ad:herkomstDefinitie "IMGeo BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Onderdeel van een beweegbare of vaste verbinding tussen twee punten, die door water, een weg of anderszins gescheiden zijn, dat essentieel is voor de constructie ." .
+
+ad:overigBouwwerk_v a owl:Class ;
+    rdfs:label "overigBouwwerk_v" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Met de aarde verbonden duurzaam bouwwerk, dat niet valt onder de definities van een pand of kunstwerk." .
+
+ad:overigeScheiding_l a owl:Class ;
+    rdfs:label "overigeScheiding_l" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie, met kleinere afmetingen dan toegestaan voor opname in de BGT" .
+
+ad:overigeScheiding_v a owl:Class ;
+    rdfs:label "overigeScheiding_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie, met kleinere afmetingen dan toegestaan voor opname in de BGT" .
+
+ad:paalAfbakening_p a owl:Class ;
+    rdfs:label "paalAfbakening_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Paal; Langwerpig stuk hout, ijzer, steen enz., dat in de grond staat. __LET OP:__ Areaaldata maakt onderscheidt in objecten die een primaire functie hebben als draagconstructie, deze worden in paalDraagconstructie_P of mastDraagconstructie_p geadministreerd. Objecten die primair bedoelt zijn om iets af te bakenen worden in dit objecttype geadministreerd. Dit zijn o.a. Bermplanken, Indexeringspalen en Schamppalen. ![Bermplank](D:\\bu_geodata_beheer\\gereedschap\\documentatie\\areaaldata_datamodel\\4.2d3\\Objectbladen\\06_Meubilair\\bermplank.png)" .
+
+ad:paalDraagconstructie_p a owl:Class ;
+    rdfs:label "paalDraagconstructie_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Hoge draagconstructie, vervaardigd van metaal, hout, steen of kunststof dat dient om iets te dragen. __LET OP:__ In dit objecttype worden de IMGEO palen geadministreerd die primair een dragende functie hebben, zoals lichtmast, verkeersregelinstallatiepaal, verkeersbordpaal en haltepaal." .
+
+ad:pandHuisnummerreeks_t a owl:Class ;
+    rdfs:label "pandHuisnummerreeks_t" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Bevat de reeks nummeraanduidingen behorend bij het pand ten behoeve van visualisatie." .
+
+ad:pand_v a owl:Class ;
+    rdfs:label "pand_v" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een PAND is de kleinste bij de totstandkoming functioneel en bouwkundig-constructief zelfstandige eenheid die direct en duurzaam met de aarde is verbonden en betreedbaar en afsluitbaar is." .
+
+ad:peilbuis_p a owl:Class ;
+    rdfs:label "peilbuis_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Peilbuis tbv opname grondwaterstanden." .
+
+ad:perron_v a owl:Class ;
+    rdfs:label "perron_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kleinste functioneel onafhankelijk stuk van een NEN 3610 Weg met gelijkblijvende, homogene eigenschappen en relaties en primair bedoeld voor gebruik door weg-, spoor- en vliegverkeer te land. __LET OP:__ In dit objecttype worden een kopie van wegdeel_v met BGTPlustype Voetpad opgenomen die als perron bij een bushalte in gebruik is. ![Perron illustratie](D:\\bu_geodata_beheer\\gereedschap\\documentatie\\areaaldata_datamodel\\4.2d3\\Objectbladen\\08_Haltes\\perron.jpg)" .
+
+ad:put_p a owl:Class ;
+    rdfs:label "put_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Gegraven of geboorde kokervormige diepte waarin zich (vloei)stoffen bevinden. __LET OP:__ In dit objecttype worden alleen die objecten geadministreerd die __GEEN__ onderdeel uitmaken van een netwerk. Omdat deze definitie arbitrair is, maakt het attribuut appurtenancetype voorlopig gebruik van dezelfde domeinwaarden." .
+
+ad:recreatieplek_v a owl:Class ;
+    rdfs:label "recreatieplek_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Terrein ingericht voor recreatief medegebruik" .
+
+ad:scheidingGeleidewand_l a owl:Class ;
+    rdfs:label "scheidingGeleidewand_l" ;
+    ad:herkomstDefinitie "BGT/PNH" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een kunststof of betonnen wand die dieren naar een ecopassage leidt. Behoort toe aan een faunavoorziening." .
+
+ad:scheidingGeluidsscherm_l a owl:Class ;
+    rdfs:label "scheidingGeluidsscherm_l" ;
+    ad:herkomstDefinitie "BGT/PNH" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie. __LET OP:__ Dit is het element niveau van de NEN 2767-4 decompositie van geluidwerende Voorzieningen __EN__ het BGT objecttype." .
+
+ad:scheidingWater_l a owl:Class ;
+    rdfs:label "scheidingWater_l" ;
+    ad:herkomstDefinitie "BGT / NEN 2767-4 / PNH" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een NEN Element is gedefinieerd als 'een samenstel van bouwdelen die tezamen een afzonderlijk herkenbaar" .
+
+ad:scheiding_l a owl:Class ;
+    rdfs:label "scheiding_l" ;
+    ad:herkomstDefinitie "BGT/PNH" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie, dat een breedte heeft van < 0,3 m.. __LET OP:__ geluidsscherm wordt geadministreerd in het objecttype scheidingGeluidsscherm_l. damwand, kademuur en walbescherming van vaarwegen worden geadministreerd in scheidingWater_l." .
+
+ad:scheiding_v a owl:Class ;
+    rdfs:label "scheiding_v" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie, dat een breedte heeft van > 0,3 m." .
+
+ad:sensor_l a owl:Class ;
+    rdfs:label "sensor_l" ;
+    ad:herkomstDefinitie "BGT/PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een fysiek detectiesysteem bestaande uit wikkelingen (lussen) in het wegdek bijvoorbeeld voor het beÃ¯nvloeden van de regeling van verkeerslichten of een virtueel detectieveld van een videodetector of radardetector, gebruikt voor het beÃ¯nvloeden van regelingen van verkeerslichten ![Lus](D:\\bu_geodata_beheer\\gereedschap\\documentatie\\areaaldata_datamodel\\4.2d3\\Objectbladen\\04_Ovl_Vri\\lus_1.png)" .
+
+ad:sensor_p a owl:Class ;
+    rdfs:label "sensor_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Apparaat voor de meting van een fysieke grootheid (bijv. temperatuur, licht, druk, elektriciteit). __LET OP:__ Snelheids camera's/roodlicht camera's zijn niet van de Provincie en worden NIET geregistreerd." .
+
+ad:spoor_l a owl:Class ;
+    rdfs:label "spoor_l" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "De as van het spoor, dat wil zeggen het midden van twee stalen staven op een onderling vaste afstand, waarover trein, tram, of sneltram rijdt. __LET OP:__ Dit is het officiele BGT objecttype. spoorrail_l is het 'oude' objecttype wat op termijn uitgefaseerd zal worden." .
+
+ad:spoorrail_l a owl:Class ;
+    rdfs:label "spoorrail_l" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Twee stalen staven op een onderling vaste afstand waarover trein, tram, metro of kraan rijden. __LET OP:__ Dit is het 'oude' objecttype wat op termijn uitgefaseerd zal worden. spoor_l is het BGT objecttype." .
+
+ad:straatmeubilairAbri_p a owl:Class ;
+    rdfs:label "straatmeubilairAbri_p" ;
+    ad:herkomstDefinitie "IMGEO/PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een abri, gerepresenteerd als punt." .
+
+ad:straatmeubilairLichtpunt_p a owl:Class ;
+    rdfs:label "straatmeubilairLichtpunt_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "in afwijking op de BGT/IMGEO indeling worden lichtpunten in dit objecttype geadministreerd. Het betreft hier armaturen en markeringsunits." .
+
+ad:straatmeubilair_p a owl:Class ;
+    rdfs:label "straatmeubilair_p" ;
+    ad:herkomstDefinitie "IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een ruimtelijk object ter inrichting van de openbare ruimte. __LET OP:__ in afwijking op de BGT/IMGEO indeling worden lichtpunten in straatmeubilairLichtpunt_p." .
+
+ad:telecommunicatiekabel_l a owl:Class ;
+    rdfs:label "telecommunicatiekabel_l" ;
+    ad:herkomstDefinitie "IMKL1.2.1" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een aansluiting of reeks aansluitingen van een nutsvoorzieningennet voor het overbrengen van signaalinformatie van de ene locatie naar een andere. (Bron: INSPIRE)" .
+
+ad:terugkeervoorziening_p a owl:Class ;
+    rdfs:label "terugkeervoorziening_p" ;
+    ad:herkomstDefinitie "BGT/PNH" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "een voorziening in een raster of geleidingswand waardoor fauna dat aan de wegkant van het raster/de geleidingswand staat weer aan de andere kant van het raster/de geleidingswand kan komen, maar waarbij dezelfde faunasoort aan de niet-wegkant niÃ©t het raster/de geleidingswand kan passeren om de weg op te komen." .
+
+ad:theorHectometrering_p a owl:Class ;
+    rdfs:label "theorHectometrering_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Hectometrering (indexeringspunten) van de wegen, vaarwegen en OV-trajecten in beheer bij de PNH." .
+
+ad:traject_v a owl:Class ;
+    rdfs:label "traject_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Een abstract functioneel gebied rondom een weg of vaarweg dat onder de verantwoordelijkheid van de provincie Noord-Holland valt. Richtlijnen voor omvang van een wegtraject:" .
+
+ad:tunneldeel_v a owl:Class ;
+    rdfs:label "tunneldeel_v" ;
+    ad:herkomstDefinitie "IMGeo BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Onderdeel van een kunstmatig aangelegde, kokervormige onderdoorgang dat essentieel is voor de constructie." .
+
+ad:uithouder_p a owl:Class ;
+    rdfs:label "uithouder_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een uithouder bevestigd aan een verlichtingsmast maakt het mogelijk om een daarvoor geschikt armatuur excentrisch van de mast te plaatsen zodat er een optimale lichtopbrengst gehaald wordt.(http://www.wegenwiki.nl/Uithouder) __NB:__ Als het een enkelvoudige lichtmast betreft worden de uithouder gegevens bij de draagconstructie vastgelegd." .
+
+ad:uitleggerPortaal_l a owl:Class ;
+    rdfs:label "uitleggerPortaal_l" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Uitlegger/Portaal is het lijnvormige element van een uitlegger of portaal. In het geval van een uitlegger bestaat het totaal uit 1 mast (object in paalDraagconstructie_p) en een object in uitleggerPortaal_l. In het geval van een portaal bestaat het geheel uit 2 masten (objecten in paalDraagconstructie_p) en een object in uitleggerPortaal_l. Aan een uitleggePortaal kunnen vervolgens lantaarns of armaturen gekoppeld zijn." .
+
+ad:utiliteitsNet_tbl a owl:Class ;
+    rdfs:label "utiliteitsNet_tbl" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:InformationObject ;
+    skos:definition "Een verzameling netwerkelementen die tot 1 type nutsvoorzieningennet behoren." .
+
+ad:vaarweg_l a owl:Class ;
+    rdfs:label "vaarweg_l" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "De as van de verschillende vaarwegen zoals verwerkt in de grootschalige topografie." .
+
+ad:vaarwegdeeltraject_v a owl:Class ;
+    rdfs:label "vaarwegdeeltraject_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Vaarwegdeeltraject is een abstract functioneel gebied waarvan" .
+
+ad:vaarwegdeeltrajectas_l a owl:Class ;
+    rdfs:label "vaarwegdeeltrajectas_l" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "As van de vaarwegdeeltrajecten" .
+
+ad:vegetatieObject_l a owl:Class ;
+    rdfs:label "vegetatieObject_l" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een lijnvormige beplanting van struiken. In verschijningsvorm variabel in breedte en hoogte. Vlakken zijn onderdeel van BGT object Begroeid terreindeel." .
+
+ad:vegetatieObject_p a owl:Class ;
+    rdfs:label "vegetatieObject_p" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een opgaande beplanting met een stam en boomkroon. Verschijningsvorm: vrijuit groeiend, geknot of in gesnoeide vorm. Hoogte groter dan 1 meter en/of stamdikte groter dan 5 centimeter" .
+
+ad:vegetatieObject_v a owl:Class ;
+    rdfs:label "vegetatieObject_v" ;
+    ad:herkomstDefinitie "PNH/IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Vlakvormige groep gelijksoortige vegetatieobjecten met een beperkte omvang. __LET OP:__ In principe wordt dit objecttype in areaaldata vooralsnog niet gebruikt. Heggen worden als lijn geadministreerd in vegetatieObject_l, plantvakken worden geadministreerd in begroeidTerreindeel_v." .
+
+ad:vtaInspectie_tbl a owl:Class ;
+    rdfs:label "vtaInspectie_tbl" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:InformationObject ;
+    skos:definition "Wettelijk verplichte inspectie van de veiligheid van bomen" .
+
+ad:waterdeel_v a owl:Class ;
+    rdfs:label "waterdeel_v" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kleinste functioneel onafhankelijk stukje water met gelijkblijvende, homogene eigenschappen en relaties dat er binnen het objecttype Water van NEN 3610 wordt onderscheiden en dat permanent met water bedekt is." .
+
+ad:waterinrichtingselement_l a owl:Class ;
+    rdfs:label "waterinrichtingselement_l" ;
+    ad:herkomstDefinitie "PNH/IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een ruimtelijk object ter inrichting van het water. Dit objecttype is bedoeld om alleenstaande geleide- of remmingswerken in op te nemen. Daar waar een geleide- of" .
+
+ad:waterinrichtingselement_p a owl:Class ;
+    rdfs:label "waterinrichtingselement_p" ;
+    ad:herkomstDefinitie "IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een ruimtelijk object ter inrichting van het water. Objecten als meerpalen en betonning worden in dit objecttype geadministreerd. Daar waar het object onderdeel uitmaakt van een kunstwerk wordt dit opgenomen in de NEN-2767-4 decompositie van het kunstwerk. In deze decompositie worden verder geen" .
+
+ad:waterloop_l a owl:Class ;
+    rdfs:label "waterloop_l" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Terrein ingericht voor afvoer en berging van oppervlaktewater. BGT kent alleen vlakken. Dit objecttype zal uitgefaseerd worden." .
+
+ad:weg_l a owl:Class ;
+    rdfs:label "weg_l" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "De as van de verschillende wegen zoals verwerkt in de grootschalige topografie" .
+
+ad:wegdeelKruin_l a owl:Class ;
+    rdfs:label "wegdeelKruin_l" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling." .
+
+ad:wegdeel_v a owl:Class ;
+    rdfs:label "wegdeel_v" ;
+    ad:herkomstDefinitie "BGT" ;
+    ad:isBGT_Object "Ja" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Kleinste functioneel onafhankelijk stuk van een NEN 3610 Weg met gelijkblijvende, homogene eigenschappen" .
+
+ad:weginrichtingselement_l a owl:Class ;
+    rdfs:label "weginrichtingselement_l" ;
+    ad:herkomstDefinitie "PNH/IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een ruimtelijk object dat dient voor de inrichting van de openbare weg. __LET OP:__ Voornamelijk bedoelt om Geleideconstructies te administreren. Een geleiderail of vangrail is een barriÃ¨re die naast wegen wordt geplaatst om te voorkomen" .
+
+ad:weginrichtingselement_p a owl:Class ;
+    rdfs:label "weginrichtingselement_p" ;
+    ad:herkomstDefinitie "PNH/IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een ruimtelijk object dat dient voor de inrichting van de openbare weg" .
+
+ad:weginrichtingselement_v a owl:Class ;
+    rdfs:label "weginrichtingselement_v" ;
+    ad:herkomstDefinitie "PNH/IMGEO" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:PhysicalObject ;
+    skos:definition "Een ruimtelijk object dat dient voor de inrichting van de openbare weg." .
+
+ad:wegvak_v a owl:Class ;
+    rdfs:label "wegvak_v" ;
+    ad:herkomstDefinitie "PNH" ;
+    ad:isBGT_Object "Nee" ;
+    ad:positioneleNauwkeurigheid "None" ;
+    rdfs:subClassOf ad:areaaldata,
+        bs:SpatialRegion ;
+    skos:definition "Administratief afgebakend gedeelte van een weg waarbinnen de inspectiemetingen uitgevoerd worden." .
+
+ad:areaaldata a owl:Class ;
+    rdfs:label "areaaldata objecttypen" .
+
