@@ -1,0 +1,1078 @@
+# baseURI: http://otl.noord-holland.nl/areaaldata/id/concept/
+# imports: http://www.w3.org/2004/02/skos/core#
+ 
+@prefix adc: <http://otl.noord-holland.nl/areaaldata/id/concept/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+adc: a owl:Ontology ;
+    owl:imports dcterms:,
+        skos: .
+
+adc:adres a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een object met adresgegevens, om naar te verwijzen vanuit kunstwerken, vri_; en ovl_kasten"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Algemeen ;
+    skos:prefLabel "adres"@nl-NL .
+
+adc:areaaldataversie a owl:AnnotationProperty .
+
+adc:bak a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Object met een permanent karakter dat dient om iets in op te bergen of te verzamelen."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Bak> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Haltes,
+        adc:Inrichtend ;
+    skos:prefLabel "bak"@nl-NL .
+
+adc:begingeldigheid a owl:AnnotationProperty ;
+    rdfs:subPropertyOf dcterms:date .
+
+adc:begroeidTerreindeel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kleinste functioneel onafhankelijk stukje van een terrein dat er binnen het objecttype Terrein van NEN 3610 wordt onderscheiden, met aaneengesloten vegetatie. Minus de specifieke objecten die PNH geadministreerd wil hebben in begroeidTerreindeelBerm_v en begroeidTerreindeelPlantvak_v"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/BegroeidTerreindeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Landschap_milieu,
+        adc:Opdelend ;
+    skos:prefLabel "begroeidTerreindeel"@nl-NL .
+
+adc:begroeidTerreindeelBerm a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een ecologische berm met een vegetatie van grassen en kruiden. BGT Begroeid Terreindeel, verbijzonderd naar fysiek voorkomen groenvoorziening: gras- en kruidachtigen. Deze berm ligt verder dan 3 meter van een provinciale weg. Bermen dichter dan 3 meter bij een provinciale weg worden vastgelegd in ondersteunendWegdeel_v."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/BegroeidTerreindeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Landschap_milieu,
+        adc:Opdelend ;
+    skos:prefLabel "begroeidTerreindeelBerm"@nl-NL .
+
+adc:begroeidTerreindeelBermKr a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/BegroeidTerreindeelKruin> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Landschap_milieu,
+        adc:Opdelend ;
+    skos:prefLabel "begroeidTerreindeelBermKr"@nl-NL .
+
+adc:begroeidTerreindeelKruin a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/BegroeidTerreindeelKruin> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Landschap_milieu,
+        adc:Opdelend ;
+    skos:prefLabel "begroeidTerreindeelKruin"@nl-NL .
+
+adc:begroeidTerreindeelPlKr a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling. Let op: Kruinlijnen zijn gerelateerd aan hun respectievelijke objecten middels een relatie op IDENTIFICATIE met IDENTIFICATIE"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/BegroeidTerreindeelKruin> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Landschap_milieu,
+        adc:Opdelend ;
+    skos:prefLabel "begroeidTerreindeelPlKr"@nl-NL .
+
+adc:begroeidTerreindeelPlantvak a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Terreindeel met aangelegde beplanting, meestal planten, heesters of struiken. BGT Begroeid Terreindeel."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/BegroeidTerreindeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Landschap_milieu,
+        adc:Opdelend ;
+    skos:prefLabel "begroeidTerreindeelPlantvak"@nl-NL .
+
+adc:beheergrenzen a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "De beheergrens bakent de publiekrechtelijke zeggenschap en verantwoordelijkheid van de provincie over het"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Algemeen,
+        adc:Functioneel ;
+    skos:prefLabel "beheergrenzen"@nl-NL .
+
+adc:beschoeiingInspectie a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Inspectieobject met alle inspectiegegevens die ingewonnen zijn m.b.t. beschoeiingen"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Landschap_milieu ;
+    skos:prefLabel "beschoeiingInspectie"@nl-NL .
+
+adc:bodem a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Bodem van een waterdeel, hier worden de gegevens bijgehouden die van belang zijn voor o.a. baggeren"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Vaarwegen ;
+    skos:prefLabel "bodem"@nl-NL .
+
+adc:bord a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een paneel waarop informatie wordt afgebeeld. Dit zijn zowel RVV borden als matrix borden (voor automobilisten);  DRIP panelen zijn in Areaaldata te vinden als matrix borden met een TOPdesk ID"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Bord> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Meubilair ;
+    skos:prefLabel "bord"@nl-NL .
+
+adc:bordDRIS a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een DRIS paneel (voor OV reizigers)"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Haltes,
+        adc:Inrichtend ;
+    skos:prefLabel "bordDRIS"@nl-NL .
+
+adc:bordScheepvaart a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een paneel waarop informatie wordt afgebeeld, specifiek bedoelt voor de scheepvaart."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Bord> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Vaarwegen ;
+    skos:prefLabel "bordScheepvaart"@nl-NL .
+
+adc:bordWegwijzer a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Constructie voorzien van een of meer panelen met informatie ten behoeve van de bewegwijzering."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Bord> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Meubilair ;
+    skos:prefLabel "bordWegwijzer"@nl-NL .
+
+adc:bordZwemwater a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een paneel waarop informatie wordt afgebeeld ten behoeve van zwemwater locaties."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Bord> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Meubilair ;
+    skos:prefLabel "bordZwemwater"@nl-NL .
+
+adc:bouwdeelGeluidsscherm a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Laagste niveau van decompositie van geluidwerende voorziening via geluidwerende constructie. Het begrip NEN Bouwdeel is niet gedefinieerd."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Kunstwerken ;
+    skos:prefLabel "bouwdeelGeluidsscherm"@nl-NL .
+
+adc:bouwdeelKunstwerk a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Laagste niveau van decompositie van kunstwerk_vast via kwElement. Het begrip NEN Bouwdeel is niet gedefinieerd."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Kunstwerken ;
+    skos:prefLabel "bouwdeelKunstwerk"@nl-NL .
+
+adc:bouwdeelOevervak a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Laagste niveau van decompositie van scheidingWater_l. Het begrip NEN Bouwdeel is niet gedefinieerd."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Vaarwegen ;
+    skos:prefLabel "bouwdeelOevervak"@nl-NL .
+
+adc:buis a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Holle leiding voor het doorstromen van gassen, vloeistoffen of capsules, bestemd om hetzij gas,"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Verharding ;
+    skos:prefLabel "buis"@nl-NL .
+
+adc:concessieverlener a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Verlener van de [Concessie]"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Haltes ;
+    skos:prefLabel "concessieverlener"@nl-NL .
+
+adc:crowInspectie a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een inspectie geeft een momentopname weer hoe een wegvakonderdeel er op dat moment bij ligt; de"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Verharding ;
+    skos:prefLabel "crowInspectie"@nl-NL .
+
+adc:crowInspectieresultaat a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een inspectie geeft een momentopname weer hoe een PNH wegvakonderdeel er op dat moment bijligt. De"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Verharding ;
+    skos:prefLabel "crowInspectieresultaat"@nl-NL .
+
+adc:crowMeting a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een inspectie geeft een momentopname weer hoe een PNH wegvakonderdeel er op dat moment bijligt. De CROW norm wordt gebruikt. Het object Meting is bedoelt om de Metingen van een bepaalt wegvakonderdeel vast te leggen. Metingen zijn: langsonvlakheid, stroefheid, zetting, spoorvorming, comfortindex"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Verharding ;
+    skos:prefLabel "crowMeting"@nl-NL .
+
+adc:doorvaartmaat a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Aanduiding van Doorvaarthoogte bij bijv. Kunstwerken"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Vaarwegen ;
+    skos:prefLabel "doorvaartmaat"@nl-NL .
+
+adc:ecoHoofdstructuur a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "De ecologische hoofdstructuur is een samenhangend netwerk van bestaande en nog te ontwikkelen belangrijke natuurgebieden. Met dit vlak wordt het gebied afgebakend wat als EHS wordt aangemerkt."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Landschap_milieu ;
+    skos:prefLabel "ecoHoofdstructuur"@nl-NL .
+
+adc:ecoVerbZone a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "De ecologische hoofdstructuur is een samenhangend netwerk van bestaande en nog te ontwikkelen belangrijke natuurgebieden. Met dit vlak wordt het gebied afgebakend wat als Verbindigszone wordt aangemerkt."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Landschap_milieu ;
+    skos:prefLabel "ecoVerbZone"@nl-NL .
+
+adc:ecopassage a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een passage onder of boven een weg voor dieren. Behoort toe aan een faunavoorziening."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Landschap_milieu ;
+    skos:prefLabel "ecopassage"@nl-NL .
+
+adc:eindgeldigheid a owl:AnnotationProperty ;
+    rdfs:subPropertyOf dcterms:date .
+
+adc:electriciteitskabel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een aansluiting of reeks aansluitingen van een nutsvoorzieningennet voor het overbrengen van elektriciteit van de ene locatie naar een andere. (Bron: INSPIRE)"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "electriciteitskabel"@nl-NL .
+
+adc:faunavoorziening a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een faunavoorziening is een voorziening die het passeren door dieren van infrastructuur geleidt, bevordert of juist voorkomt (bron: Leidraad Faunavoorzieningen bij Infrastructuur)."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Landschap_milieu ;
+    skos:prefLabel "faunavoorziening"@nl-NL .
+
+adc:fietsparkeervoorziening a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een duurzaam verankerd rek in de openbare ruimte voor het stallen van fietsen. Voor Fietsenstallingen/kluizen wordt de omtrek van de constructie als lijn vastgelegd."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Haltes,
+        adc:Inrichtend ;
+    skos:prefLabel "fietsparkeervoorziening"@nl-NL .
+
+adc:functioneelGebied a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Begrensd en benoemd gebied dat door een functionele eenheid beschreven wordt."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/FunctioneelGebied> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Algemeen,
+        adc:Functioneel ;
+    skos:prefLabel "functioneelGebied"@nl-NL .
+
+adc:gebiedscontractregio a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Perceelsindeling t.b.v. de onderhoudsbestekken en contractregio's."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Algemeen,
+        adc:Functioneel ;
+    skos:prefLabel "gebiedscontractregio"@nl-NL .
+
+adc:gebouwInstallatie a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een component aan de buitenzijde van een gebouw, die het aanzicht van het gebouw mede bepaalt."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/GebouwInstallatie> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Overig ;
+    skos:prefLabel "gebouwInstallatie"@nl-NL .
+
+adc:geluidwerendeVoorziening a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen. De NEN 2767-4 decompositie wordt gevolgd, waarbij GELUIDWERENDE_VOORZIENING als Beheerobject is aangemaakt om het element 'geluidwerende constructie' van een bovenliggend beheerobject te voorzien."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Kunstwerken ;
+    skos:prefLabel "geluidwerendeVoorziening"@nl-NL .
+
+adc:halte a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Het geheel van objecten behorende bij een stopplaats van een autobus. (Integraal Gegevens Model Ideaal Areaal 1.2). STOPPLACE in NDOV terminologie"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Haltes ;
+    skos:prefLabel "halte"@nl-NL .
+
+adc:installatie a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Samenhangend systeem dat een bepaald doel dient. Bijv, zonnepaneel, boorgat, pomp"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Installatie> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Overig ;
+    skos:prefLabel "installatie"@nl-NL .
+
+adc:kast a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Object met een permanent karakter dat dient om iets in te bergen en te beschermen. __LET OP:__ OVL- en VRI-Kasten worden apart geadministreerd."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Kast> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Meubilair ;
+    skos:prefLabel "kast"@nl-NL .
+
+adc:kastDRIS a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kast ten behoeve van de regeling van DRIS panelen"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Haltes,
+        adc:Inrichtend ;
+    skos:prefLabel "kastDRIS"@nl-NL .
+
+adc:kastOvl a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kast ten behoeve van de regeling van de openbare verlichting."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Kast> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "kastOvl"@nl-NL .
+
+adc:kastVri a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kast ten behoeve van de regeling van verkeerslichten"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Kast> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "kastVri"@nl-NL .
+
+adc:kleinehaltedisplay a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kleine halte display: klein scherm dat actuele vertrektijden toont, maar daarnaast ook een"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Haltes,
+        adc:Inrichtend ;
+    skos:prefLabel "kleinehaltedisplay"@nl-NL .
+
+adc:kruispunt a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kruisingen hebben een uniek nummer."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Algemeen,
+        adc:Functioneel ;
+    skos:prefLabel "kruispunt"@nl-NL .
+
+adc:kunstwerk a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen. De NEN 2767-4 decompositie wordt gevolgd. Dit is een samenvattende feature class van de vorige feature classes: KunstwerkBeweegbaar_p, Kunstwerkvast_p en Schutsluis_p"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Kunstwerken ;
+    skos:prefLabel "kunstwerk"@nl-NL .
+
+adc:kunstwerkdeel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen met een breedte <30cm, bijvoorbeeld een duiker."@nl-NL,
+        "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen met een breedte >30cm."@nl-NL,
+        "Onderdeel van een civiel-technisch werk voor de infrastructuur van wegen, water, spoorbanen, waterkeringen en/of leidingen. Bijvoorbeeld voetpunten van een elektriciteitsmast."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Kunstwerkdeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Kunstwerken,
+        adc:Opdelend ;
+    skos:prefLabel "kunstwerkdeel"@nl-NL .
+
+adc:kwElement a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een NEN Element is gedefinieerd als \"een samenstel van bouwdelen die tezamen een afzonderlijk herkenbaar"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Kunstwerken ;
+    skos:prefLabel "kwElement"@nl-NL .
+
+adc:lamp a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "component in een lantaarn of armatuur met als functie verlichten."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "lamp"@nl-NL .
+
+adc:lantaarn a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "De lichten van een verkeersregelinstallatie samen met het achtergrondschild en de zonnekappen"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "lantaarn"@nl-NL .
+
+adc:leidingelement a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een ondergronds object dat bij een leiding of een themakaart hoort. __LET OP:__ dit is het objecttype waar kolken etc. in vastgelegd worden!"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Put> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "leidingelement"@nl-NL .
+
+adc:ligplaatsstrook a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een Ligplaatsstrook is een gebied waar ligplaatsen toegestaan zijn"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Vaarwegen ;
+    skos:prefLabel "ligplaatsstrook"@nl-NL .
+
+adc:mantelbuis a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een mantelbuis is een buis bestemd voor de doorvoer en bescherming van kabels"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "mantelbuis"@nl-NL .
+
+adc:mastDraagconstructie a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Hoge draagconstructie, vervaardigd van metaal, hout, steen of kunststof dat dient om iets te dragen."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Mast> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Algemeen,
+        adc:Inrichtend ;
+    skos:prefLabel "mastDraagconstructie"@nl-NL .
+
+adc:nenConditiescore a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een inspectie geeft een momentopname weer hoe een kunswerk er voor staat. De NEN 2767-4 wordt gebruikt voor conditiescores. Het object NEN_Conditiescore is bedoelt om de inspectie resultaten van een bepaalt kunstwerk vast te leggen."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Kunstwerken ;
+    skos:prefLabel "nenConditiescore"@nl-NL .
+
+adc:nenInspectie a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een inspectie geeft een conditiescore voor een kunstwerk. De NEN 2767-4 wordt gebruikt. Het object NEN_Inspectie is bedoelt om de algemene gegevens van een inspectie 'ronde' vast te leggen."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Kunstwerken ;
+    skos:prefLabel "nenInspectie"@nl-NL .
+
+adc:oeverReparatie a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een lokale reparatie aan een oevervak"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Vaarwegen ;
+    skos:prefLabel "oeverReparatie"@nl-NL .
+
+adc:oevervak a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een Oevervak is de rand van een kanaal, vaarweg of rivier. Het begint bij bodem van het nautisch profiel en gaat door tot 1m achter de oeverconstructie. __NB:__ Dit is het equivalent van Beheerobject bij Vaarwegen conform de NEN 2767-4 Decompositie. Een oevervak is ongeveer 100 meter lang en bestaat uit een uniforme oeverconstructie. De Oeverconstructie zelf is vastgelegd in [AREAALDATA.scheidingWater_l] en [AREAALDATA.bouwdeelOevervak_tbl]"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Vaarwegen ;
+    skos:prefLabel "oevervak"@nl-NL .
+
+adc:onbegroeidTerreindeel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kleinste functioneel onafhankelijk stukje van een terrein, dat er binnen het objecttype Terrein van NEN 3610 wordt onderscheiden, zonder aaneengesloten vegetatie."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/OnbegroeidTerreindeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Landschap_milieu,
+        adc:Opdelend ;
+    skos:prefLabel "onbegroeidTerreindeel"@nl-NL .
+
+adc:onbegroeidTerreindeelKruin a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/OnbegroeidTerreindeelKruin> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Landschap_milieu,
+        adc:Opdelend ;
+    skos:prefLabel "onbegroeidTerreindeelKruin"@nl-NL .
+
+adc:onderdeel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Component bij een mast, zoals een voorschakelapparaat, drukknop,rateltikker, windmeter, gms onderdeel"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Ovl_Vri ;
+    skos:prefLabel "onderdeel"@nl-NL .
+
+adc:ondersteunendWaterdeel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Object dat in het kader van de waterhuishouding periodiek gedeeltelijk of geheel met water is bedekt. Een vegetatie van voornamelijk riet en andere soorten langs een waterloop. In breedte variabel van 0,50 tot 3,00 meter.  De Provincie heeft voornamelijk oevers en slootkanten in het areaal. Oevers en slootkanten zijn de delen die enerzijds begrensd worden door de waterlijn en anderzijds door een kant insteek. Een kantinsteek heeft altijd een bijbehorende taludlijn en hoeft niet te worden ingetekend."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/OndersteunendWaterdeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Opdelend,
+        adc:Vaarwegen ;
+    skos:prefLabel "ondersteunendWaterdeel"@nl-NL .
+
+adc:ondersteunendWegdeel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een deel van de weg dat niet primair bedoeld is voor gebruik door het verkeer. Dit omvat o.a. verkeerseiland en berm daar waar de berm onderdeel uitmaakt van de constructie van de weg. Indien eeen berm geen onderdeel uitmaakt van de constructie van de weg, en verder dan 3 meter van een provinciale weg ligt, wordt deze vastgelegd in begroeidTerrteindeelBerm_v."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/OndersteunendWegdeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Opdelend,
+        adc:Verharding ;
+    skos:prefLabel "ondersteunendWegdeel"@nl-NL .
+
+adc:ondersteunendWegdeelKruin a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/OndrsteunendWegdeelKruin> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Opdelend,
+        adc:Verharding ;
+    skos:prefLabel "ondersteunendWegdeelKruin"@nl-NL .
+
+adc:ongeclassificeerdObject a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Object waarvoor geen bronhouder aangewezen is en/of dat niet nader is geclassificeerd. Er mogen geen nieuwe objecten van dit objecttype worden aangemaakt/aangeleverd."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/OndrsteunendWegdeelKruin> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Opdelend,
+        adc:Overig ;
+    skos:prefLabel "ongeclassificeerdObject"@nl-NL .
+
+adc:overbruggingsdeel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Onderdeel van een beweegbare of vaste verbinding tussen twee punten, die door water, een weg of anderszins gescheiden zijn, dat essentieel is voor de constructie ."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Overbruggingsdeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Kunstwerken,
+        adc:Opdelend ;
+    skos:prefLabel "overbruggingsdeel"@nl-NL .
+
+adc:overigBouwwerk a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Met de aarde verbonden duurzaam bouwwerk, dat niet valt onder de definities van een pand of kunstwerk."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Opdelend,
+        adc:Overig ;
+    skos:prefLabel "overigBouwwerk"@nl-NL .
+
+adc:overigeScheiding a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie, met kleinere afmetingen dan toegestaan voor opname in de BGT"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/OverigeScheiding> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Overig ;
+    skos:prefLabel "overigeScheiding"@nl-NL .
+
+adc:paalAfbakening a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Paal; Langwerpig stuk hout, ijzer, steen enz., dat in de grond staat. __LET OP:__ Areaaldata maakt onderscheidt in objecten die een primaire functie hebben als draagconstructie, deze worden in paalDraagconstructie_P of mastDraagconstructie_p geadministreerd. Objecten die primair bedoelt zijn om iets af te bakenen worden in dit objecttype geadministreerd. Dit zijn o.a. Bermplanken, Indexeringspalen en Schamppalen. ![Bermplank](D:\\bu_geodata_beheer\\gereedschap\\documentatie\\areaaldata_datamodel\\4.2d3\\Objectbladen\\06_Meubilair\\bermplank.png)"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Paal> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Meubilair ;
+    skos:prefLabel "paalAfbakening"@nl-NL .
+
+adc:paalDraagconstructie a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Hoge draagconstructie, vervaardigd van metaal, hout, steen of kunststof dat dient om iets te dragen. __LET OP:__ In dit objecttype worden de IMGEO palen geadministreerd die primair een dragende functie hebben, zoals lichtmast, verkeersregelinstallatiepaal, verkeersbordpaal en haltepaal."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Paal> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Algemeen,
+        adc:Inrichtend ;
+    skos:prefLabel "paalDraagconstructie"@nl-NL .
+
+adc:pand a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een PAND is de kleinste bij de totstandkoming functioneel en bouwkundig-constructief zelfstandige eenheid die direct en duurzaam met de aarde is verbonden en betreedbaar en afsluitbaar is."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Pand> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Opdelend,
+        adc:Overig ;
+    skos:prefLabel "pand"@nl-NL .
+
+adc:pandHuisnummerreeks a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Bevat de reeks nummeraanduidingen behorend bij het pand ten behoeve van visualisatie."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/PandHuisnummerreeks> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Opdelend,
+        adc:Overig ;
+    skos:prefLabel "pandHuisnummerreeks"@nl-NL .
+
+adc:peilbuis a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Peilbuis tbv opname grondwaterstanden."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Overig ;
+    skos:prefLabel "peilbuis"@nl-NL .
+
+adc:perron a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kleinste functioneel onafhankelijk stuk van een NEN 3610 Weg met gelijkblijvende, homogene eigenschappen en relaties en primair bedoeld voor gebruik door weg-, spoor- en vliegverkeer te land. __LET OP:__ In dit objecttype worden een kopie van wegdeel_v met BGTPlustype Voetpad opgenomen die als perron bij een bushalte in gebruik is. ![Perron illustratie](D:\\bu_geodata_beheer\\gereedschap\\documentatie\\areaaldata_datamodel\\4.2d3\\Objectbladen\\08_Haltes\\perron.jpg)"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Wegdeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Haltes,
+        adc:Inrichtend ;
+    skos:prefLabel "perron"@nl-NL .
+
+adc:put a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Gegraven of geboorde kokervormige diepte waarin zich (vloei)stoffen bevinden. __LET OP:__ In dit objecttype worden alleen die objecten geadministreerd die __GEEN__ onderdeel uitmaken van een netwerk. Omdat deze definitie arbitrair is, maakt het attribuut appurtenancetype voorlopig gebruik van dezelfde domeinwaarden."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Put> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Verharding ;
+    skos:prefLabel "put"@nl-NL .
+
+adc:recreatieplek a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Terrein ingericht voor recreatief medegebruik"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Landschap_milieu ;
+    skos:prefLabel "recreatieplek"@nl-NL .
+
+adc:scheiding a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie, dat een breedte heeft van < 0,3 m.. __LET OP:__ geluidsscherm wordt geadministreerd in het objecttype scheidingGeluidsscherm_l. damwand, kademuur en walbescherming van vaarwegen worden geadministreerd in scheidingWater_l."@nl-NL,
+        "Kunstmatig, meestal lineair obstakel met een werende functie, dat een breedte heeft van > 0,3 m."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Scheiding> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Meubilair,
+        adc:Opdelend,
+        adc:Vaarwegen ;
+    skos:prefLabel "scheiding"@nl-NL .
+
+adc:scheidingGeleidewand a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een kunststof of betonnen wand die dieren naar een ecopassage leidt. Behoort toe aan een faunavoorziening."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Landschap_milieu ;
+    skos:prefLabel "scheidingGeleidewand"@nl-NL .
+
+adc:scheidingGeluidsscherm a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kunstmatig, meestal lineair obstakel met een werende functie. __LET OP:__ Dit is het element niveau van de NEN 2767-4 decompositie van geluidwerende Voorzieningen __EN__ het BGT objecttype."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Scheiding> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Kunstwerken ;
+    skos:prefLabel "scheidingGeluidsscherm"@nl-NL .
+
+adc:scheidingWater a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een NEN Element is gedefinieerd als 'een samenstel van bouwdelen die tezamen een afzonderlijk herkenbaar"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Scheiding> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Vaarwegen ;
+    skos:prefLabel "scheidingWater"@nl-NL .
+
+adc:sensor a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Apparaat voor de meting van een fysieke grootheid (bijv. temperatuur, licht, druk, elektriciteit). __LET OP:__ Snelheids camera's/roodlicht camera's zijn niet van de Provincie en worden NIET geregistreerd."@nl-NL,
+        "Een fysiek detectiesysteem bestaande uit wikkelingen (lussen) in het wegdek bijvoorbeeld voor het beÃ¯nvloeden van de regeling van verkeerslichten of een virtueel detectieveld van een videodetector of radardetector, gebruikt voor het beÃ¯nvloeden van regelingen van verkeerslichten ![Lus](D:\\bu_geodata_beheer\\gereedschap\\documentatie\\areaaldata_datamodel\\4.2d3\\Objectbladen\\04_Ovl_Vri\\lus_1.png)"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Sensor> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "sensor"@nl-NL .
+
+adc:spoor a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "De as van het spoor, dat wil zeggen het midden van twee stalen staven op een onderling vaste afstand, waarover trein, tram, of sneltram rijdt. __LET OP:__ Dit is het officiele BGT objecttype. spoorrail_l is het 'oude' objecttype wat op termijn uitgefaseerd zal worden."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Spoor> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Overig ;
+    skos:prefLabel "spoor"@nl-NL .
+
+adc:spoorrail a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Twee stalen staven op een onderling vaste afstand waarover trein, tram, metro of kraan rijden. __LET OP:__ Dit is het 'oude' objecttype wat op termijn uitgefaseerd zal worden. spoor_l is het BGT objecttype."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Overig ;
+    skos:prefLabel "spoorrail"@nl-NL .
+
+adc:straatmeubilair a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een ruimtelijk object ter inrichting van de openbare ruimte. __LET OP:__ in afwijking op de BGT/IMGEO indeling worden lichtpunten in straatmeubilairLichtpunt_p."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Straatmeubilair> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Meubilair ;
+    skos:prefLabel "straatmeubilair"@nl-NL .
+
+adc:straatmeubilairAbri a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een abri, gerepresenteerd als punt."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/OverigBouwwerk> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Haltes,
+        adc:Inrichtend ;
+    skos:prefLabel "straatmeubilairAbri"@nl-NL .
+
+adc:straatmeubilairLichtpunt a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "in afwijking op de BGT/IMGEO indeling worden lichtpunten in dit objecttype geadministreerd. Het betreft hier armaturen en markeringsunits."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Straatmeubilair> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "straatmeubilairLichtpunt"@nl-NL .
+
+adc:telecommunicatiekabel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een aansluiting of reeks aansluitingen van een nutsvoorzieningennet voor het overbrengen van signaalinformatie van de ene locatie naar een andere. (Bron: INSPIRE)"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "telecommunicatiekabel"@nl-NL .
+
+adc:terugkeervoorziening a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "een voorziening in een raster of geleidingswand waardoor fauna dat aan de wegkant van het raster/de geleidingswand staat weer aan de andere kant van het raster/de geleidingswand kan komen, maar waarbij dezelfde faunasoort aan de niet-wegkant niÃ©t het raster/de geleidingswand kan passeren om de weg op te komen."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Landschap_milieu ;
+    skos:prefLabel "terugkeervoorziening"@nl-NL .
+
+adc:theorHectometrering a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Hectometrering (indexeringspunten) van de wegen, vaarwegen en OV-trajecten in beheer bij de PNH."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Algemeen,
+        adc:Functioneel ;
+    skos:prefLabel "theorHectometrering"@nl-NL .
+
+adc:traject a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een abstract functioneel gebied rondom een weg of vaarweg dat onder de verantwoordelijkheid van de provincie Noord-Holland valt. Richtlijnen voor omvang van een wegtraject:"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Algemeen,
+        adc:Functioneel ;
+    skos:prefLabel "traject"@nl-NL .
+
+adc:tunneldeel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Onderdeel van een kunstmatig aangelegde, kokervormige onderdoorgang dat essentieel is voor de constructie."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Tunneldeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Kunstwerken,
+        adc:Opdelend ;
+    skos:prefLabel "tunneldeel"@nl-NL .
+
+adc:uithouder a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een uithouder bevestigd aan een verlichtingsmast maakt het mogelijk om een daarvoor geschikt armatuur excentrisch van de mast te plaatsen zodat er een optimale lichtopbrengst gehaald wordt.(http://www.wegenwiki.nl/Uithouder) __NB:__ Als het een enkelvoudige lichtmast betreft worden de uithouder gegevens bij de draagconstructie vastgelegd."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "uithouder"@nl-NL .
+
+adc:uitleggerPortaal a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Uitlegger/Portaal is het lijnvormige element van een uitlegger of portaal. In het geval van een uitlegger bestaat het totaal uit 1 mast (object in paalDraagconstructie_p) en een object in uitleggerPortaal_l. In het geval van een portaal bestaat het geheel uit 2 masten (objecten in paalDraagconstructie_p) en een object in uitleggerPortaal_l. Aan een uitleggePortaal kunnen vervolgens lantaarns of armaturen gekoppeld zijn."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Ovl_Vri ;
+    skos:prefLabel "uitleggerPortaal"@nl-NL .
+
+adc:utiliteitsNet a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een verzameling netwerkelementen die tot 1 type nutsvoorzieningennet behoren."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Algemeen ;
+    skos:prefLabel "utiliteitsNet"@nl-NL .
+
+adc:vaarweg a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "De as van de verschillende vaarwegen zoals verwerkt in de grootschalige topografie."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Vaarwegen ;
+    skos:prefLabel "vaarweg"@nl-NL .
+
+adc:vaarwegdeeltraject a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Vaarwegdeeltraject is een abstract functioneel gebied waarvan"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Vaarwegen ;
+    skos:prefLabel "vaarwegdeeltraject"@nl-NL .
+
+adc:vaarwegdeeltrajectas a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "As van de vaarwegdeeltrajecten"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Vaarwegen ;
+    skos:prefLabel "vaarwegdeeltrajectas"@nl-NL .
+
+adc:vegetatieObject a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een lijnvormige beplanting van struiken. In verschijningsvorm variabel in breedte en hoogte. Vlakken zijn onderdeel van BGT object Begroeid terreindeel."@nl-NL,
+        "Een opgaande beplanting met een stam en boomkroon. Verschijningsvorm: vrijuit groeiend, geknot of in gesnoeide vorm. Hoogte groter dan 1 meter en/of stamdikte groter dan 5 centimeter"@nl-NL,
+        "Vlakvormige groep gelijksoortige vegetatieobjecten met een beperkte omvang. __LET OP:__ In principe wordt dit objecttype in areaaldata vooralsnog niet gebruikt. Heggen worden als lijn geadministreerd in vegetatieObject_l, plantvakken worden geadministreerd in begroeidTerreindeel_v."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/VegetatieObject> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Landschap_milieu ;
+    skos:prefLabel "vegetatieObject"@nl-NL .
+
+adc:vtaInspectie a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Wettelijk verplichte inspectie van de veiligheid van bomen"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Landschap_milieu ;
+    skos:prefLabel "vtaInspectie"@nl-NL .
+
+adc:waterdeel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kleinste functioneel onafhankelijk stukje water met gelijkblijvende, homogene eigenschappen en relaties dat er binnen het objecttype Water van NEN 3610 wordt onderscheiden en dat permanent met water bedekt is."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Waterdeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Opdelend,
+        adc:Vaarwegen ;
+    skos:prefLabel "waterdeel"@nl-NL .
+
+adc:waterinrichtingselement a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een ruimtelijk object ter inrichting van het water. Dit objecttype is bedoeld om alleenstaande geleide- of remmingswerken in op te nemen. Daar waar een geleide- of"@nl-NL,
+        "Een ruimtelijk object ter inrichting van het water. Objecten als meerpalen en betonning worden in dit objecttype geadministreerd. Daar waar het object onderdeel uitmaakt van een kunstwerk wordt dit opgenomen in de NEN-2767-4 decompositie van het kunstwerk. In deze decompositie worden verder geen"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Waterinrichtingselement> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Vaarwegen ;
+    skos:prefLabel "waterinrichtingselement"@nl-NL .
+
+adc:waterloop a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Terrein ingericht voor afvoer en berging van oppervlaktewater. BGT kent alleen vlakken. Dit objecttype zal uitgefaseerd worden."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Vaarwegen ;
+    skos:prefLabel "waterloop"@nl-NL .
+
+adc:weg a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "De as van de verschillende wegen zoals verwerkt in de grootschalige topografie"@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Algemeen,
+        adc:Functioneel ;
+    skos:prefLabel "weg"@nl-NL .
+
+adc:wegdeel a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Kleinste functioneel onafhankelijk stuk van een NEN 3610 Weg met gelijkblijvende, homogene eigenschappen"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Wegdeel> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Opdelend,
+        adc:Verharding ;
+    skos:prefLabel "wegdeel"@nl-NL .
+
+adc:wegdeelKruin a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Lijngeometrie van de hoogstgelegen begrenzing van een kunstmatig aangelegd en onderhouden helling."@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/WegdeekKruin> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Opdelend,
+        adc:Verharding ;
+    skos:prefLabel "wegdeelKruin"@nl-NL .
+
+adc:weginrichtingselement a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Een ruimtelijk object dat dient voor de inrichting van de openbare weg"@nl-NL,
+        "Een ruimtelijk object dat dient voor de inrichting van de openbare weg."@nl-NL,
+        "Een ruimtelijk object dat dient voor de inrichting van de openbare weg. __LET OP:__ Voornamelijk bedoelt om Geleideconstructies te administreren. Een geleiderail of vangrail is een barriÃ¨re die naast wegen wordt geplaatst om te voorkomen"@nl-NL ;
+    skos:exactMatch <https://definities.geostandaarden.nl/imgeo/id/begrip/Weginrichtingselement> ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Inrichtend,
+        adc:Meubilair ;
+    skos:prefLabel "weginrichtingselement"@nl-NL .
+
+adc:wegvak a skos:Concept ;
+    adc:areaaldataversie "4.2" ;
+    adc:begingeldigheid "2019-09-25"^^xsd:date ;
+    skos:definition "Administratief afgebakend gedeelte van een weg waarbinnen de inspectiemetingen uitgevoerd worden."@nl-NL ;
+    skos:inScheme adc:Areaaldata ;
+    skos:member adc:Functioneel,
+        adc:Verharding ;
+    skos:prefLabel "wegvak"@nl-NL .
+
+adc:Meubilair a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Meubilair"@nl-NL ;
+    skos:definition "Alle overige verkeersvoorzieningen"@nl-NL .
+
+adc:Haltes a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Haltes"@nl-NL ;
+    skos:definition "Objecten voor openbaar vervoer Dit datamodel bevat de gegevens voor het NDOV."@nl-NL .
+
+adc:Overig a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Overig"@nl-NL ;
+    skos:definition "In deze collectie vallen alle objecten die in geen ander thema vallen maar wel onderdeel uitmaken van Areaaldata."@nl-NL .
+
+adc:Verharding a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Verharding"@nl-NL ;
+    skos:definition "Collectie concepten over verhardingen. In de areaaldefinitie zijn verhardingen gedefinieerd als gebaande gedeelten voor het wegverkeer die onder de verantwoordelijkheid van de provincie Noord-Holland vallen. De verhardingstyperingen (rijbaan, voetpad, fietspad etc.) sluiten aan op de CROW methodiek. (weg functies)"@nl-NL .
+
+adc:Algemeen a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Algemeen"@nl-NL ;
+    skos:definition "In deze collectie worden de algemene objecten beschreven: enerzijds objecten die niet over een specifiek areaal gaan, maar areaal oversteigende informatie vastleggen. Anderzijds objecten die relaties hebben net objecten in verschillende thema's."@nl-NL .
+
+adc:Kunstwerken a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Kunstwerken"@nl-NL ;
+    skos:definition "Een collectie concepten die met kunstwerken te maken hebben. Een kunstwerk is een samenhangende eenheid binnen een verkeersinfrastructuur voor het vervoeren van mensen en goederen."@nl-NL .
+
+adc:Ovl_Vri a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Ovl_Vri"@nl-NL ;
+    skos:definition "Deze collectie bevat de arealen Openbare Verlichting (OVL) en het areaal Verkeersregelinstallaties (VRI).Het betreft met name de fysieke objecten binnen deze arealen en dus niet zaken als instellingen of gebruiksgegevens."@nl-NL .
+
+adc:Vaarwegen a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Vaarwegen"@nl-NL ;
+    skos:definition "Collectue concepten gerelateerd aan vaarwegen. Een vaarweg is een samenhangende eenheid binnen de natte verkeersinfrastructuur voor het vervoeren van mensen en goederen. Het kan ook de aanvoer, afvoer, kering en berging van water mogelijk maken."@nl-NL .
+
+adc:Landschap_milieu a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Landschap_milieu"@nl-NL ;
+    skos:definition "Het areaal Landschap en Milieu behelst alle objecten op of langs een provinciale weg of vaarweg die met de groene infrastructuur te maken hebben. Dus bomen, bermen en heggen, maar ook plantvakken en ecologische indelingen."@nl-NL .
+
+adc:Functioneel a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Functioneel"@nl-NL ;
+    skos:definition "Verzameling Functionele concepten. Indeling met name bedoelt voor groepering in ArcGIS."@nl-NL .
+
+adc:Opdelend a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Opdelend"@nl-NL ;
+    skos:definition "Verzameling Opdelende concepten. Opdelende Concepten zijn dingen die het aardoppenvlak conformde BGT wel opdelen, deze mogen op maaiveldniveau niet overlappend zijn. Indeling met name bedoelt voor groepering in ArcGIS."@nl-NL .
+
+adc:Inrichtend a skos:Collection,
+        skos:Concept ;
+    rdfs:label "Inrichtend"@nl-NL ;
+    skos:definition "Verzameling Inrichtende concepten. Inrichtende Concepten zijn dingen die het aardoppenvlak conformde BGT niet opdelen. Indeling met name bedoelt voor groepering in ArcGIS."@nl-NL .
+
+adc:Areaaldata a skos:ConceptScheme ;
+    skos:prefLabel "Areaaldata begrippenkader"@nl-NL .
+
