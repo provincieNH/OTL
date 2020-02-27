@@ -13,7 +13,7 @@ De resultaten daarvan zijn [__hier__](https://github.com/provincieNH/OTL/imbor) 
 
 Omdat niet iedereen in de gelegenheid zal zijn om de notebooks interactief te bekijken zijn ze hier ook gepubliceerd als statische content.
 
-* Uitleg over de structuur en eigenschappen [ontologie-overzicht](imbor-ontologie-overzicht.html)
+* __Uitleg over de structuur en eigenschappen [ontologie-overzicht](imbor-ontologie-overzicht.html)__
 
-* Visualisatie van de structuur in een netwerk diagram [imbor_demo_networkX](imbor_demo_networkX.html)
+* __Visualisatie van de structuur in een netwerk diagram [imbor_demo_networkX](imbor_demo_networkX.html)__
 
