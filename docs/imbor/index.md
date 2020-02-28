@@ -9,7 +9,7 @@ De [__documentatie__](https://stichting-crow.github.io/imbor) is te vinden in de
 
 Aanvullend op de documentatie van het CROW zelf hebben wij ook naar de Ontologie gekeken om te onderzoeken of we de modelleer keuzes van het CROW snappen en ervaring op te doen hoe de Ontologie bevraagt kan worden.
 
-De resultaten daarvan zijn [__hier__](https://github.com/provincieNH/OTL/imbor) te vinden in de vorm van twee jupyter notebooks. (een [jupyter notebook](https://jupyter.org/) is een interactieve code, documentatie en visualisatie omgeving).
+De resultaten daarvan zijn [__hier__](https://github.com/provincieNH/OTL/tree/master/imbor) te vinden in de vorm van twee jupyter notebooks. (een [jupyter notebook](https://jupyter.org/) is een interactieve code, documentatie en visualisatie omgeving).
 
 Omdat niet iedereen in de gelegenheid zal zijn om de notebooks interactief te bekijken zijn ze hier ook gepubliceerd als statische content.
 
