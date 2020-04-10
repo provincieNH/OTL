@@ -1,0 +1,84 @@
+# baseURI: http://ld.noord-holland.nl/doc/catalogus/
+# imports: http://www.w3.org/2006/vcard/ns#
+# imports: http://www.w3.org/ns/dcat
+
+@prefix : <http://ld.noord-holland.nl/doc/catalogus/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:
+  a owl:Ontology ;
+  owl:imports vcard: ;
+  owl:imports <http://www.w3.org/ns/dcat> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+:Areaaldata
+  a dcat:Dataset ;
+  dct:accessRights :restricted_rights ;
+  dct:description "Areaaldata is de integrale Asset informatie dataset van de Provincie Noord-Holland." ;
+  rdfs:label "Areaaldata" ;
+  skos:prefLabel "Areaaldata" ;
+  dcat:contactPoint :Kaart_en_Data ;
+  dcat:keyword "Areaaldata" ;
+  dcat:keyword "BGT" ;
+  dcat:keyword "Geo" ;
+.
+:BU_Datacatalogus
+  a dcat:Catalog ;
+  dct:creator :Niels_Hoffmann ;
+  rdfs:label "BU Datacatalogus" ;
+  skos:prefLabel "BU Datacatalogus" ;
+  dcat:contactPoint :Kaart_en_Data ;
+  dcat:dataset :Areaaldata ;
+.
+:Kaart_en_Data
+  a vcard:Email ;
+  rdfs:label "Kaart en Data" ;
+  skos:prefLabel "Kaart en Data" ;
+  vcard:mailer "kaartendata@noord-holland.nl" ;
+.
+:Niels_Hoffmann
+  a dct:Agent ;
+  rdfs:label "Niels Hoffmann" ;
+  skos:prefLabel "Niels Hoffmann" ;
+.
+:Open_Areaaldata
+  a dcat:Dataset ;
+  dct:accessRights :unrestricted ;
+  dct:description "Open Areaaldata is een subset van Areaaldata, wat de Asset informatie dataset van de Provincie Noord-Holland is. Deze subset is als open data beschikbaar" ;
+  rdfs:label "Open Areaaldata" ;
+  skos:prefLabel "Open Areaaldata" ;
+  dcat:contactPoint :Kaart_en_Data ;
+  dcat:keyword "Areaaldata" ;
+  dcat:keyword "BGT" ;
+  dcat:keyword "Geo" ;
+.
+<http://ld.noord-holland.nl/doc/catalogus/kaartendata@noord-holland.nl>
+  a vcard:Email ;
+  rdfs:label "noord-holland.nl" ;
+  skos:prefLabel "noord-holland.nl" ;
+.
+:pnh_areaal
+  a dcat:DataService ;
+  rdfs:label "pnh areaal" ;
+  skos:prefLabel "pnh areaal" ;
+  dcat:endpointDescription <https://gisservices.noord-holland.nl/ags/rest/services/extern/pnh_areaal/MapServer> ;
+  dcat:endpointURL <https://gisservices.noord-holland.nl/ags/rest/services/extern/pnh_areaal/MapServer> ;
+.
+:restricted_rights
+  a dct:RightsStatement ;
+  dct:description "Gebruik mogelijk na schriftelijke overeenkomst. doorleveren niet toegestaan...." ;
+  rdfs:label "restricted rights" ;
+  skos:prefLabel "restricted rights" ;
+.
+:unrestricted
+  a dct:RightsStatement ;
+  rdfs:label "unrestricted" ;
+  skos:prefLabel "unrestricted" ;
+.
