@@ -1,0 +1,111 @@
+# baseURI: http://otl.noord-holland.nl/core/concept/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://otl.noord-holland.nl/core/concept/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:
+  a owl:Ontology ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+:Assetmanagement
+  a skos:ConceptScheme ;
+  rdfs:label "Assetmanagement" ;
+.
+:Beheergrens
+  a skos:Concept ;
+  dcterms:source "Assetbeheerplan 2017 (Versie 1.8)" ;
+  rdfs:label "Beheergrens" ;
+  skos:broader <http://ont.cbnl.org/cb/def/CB01092> ;
+  skos:definition """De beheergrens bakent de publiekrechtelijke zeggenschap en verantwoordelijkheid van de provincie over het
+areaal af.""" ;
+  skos:inScheme :Assetmanagement ;
+  skos:scopeNote """Zo wordt duidelijk tot hoever de provincie krachtens de Omgevingswet, de Waterwet en de
+Wegenverkeerswet 1994 beheerder is van de provinciale (vaar)wegen. Ook regelt de beheergrens tot hoever de
+provinciale bevoegdheid reikt bij het treffen van maatregelen, het al dan niet toestaan van handelingen van
+derden, of juist het gedogen van situaties die van invloed zijn op de toestand of het gebruik van de (vaar)weg.
+Daarnaast geeft de beheergrens aan tot hoever de provincie met haar Omgevingsverordening,
+Waterverordening en Wegenverordening de publiekrechtelijke nadere regels voor de provinciale (vaar)wegen
+voor kan schrijven. Daarmee regelt de beheergrens eenduidigheid en transparantie over het beheer. Dit om te
+behoeden voor nadelige gevolgen voor beheerbaarheid, doorstroming en veiligheid van activiteiten op of rond
+de infrastructuur.""" ;
+.
+:Beheersovereenkomst
+  a skos:Concept ;
+  dcterms:source "Assetbeheerplan 2017 (Versie 1.8)" ;
+  rdfs:label "Beheersovereenkomst" ;
+  skos:definition """Een beheersovereenkomst is een document waarin specifieke beheer- en onderhoudsafspraken worden
+vastgelegd tussen Provincie Noord-Holland en andere beheerders.""" ;
+  skos:inScheme :Assetmanagement ;
+.
+:Eigendomsgrens
+  a skos:Concept ;
+  dcterms:source "Assetbeheerplan 2017 (Versie 1.8)" ;
+  rdfs:label "Eigendomsgrens" ;
+  skos:broader <http://ont.cbnl.org/cb/def/CB01092> ;
+  skos:definition """De eigendomsgrens geeft aan tot waar het eigendomsrecht van de provincie reikt, zoals vastgelegd bij het
+Kadaster.""" ;
+  skos:inScheme :Assetmanagement ;
+.
+:Gebiedsgrens
+  a skos:Concept ;
+  dcterms:source "Assetbeheerplan 2017 (Versie 1.8)" ;
+  rdfs:label "Gebiedsgrens" ;
+  skos:broader <http://ont.cbnl.org/cb/def/CB01092> ;
+  skos:definition """Gebiedsgrens is een organisatorische grens binnen de provincie Noord-Holland. Deze geeft aan in welke
+gebieden BSP het beheer en onderhoud van de provinciale infrastructuur heeft georganiseerd.""" ;
+  skos:inScheme :Assetmanagement ;
+.
+:Onderhoudsgrens
+  a skos:Concept ;
+  dcterms:source "Assetbeheerplan 2017 (Versie 1.8)" ;
+  rdfs:label "Onderhoudsgrens" ;
+  skos:broader <http://ont.cbnl.org/cb/def/CB01092> ;
+  skos:definition """Het onderhoud is afgebakend tot waar de wettelijke verplichting van de provincie reikt om infrastructureel areaal te
+onderhouden.""" ;
+  skos:inScheme :Assetmanagement ;
+  skos:scopeNote """Dit onderhoud reikt vaak verder dan de beheergrens. Immers, tot het onderhoud behoren tevens
+objecten die buiten de beheergrens gelegen zijn, maar verbonden zijn aan de objecten welke tot de beheer- en
+onderhoudsverplichting van de (vaar)weg behoren. Ten behoeve van de onderhoudsverdeling tussen beheerders en
+eigenaren van het infrastructurele areaal, wordt een overeenkomst afgesloten of een vergunning verleend. In
+bijzondere omstandigheden (vanuit maatschappelijk en privaatbelang), worden daarbij ook rechten van opstal
+vergeven.
+Bijvoorbeeld: Het beheren en onderhouden van een bij een systeem horend object zoals een vooraankondigingsbord
+voor een VRI op de weg/gebied van een andere beheerder.""" ;
+.
+:Projectgrens
+  a skos:Concept ;
+  dcterms:source "Assetbeheerplan 2017 (Versie 1.8)" ;
+  rdfs:label "Projectgrens" ;
+  skos:broader <http://ont.cbnl.org/cb/def/CB01092> ;
+  skos:definition """De projectgrens is de geografische afbakening die wordt gelegd om het gebied waarbinnen alles gedaan kan
+worden om het project te kunnen realiseren.""" ;
+  skos:inScheme :Assetmanagement ;
+  skos:scopeNote """Deze grens is het uitgangspunt voor het gesprek tussen de
+gebiedsaannemer en het IPM-team van het project, dat leidt tot een afspraak in een coördinatieovereenkomst.""" ;
+.
+:Systeemgrens
+  a skos:Concept ;
+  dcterms:source "Assetbeheerplan 2017 (Versie 1.8)" ;
+  rdfs:label "Systeemgrens" ;
+  skos:altLabel "reikwijdte systeem" ;
+  skos:broader <http://ont.cbnl.org/cb/def/CB01092> ;
+  skos:definition """In het kader van assetmanagement is een systeem een samenwerkend geheel van individuele assets. Dit
+samenwerkende geheel dient één of meerdere functies.""" ;
+  skos:inScheme :Assetmanagement ;
+  skos:scopeNote """Het systeem ‘weg’ dient bijvoorbeeld de functie ‘bereikbaarheid’. Een voorbeeld is het geheel aan verhardingen,
+belijningen, verkeersregelinstallaties, dat samen het systeem ‘weg’ voortbrengt.
+Assetbeheerplan 2017 16 Provincie Noord-Holland
+Ter illustratie: lussen en VRI-kasten die op een weg liggen van een andere beheerder ten behoeve van het
+provinciale systeem.
+Ter verduidelijking: de onderhoudsgrens is een nadere specificatie van een systeemgrens, te weten wat dient
+er binnen de reikwijdte van het systeem onderhouden te worden.""" ;
+.
