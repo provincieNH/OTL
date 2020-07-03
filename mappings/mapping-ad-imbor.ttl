@@ -1,0 +1,133 @@
+# baseURI: http://otl.noord-holland.nl/def/areaaldata/mapping/
+# imports: file:/D:/tbcfe-workspace/IMBOR-LD/imbor-eigenschappen.ttl
+# imports: file:/D:/tbcfe-workspace/IMBOR-LD/imbor-objecten.ttl
+# imports: file:/D:/tbcfe-workspace/IMBOR-LD/imbor-shapes.ttl
+# imports: file:/D:/tbcfe-workspace/IMBOR-LD/imbor_domeinwaarden.ttl
+# imports: http://otl.noord-holland.nl/def/areaaldata/eigenschap/
+# imports: http://otl.noord-holland.nl/def/areaaldata/shape/
+
+@prefix : <http://otl.noord-holland.nl/def/areaaldata/mapping/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/AD_ID>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P374> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/BEHEERDER>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P204> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/BEVESTIGINGSWIJZE>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P915> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/BOOMSITUERING>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P232> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/BOOMSOORT>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P195> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/BREEDTE>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P146> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/DATUMAANPLANTING>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P290> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/DATUMPLAATSING>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P290> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/DIAMETER>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P829> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/EIGENAAR>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P217> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/FUNCTIE>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P1335> ;
+  skos:note "mapping tussen AnnotationProperty en ObjectProperty?" ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/FYSIEKVOORKOMEN>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P1336> ;
+  skos:note "mapping tussen AnnotationProperty en ObjectProperty?" ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/GEBRUIKSFUNCTIE>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P523> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/JAARAANLEG>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P290> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/LENGTE>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P179> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/MATERIAALTYPE>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P419> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/OPPERVLAKTE>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P190> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/REFLECTIEKLASSE>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P917> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/SNOEIFASE>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P346> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/TRAJECT>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P270> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/WEGTYPE>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P345> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/WEGVAK>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P775> ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/eigenschap/WGV_NUMMER>
+  owl:equivalentProperty <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/eigenschap/P240> ;
+  skos:note "mapping tussen AnnotationProperty en DatatypeProperty?" ;
+.
+:
+  a owl:Ontology ;
+  owl:imports <file:/D:/tbcfe-workspace/IMBOR-LD/imbor-eigenschappen.ttl> ;
+  owl:imports <file:/D:/tbcfe-workspace/IMBOR-LD/imbor-objecten.ttl> ;
+  owl:imports <file:/D:/tbcfe-workspace/IMBOR-LD/imbor-shapes.ttl> ;
+  owl:imports <file:/D:/tbcfe-workspace/IMBOR-LD/imbor_domeinwaarden.ttl> ;
+  owl:imports <http://otl.noord-holland.nl/def/areaaldata/eigenschap/> ;
+  owl:imports <http://otl.noord-holland.nl/def/areaaldata/shape/> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/objecttype/bordScheepvaart>
+  owl:equivalentClass <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/objecttype/OBB587> ;
+  skos:note "gemapt op imbor:Scheepvaartbord" ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/objecttype/bord_Informatiebord>
+  owl:equivalentClass <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/objecttype/OBB36> ;
+  skos:note "gemapt op imbor:Informatiebord (algemeen, dus niet het rvv-informatiebord...)" ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/objecttype/bord_Onbekend>
+  owl:equivalentClass <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/objecttype/OBB513> ;
+  skos:note "gemapt op imbor:bord" ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/objecttype/bord_Onderbord>
+  owl:equivalentClass <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/objecttype/OBC1442> ;
+  skos:note "gemapt op imbor:onderbord" ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/objecttype/bord_RVVVerkeersbord>
+  owl:equivalentClass <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/objecttype/OBB41> ;
+  skos:note "gemapt op imbor:Verkeersbord" ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/objecttype/bord_ThematischeStrokenbord>
+  owl:equivalentClass <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/objecttype/OBC1905> ;
+  skos:note "gemapt op imbor:Toeristisch bewegwijzeringsbord (maar eigenlijk alleen TB10 borden...)" ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/objecttype/bord_Verklikkerbord>
+  owl:equivalentClass <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/objecttype/OBB380> ;
+  skos:note "gemapt op imbor:Kabels- en leidingenbord" ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/objecttype/vegetatieObject>
+  owl:equivalentClass <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/objecttype/OBB4> ;
+  skos:note "gemapt op imbor:Boom (subklasse van imbor vegetatieObject)" ;
+.
+<http://otl.noord-holland.nl/def/areaaldata/objecttype/wegdeel>
+  owl:equivalentClass <http://linkeddata.crow.nl/publication-v2/ns/crow/imbor/def/objecttype/OBB401> ;
+  skos:note "gemapt op imbor:VerhardingsObject (is niet helemaal zuiver, maar goed...)" ;
+.
