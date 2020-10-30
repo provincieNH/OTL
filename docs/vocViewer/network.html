@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>vocViewer | Visualisatie</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://visjs.github.io/vis-network/dist/vis-network.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css" />
+
+    <script src="js/ws.js"></script>
+    <script src="js/visNet.js"></script>
+
+    <style type="text/css">
+        html {
+            height: 100%;
+            margin: 0px;
+        }
+
+        body {
+            height: 90%;
+            margin-top: 10px;
+        }
+
+        #mynetwork {
+            background-color: #e6e6e6;
+            height: 700px;
+
+        }
+
+        #help {
+            float: right;
+        }
+
+        .custom-control-label {
+            padding-right: 10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            visNet.init();
+        });
+    </script>
+</head>
+
+<body onload="visNet.onResize();" onresize="visNet.onResize();">
+    <div class="container-fluid" style="height:100%;">
+        <div class="row no-gutters" style="height:100%;">
+            <div id="one" class="card col">
+                <div id="mynetworkContainer" class="card-body">
+
+                    <button id="btnThesaurus" title="vocViewer" type="button" class="close"  onclick="this.blur(); visNet.openThesaurus();">close x</button>
+
+                    <div id="mynetworkToolbar" class="form-inline">
+                        <div style="float: left; margin-bottom: 10px;">
+                            <form class="form-inline">
+                                <strong>View:</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <div class="form-group">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="cbHierarchy" toggle="toggle" onchange="this.blur();visNet.clickHierarchy();">
+                                        <label class="custom-control-label" for="cbHierarchy">hierarchische layout</label>
+                                    </div>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="cbConcepts" checked toggle="toggle" onchange="this.blur();visNet.clickExtConcepts();">
+                                        <label class="custom-control-label" for="cbConcepts">externe links</label>
+                                    </div>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="cbColorize" toggle="toggle" onchange="this.blur();visNet.clickColorize();">
+                                        <label class="custom-control-label" for="cbColorize">alleen selectie kleur</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div id="mynetwork">
+
+                    </div>
+                    <div id="mynetworkProgressCont" class="progress" style="height:5px;">
+                        <div id="mynetworkProgress" class="progress-bar bg-primary" role="progressbar" style="width:5%; height:5px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+
+
+                    <span class="col" >
+                        powered by <a href="http://visjs.org"><img src="data:image/gif;base64,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"></a>
+                    </span>
+
+                    <span id="help"><strong>TIP:&nbsp;&nbsp;click node</strong> to add related concepts&nbsp;&nbsp;<strong><span id="holdId">doubleclick node</span></strong> for details</span>
+                </div>
+            </div>
+            <input type="hidden" id="externalUri" />
+        </div>
+
+    </div>
+</body></html>

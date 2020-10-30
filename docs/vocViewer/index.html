@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>vocViewer</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/icon.png" />
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
+    <link rel="stylesheet" href="css/FontAwesome/all.min.css" />
+    <link rel="stylesheet" href="css/site.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.3.0/fuse.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/ws.js"></script>
+    <script src="js/vocabularies.js"></script>
+    <script src="js/lang.js"></script>
+    <script src="js/page.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/detail.js"></script>
+    <script>
+        if (typeof page == 'undefined' || window.navigator.userAgent.indexOf('MSIE ') > 0 || window.navigator.userAgent.indexOf('Trident/') > 0) {
+            document.execCommand('Stop');
+            document.body = document.createElement("body");
+
+            function gup(name, url) {
+                if (!url) url = location.href;
+                name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+                var regexS = "[\\?&]" + name + "=([^&#]*)";
+                var regex = new RegExp(regexS);
+                var results = regex.exec(url);
+                return results == null ? null : results[1];
+            }
+
+            var html = '<div class="alert alert-dismissible alert-warning">' +
+                '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                '<h4 class="alert-heading">Provincie Thesaurus</h4>' +
+                '<p class="mb-0">[Dutch]<br>' +
+                'Deze Website is geoptimaliseerd voor Firefox, Chrome, Safari of MS Edge. MS Internet Explorer 11 of ouder wordt niet ondersteunt.' +
+                '<br><br>' +
+                '[English]<br>Thss website is optimized for browsers Firefox, Chrome, Safari or MS Edge. - MS Internet Explorer 11 or older is not supported any more.' +
+                '</p></div>';
+
+
+            let uri = gup('uri', window.location.href);
+            if (uri) {
+                uri = decodeURIComponent(uri);
+                html += '<a style="margin: 15px;" href="javascript: document.getElementById(\'irdfForm\').submit();" >Download RDF [' + uri + ']</a ><form id="irdfForm" target="_blank" style="display: none; " method="post" action="https://triplestore/sparql/"><input type="hidden" name="query" id="irdfQuery" value="describe <' + uri + '>" /></form>';
+            }
+            document.body.innerHTML = html;
+
+        } else {
+            $(document).ready(function() {
+                page.init();
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navBar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a id="LINK_PNHLOGO" href="https://www.noord-holland.nl"><img alt="Provincie Thesaurus" id="IMG_PNHLOGO" src="img/pnhlogo.png" height="35"></a>
+            <button id="navbarToggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:location.replace(page.BASE + '?lang=' + lang.ID);">
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html?uri=http://ld.noord-holland.nl/id/thesaurus/doc/2">Over</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="feedback" href="javascript: page.openFeedBack();">Feedback</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Taal</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown05">
+                            <a class="dropdown-item" href="javascript: page.setLang('nl');">Nederlands</a>
+                            <a class="dropdown-item" href="javascript: page.setLang('en');">Engels</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+        <div id="contentRow1" class="row">
+            <div id="pageContent" class="col-lg-8">
+                <!-- Page description -->
+                <div id="page_desc"></div>
+                <hr>
+                <!-- Project descriptions -->
+                <div id="proj_desc"></div>
+                <hr>
+                <!-- other descriptions -->
+                <div id="other_desc"></div>
+                <br>
+            </div>
+            <!-- Sidebar Widgets Column -->
+            <div id="rightSidebar" class="col-lg-4">
+                <!-- Search Widget -->
+                <div id="search_widget" class="card my-4 text-white bg-info mb-3">
+                    <div id="searchCard" class="card-body">
+                        <svg version="1.1" id="rdfSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17.891px" height="18.451px" viewBox="203.351 335.084 17.891 18.451">
+                            <path fill="#FFFFFF" d="M218.806,347.103c-0.737-0.34-0.907-1.587-0.963-2.608c-0.114-3.997,1.587-2.41,2.239-4.961
+                            c0.283-1.077-0.028-2.012-0.539-2.778c-0.766-1.077-1.672-1.049-2.268-1.275h-0.793c-0.34,0.142-0.68,0.17-1.077,0.368
+                            c-0.879,0.482-1.616,1.446-1.701,2.608c-0.028,0.51,0.085,0.851-0.142,1.276c-0.142,0.255-0.425,0.595-0.624,0.765
+                            c-3.571,2.977-4.025,0.454-6.378,1.077c-3.486,0.964-2.977,5.868,0.284,6.35c2.466,0.369,2.126-1.474,4.592-0.482
+                            c1.474,0.624,2.551,1.248,2.721,2.948c0.114,1.162,0.794,2.041,1.758,2.523c0.312,0.142,0.708,0.198,1.021,0.34h0.907
+                            c0.425-0.198,0.765-0.198,1.247-0.482C221.131,351.524,221.188,348.265,218.806,347.103z M206.646,342.851
+                            c0.482,1.502-0.539,1.049-0.964,1.219c-0.567,0.198-0.567,1.474-0.453,2.069c-1.531-2.211,1.304-5.074,3.458-3.657
+                            C207.524,342.34,207.496,342.595,206.646,342.851z M214.328,338.287c0.113-0.624,0.425-1.134,0.737-1.474
+                            c0.539-0.539,2.211-1.304,3.146-0.425c-1.219-0.198-1.19,0.114-2.069,0.369c0.482,1.247-0.312,1.134-0.992,1.162
+                            c-0.539,0.624-0.595,1.276-0.425,2.041C214.356,339.647,214.243,338.854,214.328,338.287z M213.477,347.301
+                            c-1.275-0.51-3.26-1.559-2.834-3.316c0.198-0.936,2.381-2.296,3.657-2.58c0.624-0.113,0.737,0,1.219,0.227
+                            c0.567,0.284,0.567,0.085,0.822,0.68c0.368,0.766,0.454,1.786,0.425,2.693c-0.057,0.878-0.227,1.729-0.963,2.154
+                            c-0.397,0.227-0.539,0.482-1.077,0.454C214.299,347.613,213.846,347.442,213.477,347.301z M216.708,348.095
+                            c0.595,1.36-0.793,1.049-1.021,1.162c-0.539,0.312-0.51,1.417-0.396,2.069c-0.766-1.191-0.51-2.353,0.368-3.231
+                            c1.559-1.56,2.977-0.425,3.203-0.369C218.041,347.471,217.361,347.669,216.708,348.095z" />
+                        </svg>
+                        <label for="searchInput" id="searchInputLabel">Zoeken</label>
+                        <div id="searchGroup" class="input-group">
+                            <input id="searchInput" type="text" class="form-control" placeholder="Search for...">
+                            <div style="position: absolute; top: 39px;">
+                                <table id="dropdown" class="table table-hover"></table>
+                            </div>
+                            <span class="input-group-btn"><button id="searchBtn" class="btn btn-secondary" type="button">Go!</button></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Apps Card -->
+                <div class="card border-info mb-3" id="appsCard">
+                    <div class="card-header">apps</div>
+                    <div class="card-body">
+                        <div id="appsBody1"></div>
+                        <div id="appsBody2"></div>
+                    </div>
+                </div>
+                <!-- Side Widgets -->
+                <div id="proj_links"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <!-- Footer -->
+    <footer id="pageFooter" class="py-5 bg-dark">
+        <div class="container">
+            <div style="display:inline;" class="m-0 text-center text-white">
+                <a href="https://www.noord-holland.nl">Noord-Holland</a> |
+                <a id="license" href="https://creativecommons.org/licenses/by-sa/3.0/nl/">license</a> |
+                <a id="contact" href="">contact</a> |
+                <a id="disclaimer" href="javascript:page.openParaLink('info=disclaimer');">disclaimer</a> |
+                <!--<a href="index.html?uri=http://ld.noord-holland.nl/id/thesaurus/doc/1">FAQ</a> |-->
+                <a href="https://github.com/provincieNH/Dataplatform" class="flex flex-column items-center justify-center color-inherit w-100 pa2 br2 br--top no-underline hover-bg-blue4 hover-white"><i class="fab fa-github" style="font-size: 14px;"></i></a>
+            </div>
+            <div style="display:inline; float:right;">
+            </div>
+        </div>
+    </footer>
+</body></html>
