@@ -6,7 +6,7 @@ var vocab = {
         var f = this[id] || this.NL;
         f.call(this);
         // after lang loaded:
-        this.LIST_THESAURUS_PROJECTS = [this.BasisMetaDesc, this.InformatieBeheer, this.AreaaldataDesc, this.AreaaldataWL];
+        this.LIST_THESAURUS_PROJECTS = [this.AreaaldataDesc, this.AreaaldataWL];
     },
     // loading functions, one for each language
     /*
