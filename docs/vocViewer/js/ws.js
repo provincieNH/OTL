@@ -5,7 +5,7 @@ var ws = {
         // 1 en 2 komen hier overeen met de ep: 1, 2 in vocabularies.js project settings
         // auth is het JWT voor de authenticatie tegen de triple store. token verloopt elke 30 dagen. via postman een nieuw token ophalen...
         1: {
-            endpoint: 'http://52.208.100.233:7200/repositories/otl',
+            endpoint: 'https://52.208.100.233:7200/repositories/otl',
             auth: '',
             uri: 'otl.noord-holland.nl'
         },
