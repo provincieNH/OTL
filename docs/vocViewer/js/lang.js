@@ -31,12 +31,12 @@ var lang = {
         this.visualization_H = 'Visualisatie';
         this.location_H = 'Locatie';
         this.creator_H = 'Provenance';
-        this.TITLE_THES_2 = 'Begrippen en definities die bij de provincie gebruikt worden';
+        this.TITLE_THES_2 ='DISCLAIMER: Dit is een test site. Er kunnen geen rechten aan de getoonde informatie ontleent worden...';
         this.DESC_THESAURUS = '..tweetalig (Nederlands, Englisch) <br>..ontworpen als generieke, uitbreidbare kennisbank <br> '+ 
         '..gemaakt met <a href="http://www.w3.org/2004/02/skos/" title="SKOS Simple Knowledge Organization System" target="_blank">SKOS</a> ' +
         'concepten (Begrippen, en synoniemen), met eigen unieke identificatie in de vorm van <a href="http://de.wikipedia.org/wiki/Uniform_Resource_Identifier" ' +
         'title="URI Uniform Resource Identifier" target="_blank">URI\'s</a><br>..opgebouwd in een meervoudige hierarchie met ruimere, nauwere en verwante begrippen '+
-        'inclusief definities en <a href="bibl_res.html" target="_blank">bibliografie</a>';
+        'inclusief definities en verwijzingen';
 
         //************Description Objects**************
 
