@@ -72,8 +72,12 @@ var lang = {
         this.visualization_H = 'Visualization';
         this.location_H = 'Location';
         this.creator_H = 'Provenance';
-        this.TITLE_THES_2 = 'a controlled vocabulary for the province';
-        this.DESC_THESAURUS = '..bilingual in dutch and english as used in publications and datasets of the province <br>..designed as a knowledge representation <br>..formatted as <a href="http://www.w3.org/2004/02/skos/" title="SKOS Simple Knowledge Organization System" target="_blank">SKOS</a> concepts (terms, including synonyms), each with their own web addresses &#8594; <a href="http://en.wikipedia.org/wiki/Uniform_Resource_Identifier" title="URI Uniform Resource Identifier" target="_blank">URIs</a><br>..specified by polyhierarchical relationships as broader, narrower, and related concepts within the domain including descriptions and &#8594; <a href="bibl_res.html" target="_blank">bibliographic references</a>';
+        this.TITLE_THES_2 = 'DISCLAIMER: This is a test site. No rights can be derived from this information';
+        this.DESC_THESAURUS = '..bilingual in dutch and english as used in publications and datasets of the province <br>'+
+        '..designed as a knowledge representation <br>..formatted as <a href="http://www.w3.org/2004/02/skos/" title="SKOS Simple Knowledge Organization System" target="_blank">SKOS</a> '+
+        'concepts (terms, including synonyms), each with their own web addresses &#8594; '+
+        '<a href="http://en.wikipedia.org/wiki/Uniform_Resource_Identifier" title="URI Uniform Resource Identifier" target="_blank">URIs</a><br>'+
+        '..specified by polyhierarchical relationships as broader, narrower, and related concepts within the domain including descriptions';
 
         this.DESC_LINKEDDATA = {
             id: 'linkedData',
