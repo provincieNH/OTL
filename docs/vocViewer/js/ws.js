@@ -5,8 +5,9 @@ var ws = {
         // 1 en 2 komen hier overeen met de ep: 1, 2 in vocabularies.js project settings
         // auth is het JWT voor de authenticatie tegen de triple store. token verloopt elke 30 dagen. via postman een nieuw token ophalen...
         1: {
-            endpoint: 'https://52.208.100.233:7200/repositories/otl',
-            auth: '',
+            //endpoint: 'https://52.208.100.233:7200/repositories/otl',
+            endpoint: 'https://noord-holland.cloud.tyk.io/swapi/repositories/otl',
+            auth: '5da48bbffdc0d2000130a58df16e4ac7717e458b882aae94a6cd1836',
             uri: 'otl.noord-holland.nl'
         },
         2: {
@@ -30,7 +31,7 @@ var ws = {
             }
         }
         //console.log('conn: '+ endpoint, auth)
-        return fetch(endpoint + '?query=' + encodeURIComponent(query) , {headers: {'Accept': 'application/sparql-results+json', 'Authorization': auth}})
+        return fetch(endpoint + '?query=' + encodeURIComponent(query) , {headers: { 'Accept': 'application/sparql-results+json', 'Authorization': auth}})
             .then(res => res.json())
             .then(thenFunc)
             .catch(error => $('#pageContent').append(`<br>no results for <br>URI: <span style="color: red;"><strong>${uri}</strong></span> <br> ` + error));
@@ -39,7 +40,7 @@ var ws = {
         let endpoint = this.endpoints[ep].endpoint
         let auth = this.endpoints[ep].auth
         //console.log('endpoint: '+ endpoint)
-        return fetch(endpoint + '?query=' + encodeURIComponent(query) , {headers: {'Accept': 'application/sparql-results+json', 'Authorization': auth}})
+        return fetch(endpoint + '?query=' + encodeURIComponent(query) , {headers: { 'Accept': 'application/sparql-results+json', 'Authorization': auth}})
             .then(res => res.json())
             .then(thenFunc)
             .catch(error => {
