@@ -46,8 +46,8 @@ var vocab = {
             type: 'skos',
             image: 'ont.png',
             name: 'Areaaldata Concepten',
-            desc: 'Dit Vocabulaire bevat alle concepten die in Areaaldata gebruikt worden. '+
-            'Deze concepten zijn zoveel mogelijk gerelateerd aan IMGeo begrippen. Daar waar van toepassing zijn er ook relaties naar andere vocabulaires gelegd.',
+            desc: 'This Vocabulary contains all concepts in use in the scope of \'Areaaldata\'. '+
+            'These concepts are, where possible, mapped to the IMGeo concepts, or other relevant concept schemes. <br> Note: the vocuabulary itself is only in Dutch...',
             ep: 1
         };
         this.AreaaldataWL = {
@@ -56,7 +56,7 @@ var vocab = {
             type: 'waardenlijst',
             image: 'list.png',
             name: 'Areaaldata Waardenlijsten',
-            desc: 'Dit Vocabulaire bevat alle waardenlijsten die in Areaaldata gebruikt worden.',
+            desc: 'This Vocabulary contains all value lists that are in use in \'Areaaldata\'. <br> Note: the vocuabulary itself is only in Dutch...',
             ep: 1
         };
     },
