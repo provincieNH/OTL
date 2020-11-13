@@ -37,4 +37,15 @@ En even opletten dat de meeste online tools WGS84 verwachten, dus niet vegreten 
 
 ```bind(bif:ST_Transform(?geomRD, 4326) as ?geomWGS)```
 
+### inzichtelijk gemaakt...
+
+In ondderstaand plaatje is de structuur inzichtelijk gemaakt.
+
+* Aan de linkerkant zie je de ontologie hierarchie van nen3610:Geo-object -> bgt:IMGeo-Object -> Wegdeel -> Voetpad
+* In het midden het nen3610:Identificatie object
+* Aan de rechterkant het foaf:Document -> bgt:IMGeo-ObjectRegistratie -> WegdeelRegistratie
+* Onderin zie je 2 instanties van een Wegdeel registratie. de rechter is inmiddels vervallen en had een functie 'Transitie', de linker is het huidige object met de functie 'Voetpad'.
+* je ziet dus dat de URI's van de Wegdeelregistratie instanties uniek zijn met een timestamp erin, en dat ze allebei naar de IMGeo Object instantie wijzen met de Identificatie als URI. 
+* Om te 'koppelen' met de BGT-LD vanuit je eigen systeem (waar je over het algemeen de Identificatie hebt...) Moet je dus 'binnenkomen' op het IMGeo-Object en vandaar uit doorgaan naar het actuele registratie object...
+
 ![structuur](bgt-ld_structuur.png)
