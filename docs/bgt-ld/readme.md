@@ -37,3 +37,4 @@ En even opletten dat de meeste online tools WGS84 verwachten, dus niet vegreten 
 
 ```bind(bif:ST_Transform(?geomRD, 4326) as ?geomWGS)```
 
+![structuur](bgt-ld_structuur.png)
