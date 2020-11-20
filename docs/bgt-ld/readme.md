@@ -49,3 +49,7 @@ In ondderstaand plaatje is de structuur inzichtelijk gemaakt.
 * Om te 'koppelen' met de BGT-LD vanuit je eigen systeem (waar je over het algemeen de Identificatie hebt...) Moet je dus 'binnenkomen' op het IMGeo-Object en vandaar uit doorgaan naar het actuele registratie object...
 
 ![structuur](bgt-ld_structuur.png)
+
+### Ontodia live demo met Provincie Noord-Holland Areaaldata gelinkt aan BGT-LD
+
+[Ontodia](https://provincienh.github.io/OTL/bgt-ld/ontodia/index.html)
