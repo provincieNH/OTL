@@ -1,4 +1,4 @@
-## De BGT-LD uitleg die ik had willen hebben...
+# De BGT-LD uitleg die ik had willen hebben...
 
 Naar aanleiding van de lancering van de BGT als Linked data wilde ik kijken of ik er wat moois mee kon. Bijvoorbeeld de demo's die we eerder
 gemaakt hebben op prototypes van de BGT 'upgraden' naar het nieuwe endpoint.
@@ -52,4 +52,9 @@ In ondderstaand plaatje is de structuur inzichtelijk gemaakt.
 
 ### Ontodia live demo met Provincie Noord-Holland Areaaldata gelinkt aan BGT-LD
 
+Dit is een bijgewerkte versie van de demo die we gemaakt hebben in het kader van de disgeo demo2 high5. 
+Dit keer met de nieuwe bgt-ld en een nieuw extract van areaaldata viewer in LD vorm, gehost op provinciale infrastructuur.
+
 [Ontodia](https://provincienh.github.io/OTL/bgt-ld/ontodia/index.html)
+
+[Ontodia met een wegdeel als startpunt](https://provincienh.github.io/OTL/bgt-ld/ontodia/index.html?resource=http://ad.noord-holland.nl/data/AD.000601CE86824CEC8B89DE27FAB9C3BA_fcl)
