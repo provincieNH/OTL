@@ -3,7 +3,10 @@
 Naar aanleiding van de lancering van de BGT als Linked data wilde ik kijken of ik er wat moois mee kon. Bijvoorbeeld de demo's die we eerder
 gemaakt hebben op prototypes van de BGT 'upgraden' naar het nieuwe endpoint.
 
-Dat bleek nog niet zo makkelijk omdat er een aantal ontwerpbeslissingen genomen zijn, die weliswaar erg terecht zijn, maar die niet direct duidelijk waren voor mij...
+Dat bleek nog niet zo makkelijk omdat er een aantal ontwerpbeslissingen genomen zijn, die weliswaar erg terecht zijn, 
+maar die niet direct duidelijk waren voor mij...
+
+__Het komt er op neer dat de huidige imeplementatie (en uitleg) vooral vanuit een registratie standpunt is. Terwijl ik vanuit een object standpunt redeneer.__ De volgende punten hielpen mij om te snappen hoe de bgt-ld versie in elkaar zit.
 
 ### BGT/IMGeo en NEN3610
 
