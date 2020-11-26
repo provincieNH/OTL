@@ -18,6 +18,8 @@ In de opgestelde ontologie is het NEN3610 topmodel ook opgenomen. Dit maakt het 
 
 Ik was in eerste instantie op zoek naar instances van het type Wegdeel, en die kon ik niet vinden... Dat komt omdat Wegdeel de definitie van 'het ding buiten in de werkelijkheid' is en WegdeelRegistratie het 'ding in de registratie'. Eigenlijk best logisch... 
 
+De relatie tussen het RegistratieObject en de definitie class wordt uiteindelijk pas op instantie niveau gelegd via functie/fysiekvoorkomen en primaryTopicOf. Als je puur naar het model kijkt in bijvoorbeeld de weaver viewer zie je die relaties dus niet. Dat zet je dus op het verkeerde been, want je hebt dus een instantie van WegdeelRegistratie in je data zitten en niet van Wegdeel. 
+
 ### Onderscheid tussen de registratie van het object, de nen3610 identificatie en de 'metadata' van het object
 
 Er is dus een WegdeelRegistratie met prefix 'registratie' <https://bgt.basisregistraties.overheid.nl/bgt/id/registratie/> <br>
