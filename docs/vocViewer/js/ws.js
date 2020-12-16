@@ -6,7 +6,7 @@ var ws = {
         // auth is het JWT voor de authenticatie tegen de triple store. token verloopt elke 30 dagen. via postman een nieuw token ophalen...
         1: {
             //endpoint: 'https://52.208.100.233:7200/repositories/otl',
-            endpoint: 'https://noord-holland.cloud.tyk.io/swapi/repositories/otl',
+            endpoint: 'https://noord-holland.cloud.tyk.io/swapi',
             auth: '5da48bbffdc0d2000130a58df16e4ac7717e458b882aae94a6cd1836',
             uri: 'otl.noord-holland.nl'
         },
