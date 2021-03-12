@@ -157,7 +157,11 @@ var respecConfig = {
   // defaults to https://tools.geostandaarden.nl/respec/style/ if not set
   // nl_organisationStylesURL: "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
   //nl_organisationStylesURL: "https://tools.geostandaarden.nl/respec/style/",
+<<<<<<< HEAD
   nl_organisationStylesURL: "media/",
+=======
+  nl_organisationStylesURL: "/respec/media/",
+>>>>>>> cff403be6282cecb294cc51d1caaeb61a63991d8
 
   // nl_organisationPublishURL points to organisation specific publication page, used in header
   // defaults to  https://docs.geostandaarden.nl/"
