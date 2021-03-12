@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset='utf-8'>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>OTL Noord-Holland</title>
+  <script src="js/config.js" class="remove"></script>
+  <!--link rel="shortcut icon" type="image/x-icon"   href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico" />-->
+  <link rel="shortcut icon" type="image/png" href="media/ont.png" />
+  <script src="https://publicatie.centrumvoorstandaarden.nl/respec/builds/respec-logius.js" class="remove" async></script>
+  
+  <!-- onderstaande style is optioneel -->
+  <link rel="stylesheet" type="text/css" href="./media/Geonovumstyle.css">
+  <!-- of gebruik eventueel specifieke style instructies voor deze repo-->
+  <!-- 
+    <style type="text/css">
+    table {
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+  </style>
+   -->
+</head>
+
+<body>
+
+  <section id='sotd'>
+  <!--Dit document is in bewerking-->
+  </section>
+
+<section id='abstract'>
+
+Deze documentatie beschrijft de <A>OTL</A> van Provincie Noord-Holland.
+
+<div style="
+    max-width: 100%;
+    overflow-x: scroll;
+">
+<img src="https://github.com/provincieNH/OTL/blob/master/docs/images/am-views.png?raw=true" width="800"
+alt="overzicht van de verschillende views op de IamPro Assetmanagement cirkel">
+</div>
+
+De <a>OTL</a> kent verschillende 'views' op de assets die de provincie in beheer heeft. Afhankelijk van de invalshoek (opstellen vraagspecificatie, aanleg, inspectie, ...) is het gewenst om de assets op een bepaalde manier
+te structureren. Het doel van de <A>OTL</A> is om deze verschillende invalshoeken te faciliteren en ze met elkaar in verbinding te brengen.
+
+Zo moet het mogelijk zijn om kwaliteitsgegevens die uit inspecties voortkomen te kunnen relateren aan specificaties die vanuit een vraagspecificatie gesteld worden.
+Dus bijvoorbeeld de op de NEN2767-4 gebaseerde inspecties zeggen iets over de beschikbaarheid van een Brug.
+</section>
+
+<section class=informative>
+
+# Achtergrond
+
+De provincie heeft al een aantal jaren een gis gebaseerd model ("Areaaldata") om assetgegevens uit te wisselen met ketenpartners. De invalshoek van dit model is het gerealiseerde areaal 
+op basis van de [[IMGeo]] standaard. Met deze <a>OTL</a> willen we deze 'view' kunnen verbinden met de andere invalshoeken die gebruikt worden in de levenscyclus van [[Assetmanagement]].
+
+Verder sluit de <a>OTL</a> aan op de lopende landelijke ontwikkelingen in het interprovinciale BIM programma en de [[NTA8035]].  
+</section>
+
+<section class="informative">
+
+# Uitgangspunten
+
+* De scope van de <a>OTL</a> beslaat het hele veld van [[Assetmanagement]] voor de provincie.
+* We gebruiken zo veel mogelijk internationale of landelijke standaarden.
+* Het veld is volop in beweging, dus we onderkennen dat we met de kennis van nu ontwerpbeslissingen nemen.  
+
+
+## Relatie met NTA8035
+
+De [[NTA8035]] is een belangrijke stap in het werkveld om standaardisatie te krijgen op 'semantisch' en 'technisch' vlak. Deze standaard volgen we zo veel als mogelijk.
+
+## Relatie met IMGeo/BGT en BRO
+
+Een belangrijk onderdeel van het 'datalandschap' is de wettelijke verplichting om als <a>bronhouder</a> data aan te leveren aan de landelijke registraties. Deze wettelijke verplichtingen moeten gerealiseerd
+kunnen worden met datgene wat in de <a>OTL</a> beschreven is.
+
+## Relatie met TMLO/MDTO
+
+Een nadrukkelijke andere invalshoek in de <a>OTL</a> is de mogelijkheid om documenten aan assetgegevens te kunnen koppelen. Voor deze documentenstroom volgen we de [[TMLO]] / <a>MDTO</a> standaard. 
+Vanuit Duurzame Toegankelijkheid is het wenselijk om al zo vroeg mogelijk in het proces metadata op te nemen over het document, waarmee het document uiteindelijk makkelijker gearchiveerd kan worden. 
+
+
+## URI-strategie
+
+De URI-strategie wordt overgenomen uit de NTA8035. 
+> `http[s]://{internet domain}/[path]/def/[data model](/|#)[({concept}|{attribute}|{relation})]`
+
+Hierbij kiezen we voor '/'' ipv '#'' want daarmee kunnen uri's makkelijk(er) dereferencable gemaakt worden als dat gewenst is.
+
+In de Provinciale API en URI strategie wordt voor de <a>OTL</a> ook naar de [[NTA8035]] richtlijnen verwezen.
+
+
+<div class="issue" data-number="8"></div>
+
+
+</section>
+
+<section class=informative>
+
+# Areaaldata
+
+<a href="https://github.com/provincieNH/Leveren_Geoinformatie">Areaaldata</a> is het datamodel wat gebruikt wordt om assetgegevens te registreren in de 'as-built' situatie.
+De basis van het model is het [[IMGeo]] model. Hierbij is er een verbijzondering gemaakt naar aanvullende informatie ten behoeve van het beheer van de assets. De <a>OTL</a> representatie van
+het Areaaldata model is een transformatie vanuit de markdown files (waar het model in gedefinieerd is) naar linked data. 
+
+Het model is opgedeeld in verschillende namespaces:
+* skos concepten: `http://otl.noord-holland.nl/id/areaaldata/concept/`
+* waardenlijsten: `http://otl.noord-holland.nl/def/areaaldata/waardenlijst/`
+* objecttypen: `http://otl.noord-holland.nl/def/areaaldata/objecttype/`
+* eigenschappen: `http://otl.noord-holland.nl/def/areaaldata/eigenschap/`
+* shapes: `http://otl.noord-holland.nl/def/areaaldata/shape/`
+
+<div class="issue" data-number="9"></div>
+
+## SKOS concepten
+
+De definities en bron verwijzingen van de areaaldata concepten zijn opgenomen in een SKOS thesaurus. Hierbij is de thematische indeling van Areaaldata opgenomen als `skos:Collection'.
+
+## Objecttypen
+
+De Objecttypen zijn een verbijzondering van IMGeo objecttypen. Of als er geen IMGeo equivalent is (traject, halte, ...) een eigen definitie. Wel zoveel mogelijk geinspireerd op andere standaard informatiemodellen.
+Het __typespec__ attribuut in Areaaldata is in de <a>OTL</a> omgezet naar een `rdfs:subClassOf` relatie. Hierbij is de naamgeving `<objecttype>_<typespec>` gehanteerd.
+
+Op objecttype niveau is de verwijzing gelegd naar de definitie van het objecttype met `dcterms:subject` naar het `skos:Concept`. 
+Fysieke objecten zijn een `rdfs:subClassOf` `nta8035:PhysicalObject`, de niet fysieke objecten zijn een `rdfs:subClassOf` `nta8035:InformationObject`.
+Fysieke objecten zijn ook een `rdfs:subClassOf` `geosparql:Feature`.
+
+N.B. In de naamgeving van areaaldata wordt een _p, _l, _v suffix gebruikt om aan te geven wat voor geometrisch type het betreft. Deze suffix wordt in de <a>OTL</a> niet overgenomen. 
+De geometrie definitie wordt in plaats daarvan overgenomen met een restrictie op het geosparql Geometry type. 
+
+## Eigenschappen
+
+Afhankelijk van het type eigenschap zijn het DatatypeProperties of ObjectProperties geworden.
+Incidenteel zitten er nog problemen in de eigenschappen met de range definities omdat deze overgenomen worden uit de markdown definities van Areaaldata.
+In de markdown/uml implementatie van het model is een eigenschap per definitie alleen in scope van het betreffende objecttype, in de vertaling naar linked data wordt de scope 'global'. In een paar gevallen 
+levert dit nog een conflict op.
+
+<div class="issue" data-number="10"></div>
+
+### Shapes
+
+Restricties worden met shacl shapes gedefinieerd. Waarbij er voor elke eigenschap een shape gedefinieerd is, gekoppeld aan het betreffende objecttype:
+```turtle
+adprop:DATALEVERANCIER
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  ad:areaaldataversie "4.2" ;
+  ad:begingeldigheid "2019-09-25"^^xsd:date ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+		ad:bak
+		ad:begroeidTerreindeel
+	  );
+	  ] ;
+	rdfs:label "DATALEVERANCIER"@nl-NL ;
+	rdfs:range xsd:string ;
+	skos:definition "Leverancier van de data"@nl-NL ;
+	.
+
+adprop:bak-DATALEVERANCIER
+  rdf:type sh:PropertyShape ;
+  sh:path adprop:DATALEVERANCIER ;
+  adshapes:areaaldataversie "4.2" ;
+  adshapes:begingeldigheid "2019-09-25"^^xsd:date ;
+  sh:datatype xsd:string ;
+  sh:maxCount 1 ;
+.
+
+adprop:begroeidTerreindeel-DATALEVERANCIER
+  rdf:type sh:PropertyShape ;
+  sh:path adprop:DATALEVERANCIER ;
+  adshapes:areaaldataversie "4.2" ;
+  adshapes:begingeldigheid "2019-09-25"^^xsd:date ;
+  sh:datatype xsd:string ;
+  sh:maxCount 1 ;
+.
+
+```
+
+Voor elke objecttype is er een NodeShape gedefinieerd om te specificeren welke eigenschappen horen bij welke objecttypen:
+```turtle
+ad:bakShape
+  rdf:type sh:NodeShape ;
+  adshapes:areaaldataversie "4.2" ;
+  adshapes:begingeldigheid "2019-09-25"^^xsd:date ;
+  sh:property adprop:bak-AD_ID ;
+  sh:property adprop:bak-BEHEERDER ;
+  sh:property adprop:bak-BERICHT_ID ;
+  sh:property adprop:bak-hasGeometry ;
+  sh:targetClass ad:bak ;
+.
+```
+
+### Eenheden
+<div class="issue" data-number="10"></div>
+
+### Vastewaardelijsten
+
+waardenlijsten zijn geimplementeerd als klasse met instanties. Waarbij de instantienaam het patroon `<waardelijst>_<waarde>` volgt. In het rdfs:label komt vervolgens de domeinnaam, code en omschrijving uit de ArcGIS 
+implementatie terug.
+
+### Geometrie
+
+Objecttypen met een geometrie ontlenen die uit de markdown definitie: 
+* _p => sf:Point
+* _l => sf:MultiLineString
+* _v => sf:MultiPolygon
+
+```turtle
+ad:bord
+  rdf:type owl:Class ;
+  rdfs:subClassOf geo:Feature ;
+  rdfs:subClassOf bs:PhysicalObject ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onClass sf:Point ;
+      owl:onProperty geo:hasGeometry ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	] ;
+	.
+```
+
+
+
+## Raakvlak met IMBOR
+
+Het Areaaldata model stamt uit de tijd van voordat het IMBOR model zijn huidige vorm kreeg. In Areaaldata is er nog voor gekozen om alle relevante objecttypen een subklasse te laten zijn van een IMGeo obejcttype.
+In IMBOR is dat principe losgelaten en is er een mapping gemaakt van IMBOR objecttypen naar IMGeo objecttypen. Om uit te kunnen wisselen tussen IMBOR en Areaaldata zal er dus een vergelijkbare mapping gemaakt moeten worden.
+
+<div class="issue" data-number="11"></div>
+
+
+</section>
+
+<section class=informative>
+
+# System Engineering
+
+Behalve het Areaaldata model bevat de <a>OTL</a> ook een ontologie vanuit de System Engineering invalshoek. Op dit moment is er nog een wat oudere structuur opgenomen in de vorm van de 'OTB'. Er wordt op het moment gewerkt
+aan een nieuwe structuur die aan moet sluiten op het Provinciaal Contracten Buffet.
+
+<div class="issue" data-number="12"></div>
+
+</section>
+
+<section class=informative>
+
+# Documenten
+
+De <a>OTL</a> bevat ook een eerste versie van een ontologie voor het vastleggen van metadata van Documenten. Deze ontologie is gebaseerd op de [[TMLO]] standaard. 
+De [[TMLO]] standaard bevat een metadata element 'Dekking Geografischgebied' wat naar een nen3610:GeoObject kan verwijzen. Daarmee is er in de standaarden al een relatie tussen documenten en GeoObjecten.
+
+```turtle
+
+shape:Dekking_Geografischgebied-dekkinggeografischgebied_geoobject
+  a sh:PropertyShape ;
+  sh:path shape:dekkinggeografischgebied_geoobject ;
+  sh:class nen3610:GeoObject ;
+.
+```
+
+Hoe dit in de <a>MDTO</a> ontologie vorm gaat krijgen moet nog blijken.
+
+<div class="issue" data-number="13"></div>
+
+
+</section>
+
+<section class=informative>
+
+# Kernmodel
+
+Aansluitend op de [[NTA8035]] is er een kern ontologie die de belangrijkste entiteiten van B&U beschrijft. Deze ontologie vormt eigenlijk de 'kapstok' om de verschillende viewpoints aan op te hangen.
+<div class="issue" data-number="14"></div>
+
+
+# Mapping tussen views
+
+Door een mapping te definieren tussen de verschillende viewpoints (binnen de <a>OTL</a> of met externe ontologieen) wordt duidelijk hoe instantiedata uitgedrukt in het ene model te interpreteren is volgens het andere model.
+Zo is het bijvoorbeeld mogelijk om een mapping te maken tussen een objecttype definitie uit de SE context en de Areaaldata context. Vervolgens kun je dus 'vragen stellen' aan bijvoorbeeld Areaaldata met het begrippenkader van SE.
+
+```turtle
+
+otb:Wegelement_Autoverkeer
+  rdf:type owl:Class ;
+  rdfs:label "O_1.1.1.1 Wegelement Autoverkeer" ;
+  rdfs:subClassOf <http://otl.noord-holland.nl/core/Wegvak> ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty otb:partOf ;
+      owl:someValuesFrom otb:Wegvak ;
+    ] ;
+  owl:disjointWith otb:Wegelement_Busverkeer ;
+  owl:disjointWith otb:Wegelement_Fietsverkeer ;
+  owl:disjointWith otb:Wegelement_Landbouwverkeer ;
+  owl:disjointWith otb:Wegelement_Voetgangersverkeer ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:intersectionOf (
+          [
+            rdf:type owl:Restriction ;
+            owl:hasValue adwl:functieWGD_rijbaanautoweg ;
+            owl:onProperty adprop:FUNCTIE ;
+          ]
+          ad:wegdeel_v
+        ) ;
+    ] ;
+  skos:definition "Een begrensd gedeelte van de Weg dat voldoende breed en hoog is voor Autoverkeer." ;
+  skos:note "Definitie Kennisgroep SE" ;
+  skos:prefLabel "Wegelement Autoverkeer" ;
+.
+
+SELECT (sum(?opp) as ?opvl)
+WHERE
+{
+?entity a pnh_otl:Wegelement_Autoverkeer .  
+?entity ad:SHAPE_Area ?opp .
+}
+
+
+```
+
+</section>
+
+<section class=informative>
+
+# Tooling
+
+We gebruiken verschillende tools om de <a>OTL</a> op te bouwen en te beheren:
+* python: Er zijn een aantal python scripts geschreven om o.a. het Markdown formaat van Areaaldata te transformeren naar een ontologie zoals hier beschreven. En om de SE informatie vanuit Relatics te transformeren naar Linked Data.
+* Topbraid Composer (Free edition): Topbraid wordt gebruikt om een aantal aanvullende ontologien te bouwen en te beheren. En om de <a>OTL</a> te raadplegen en te controleren.
+* <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a>: is een tool om een ontology om te zetten naar een HTML of D3.js weergave.
+* Github: De <a href="https://github.com/provincieNH/OTL">OTL Github repository</a> is de bron van de OTL.
+* Ontotext GraphDB
+* <a href="http://vocbench.uniroma2.it/">Vocbench</a>: is een webapplicatie om collaboratief ontologieen mee te ontwikkelen en te beheren. Staat op de roadmap om getest te gaan worden.
+* <a href="http://ld-r.org/">ld-r</a>: Linked data reactor staat op de roadmap om getest te gaan worden.
+
+# Visualisatie
+
+<a href="https://provincienh.github.io/OTL/otl-viz/">De OTL in D3.js</a>
+
+<a href="https://provincienh.github.io/OTL/otl-doc/">De OTL in HTML</a>
+
+
+</section>
+
+<section class="appendix informative" id="glossary">
+	<h2>Glossary</h2>
+	<p><dfn>OTL</dfn>: Object Type Library. Term die in de bouwsector gebruikt wordt en overeenkomt met <a>Ontologie</a>.</p>
+	<p><dfn>Ontologie</dfn>: een kennismodel van een specifiek kennisdomein in de werkelijkheid [[ONTOLOGY]]. Bevat een set regels, die gebruikt kunnen worden om extra kennis af te leiden uit gelinkte data. Met behulp van zo'n model kunnen computers begrijpen wat de data betekent en redeneren over data. </p>
+	<p><dfn>bronhouder</dfn>: Een bronhouder is verantwoordelijk voor het inwinnen en bijhouden van de authentieke en niet-authentieke gegevens in een basisregistratie en voor het borgen van de kwaliteit van die gegevens (onder meer naar aanleiding van ontvangen terugmeldingen). Een basisregistratie heeft één of meer bronhouders.</p>
+	<p><dfn>MDTO</dfn>: Metagegevens Duurzaam Toegankelijke Overheidsinformatie. Dit wordt de opvolger van [[TMLO]], waarbij er ook een Linked data profiel opgesteld wordt. <a href="https://www.nationaalarchief.nl/archiveren/nieuws/van-tmlo-en-tp-rijk-naar-mdto">MDTO</a></p>
+</section>
+
+<section class="appendix" id="issue-summary">
+Gerefereerde GitHub issues:
+  </section>
+</body>
+
+</html>
