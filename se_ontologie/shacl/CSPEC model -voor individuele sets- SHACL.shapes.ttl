@@ -1,0 +1,792 @@
+﻿@prefix cdoc: 		<http://ontologie.crow.nl/document/201711/>.
+@prefix cspec: 		<http://ontologie.crow.nl/bibliotheekspecificatie/201711/>.
+
+@prefix dct:		<http://purl.org/dc/terms/>.
+@prefix owl:		<http://www.w3.org/2002/07/owl#>.
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:		<http://www.w3.org/2000/01/rdf-schema#>.
+@prefix sh:			<http://www.w3.org/ns/shacl#>.
+@prefix skos:		<http://www.w3.org/2004/02/skos/core#>.
+@prefix spin:		<http://spinrdf.org/spin#>.
+@prefix xsd:		<http://www.w3.org/2001/XMLSchema#>.
+
+@prefix modelspec:		<http://ontologie.crow.nl/model/cspec/201711/>.
+@prefix modelcdoc:		<http://ontologie.crow.nl/model/cdoc/201711/>.				
+
+#======================
+# NodeShapes
+#======================
+
+modelspec:Activiteit rdf:type sh:NodeShape;
+	rdfs:label "Activiteit"@nl;
+	rdfs:comment "Iets dat gebeurt";
+	sh:targetClass cspec:Activiteit;
+	sh:name "cspec:Activiteit";
+	sh:property modelspec:bestaatUit;
+	sh:property modelspec:heeftBetrekkingOpFase;
+	sh:property modelspec:heeftStatus;
+	sh:property modelspec:isGespecificeerdDoor;
+	sh:property modelspec:isLidVan;
+	sh:property modelspec:vervult;
+.
+
+modelspec:Collectie rdf:type sh:NodeShape;
+	rdfs:label "Collectie"@nl;
+	rdfs:comment "Een verzameling van dingen die bij elkaar horen"@nl;
+	sh:targetClass cspec:Collectie;
+	sh:name "cspec:Collectie";
+	sh:property modelspec:bestaatUit;
+	sh:property modelspec:heeftBetrekkingOpFase;
+	sh:property modelspec:heeftLid;
+	sh:property modelspec:heeftStatus;
+.
+
+modelspec:Dataset rdf:type sh:NodeShape;
+	rdfs:label "Dataset"@nl;
+	rdfs:comment "Een collectie van bibliotheekdata die zijn gebpubliceerd om contracten mee op te stellen";
+	sh:targetClass cspec:Dataset;
+	sh:name "cspec:Dataset";
+	sh:property modelspec:heeftBetrekkingOpFase;
+	sh:property modelspec:heeftStatus;
+	sh:property modelspec:isDatasetVoor;
+	sh:property modelspec:isLidVan;
+.
+
+modelspec:Eenheid rdf:type sh:NodeShape;
+	rdfs:label "Eenheid"@nl;
+	rdfs:comment "De dimensie van de grootheid waarin een aspect wordt uitgedrukt";
+	sh:targetClass cspec:Eenheid;
+	sh:name "cspec:Eenheid";
+	sh:property modelspec:bestaatUit;
+	sh:property modelspec:heeftBetrekkingOpFase;
+	sh:property modelspec:heeftStatus;
+	sh:property modelspec:isEenheidVoor;
+	sh:property modelspec:isLidVan;
+	
+.
+
+modelspec:Fase rdf:type sh:NodeShape;
+	rdfs:label "Fase"@nl;
+	rdfs:comment "Een periode als onderdeel van een langere ontwikkeling";
+	sh:targetClass cspec:Fase;
+	sh:name "cspec:Fase";
+	sh:property modelspec:bestaatUit;
+	sh:property modelspec:FaseHeeftBetrekkingOp;
+	sh:property modelspec:heeftStatus;
+	sh:property modelspec:isLidVan;
+.
+
+modelspec:Functie rdf:type sh:NodeShape;
+	rdfs:label "Functie"@nl;
+	rdfs:comment "Een potentieel meetbare prestatie van een object / systeem";
+	sh:targetClass cspec:Functie;
+	sh:name "cspec:Functie";
+	sh:property modelspec:bestaatUit;
+	sh:property modelspec:heeftBetrekkingOpFase;
+	sh:property modelspec:heeftStatus;
+	sh:property modelspec:isGespecificeerdDoor;
+	sh:property modelspec:isLidVan;
+	sh:property modelspec:wordtVervuldDoor;
+.
+
+modelspec:Methode rdf:type sh:NodeShape;
+	rdfs:label "Methode"@nl;
+	rdfs:comment "Een vaste wel doordachte manier van handelen om een bepaald doel te bereiken";
+	sh:targetClass cspec:Methode;
+	sh:name "cspec:Methode";
+	sh:property modelspec:bestaatUit;
+	sh:property modelspec:heeftBetrekkingOpFase;
+	sh:property modelspec:heeftStatus;
+	sh:property modelspec:isLidVan;
+	sh:property modelspec:isVerificatiemethodeVoor;
+.
+
+modelspec:Object rdf:type sh:NodeShape;
+	rdfs:label "Object"@nl;
+	rdfs:comment "Een door de mens geproduceerd of gerealiseerd voorwerp, constructie, bouwwerk";
+	sh:targetClass cspec:Object;
+	sh:name "cspec:Object";
+	sh:property modelspec:bestaatUit;
+	sh:property modelspec:bijActiviteitenWordtObjectGespecificeerdDoor;
+	sh:property modelspec:bijObjectWordtActiviteitGespecificeerdDoor;
+	sh:property modelspec:heeftBetrekkingOpFase;
+	sh:property modelspec:heeftStatus;
+	sh:property modelspec:heeftVariant;
+	sh:property modelspec:isGespecificeerdDoor;
+	sh:property modelspec:isLidVan;
+	sh:property modelspec:isVariantVan;
+	sh:property modelspec:vervult;
+.
+
+modelspec:Raakvlak rdf:type sh:NodeShape;
+	rdfs:label "Raakvlak"@nl;
+	rdfs:comment "Het punt of gebied dat twee objecten gemeen hebben";
+	sh:targetClass cspec:Raakvlak;
+	sh:name "cspec:Raakvlak";
+	sh:property modelspec:bestaatUit; 
+### Nader uitwerken voor raakvlak waarschijnlijk aparte bestaat uit property";
+	sh:property modelspec:heeftBetrekkingOpFase;
+	sh:property modelspec:heeftStatus;
+	sh:property modelspec:isGespecificeerdDoor;
+	sh:property modelspec:isLidVan;
+.
+
+modelspec:Specificatie rdf:type sh:NodeShape;
+	rdfs:label "Specificatie"@nl;
+	rdfs:comment "Een nadere aanduiding waaraan een product moet voldoen";
+	sh:targetClass cspec:Specificatie;
+	sh:name "cspec:Specificatie";
+	sh:property modelspec:ID;
+	sh:property modelspec:handleidingTekst;
+	sh:property modelspec:heeftOnderliggende;
+	sh:property modelspec:sluitCombinatieUitMet;
+	sh:property modelspec:specificeert;
+	sh:property modelspec:specificeertObjectBijActiviteit;
+	sh:property modelspec:bron;
+	sh:property modelspec:combintatieWordtUitgeslotenDoor;
+	sh:property modelspec:combinatieWordtVereistDoor;
+	sh:property modelspec:heeftBetrekkingOpFase;
+	sh:property modelspec:heeftEenheid;
+	sh:property modelspec:heeftStatus;
+	sh:property modelspec:heeftVerificatiemethode;
+	sh:property modelspec:isLidVan;
+	sh:property modelspec:isOnderliggendeVan;
+	sh:property modelspec:isVanCategorie;
+	sh:property modelspec:sluitCombinatieUitMet;
+	sh:property modelspec:specificeert;
+	sh:property modelspec:specificeertActiviteitBijObject;
+	sh:property modelspec:specificeertObjectBijActiviteit;
+	sh:property modelspec:wordtInCombinatieVereistDoor;
+	sh:property modelcdoc:isVastBinnenJuridischeContext;
+	sh:property modelcdoc:isFacultatiefBinnenJuridischeContext;
+.
+
+modelspec:Specificatiecategorie rdf:type sh:NodeShape;
+	rdfs:label "Specificatiecategorie"@nl;
+	rdfs:comment "Een categorie waar een specificatei toe kan behoren";
+	sh:targetClass cspec:Specificatiecategorie;
+	sh:name "cspec:Specificatiecategorie";
+	sh:property modelspec:bestaatUit;
+	sh:property modelspec:heeftBetrekkingOpFase;
+	sh:property modelspec:heeftStatus;
+	sh:property modelspec:heeftSubcategorie;
+	sh:property modelspec:isCategorieVoor;
+	sh:property modelspec:isLidVan;
+	sh:property modelspec:isSubcategorieVoor;
+.
+
+modelspec:Status rdf:type sh:NodeShape;
+	rdfs:label "Status"@nl;
+	rdfs:comment "De stand of toestand van iets";
+	sh:targetClass cspec:Status;
+	sh:name "cspec:Status";
+	sh:property modelspec:heeftBetrekkingOpFase;
+	sh:property modelspec:isStatusVan;
+.
+
+#====================
+# PropertyShapes Owl:ObjectProperties
+#====================
+
+modelspec:FaseHeeftBetrekkingOp rdf:type sh:PropertyShape;
+	rdfs:label "fase heeft betrekking op"@nl;
+	rdfs:comment "";
+	sh:path cspec:FaseHeeftBetrekkingOp;
+	sh:name "cspec:FaseHeeftBetrekkingOp";
+	sh:or (
+		[sh:class cspec:Activiteit;]
+		[sh:class cspec:Collectie;]
+		[sh:class cspec:Dataset;]
+		[sh:class cspec:Eenheid;]
+		[sh:class cspec:Fase;]
+		[sh:class cspec:Functie;]
+		[sh:class cspec:Methode;]
+		[sh:class cspec:Object;]
+		[sh:class cspec:Raakvlak;]
+		[sh:class cspec:Specificatie;]
+		[sh:class cspec:Specificatiecategorie;]
+		[sh:class cspec:Status;]
+		);
+.
+
+modelspec:bestaatUit rdf:type sh:PropertyShape;
+	rdfs:label "bestaat uit"@nl;
+	sh:path cspec:bestaatUit;
+	sh:name "cspec:bestaatUit";
+	sh:or (
+		[sh:class cspec:Activiteit;]
+		[sh:class cspec:Collectie;]
+		[sh:class cspec:Dataset;]
+		[sh:class cspec:Eenheid;]
+		[sh:class cspec:Fase;]
+		[sh:class cspec:Functie;]
+		[sh:class cspec:Methode;]
+		[sh:class cspec:Object; ]
+		[sh:class cspec:Raakvlak;]
+		[sh:class cspec:Specificatie;]
+		[sh:class cspec:Specificatiecategorie;]
+		[sh:class cspec:Status;]
+		);
+.
+
+modelspec:bijActiviteitenWordtObjectGespecificeerdDoor rdf:type sh:PropertyShape;
+	rdfs:label "bij activiteit wordt object gespecificeerd door"@nl;
+	sh:path cspec:bijActiviteitenWordtObjectGespecificeerdDoor;
+	sh:name "cspec:bijActiviteitenWordtObjectGespecificeerdDoor";
+	sh:class cspec:Specificatie;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maar één object ingevoerd worden";
+.
+
+modelspec:bijObjectWordtActiviteitGespecificeerdDoor rdf:type sh:PropertyShape;
+	rdfs:label "bij object wordt activiteit gespecificeerd door"@nl;
+	sh:path cspec:bijActiviteitenWordtObjectGespecificeerdDoor;
+	sh:name "cspec:bijActiviteitenWordtObjectGespecificeerdDoor";
+	sh:class cspec:Specificatie;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maar één activiteit ingevoerd worden";
+.
+
+modelspec:combintatieWordtUitgeslotenDoor rdf:type sh:PropertyShape;
+	rdfs:label "Deze relatie wordt gelegd tussen twee specificaties, waarbij de ene specificatie uitgesloten wordt door de andere specificatie."@nl;
+	sh:path cspec:combintatieWordtUitgeslotenDoor;
+	sh:name "cspec:combintatieWordtUitgeslotenDoor";
+	sh:class cspec:Specificatie;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maar naar één specificatie verwezen worden";
+.
+
+modelspec:combinatieWordtVereistDoor rdf:type sh:PropertyShape;
+	rdfs:label "Deze relatie wordt gelegd tussen twee specificaties, waarbij de ene specificatie uitgesloten wordt door de andere specificatie."@nl;
+	sh:path cspec:combinatieWordtVereistDoor;
+	sh:name "cspec:combinatieWordtVereistDoor";
+	sh:class cspec:Specificatie;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maar naar één specificatie verwezen worden";
+.
+
+modelspec:heeftBetrekkingOpFase rdf:type sh:PropertyShape;
+	rdfs:label "heeft betrekking op fase"@nl;
+	sh:path cspec:heeftBetrekkingOpFase;
+	sh:name "cspec:heeftBetrekkingOpFase";
+	sh:class cspec:Fase;
+.
+
+modelspec:heeftEenheid rdf:type sh:PropertyShape;
+	rdfs:label "heeft eenheid"@nl;
+	sh:path cspec:heeftEenheid;
+	sh:name "cspec:heeftEenheid";
+	sh:class cspec:Eenheid;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maar naar één eenheid verwezen worden";
+.
+
+modelspec:heeftLid rdf:type sh:PropertyShape;
+	rdfs:label "heeft lid"@nl;
+	sh:path cspec:heeftLid;
+	sh:name "cspec:heeftLid";
+	sh:or (
+		[sh:class cspec:Activiteit;]
+		[sh:class cspec:Collectie;]
+		[sh:class cspec:Dataset;]
+		[sh:class cspec:Eenheid;]
+		[sh:class cspec:Fase;]
+		[sh:class cspec:Functie;]
+		[sh:class cspec:Methode;]
+		[sh:class cspec:Object;]
+		[sh:class cspec:Raakvlak;]
+		[sh:class cspec:Specificatie;]
+		[sh:class cspec:Specificatiecategorie;]
+		);
+.
+
+modelspec:heeftOnderliggende rdf:type sh:PropertyShape;
+	rdfs:label "heeft onderliggende"@nl;
+	sh:path cspec:heeftOnderliggende;
+	sh:name "cspec:heeftOnderliggende";
+	sh:class cspec:Specificatie;
+.
+
+modelspec:heeftStatus rdf:type sh:PropertyShape;
+	rdfs:label "heeft status";
+	sh:path cspec:heeftStatus;
+	sh:name "cspec:heeftStatus";
+	sh:class cspec:Status;
+	sh:severity sh:Violation;
+	sh:message "Er dient een status te worden meegegeven";
+.
+
+modelspec:heeftSubcategorie rdf:type sh:PropertyShape;
+	rdfs:label "heeft subcategorie"@nl;
+	sh:path cspec:heeftSubcategorie;
+	sh:name "cspec:heeftSubcategorie";
+	sh:class cspec:Specificatiecategorie;
+.
+
+modelspec:heeftVariant rdf:type sh:PropertyShape;
+	rdfs:label "heeft variant"@nl;
+	sh:path cspec:heeftVariant;
+	sh:name "cspec:heeftVariant";
+	sh:class cspec:Object;
+.
+
+modelspec:heeftVerificatiemethode rdf:type sh:PropertyShape;
+	rdfs:label "heeft verificatiemethode"@nl;
+	sh:path cspec:heeftVerificatiemethode;
+	sh:name "cspec:heeftVerificatiemethode";
+	sh:class cspec:Methode;
+.
+
+modelspec:hoortBijDataset rdf:type sh:PropertyShape;
+	rdfs:label "hoort bij dataset"@nl;
+	sh:path cspec:hoortBijDataset;
+	sh:name "cspec:hoortBijDataset";
+	sh:class cspec:Dataset;
+	sh:minCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er dient een verwijzing naar minimaal één dataset te worden opgenomen";
+.
+
+modelspec:isCategorieVoor rdf:type sh:PropertyShape;
+	rdfs:label "is categorie voor"@nl;
+	sh:path cspec:isCategorieVoor;
+	sh:name "cspec:isCategorieVoor";
+	sh:class cspec:Specificatie;
+.
+
+modelspec:isDatasetVoor rdf:type sh:PropertyShape;
+	rdfs:label "is dataset voor"@nl;
+	sh:path cspec:isDatasetVoor;
+	sh:name "cspec:isDatasetVoor";
+	sh:minCount 1;
+	sh:severity sh:Violation;
+.
+
+modelspec:isEenheidVoor rdf:type sh:PropertyShape;
+	rdfs:label "is eenheid voor"@nl;
+	sh:path cspec:isEenheidVoor;	
+	sh:name "cspec:isEenheidVoor";
+	sh:class cspec:Specificatie;
+	sh:minCount 1;
+	sh:severity sh:Violation;
+.
+
+modelspec:isGespecificeerdDoor rdf:type sh:PropertyShape;
+	rdfs:label "is gespecificeerd door"@nl;
+	sh:path cspec:isGespecificeerdDoor;
+	sh:name "cspec:isGespecificeerdDoor";
+	sh:class cspec:Specificatie;
+.
+
+modelspec:isLidVan rdf:type sh:PropertyShape;
+	rdfs:label "is lid van"@nl;
+	sh:path cspec:isLidVan;
+	sh:name "cspec:isLidVan";
+	sh:class cspec:Collectie;
+.
+
+modelspec:isOnderdeelVan rdf:type sh:PropertyShape;
+	rdfs:label "is onderdeel van"@nl;
+	sh:path cspec:isOnderdeelVan;
+	sh:name "cspec:isOnderdeelVan";
+	sh:in ( cspec:Activiteit
+			cspec:Collectie	
+			cspec:Dataset
+			cspec:Eenheid
+			cspec:Fase
+			cspec:Functie
+			cspec:Methode
+			cspec:Object
+			cspec:Raakvlak
+			cspec:Specificatie
+			cspec:Specificatiecategorie
+		);
+	sh:or (
+		[sh:class cspec:Activiteit;]
+		[sh:class cspec:Collectie;]
+		[sh:class cspec:Dataset;]
+		[sh:class cspec:Eenheid;]
+		[sh:class cspec:Fase;]
+		[sh:class cspec:Functie;]
+		[sh:class cspec:Methode;]
+		[sh:class cspec:Object;]
+		[sh:class cspec:Raakvlak;]
+		[sh:class cspec:Specificatie;]
+		[sh:class cspec:Specificatiecategorie;]
+		);
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maximaal één verwijzing naar een Activiteit, Collectie, Dataset, Eenheid, Fase, Functie, Methode, Object, Raakvlak, Specificatie of Specificatiecategorie aanwezig zijn";
+.
+
+modelspec:isOnderliggendeVan rdf:type sh:PropertyShape;
+	rdfs:label "is onderliggende van"@nl;
+	sh:path cspec:isOnderliggendeVan;
+	sh:name "cspec:isOnderliggendeVan";
+	sh:class cspec:Specificatie;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maximaal één verwijzing naar Specificatie worden opgenomen"; 
+.
+
+modelspec:isStatusVan rdf:type sh:PropertyShape;
+	rdfs:label "is status van"@nl;
+	sh:path cspec:isStatusVan;
+	sh:name "cspec:isStatusVan";
+	sh:or (
+		[sh:class cspec:Activiteit;]
+		[sh:class cspec:Collectie;]
+		[sh:class cspec:Dataset;]
+		[sh:class cspec:Eenheid;]
+		[sh:class cspec:Fase;]
+		[sh:class cspec:Functie;]
+		[sh:class cspec:Methode;]
+		[sh:class cspec:Object;]
+		[sh:class cspec:Raakvlak;]
+		[sh:class cspec:Specificatie;]
+		[sh:class cspec:Specificatiecategorie;]
+		);
+	sh:minCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er dient een status te worden ingevoerd";
+.
+
+modelspec:isSubcategorieVoor rdf:type sh:PropertyShape;
+	rdfs:label "is subcategorie voor"@nl;
+	sh:path cspec:isSubcategorieVoor;
+	sh:name "cspec:isSubcategorieVoor";
+	sh:class cspec:Specificatiecategorie;
+	sh:severity sh:Violation;
+	sh:message "Er dient minimaal één verwijzing naar een Specificatiecategorie aanwezig te zijn";
+.
+
+modelspec:isVanCategorie rdf:type sh:PropertyShape;
+	rdfs:label "is van categorie"@nl;
+	sh:path cspec:isVanCategorie;
+	sh:name "cspec:isVanCategorie";
+	sh:class cspec:Specificatiecategorie;
+.
+
+modelspec:isVariantVan rdf:type sh:PropertyShape;
+	rdfs:label "is variant van"@nl;
+	sh:path cspec:isVariantVan;
+	sh:name "cspec:isVariantVan";
+	sh:class cspec:Object;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er dient één verwijzing te worden opgenomen naar een Object";
+.
+
+modelspec:isVerificatiemethodeVoor rdf:type sh:PropertyShape;
+	rdfs:label "is verificatiemethode voor"@nl;
+	sh:path cspec:isVerificatiemethodeVoor;
+	sh:name "cspec:isVerificatiemethodeVoor";
+	sh:class cspec:Specificatie;
+	sh:minCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er dient minimaal één verwijzing te zijn opgenomen naar een Specificatie";
+.
+
+modelspec:sluitCombinatieUitMet rdf:type sh:PropertyShape;
+	rdfs:label "sluit combinatie uit met"@nl;
+	sh:path cspec:sluitCombinatieUitMet;
+	sh:name "cspec:sluitCombinatieUitMet";
+	sh:class cspec:Specificatie;
+.
+
+modelspec:specificeert rdf:type sh:PropertyShape;
+	rdfs:label "specificeert"@nl;
+	sh:path cspec:specificeert;
+	sh:name "cspec:specificeert";
+		sh:or (
+		[sh:class cspec:Activiteit;]
+		[sh:class cspec:Functie;]
+		[sh:class cspec:Object;]
+		[sh:class cspec:Raakvlak;]
+		);
+	sh:minCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er dient één verwijzing naar een Activiteit, Functie, Object of Raakvlak te zijn ingevoerd";
+.
+
+modelspec:specificeertActiviteitBijObject rdf:type sh:PropertyShape;
+	rdfs:label "specificeert activiteit bij object"@nl;
+	sh:path cspec:specificeertActiviteitBijObject;
+	sh:name "cspec:specificeertActiviteitBijObject";
+	sh:class cspec:Object;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maar één verwijzing naar een Object worden opgenomen";
+.
+
+modelspec:specificeertObjectBijActiviteit rdf:type sh:PropertyShape;
+	rdfs:label "specificeert object bij activiteit"@nl;
+	sh:path cspec:specificeertObjectBijActiviteit;
+	sh:name "cspec:specificeertObjectBijActiviteit";
+	sh:class cspec:Activiteit;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maar één verwijzing naar een Activiteit worden opgenomen";
+.
+
+modelspec:vervult rdf:type sh:PropertyShape;
+	rdfs:label "vervult"@nl;
+	sh:path cspec:vervult;
+	sh:name "cspec:vervult";
+	sh:class cspec:Functie;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maar één verwijzing naar een Functie worden opgenomen";
+.
+
+modelspec:wordtInCombinatieVereistDoor rdf:type sh:PropertyShape;
+	rdfs:label "wordt in combinatie vereist door"@nl;
+	rdfs:comment "Deze relatie wordt gelegd tussen twee specificaties, waarbij de ene specificatie niet geldt zonder de andere specificatie"@nl;
+	sh:path cspec:wordtInCombinatieVereistDoor;
+	sh:name "cspec:wordtInCombinatieVereistDoor";
+	sh:class cspec:Specificatie;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maar één verwijzing naar een Specificatie worden opgenomen";
+.
+
+modelspec:wordtVervuldDoor rdf:type sh:PropertyShape;
+	rdfs:label "wordt vervuld door"@nl;
+	sh:path cspec:wordtVervuldDoor;
+	sh:name "cspec:wordtVervuldDoor";
+	sh:class cspec:Object;
+	sh:class cspec:Activiteit;
+.
+
+#====================
+# PropertyShapes Owl:DatatypeProperties
+#====================
+
+modelspec:ID rdf:type sh:PropertyShape;
+	sh:path cspec:ID;
+	sh:name "cspec:ID";
+	sh:in ( cspec:Activiteit
+			cspec:Collectie	
+			cspec:Dataset
+			cspec:Eenheid
+			cspec:Fase
+			cspec:Functie
+			cspec:Methode
+			cspec:Object
+			cspec:Raakvlak
+			cspec:Specificatie
+			cspec:Specificatiecategorie
+		);
+.
+
+modelspec:URLVanDeDefinitie rdf:type sh:PropertyShape;
+	rdfs:label "URL van de defintie"@nl;
+	sh:path cspec:URLVanDeDefinitie;
+	sh:name "cspec:URLVanDeDefinitie";
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Een definitie mag maximaal één URL hebben";
+	sh:datatype sh:IRI;
+.
+
+modelspec:aanwijzingTekst rdf:type sh:PropertyShape;
+	rdfs:label "Aanwijzing tekst"@nl;
+	sh:path cspec:aanwijzingTekst;
+	sh:name "cspec:aanwijzingTekst";
+	sh:in ( cspec:Activiteit
+			cspec:Collectie	
+			cspec:Dataset
+			cspec:Eenheid
+			cspec:Fase
+			cspec:Functie
+			cspec:Methode
+			cspec:Object
+			cspec:Raakvlak
+			cspec:Specificatie
+			cspec:Specificatiecategorie
+		);
+	sh:datatype xsd:string;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maximaal één passage aanwijzings tekst worden opgenomen";
+.
+
+modelspec:beschrijving rdf:type sh:PropertyShape;
+	rdfs:label "beschrijving"@nl;
+	sh:path cspec:beschrijving;
+	sh:name "cspec:beschrijving";
+	sh:in ( cspec:Activiteit
+			cspec:Collectie	
+			cspec:Dataset
+			cspec:Eenheid
+			cspec:Fase
+			cspec:Functie
+			cspec:Methode
+			cspec:Object
+			cspec:Raakvlak
+			cspec:Specificatie
+			cspec:Specificatiecategorie
+		);
+	sh:datatype xsd:string;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maximaal één beschrijving worden opgenomen";
+.
+
+modelspec:bronVanDefinitie rdf:type sh:PropertyShape;
+	rdfs:label "bron van definitie"@nl;
+	sh:path cspec:bronVanDefinitie;
+	sh:name "cspec:bronVanDefinitie";
+	sh:in ( cspec:Activiteit
+			cspec:Collectie	
+			cspec:Dataset
+			cspec:Eenheid
+			cspec:Fase
+			cspec:Functie
+			cspec:Methode
+			cspec:Object
+			cspec:Raakvlak
+			cspec:Specificatie
+			cspec:Specificatiecategorie
+		);
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maximaal één bron worden opgenomen voor een definitie";
+.
+
+cspec:code rdf:type sh:PropertyShape;
+	rdfs:label "code"@nl;
+	sh:path cspec:code;
+	sh:name "cspec:code";
+	sh:in ( cspec:Activiteit
+			cspec:Collectie	
+			cspec:Dataset
+			cspec:Eenheid
+			cspec:Fase
+			cspec:Functie
+			cspec:Methode
+			cspec:Object
+			cspec:Raakvlak
+			cspec:Specificatie
+			cspec:Specificatiecategorie
+		);
+	sh:datatype sh:literal;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maximaal één code worden opgevoerd";
+.
+
+modelspec:definitie rdf:type sh:PropertyShape;
+	rdfs:label "definitie";
+	sh:path cspec:defintie;
+	sh:name "cspec:definitie";
+	sh:in ( cspec:Activiteit
+			cspec:Collectie	
+			cspec:Dataset
+			cspec:Eenheid
+			cspec:Fase
+			cspec:Functie
+			cspec:Methode
+			cspec:Object
+			cspec:Raakvlak
+			cspec:Specificatie
+			cspec:Specificatiecategorie
+		);
+	sh:datatype xsd:string;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maximaal één definitie worden opgenomen";
+.
+
+cspec:handleidingTekst rdf:type sh:PropertyShape;
+	rdfs:label "handleidingstekst"@nl;
+	sh:path cspec:handleidingTekst;
+	sh:name "cspec:handleidingTekst";
+	sh:in ( cspec:Activiteit
+			cspec:Collectie	
+			cspec:Dataset
+			cspec:Eenheid
+			cspec:Fase
+			cspec:Functie
+			cspec:Methode
+			cspec:Object
+			cspec:Raakvlak
+			cspec:Specificatie
+			cspec:Specificatiecategorie
+		);
+	sh:datatype xsd:string;
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maximaal één handleiding tekst worden opgenomen";
+.
+
+modelspec:inhoudMethode rdf:type sh:PropertyShape;
+	rdfs:label "inhoud methode"@nl;
+	sh:path cspec:inhoudMethode;
+	sh:name "cspec:inhoudMethode";
+	sh:in ( cspec:Activiteit
+			cspec:Collectie	
+			cspec:Dataset
+			cspec:Eenheid
+			cspec:Fase
+			cspec:Functie
+			cspec:Methode
+			cspec:Object
+			cspec:Raakvlak
+			cspec:Specificatie
+			cspec:Specificatiecategorie
+		);
+	sh:maxCount 1;
+	sh:severity sh:Violation;
+	sh:message "Er mag maximaal één verwijzing worden opgenomen naar een inhoud van een Methode";
+.
+
+modelspec:naam rdf:type sh:PropertyShape;
+	rdfs:label "naam"@nl;
+	sh:path cspec:naam;
+	sh:name "cspec:naam";
+	sh:in ( cspec:Activiteit
+			cspec:Collectie	
+			cspec:Dataset
+			cspec:Eenheid
+			cspec:Fase
+			cspec:Functie
+			cspec:Methode
+			cspec:Object
+			cspec:Raakvlak
+			cspec:Specificatie
+			cspec:Specificatiecategorie
+		);
+	sh:datatype xsd:string;
+	sh:maxCount 2;
+	sh:severity sh:Violation;
+	sh:message "Er mag maximaal één naam voor dit element worden opgevoerd";
+.
+
+modelspec:synoniem rdf:type sh:PropertyShape;
+	rdfs:label "synoniem"@nl;
+	sh:path cspec:synoniem;
+	sh:name "cspec:synoniem";
+	sh:in ( cspec:Activiteit
+			cspec:Collectie	
+			cspec:Dataset
+			cspec:Eenheid
+			cspec:Fase
+			cspec:Functie
+			cspec:Methode
+			cspec:Object
+			cspec:Raakvlak
+			cspec:Specificatie
+			cspec:Specificatiecategorie
+		);
+	sh:datatype sh:literal;
+.
+
+
+
+

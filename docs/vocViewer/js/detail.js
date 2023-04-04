@@ -57,7 +57,7 @@ var detail = {
             //console.log("NH: " + uri)
             if (data.results.bindings.length > 1) {
                 var F = page.isEmbedded ? detail.FRONT_LIST_EMBEDDED : detail.FRONT_LIST;
-                //console.log(F)
+                //console.log("F: " + JSON.stringify(F))
                 for (var key in F) detail.insertFrontPart(key, uri, data, Array.from(F[key].values()));
                 var div = $('#pageContent');
                 div.append(`<hr>
@@ -113,8 +113,10 @@ var detail = {
     insertFrontPart: function (key, uri, data, props) {
         var div = $('#pageContent');
         let html = ``;
+        console.log('key:'+ key + ' uri: '+  uri + ' data: '+ JSON.stringify(data) + ' props: '+ props)
         props.forEach((i) => {
             let ul = this.getObj(data, i);
+            //console.log('ul: ' + JSON.stringify(ul))
             if (ul.size > 0) {
                 switch (key) {
                     case 'prefLabel':
@@ -128,10 +130,10 @@ var detail = {
                         let endpoint = ''
                         let auth=''
                         for ( var ep in ws.endpoints){
-                            //console.log(i, uri)
+                            console.log(i, uri)
                             if (uri.includes(ws.endpoints[ep].uri))
                             { 
-                                //console.log('in if statemtent')
+                                console.log('in if statemtent')
                                 endpoint = ws.endpoints[ep].endpoint
                                 auth = ws.endpoints[ep].auth
                                 break;

@@ -172,7 +172,7 @@ var page = {
                         WHERE { 
                         ?c a skos:ConceptScheme; skos:prefLabel ?cL
                         . FILTER(lang(?cL)="${lang.ID}") . 
-                        FILTER(?c = <${project.cs}>) .
+                        #FILTER(?c = <${project.cs}>) .
                         ?tc skos:topConceptOf ?c . ?tc skos:prefLabel ?tcL . FILTER(lang(?tcL)="${lang.ID}") . 
                         ?tc skos:narrower* ?n 
                         BIND(CONCAT(STR(?tc),"$",STR(?tcL)) AS ?L) 
