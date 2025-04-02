@@ -107,145 +107,143 @@ In de Provinciale API en URI strategie wordt voor de <a>OTL</a> ook naar de [[NT
 
 </section>
 
-<section class=informative>
 
-# Areaaldata
+  # Areaaldata
 
-<a href="https://github.com/provincieNH/Leveren_Geoinformatie">Areaaldata</a> is het datamodel wat gebruikt wordt om assetgegevens te registreren in de 'as-built' situatie.
-De basis van het model is het [[IMGeo]] model. Hierbij is er een verbijzondering gemaakt naar aanvullende informatie ten behoeve van het beheer van de assets. De <a>OTL</a> representatie van
-het Areaaldata model is een transformatie vanuit de markdown files (waar het model in gedefinieerd is) naar linked data. 
+  <a href="https://github.com/provincieNH/Leveren_Geoinformatie">Areaaldata</a> is het datamodel wat gebruikt wordt om assetgegevens te registreren in de 'as-built' situatie.
+  De basis van het model is het [[IMGeo]] model. Hierbij is er een verbijzondering gemaakt naar aanvullende informatie ten behoeve van het beheer van de assets. De <a>OTL</a> representatie van
+  het Areaaldata model is een transformatie vanuit de markdown files (waar het model in gedefinieerd is) naar linked data.
 
-Het model is opgedeeld in verschillende namespaces:
-* skos concepten: `http://otl.noord-holland.nl/id/areaaldata/concept/`
-* waardenlijsten: `http://otl.noord-holland.nl/def/areaaldata/waardenlijst/`
-* objecttypen: `http://otl.noord-holland.nl/def/areaaldata/objecttype/`
-* eigenschappen: `http://otl.noord-holland.nl/def/areaaldata/eigenschap/`
-* shapes: `http://otl.noord-holland.nl/def/areaaldata/shape/`
+  Het model is opgedeeld in verschillende namespaces:
+  * skos concepten: `http://otl.noord-holland.nl/id/areaaldata/concept/`
+  * waardenlijsten: `http://otl.noord-holland.nl/def/areaaldata/waardenlijst/`
+  * objecttypen: `http://otl.noord-holland.nl/def/areaaldata/objecttype/`
+  * eigenschappen: `http://otl.noord-holland.nl/def/areaaldata/eigenschap/`
+  * shapes: `http://otl.noord-holland.nl/def/areaaldata/shape/`
 
-<div class="issue" data-number="9"></div>
+  <div class="issue" data-number="9"></div>
 
-## SKOS concepten
+  ## SKOS concepten
 
-De definities en bron verwijzingen van de areaaldata concepten zijn opgenomen in een SKOS thesaurus. Hierbij is de thematische indeling van Areaaldata opgenomen als `skos:Collection'.
+  De definities en bron verwijzingen van de areaaldata concepten zijn opgenomen in een SKOS thesaurus. Hierbij is de thematische indeling van Areaaldata opgenomen als `skos:Collection'.
 
-## Objecttypen
+  ## Objecttypen
 
-De Objecttypen zijn een verbijzondering van IMGeo objecttypen. Of als er geen IMGeo equivalent is (traject, halte, ...) een eigen definitie. Wel zoveel mogelijk geinspireerd op andere standaard informatiemodellen.
-Het __typespec__ attribuut in Areaaldata is in de <a>OTL</a> omgezet naar een `rdfs:subClassOf` relatie. Hierbij is de naamgeving `<objecttype>_<typespec>` gehanteerd.
+  De Objecttypen zijn een verbijzondering van IMGeo objecttypen. Of als er geen IMGeo equivalent is (traject, halte, ...) een eigen definitie. Wel zoveel mogelijk geinspireerd op andere standaard informatiemodellen.
+  Het __typespec__ attribuut in Areaaldata is in de <a>OTL</a> omgezet naar een `rdfs:subClassOf` relatie. Hierbij is de naamgeving `<objecttype>_<typespec>` gehanteerd.
 
-Op objecttype niveau is de verwijzing gelegd naar de definitie van het objecttype met `dcterms:subject` naar het `skos:Concept`. 
-Fysieke objecten zijn een `rdfs:subClassOf` `nta8035:PhysicalObject`, de niet fysieke objecten zijn een `rdfs:subClassOf` `nta8035:InformationObject`.
-Fysieke objecten zijn ook een `rdfs:subClassOf` `geosparql:Feature`.
+    Op objecttype niveau is de verwijzing gelegd naar de definitie van het objecttype met `dcterms:subject` naar het `skos:Concept`.
+    Fysieke objecten zijn een `rdfs:subClassOf` `nta8035:PhysicalObject`, de niet fysieke objecten zijn een `rdfs:subClassOf` `nta8035:InformationObject`.
+    Fysieke objecten zijn ook een `rdfs:subClassOf` `geosparql:Feature`.
 
-N.B. In de naamgeving van areaaldata wordt een _p, _l, _v suffix gebruikt om aan te geven wat voor geometrisch type het betreft. Deze suffix wordt in de <a>OTL</a> niet overgenomen. 
-De geometrie definitie wordt in plaats daarvan overgenomen met een restrictie op het geosparql Geometry type. 
+    N.B. In de naamgeving van areaaldata wordt een _p, _l, _v suffix gebruikt om aan te geven wat voor geometrisch type het betreft. Deze suffix wordt in de <a>OTL</a> niet overgenomen.
+    De geometrie definitie wordt in plaats daarvan overgenomen met een restrictie op het geosparql Geometry type.
 
-## Eigenschappen
+    ## Eigenschappen
 
-Afhankelijk van het type eigenschap zijn het DatatypeProperties of ObjectProperties geworden.
-Incidenteel zitten er nog problemen in de eigenschappen met de range definities omdat deze overgenomen worden uit de markdown definities van Areaaldata.
-In de markdown/uml implementatie van het model is een eigenschap per definitie alleen in scope van het betreffende objecttype, in de vertaling naar linked data wordt de scope 'global'. In een paar gevallen 
-levert dit nog een conflict op.
+    Afhankelijk van het type eigenschap zijn het DatatypeProperties of ObjectProperties geworden.
+    Incidenteel zitten er nog problemen in de eigenschappen met de range definities omdat deze overgenomen worden uit de markdown definities van Areaaldata.
+    In de markdown/uml implementatie van het model is een eigenschap per definitie alleen in scope van het betreffende objecttype, in de vertaling naar linked data wordt de scope 'global'. In een paar gevallen
+    levert dit nog een conflict op.
 
-<div class="issue" data-number="10"></div>
+    <div class="issue" data-number="10"></div>
 
-### Shapes
+    ### Shapes
 
-Restricties worden met shacl shapes gedefinieerd. Waarbij er voor elke eigenschap een shape gedefinieerd is, gekoppeld aan het betreffende objecttype:
-```turtle
-adprop:DATALEVERANCIER
-  rdf:type owl:DatatypeProperty ;
-  rdf:type owl:FunctionalProperty ;
-  ad:areaaldataversie "4.2" ;
-  ad:begingeldigheid "2019-09-25"^^xsd:date ;
-  rdfs:domain [
+    Restricties worden met shacl shapes gedefinieerd. Waarbij er voor elke eigenschap een shape gedefinieerd is, gekoppeld aan het betreffende objecttype:
+    ```turtle
+    adprop:DATALEVERANCIER
+    rdf:type owl:DatatypeProperty ;
+    rdf:type owl:FunctionalProperty ;
+    ad:areaaldataversie "4.2" ;
+    ad:begingeldigheid "2019-09-25"^^xsd:date ;
+    rdfs:domain [
+    rdf:type owl:Class ;
+    owl:unionOf (
+    ad:bak
+    ad:begroeidTerreindeel
+    );
+    ] ;
+    rdfs:label "DATALEVERANCIER"@nl-NL ;
+    rdfs:range xsd:string ;
+    skos:definition "Leverancier van de data"@nl-NL ;
+    .
+
+    adprop:bak-DATALEVERANCIER
+    rdf:type sh:PropertyShape ;
+    sh:path adprop:DATALEVERANCIER ;
+    adshapes:areaaldataversie "4.2" ;
+    adshapes:begingeldigheid "2019-09-25"^^xsd:date ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    .
+
+    adprop:begroeidTerreindeel-DATALEVERANCIER
+    rdf:type sh:PropertyShape ;
+    sh:path adprop:DATALEVERANCIER ;
+    adshapes:areaaldataversie "4.2" ;
+    adshapes:begingeldigheid "2019-09-25"^^xsd:date ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    .
+
+    ```
+
+    Voor elke objecttype is er een NodeShape gedefinieerd om te specificeren welke eigenschappen horen bij welke objecttypen:
+    ```turtle
+    ad:bakShape
+    rdf:type sh:NodeShape ;
+    adshapes:areaaldataversie "4.2" ;
+    adshapes:begingeldigheid "2019-09-25"^^xsd:date ;
+    sh:property adprop:bak-AD_ID ;
+    sh:property adprop:bak-BEHEERDER ;
+    sh:property adprop:bak-BERICHT_ID ;
+    sh:property adprop:bak-hasGeometry ;
+    sh:targetClass ad:bak ;
+    .
+    ```
+
+    ### Eenheden
+    <div class="issue" data-number="10"></div>
+
+    ### Vastewaardelijsten
+
+    waardenlijsten zijn geimplementeerd als klasse met instanties. Waarbij de instantienaam het patroon `<waardelijst>_<waarde>` volgt. In het rdfs:label komt vervolgens de domeinnaam, code en omschrijving uit de ArcGIS
+      implementatie terug.
+
+      ### Geometrie
+
+      Objecttypen met een geometrie ontlenen die uit de markdown definitie:
+      * _p => sf:Point
+      * _l => sf:MultiLineString
+      * _v => sf:MultiPolygon
+
+      ```turtle
+      ad:bord
       rdf:type owl:Class ;
-      owl:unionOf (
-		ad:bak
-		ad:begroeidTerreindeel
-	  );
-	  ] ;
-	rdfs:label "DATALEVERANCIER"@nl-NL ;
-	rdfs:range xsd:string ;
-	skos:definition "Leverancier van de data"@nl-NL ;
-	.
-
-adprop:bak-DATALEVERANCIER
-  rdf:type sh:PropertyShape ;
-  sh:path adprop:DATALEVERANCIER ;
-  adshapes:areaaldataversie "4.2" ;
-  adshapes:begingeldigheid "2019-09-25"^^xsd:date ;
-  sh:datatype xsd:string ;
-  sh:maxCount 1 ;
-.
-
-adprop:begroeidTerreindeel-DATALEVERANCIER
-  rdf:type sh:PropertyShape ;
-  sh:path adprop:DATALEVERANCIER ;
-  adshapes:areaaldataversie "4.2" ;
-  adshapes:begingeldigheid "2019-09-25"^^xsd:date ;
-  sh:datatype xsd:string ;
-  sh:maxCount 1 ;
-.
-
-```
-
-Voor elke objecttype is er een NodeShape gedefinieerd om te specificeren welke eigenschappen horen bij welke objecttypen:
-```turtle
-ad:bakShape
-  rdf:type sh:NodeShape ;
-  adshapes:areaaldataversie "4.2" ;
-  adshapes:begingeldigheid "2019-09-25"^^xsd:date ;
-  sh:property adprop:bak-AD_ID ;
-  sh:property adprop:bak-BEHEERDER ;
-  sh:property adprop:bak-BERICHT_ID ;
-  sh:property adprop:bak-hasGeometry ;
-  sh:targetClass ad:bak ;
-.
-```
-
-### Eenheden
-<div class="issue" data-number="10"></div>
-
-### Vastewaardelijsten
-
-waardenlijsten zijn geimplementeerd als klasse met instanties. Waarbij de instantienaam het patroon `<waardelijst>_<waarde>` volgt. In het rdfs:label komt vervolgens de domeinnaam, code en omschrijving uit de ArcGIS 
-implementatie terug.
-
-### Geometrie
-
-Objecttypen met een geometrie ontlenen die uit de markdown definitie: 
-* _p => sf:Point
-* _l => sf:MultiLineString
-* _v => sf:MultiPolygon
-
-```turtle
-ad:bord
-  rdf:type owl:Class ;
-  rdfs:subClassOf geo:Feature ;
-  rdfs:subClassOf bs:PhysicalObject ;
-  rdfs:subClassOf [
+      rdfs:subClassOf geo:Feature ;
+      rdfs:subClassOf bs:PhysicalObject ;
+      rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onClass sf:Point ;
       owl:onProperty geo:hasGeometry ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-	] ;
-	.
-```
+      ] ;
+      .
+      ```
 
 
 
-## Raakvlak met IMBOR
+      ## Raakvlak met IMBOR
 
-Het Areaaldata model stamt uit de tijd van voordat het IMBOR model zijn huidige vorm kreeg. In Areaaldata is er nog voor gekozen om alle relevante objecttypen een subklasse te laten zijn van een IMGeo obejcttype.
-In IMBOR is dat principe losgelaten en is er een mapping gemaakt van IMBOR objecttypen naar IMGeo objecttypen. Om uit te kunnen wisselen tussen IMBOR en Areaaldata zal er dus een vergelijkbare mapping gemaakt moeten worden.
+      Het Areaaldata model stamt uit de tijd van voordat het IMBOR model zijn huidige vorm kreeg. In Areaaldata is er nog voor gekozen om alle relevante objecttypen een subklasse te laten zijn van een IMGeo obejcttype.
+      In IMBOR is dat principe losgelaten en is er een mapping gemaakt van IMBOR objecttypen naar IMGeo objecttypen. Om uit te kunnen wisselen tussen IMBOR en Areaaldata zal er dus een vergelijkbare mapping gemaakt moeten worden.
 
-<div class="issue" data-number="11"></div>
+      <div class="issue" data-number="11"></div>
 
 
-</section>
 
-<section class=informative>
+      <section class=informative>
 
 # System Engineering
 
